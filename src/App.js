@@ -1,17 +1,18 @@
 import React from 'react';
 import Menu from './components/menu';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './pages/home';
+import Home from './pages/home/';
 import Projects from './pages/projects';
 import Beats from './pages/beats';
 import Merchandise from './pages/merchandise';
 import Contact from './pages/contact';
 import NotFound from './pages/notfound';
+import Container from 'react-bootstrap/Container';
 
 export default class App extends React.Component {
   render () {
     return (
-      <React.Fragment>
+      <Container fluid style={{padding: 0, flex: 1}}>
         <Menu />
         <Router>
           <Switch>
@@ -23,7 +24,7 @@ export default class App extends React.Component {
             <Route component={NotFound} />
           </Switch>
         </Router>
-      </React.Fragment>
+      </Container>
     );
   }
 }
