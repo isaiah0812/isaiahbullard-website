@@ -44,18 +44,18 @@ const carouselHeight = window.innerHeight * .5;
 export default class ProjectCarouselItem extends React.Component {
   render() {
     return (
-      <div>
-        <CarouselBackdrop src={'/assets/home/Zaes_Room.png'} height={carouselHeight} />
+      <Container fluid>
+        <CarouselBackdrop src={this.props.backdrop} height={carouselHeight} />
         <CarouselInfo>
           <Container fluid style={{padding: 12}}>
             <Row sm={12}>
               <Col sm={6}>
-                <CarouselImage src={'/assets/home/ZaesRoom_Logo.png'} height={(window.innerHeight * .335)} width={(window.innerHeight * .335)} />
+                <CarouselImage src={this.props.logo} height={(window.innerHeight * .335)} width={(window.innerHeight * .335)} />
               </Col>
               <Col sm={6}>
                 <Row sm={6}>
                   <Col sm={12} style={{paddingTop: 12, paddingBottom: 12, height: (window.innerHeight * .335)/2}}>
-                    <CarouselText style={{height: ((window.innerHeight * .335)/2) - 24}}>#GraduationIsSoon. Coming 2020.</CarouselText>
+                    <CarouselText style={{height: ((window.innerHeight * .335)/2) - 24}}>{this.props.description}</CarouselText>
                   </Col>
                 </Row>
                 <Row sm={6}>
@@ -67,7 +67,7 @@ export default class ProjectCarouselItem extends React.Component {
             </Row>
           </Container>
         </CarouselInfo>
-      </div>
+      </Container>
     );
   }
 }
