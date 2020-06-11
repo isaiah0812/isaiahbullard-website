@@ -12,7 +12,7 @@ import Container from 'react-bootstrap/Container';
 export default class App extends React.Component {
   render () {
     return (
-      <Container fluid style={{padding: 0, flex: 1}}>
+      <Container fluid style={{padding: 0}}>
         <Menu />
         <Router>
           <Switch>
