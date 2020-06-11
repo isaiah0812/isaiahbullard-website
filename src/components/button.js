@@ -25,7 +25,7 @@ export default class Button extends React.Component {
   render() {
     return (
       <StyledButton onClick={() => alert("Button Clicked")}>
-        Listen
+        {this.props.text}
       </StyledButton>
     );
   }

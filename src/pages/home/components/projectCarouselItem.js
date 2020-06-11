@@ -60,7 +60,7 @@ export default class ProjectCarouselItem extends React.Component {
                 </Row>
                 <Row sm={6}>
                   <Col sm={12} style={{paddingTop: 12, paddingBottom: 12, height: (window.innerHeight * .335)/2}}>
-                    <Button />
+                    <Button text={'Listen'} />
                   </Col>
                 </Row>
               </Col>
