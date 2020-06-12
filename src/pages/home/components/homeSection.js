@@ -10,7 +10,6 @@ const SectionTitle = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
   font-size: 10vh;
 `
 
@@ -23,18 +22,18 @@ export default class HomeSection extends React.Component {
   render() {
     return (
       <Container fluid>
-        <Row style={{height: (window.innerHeight * .5), backgroundColor: '#040B30', color: '#FFFFFF'}}>
+        <Row style={{height: (window.innerHeight * .5), backgroundColor: this.props.primary ? '#040B30' : '#FFFFFF', color: this.props.primary ? '#FFFFFF' : '#040B30'}}>
           <Col sm={6}>
-            <SectionTitle>About Me</SectionTitle>
+            <SectionTitle>{this.props.title}</SectionTitle>
           </Col>
           <Col sm={6}>
             <Row style={{height: (window.innerHeight * .25), padding: 24, display: 'flex', alignItems: 'flex-end'}}>
               <SectionDescription>
-                Producer. Songwriter. Wannabe composer. That's me! I'm open to all serious inquiries that involve music. Hit the button below to contact me and let's get locked in!
+                {this.props.description}
               </SectionDescription>
             </Row>
             <Row style={{height: (window.innerHeight * .25), padding: 24}}>
-              <Button text={'Contact'} />
+              <Button text={this.props.buttonText} secondary={!this.props.primary} />
             </Row>
           </Col>
         </Row>

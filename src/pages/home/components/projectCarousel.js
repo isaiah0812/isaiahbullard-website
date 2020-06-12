@@ -8,6 +8,7 @@ import hj_cover from '../assets/Holly_Jolly.png';
 import hj_logo from '../assets/HollyJolly_Logo.png';
 import ma_cover from '../assets/Maestro.png';
 import ma_logo from '../assets/Maestro_Logo.png';
+import arrow from '../../../assets/Arrow1.png';
 
 const carouselHeight = window.innerHeight * .5;
 

@@ -7,7 +7,7 @@ const StyledButton = styled.button`
   border-width: 7px;
   border-style: solid;
   border-radius: 16px;
-  border-color: #FFFFFF;
+  border-color: ${props => props.secondary ? '#040B30' : '#FFFFFF'};
   background-color: #29B3F1;
   text-align: center;
   font-size: 3.8vh;
@@ -19,12 +19,13 @@ const StyledButton = styled.button`
     border-color: #29B3F1;
     color: #29B3F1;
   }
+
 `
 
 export default class Button extends React.Component {
   render() {
     return (
-      <StyledButton onClick={() => alert("Button Clicked")}>
+      <StyledButton secondary={this.props.secondary} onClick={() => alert("Button Clicked")}>
         {this.props.text}
       </StyledButton>
     );
