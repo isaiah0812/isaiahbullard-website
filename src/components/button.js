@@ -7,8 +7,8 @@ const StyledButton = styled.button`
   border-width: 7px;
   border-style: solid;
   border-radius: 16px;
-  border-color: ${props => props.secondary ? '#040B30' : '#FFFFFF'};
-  background-color: #29B3F1;
+  border-color: ${props => props.submit ? '#040B30' : (props.secondary ? '#040B30' : '#FFFFFF')};
+  background-color: ${props => props.submit ? '#707070' : '#29B3F1'};
   text-align: center;
   font-size: 3.8vh;
   color: #FFFFFF;
@@ -25,7 +25,12 @@ const StyledButton = styled.button`
 export default class Button extends React.Component {
   render() {
     return (
-      <StyledButton secondary={this.props.secondary} onClick={() => alert("Button Clicked")}>
+      <StyledButton 
+        type={this.props.submit ? 'submit' : 'button'} 
+        submit={this.props.submit} 
+        secondary={this.props.secondary} 
+        onClick={this.props.submit ? undefined : () => alert("Button Clicked")}
+      >
         {this.props.text}
       </StyledButton>
     );
