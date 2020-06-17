@@ -77,15 +77,13 @@ export default function Contact () {
   const { handleSubmit, register } = useForm();
 
   const onSubmit = (values) => {
-    alert(
-      'firstName: ' + values.firstName + 
-      '\nlastName: ' + values.lastName + 
-      '\nstageName: ' + values.stageName + 
-      '\nemail: ' + values.email + 
-      '\nphoneNumber: ' + values.phoneNumber + 
-      '\nbeat: ' + values.beat + 
-      '\nstatement: ' + values.statement
-    );
+    const emailString = 'mailto:beatsbyzae12@gmail.com?subject=' +
+                        (values.beat ? 'Beat Purchase' : 'Contacting Isaiah Bullard') +
+                        '&body=' + values.statement + '%0A%0D%0A%0DEmail from ' + values.firstName + ' ' + values.lastName + 
+                        (values.stageName ? '%0A%0D\"' + values.stageName + '\"' : '') + (values.email ? '%0A%0D' + values.email : '') + 
+                        (values.phoneNumber ? '%0A%0D' + values.phoneNumber : '');
+
+    window.location.assign(emailString);
   }
 
   return (
@@ -97,7 +95,7 @@ export default function Contact () {
           <BannerCaption>Ask me about my services! I make beats and websites. I also make a mean macaroni necklace.</BannerCaption>
         </BannerText>
       </PageBanner>
-      <Container style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 60, width: '40%'}}>
+      <Container style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 60, width: '100vh'}}>
         <PageSectionTitle>Fill Out the Form</PageSectionTitle>
         <hr style={{width: '10%', borderWidth: 3, borderColor: '#707070'}} />
         <HoveringForm>
@@ -111,8 +109,8 @@ export default function Contact () {
               <FormControl name='lastName' ref={register} type={'text'} placeHolder={'Last Name'} />
             </FormGroup>
             <FormGroup>
-              <FormLabel>Stage Name/Rap Name/Super Hero Name</FormLabel>
-              <FormControl name='stageName' ref={register} type={'text'} placeHolder={'Stage Name/Rap Name/Super Hero Name'} />
+              <FormLabel>Stage Name/Rap Name/Company Name/Super Hero Name</FormLabel>
+              <FormControl name='stageName' ref={register} type={'text'} placeHolder={'Stage Name/Rap Name/Company Name/Super Hero Name'} />
             </FormGroup>
             <FormGroup>
               <FormLabel>Email Address</FormLabel>
