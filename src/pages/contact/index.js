@@ -77,10 +77,12 @@ export default function Contact () {
   const { handleSubmit, register } = useForm();
 
   const onSubmit = (values) => {
+    const newLineRegex = /\n/gi;
+
     const emailString = 'mailto:beatsbyzae12@gmail.com?subject=' +
                         (values.beat ? 'Beat Purchase' : 'Contacting Isaiah Bullard') +
-                        '&body=' + values.statement + '%0A%0D%0A%0DEmail from ' + values.firstName + ' ' + values.lastName + 
-                        (values.stageName ? '%0A%0D\"' + values.stageName + '\"' : '') + (values.email ? '%0A%0D' + values.email : '') + 
+                        '&body=' + values.statement.replace(newLineRegex, '%0A%0D') + '%0A%0D%0A%0DEmail from ' + values.firstName + ' ' + values.lastName + 
+                        (values.stageName ? '%0A%0D"' + values.stageName + '"' : '') + (values.email ? '%0A%0D' + values.email : '') + 
                         (values.phoneNumber ? '%0A%0D' + values.phoneNumber : '');
 
     window.location.assign(emailString);
@@ -137,6 +139,10 @@ export default function Contact () {
 
 // TODO Select Beats when checked
 
-// TODO onSubmit Function
+// TODO Character Limits
 
-// TODO Send email
+// TODO Required Fields
+
+// TODO Phone Number notification
+
+// TODO Notification Modal
