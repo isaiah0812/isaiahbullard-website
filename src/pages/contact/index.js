@@ -23,8 +23,8 @@ const BannerImage = styled.img`
   width: 100%;
   object-fit: cover;
   position: center;
-  filter: brightness(48%) blur(11px);
-  -webkit-filter: brightness(48%) blur(11px);
+  filter: brightness(48%) blur(4.5px);
+  -webkit-filter: brightness(48%) blur(4.5px);
 `
 
 const BannerText = styled.div`
@@ -51,7 +51,7 @@ const BannerCaption = styled.h4`
   color: #FFFFFF;
   text-align: center;
   position: relative;
-  top: 65%;
+  top: 70%;
   font-size: 2.3vh;
   font-weight: normal;
 `

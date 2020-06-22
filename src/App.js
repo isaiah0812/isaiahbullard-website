@@ -2,7 +2,7 @@ import React from 'react';
 import Menu from './components/menu';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/home/';
-import Projects from './pages/projects';
+import Projects from './pages/projects/';
 import Beats from './pages/beats';
 import Merchandise from './pages/merchandise';
 import Contact from './pages/contact/';
