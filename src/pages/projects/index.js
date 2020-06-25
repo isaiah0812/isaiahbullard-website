@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import banner from './assets/banner.jpg';
+import ProjectCard from './components/projectCard';
 
 const bannerSize = window.innerHeight * .4;
 
@@ -48,6 +49,12 @@ const BannerCaption = styled.h4`
   font-weight: normal;
 `
 
+const PageSectionTitle = styled.h2`
+  color: #040B30;
+  text-align: center;
+  font-size: 5vh;
+`
+
 export default class Projects extends React.Component {
   render () {
     return (
@@ -59,6 +66,14 @@ export default class Projects extends React.Component {
             <BannerCaption>Albums, Singles, Production Credits, Placements, Stick Figures, etc.</BannerCaption>
           </BannerText>
         </PageBanner>
+        <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', padding: 60}}>
+          <PageSectionTitle>Albums</PageSectionTitle>
+          <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+
+            <ProjectCard>
+              
+            </ProjectCard>
+        </Container>
       </Container>
     );
   }
