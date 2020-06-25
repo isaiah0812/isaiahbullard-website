@@ -70,7 +70,9 @@ export default class Projects extends React.Component {
         <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', padding: 60}}>
           <PageSectionTitle>Albums</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-          <ProjectCard title={"Zae's Room"} cover={zr_cover} />
+          <Container style={{display: 'flex', flexDirection: 'row', width: '40%', padding: 0, flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
+            <ProjectCard title={"Zae's Room"} cover={zr_cover} />
+          </Container>
         </Container>
       </Container>
     );

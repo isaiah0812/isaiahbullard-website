@@ -9,6 +9,7 @@ const ProjectButton = styled.button`
   background-size: 100%;
   border: 0px;
   padding: 0px;
+  margin: 1%;
 `
 
 const FadeHover = styled.div`
