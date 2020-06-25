@@ -5,7 +5,7 @@ const ProjectButton = styled.button`
   width: 20vh;
   height: 20vh;
   position: relative;
-  background: url(${props => props.image});
+  background: url(${props => props.cover});
   background-size: 100%;
   border: 0px;
   padding: 0px;
@@ -40,9 +40,9 @@ const ProjectTitle = styled.h3`
 export default class ProjectCard extends React.Component {
   render() {
     return (
-      <ProjectButton image={require('../assets/Zaes_Room.PNG')} onClick={() => alert("Button Clicked")}>
+      <ProjectButton cover={this.props.cover} onClick={() => alert("Button Clicked")}>
         <FadeHover>
-          <ProjectTitle>Zae's Room</ProjectTitle>
+          <ProjectTitle>{this.props.title}</ProjectTitle>
         </FadeHover>
       </ProjectButton>
     );

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import banner from './assets/banner.jpg';
 import ProjectCard from './components/projectCard';
+import zr_cover from './assets/Zaes_Room.PNG';
 
 const bannerSize = window.innerHeight * .4;
 
@@ -69,10 +70,7 @@ export default class Projects extends React.Component {
         <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', padding: 60}}>
           <PageSectionTitle>Albums</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-
-            <ProjectCard>
-              
-            </ProjectCard>
+          <ProjectCard title={"Zae's Room"} cover={zr_cover} />
         </Container>
       </Container>
     );
