@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import banner from './assets/banner.jpg';
-import ProjectCard from './components/projectCard';
+import AlbumCard from './components/albumCard';
+import ma_cover from './assets/Maestro.PNG';
 import zr_cover from './assets/Zaes_Room.PNG';
 
 const bannerSize = window.innerHeight * .4;
@@ -56,6 +57,17 @@ const PageSectionTitle = styled.h2`
   font-size: 5vh;
 `
 
+const albums = [
+  {
+    title: "Maestro",
+    cover: ma_cover,
+  },
+  {
+    title: "Zae's Room",
+    cover: zr_cover,
+  }
+];
+
 export default class Projects extends React.Component {
   render () {
     return (
@@ -70,8 +82,27 @@ export default class Projects extends React.Component {
         <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', padding: 60}}>
           <PageSectionTitle>Albums</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-          <Container style={{display: 'flex', flexDirection: 'row', width: '40%', padding: 0, flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
-            <ProjectCard title={"Zae's Room"} cover={zr_cover} />
+          <Container style={{
+            display: 'flex', 
+            flexDirection: 'row', 
+            width: '40%', 
+            padding: 0, 
+            flexWrap: 'wrap', 
+            justifyContent: 'space-evenly'
+          }}>
+            {albums.map((album) => <AlbumCard title={album.title} cover={album.cover} />)}
+          </Container>
+          <PageSectionTitle>Singles</PageSectionTitle>
+          <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+          <Container style={{
+            display: 'flex', 
+            flexDirection: 'row', 
+            width: '40%', 
+            padding: 0, 
+            flexWrap: 'wrap', 
+            justifyContent: 'space-evenly'
+          }}>
+            {albums.map((album) => <AlbumCard title={album.title} cover={album.cover} />)}
           </Container>
         </Container>
       </Container>

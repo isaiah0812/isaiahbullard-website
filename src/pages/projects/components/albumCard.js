@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ProjectButton = styled.button`
+const AlbumButton = styled.button`
   width: 20vh;
   height: 20vh;
   position: relative;
@@ -29,7 +29,7 @@ const FadeHover = styled.div`
   }
 `
 
-const ProjectTitle = styled.h3`
+const AlbumTitle = styled.h3`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -38,14 +38,14 @@ const ProjectTitle = styled.h3`
   font-weight: normal;
 `
 
-export default class ProjectCard extends React.Component {
+export default class AlbumCard extends React.Component {
   render() {
     return (
-      <ProjectButton cover={this.props.cover} onClick={() => alert("Button Clicked")}>
+      <AlbumButton cover={this.props.cover} onClick={() => alert("Button Clicked")}>
         <FadeHover>
-          <ProjectTitle>{this.props.title}</ProjectTitle>
+          <AlbumTitle>{this.props.title}</AlbumTitle>
         </FadeHover>
-      </ProjectButton>
+      </AlbumButton>
     );
   }
 }
