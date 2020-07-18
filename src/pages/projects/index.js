@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import banner from './assets/banner.jpg';
 import AlbumCard from './components/albumCard';
+import SingleCard from './components/singleCard';
 import ma_cover from './assets/Maestro.PNG';
 import zr_cover from './assets/Zaes_Room.PNG';
 
@@ -65,7 +66,7 @@ const albums = [
   {
     title: "Zae's Room",
     cover: zr_cover,
-  }
+  },
 ];
 
 export default class Projects extends React.Component {
@@ -100,9 +101,9 @@ export default class Projects extends React.Component {
             width: '40%', 
             padding: 0, 
             flexWrap: 'wrap', 
-            justifyContent: 'space-evenly'
+            justifyContent: 'space-evenly',
           }}>
-            {albums.map((album) => <AlbumCard title={album.title} cover={album.cover} />)}
+            {albums.map((album) => <SingleCard title={album.title} cover={album.cover} />)}
           </Container>
         </Container>
       </Container>
