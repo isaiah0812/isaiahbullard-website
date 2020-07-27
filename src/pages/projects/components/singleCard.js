@@ -1,23 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AlbumCard from './albumCard';
 import Container from 'react-bootstrap/Container';
 
-export default class SingleCard extends React.Component {
-  constructor(props){
-    super(props);
+export default ({title, cover, onClick, open}) => {
+  const [display, setDisplay] = useState(open);
 
-    this.state = {
-      open: false,
-    }
-  }
-  render() {
-    return (
-      <div>
-        <AlbumCard title={this.props.title} cover={this.props.cover} />
+  return (
+    <div>
+      <AlbumCard 
+        title={title} 
+        cover={cover} 
+        onClick={() => {
+          onClick && onClick()
+          setDisplay(!display)
+        }
+      }/>
+      {display && (
         <Container style={{backgroundColor: 'red', width: '100%'}}>
           Hello
         </Container>
-      </div>
-    );
-  }
+      )}
+    </div>
+  );
 }

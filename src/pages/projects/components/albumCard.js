@@ -38,14 +38,12 @@ const AlbumTitle = styled.h3`
   font-weight: normal;
 `
 
-export default class AlbumCard extends React.Component {
-  render() {
+export default ({title, cover, onClick}) => {
     return (
-      <AlbumButton cover={this.props.cover} onClick={() => alert("Button Clicked")}>
+      <AlbumButton cover={cover} onClick={onClick}>
         <FadeHover>
-          <AlbumTitle>{this.props.title}</AlbumTitle>
+          <AlbumTitle>{title}</AlbumTitle>
         </FadeHover>
       </AlbumButton>
     );
-  }
 }

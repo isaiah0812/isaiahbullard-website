@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import banner from './assets/banner.jpg';
@@ -69,44 +69,58 @@ const albums = [
   },
 ];
 
-export default class Projects extends React.Component {
-  render () {
-    return (
-      <Container fluid style={{padding: 0}}>
-        <PageBanner>
-          <BannerImage src={banner} height={bannerSize} />
-          <BannerText>
-            <BannerTitle>Projects</BannerTitle>
-            <BannerCaption>Albums, Singles, Production Credits, Placements, Stick Figures, etc.</BannerCaption>
-          </BannerText>
-        </PageBanner>
-        <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', padding: 60}}>
-          <PageSectionTitle>Albums</PageSectionTitle>
-          <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-          <Container style={{
-            display: 'flex', 
-            flexDirection: 'row', 
-            width: '40%', 
-            padding: 0, 
-            flexWrap: 'wrap', 
-            justifyContent: 'space-evenly'
-          }}>
-            {albums.map((album) => <AlbumCard title={album.title} cover={album.cover} />)}
-          </Container>
-          <PageSectionTitle>Singles</PageSectionTitle>
-          <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-          <Container style={{
-            display: 'flex', 
-            flexDirection: 'row', 
-            width: '40%', 
-            padding: 0, 
-            flexWrap: 'wrap', 
-            justifyContent: 'space-evenly',
-          }}>
-            {albums.map((album) => <SingleCard title={album.title} cover={album.cover} />)}
-          </Container>
+export default () => {
+  const [openId, setOpenId] = useState(-1)
+  const [open, setOpen] = useState(undefined)
+
+  return (
+    <Container fluid style={{padding: 0}}>
+      <PageBanner>
+        <BannerImage src={banner} height={bannerSize} />
+        <BannerText>
+          <BannerTitle>Projects</BannerTitle>
+          <BannerCaption>Albums, Singles, Production Credits, Placements, Stick Figures, etc.</BannerCaption>
+        </BannerText>
+      </PageBanner>
+      <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', padding: 60}}>
+        <PageSectionTitle>Albums</PageSectionTitle>
+        <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+        <Container style={{
+          display: 'flex', 
+          flexDirection: 'row', 
+          width: '40%', 
+          padding: 0, 
+          flexWrap: 'wrap', 
+          justifyContent: 'space-evenly'
+        }}>
+          {albums.map((album) => <AlbumCard title={album.title} cover={album.cover} onClick={() => alert("Album Clicked")} />)}
+        </Container>
+        <PageSectionTitle>Singles</PageSectionTitle>
+        <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+        {open && (<SingleCard open title={albums[openId].title} cover={albums[openId].cover} onClick={() => {
+          setOpen(undefined)
+          setOpenId(-1)
+        }} />)}
+        <Container style={{
+          display: 'flex', 
+          flexDirection: 'row', 
+          width: '40%', 
+          padding: 0, 
+          flexWrap: 'wrap', 
+          justifyContent: 'space-evenly',
+        }}>
+          {albums.map((album, id) => {
+            if (id !== openId) {
+              return (<SingleCard title={album.title} cover={album.cover} onClick={() => {
+                console.log("Time to rerender!")
+                setOpen(album)
+                setOpenId(id)
+              }} />)
+            }
+            return (<p></p>)
+          })}
         </Container>
       </Container>
-    );
-  }
+    </Container>
+  );
 }
