@@ -76,15 +76,18 @@ const singles = [
   {
     title: "Fast Lane",
     cover: fl_cover,
+    color: '#F4750E',
   },
   {
     title: "Big Thangs",
     cover: bt_cover,
+    color: '#FF0008',
   },
   {
     title: "Evil Plan",
     cover: ep_cover,
-  }
+    color: '#30FFB9',
+  },
 ]
 
 export default () => {
@@ -119,7 +122,7 @@ export default () => {
           width: '40%',
           padding: 0,
         }}>
-          {open && (<SingleCard open title={singles[openId].title} cover={singles[openId].cover} onClick={() => {
+          {open && (<SingleCard open single={singles[openId]} onClick={() => {
             setOpen(undefined)
             setOpenId(-1)
           }} />)}
@@ -133,7 +136,7 @@ export default () => {
               if (id === openId) {
                 return false
               }
-              return (<SingleCard title={single.title} cover={single.cover} onClick={() => {
+              return (<SingleCard single={single} onClick={() => {
                 setOpen(single)
                 setOpenId(id)
               }} />)

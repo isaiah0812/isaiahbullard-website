@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
 import AlbumCard from './albumCard';
-import Container from 'react-bootstrap/Container';
+import SingleDiv from './singleDiv';
 
-export default ({title, cover, onClick, open}) => {
+export default ({single, onClick, open}) => {
   const [display, setDisplay] = useState(open);
 
   return (
     <div>
       <AlbumCard 
-        title={title} 
-        cover={cover} 
+        title={single.title} 
+        cover={single.cover} 
         onClick={() => {
           onClick && onClick()
           setDisplay(!display)
         }
       }/>
       {display && (
-        <Container style={{backgroundColor: 'red', width: '100%'}}>
-          Hello
-        </Container>
+        <SingleDiv color={single.color} />
       )}
     </div>
   );
