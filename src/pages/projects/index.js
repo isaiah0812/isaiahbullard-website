@@ -6,6 +6,9 @@ import AlbumCard from './components/albumCard';
 import SingleCard from './components/singleCard';
 import ma_cover from './assets/Maestro.PNG';
 import zr_cover from './assets/Zaes_Room.PNG';
+import bt_cover from './assets/Big_Thangs2.JPG';
+import ep_cover from './assets/Evil_Plan2.png';
+import fl_cover from './assets/Fast_Lane.png';
 
 const bannerSize = window.innerHeight * .4;
 
@@ -69,6 +72,21 @@ const albums = [
   },
 ];
 
+const singles = [
+  {
+    title: "Fast Lane",
+    cover: fl_cover,
+  },
+  {
+    title: "Big Thangs",
+    cover: bt_cover,
+  },
+  {
+    title: "Evil Plan",
+    cover: ep_cover,
+  }
+]
+
 export default () => {
   const [openId, setOpenId] = useState(-1)
   const [open, setOpen] = useState(undefined)
@@ -91,34 +109,36 @@ export default () => {
           width: '40%', 
           padding: 0, 
           flexWrap: 'wrap', 
-          justifyContent: 'space-evenly'
+          justifyContent: 'space-around'
         }}>
           {albums.map((album) => <AlbumCard title={album.title} cover={album.cover} onClick={() => alert("Album Clicked")} />)}
         </Container>
         <PageSectionTitle>Singles</PageSectionTitle>
         <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-        {open && (<SingleCard open title={albums[openId].title} cover={albums[openId].cover} onClick={() => {
-          setOpen(undefined)
-          setOpenId(-1)
-        }} />)}
         <Container style={{
-          display: 'flex', 
-          flexDirection: 'row', 
-          width: '40%', 
-          padding: 0, 
-          flexWrap: 'wrap', 
-          justifyContent: 'space-evenly',
+          width: '40%',
+          padding: 0,
         }}>
-          {albums.map((album, id) => {
-            if (id !== openId) {
-              return (<SingleCard title={album.title} cover={album.cover} onClick={() => {
-                console.log("Time to rerender!")
-                setOpen(album)
+          {open && (<SingleCard open title={singles[openId].title} cover={singles[openId].cover} onClick={() => {
+            setOpen(undefined)
+            setOpenId(-1)
+          }} />)}
+          <Container style={{
+            display: 'flex', 
+            flexDirection: 'row', 
+            flexWrap: 'wrap', 
+            justifyContent: 'space-around',
+          }}>
+            {singles.map((single, id) => {
+              if (id === openId) {
+                return false
+              }
+              return (<SingleCard title={single.title} cover={single.cover} onClick={() => {
+                setOpen(single)
                 setOpenId(id)
               }} />)
-            }
-            return (<p></p>)
-          })}
+            })}
+          </Container>
         </Container>
       </Container>
     </Container>
