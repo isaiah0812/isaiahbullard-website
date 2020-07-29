@@ -11,15 +11,36 @@ const Triangle = styled.div`
   align-self: center;
 `
 
-export default ({color}) => {
+const SingleTitle = styled.h3`
+  font-weight: normal;
+`
+
+const SingleFeatures = styled.h5`
+  font-weight: normal;
+`
+
+export default ({single}) => {
   return (
     <Container style={{
       display: 'flex',
       flexDirection: 'column',
     }}>
-      <Triangle color={color} />
-      <Container style={{backgroundColor: color, width: '100%'}}>
-        Hello
+      <Triangle color={single.color} />
+      <Container style={{
+        backgroundColor: single.color, 
+        color: ((single.color < '#800000') ? '#000000' : '#FFFFFF'),
+        width: '100%',
+        padding: '2%',
+      }}>
+        <SingleTitle>{single.title}</SingleTitle>
+        {single.features && (
+          <SingleFeatures>feat. {single.features.map((feature, id) => {
+            if(id === single.features.length - 2) return feature + " "
+            else if(id === single.features.length - 1) return "& " + feature
+            else return feature + ", "
+          })}</SingleFeatures>
+
+        )}
       </Container>
     </Container>
   )

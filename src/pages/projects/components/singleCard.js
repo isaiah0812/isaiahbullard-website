@@ -16,7 +16,7 @@ export default ({single, onClick, open}) => {
         }
       }/>
       {display && (
-        <SingleDiv color={single.color} />
+        <SingleDiv single={single} />
       )}
     </div>
   );

@@ -77,16 +77,19 @@ const singles = [
     title: "Fast Lane",
     cover: fl_cover,
     color: '#F4750E',
+    features: ["CoreyArnell", "FUZE"],
   },
   {
     title: "Big Thangs",
     cover: bt_cover,
     color: '#FF0008',
+    features: ["CoreyArnell", "May"],
   },
   {
     title: "Evil Plan",
     cover: ep_cover,
     color: '#30FFB9',
+    features: ["LouieV T", "FUZE"],
   },
 ]
 
