@@ -39,8 +39,8 @@ export default ({single}) => {
             else if(id === single.features.length - 1) return "& " + feature
             else return feature + ", "
           })}</SingleFeatures>
-
         )}
+        <p>{single.description}</p>
       </Container>
     </Container>
   )

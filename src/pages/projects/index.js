@@ -78,18 +78,21 @@ const singles = [
     cover: fl_cover,
     color: '#F4750E',
     features: ["CoreyArnell", "FUZE"],
+    description: "No microphones were burned in the making of this recording. Please leave this type of rapping to the professionals and do not try this at home. Released March 1, 2019.",
   },
   {
     title: "Big Thangs",
     cover: bt_cover,
     color: '#FF0008',
     features: ["CoreyArnell", "May"],
+    description: "The first single from Zae's Room. A banger if there ever was one. CoreyArnell is Wes Clinton. May is...well, May. If you're looking for that song to have your girl twerk to, you've come to the right place. Released March 6, 2020.",
   },
   {
     title: "Evil Plan",
     cover: ep_cover,
     color: '#30FFB9',
     features: ["LouieV T", "FUZE"],
+    description: "The second single from Zae's Room. This beat took 20 minutes to make, and it's still the hardest song you might hear in your life. Trust me, this will get the party going. Released April 10, 2020.",
   },
 ]
 
