@@ -24,6 +24,18 @@ const SingleDescription = styled.p`
   line-height: normal;
 `
 
+const SingleSongLink = styled.a`
+  color: ${props => props.color};
+
+  &:hover {
+    color: ${props => props.color};
+  }
+
+  &:visited {
+    color: ${props => props.color};
+  }
+`
+
 export default ({single}) => {
   const textColor = (single.color < '#800000') ? '#000000' : '#FFFFFF'
   return (
@@ -48,7 +60,13 @@ export default ({single}) => {
         )}
         <SingleDescription>{single.description}</SingleDescription>
         <p>Release Date: {single.releaseDate}</p>
-        <SingleDivPlayer />
+        <SingleDivPlayer 
+          spotify={single.spotify}
+          apple={single.apple}
+          bandcamp={single.bandcamp}
+          soundcloud={single.soundcloud}
+        />
+        <SingleSongLink href={"https://song.link/us/i/" + single.songLink} color={textColor} target="_blank">Other Sources</SingleSongLink>
       </Container>
     </Container>
   )

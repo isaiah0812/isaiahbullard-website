@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Tab from 'react-bootstrap/Tab';
 import Nav from 'react-bootstrap/Nav';
 
-export default () => {
+export default ({spotify, apple, bandcamp, soundcloud}) => {
     return (
         <Tab.Container defaultActiveKey="spotify">
           <Col>
@@ -33,7 +33,7 @@ export default () => {
                     padding: '2%',
                   }}>
                     <iframe 
-                      src="https://open.spotify.com/embed/track/1fZHvbksavmt5XEtAmTBCR" 
+                      src={"https://open.spotify.com/embed/track/" + spotify} 
                       style={{
                         height: 80,
                         width: '100%',
@@ -61,7 +61,7 @@ export default () => {
                         border: 0,
                       }} 
                       sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
-                      src="https://embed.music.apple.com/us/album/evil-plan-feat-louiev-t-fuze/1506525081?i=1506525082" 
+                      src={"https://embed.music.apple.com/us/album/" + apple}
                       title="Apple Music"
                     />
                   </Container>
@@ -77,7 +77,7 @@ export default () => {
                         width: '100%', 
                         height: '120px',
                       }} 
-                      src="https://bandcamp.com/EmbeddedPlayer/track=2329859596/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" 
+                      src={"https://bandcamp.com/EmbeddedPlayer/track=" + bandcamp + "/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" }
                       seamless 
                       title="Bandcamp"
                     />
@@ -96,7 +96,7 @@ export default () => {
                       }}
                       scrolling="no" 
                       allow="autoplay" 
-                      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/795101182&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" 
+                      src={"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" + soundcloud + "&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"} 
                       title="Soundcloud"
                     />
                   </Container>
