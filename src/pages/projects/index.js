@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import banner from './assets/banner.jpg';
 import AlbumCard from './components/albumCard';
 import SingleCard from './components/singleCard';
+import CreditCard from './components/creditCard';
 import ma_cover from './assets/Maestro.PNG';
 import zr_cover from './assets/Zaes_Room.PNG';
 import bt_cover from './assets/Big_Thangs2.JPG';
@@ -166,6 +167,11 @@ export default () => {
               }} />)
             })}
           </Container>
+        </Container>
+        <PageSectionTitle>Credits</PageSectionTitle>
+        <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+        <Container style={{display: 'flex', width: '40%', backgroundColor: '#707070', padding: '1%', alignItems: 'left'}}>
+          <CreditCard />
         </Container>
       </Container>
     </Container>
