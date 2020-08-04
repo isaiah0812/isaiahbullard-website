@@ -183,7 +183,14 @@ export default () => {
         </Container>
         <PageSectionTitle>Credits</PageSectionTitle>
         <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-        <Container style={{display: 'flex', width: '40%', backgroundColor: '#707070', padding: '1%', alignItems: 'left', flexWrap: 'wrap'}}>
+        <Container style={{
+          display: 'flex', 
+          width: '40%', 
+          backgroundColor: '#707070', 
+          padding: '1%', 
+          alignItems: 'left', 
+          flexWrap: 'wrap'}}
+        >
           {credits.map((credit) => <CreditCard credit={credit} />)}
         </Container>
       </Container>
