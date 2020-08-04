@@ -115,6 +115,19 @@ const singles = [
   },
 ]
 
+const credits = [
+  {
+    title: "Safari",
+    artist: "FUZE",
+    link: "https://soundcloud.com/igotwoezz/safari-feat-subzero-prod",
+  },
+  {
+    title: "Toonami",
+    artist: "Community Service",
+    link: "https://soundcloud.com/community-service/toonami",
+  },
+]
+
 export default () => {
   const [openId, setOpenId] = useState(-1)
   const [open, setOpen] = useState(undefined)
@@ -170,8 +183,8 @@ export default () => {
         </Container>
         <PageSectionTitle>Credits</PageSectionTitle>
         <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-        <Container style={{display: 'flex', width: '40%', backgroundColor: '#707070', padding: '1%', alignItems: 'left'}}>
-          <CreditCard />
+        <Container style={{display: 'flex', width: '40%', backgroundColor: '#707070', padding: '1%', alignItems: 'left', flexWrap: 'wrap'}}>
+          {credits.map((credit) => <CreditCard credit={credit} />)}
         </Container>
       </Container>
     </Container>

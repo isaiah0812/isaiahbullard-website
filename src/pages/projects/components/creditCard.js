@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const CreditLink = styled.a`
+  width: 48%;
+  margin: 1%;
+`
+
 const CreditButton = styled.button`
-	background-color: #FFFFFF;
+  background-color: #FFFFFF;
+  width: 100%;
 	border: 0px;
-	padding: 1%;
-	width: 50%;
-	height: 84px;
 	border-radius: 16px;
   text-align: center;
   font-size: 100%;
@@ -20,10 +23,20 @@ const CreditButton = styled.button`
   }
 `
 
-export default () => {
+const CreditTitle = styled.h4`
+  font-weight: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+`
+
+export default ({credit}) => {
 	return (
-		<CreditButton>
-			Hello
-		</CreditButton>
+    <CreditLink href={credit.link} target="_blank">
+      <CreditButton>
+        <CreditTitle>{credit.title} - {credit.artist}</CreditTitle>
+        Click to listen
+      </CreditButton>
+    </CreditLink>
 	)
 }
