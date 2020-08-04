@@ -189,8 +189,8 @@ export default () => {
           backgroundColor: '#707070', 
           padding: '1%', 
           alignItems: 'left', 
-          flexWrap: 'wrap'}}
-        >
+          flexWrap: 'wrap',
+        }}>
           {credits.map((credit) => <CreditCard credit={credit} />)}
         </Container>
       </Container>
