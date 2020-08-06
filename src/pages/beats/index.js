@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import banner from './assets/banner.jpg';
+import AlbumCard from '../projects/components/albumCard';
+import hj_cover from './assets/HollyJolly.png';
 
 const bannerSize = window.innerHeight * .4;
 
@@ -54,6 +56,13 @@ const PageSectionTitle = styled.h2`
   font-size: 5vh;
 `
 
+const beatTapes = [
+  {
+    title: "The Holly Jolly Tape",
+    cover: hj_cover,
+  },
+];
+
 export default class Beats extends React.Component {
   render () {
     return (
@@ -65,6 +74,19 @@ export default class Beats extends React.Component {
             <BannerCaption>You either want to make a record or fantasize about your "rap dreams". This page is for you!</BannerCaption>
           </BannerText>
         </PageBanner>
+        <Container fluid style={{display: 'flex', paddingLeft: 0, paddingRight: 0, paddingTop: 60, paddingBottom: 60}}>
+          <Container style={{width: '50%'}}>
+            <PageSectionTitle>Beats</PageSectionTitle>
+            <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+          </Container>
+          <Container style={{width: '50%'}}>
+            <PageSectionTitle>Beat Tapes</PageSectionTitle>
+            <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+            <Container style={{width: '80%', display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap'}}>
+              {beatTapes.map((beatTape) => <AlbumCard title={beatTape.title} cover={beatTape.cover} onClick={() => alert("Album Clicked")} />)}
+            </Container>
+          </Container>
+        </Container>
       </Container>
     );
   }
