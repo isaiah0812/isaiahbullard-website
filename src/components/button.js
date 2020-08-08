@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from 'react-bootstrap/Button';
 
-const StyledButton = styled.button`
+const StyledButton = styled(Button)`
   height: 8vh;
   width: 20vh;
   border-width: 7px;
@@ -22,17 +23,15 @@ const StyledButton = styled.button`
 
 `
 
-export default class Button extends React.Component {
-  render() {
-    return (
-      <StyledButton 
-        type={this.props.submit ? 'submit' : 'button'} 
-        submit={this.props.submit} 
-        secondary={this.props.secondary} 
-        onClick={this.props.submit ? undefined : () => alert("Button Clicked")}
-      >
-        {this.props.text}
-      </StyledButton>
-    );
-  }
+export default ({submit, secondary, text, href}) => {
+  return (
+    <StyledButton 
+      type={submit ? 'submit' : 'button'} 
+      submit={submit} 
+      secondary={secondary} 
+      href={submit ? undefined : href}
+    >
+      {text}
+    </StyledButton>
+  );
 }
