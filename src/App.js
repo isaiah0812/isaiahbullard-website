@@ -6,13 +6,13 @@ import Projects from './pages/projects/';
 import Beats from './pages/beats/';
 import Merchandise from './pages/merchandise/';
 import Contact from './pages/contact/';
-import NotFound from './pages/notfound';
+import NotFound from './pages/notFound/';
 import Container from 'react-bootstrap/Container';
 
 export default class App extends React.Component {
   render () {
     return (
-      <Container fluid style={{padding: 0}}>
+      <Container fluid style={{padding: 0, display: 'flex', flexDirection: 'column'}}>
         <Menu />
         <Router>
           <Switch>
