@@ -19,7 +19,7 @@ const FadeHover = styled.div`
   color: transparent; 
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
-  transition: color 0.3s, backdrop-filter 0.3s, -webkit-backdrop-filter 0.3s, background-color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.5);
