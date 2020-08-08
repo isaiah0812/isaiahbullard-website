@@ -211,49 +211,47 @@ const beatTapes = [
   },
 ];
 
-export default class Beats extends React.Component {
-  render () {
-    return (
-      <Container fluid style={{padding: 0}}>
-        <PageBanner>
-          <BannerImage src={banner} height={bannerSize} />
-          <BannerText>
-            <BannerTitle>Beats</BannerTitle>
-            <BannerCaption>You either want to make a record or fantasize about your "rap dreams". This page is for you!</BannerCaption>
-          </BannerText>
-        </PageBanner>
-        <Container fluid style={{display: 'flex', paddingLeft: 0, paddingRight: 0, paddingTop: 60, paddingBottom: 60}}>
-          <Container style={{width: '50%'}}>
-            <PageSectionTitle>Beats</PageSectionTitle>
-            <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-            <Container style={{width: '80%'}}>
-              <Accordion>
-                {beats.map((beat) => (
-                  <Card style={{border: 0}}>
-                    <Accordion.Toggle as={BeatButton} cover={beat.cover} eventKey={beat.id}>
-                      <BeatButtonHover>
-                        <BeatButtonTitle>{beat.title}</BeatButtonTitle>
-                      </BeatButtonHover>
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey={beat.id}>
-                      <Card.Body style={{backgroundColor: '#040B30'}}>
-                        <iframe id="player" title="beat" type="text/html" width="100%" src={"http://www.youtube.com/embed/" + beat.youtube + "?enablejsapi=1&origin=zaemadethis.com"} frameborder="0"></iframe>
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Card>
-                ))}
-              </Accordion>
-            </Container>
+export default () => {
+  return (
+    <Container fluid style={{padding: 0}}>
+      <PageBanner>
+        <BannerImage src={banner} height={bannerSize} />
+        <BannerText>
+          <BannerTitle>Beats</BannerTitle>
+          <BannerCaption>You either want to make a record or fantasize about your "rap dreams". This page is for you!</BannerCaption>
+        </BannerText>
+      </PageBanner>
+      <Container fluid style={{display: 'flex', paddingLeft: 0, paddingRight: 0, paddingTop: 60, paddingBottom: 60}}>
+        <Container style={{width: '50%'}}>
+          <PageSectionTitle>Beats</PageSectionTitle>
+          <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+          <Container style={{width: '80%'}}>
+            <Accordion>
+              {beats.map((beat) => (
+                <Card style={{border: 0}}>
+                  <Accordion.Toggle as={BeatButton} cover={beat.cover} eventKey={beat.id}>
+                    <BeatButtonHover>
+                      <BeatButtonTitle>{beat.title}</BeatButtonTitle>
+                    </BeatButtonHover>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey={beat.id}>
+                    <Card.Body style={{backgroundColor: '#040B30'}}>
+                      <iframe id="player" title="beat" type="text/html" width="100%" src={"http://www.youtube.com/embed/" + beat.youtube + "?enablejsapi=1&origin=zaemadethis.com"} frameborder="0"></iframe>
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+              ))}
+            </Accordion>
           </Container>
-          <Container style={{width: '50%'}}>
-            <PageSectionTitle>Beat Tapes</PageSectionTitle>
-            <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-            <Container style={{width: '80%', display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap'}}>
-              {beatTapes.map((beatTape) => <AlbumCard title={beatTape.title} cover={beatTape.cover} onClick={() => alert("Album Clicked")} />)}
-            </Container>
+        </Container>
+        <Container style={{width: '50%'}}>
+          <PageSectionTitle>Beat Tapes</PageSectionTitle>
+          <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+          <Container style={{width: '80%', display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap'}}>
+            {beatTapes.map((beatTape) => <AlbumCard title={beatTape.title} cover={beatTape.cover} onClick={() => alert("Album Clicked")} />)}
           </Container>
         </Container>
       </Container>
-    );
-  }
+    </Container>
+  );
 }

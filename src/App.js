@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/home/';
 import Projects from './pages/projects/';
 import Beats from './pages/beats/';
-import Merchandise from './pages/merchandise';
+import Merchandise from './pages/merchandise/';
 import Contact from './pages/contact/';
 import NotFound from './pages/notfound';
 import Container from 'react-bootstrap/Container';
