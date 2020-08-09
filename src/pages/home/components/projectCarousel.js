@@ -37,7 +37,7 @@ export default class ProjectCarousel extends React.Component {
     return (
       <Carousel style={{height: carouselHeight}}>
         {projects.map((project) => (
-          <CarouselItem style={{height: '100%', position: 'relative'}}>
+          <CarouselItem style={{height: '100%'}}>
             <ProjectCarouselItem backdrop={project.backdrop} logo={project.logo} description={project.description} />
           </CarouselItem>
         ))}
