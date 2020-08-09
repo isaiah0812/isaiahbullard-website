@@ -4,11 +4,10 @@ import Nav from 'react-bootstrap/Nav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import MenuItem from './menuItem';
-import { routes } from '../.config/routing';
+import { routes } from '../constants/routing';
 
 const navbarStyle = {
   backgroundColor: 'black',
-  height: '84px',
 }
 
 const navBrandStyle = {

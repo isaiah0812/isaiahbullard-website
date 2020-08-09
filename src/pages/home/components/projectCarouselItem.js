@@ -26,12 +26,9 @@ const CarouselInfo = styled(Container)`
   padding: 0px;
   height: 75%;
   width: 70%;
-  border: 1px;
-  border-color: red;
-  border-style: solid;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   color: white;
 `
 
@@ -39,27 +36,23 @@ const CarouselImage = styled.img`
   margin: 0;
 `
 
-const CarouselText = styled.div`
-  display: flex;
-  align-items: flex-end;
-  font-size: 175%;
-  height: 50%;
+const CarouselText = styled.h3`
   padding-bottom: 2%;
   padding-top: 2%;
+  line-height: normal;
+  font-weight: normal;
 `
 
-const carouselHeight = window.innerHeight * .5;
+let carouselHeight = window.innerHeight * .5;
 
 export default ({backdrop, logo, description}) => {
   return (
     <Container fluid style={{padding: 0, height: carouselHeight}}>
       <CarouselSlide fluid backdrop={backdrop}>
         <CarouselSlideFade fluid>
-          <CarouselInfo>
-            <Container fluid style={{display: 'flex', justifyContent: 'center', width: '50%', height: '100%'}}>
-              <CarouselImage src={logo} height="100%" />
-            </Container>
-            <Container fluid style={{diplay: 'flex', flexDirection: 'column', height: '100%', width: '50%'}}>
+          <CarouselInfo fluid>
+            <CarouselImage src={logo} height="100%" />
+            <Container fluid style={{diplay: 'flex', width: '45%', alignSelf: 'center', height: 'auto', margin: 0}}>
               <CarouselText>{description}</CarouselText>
               <Button text={'Listen'} />
             </Container>

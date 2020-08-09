@@ -3,15 +3,14 @@ import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
 
 const StyledButton = styled(Button)`
-  height: 8vh;
-  width: 20vh;
   border-width: 7px;
   border-style: solid;
   border-radius: 16px;
   border-color: ${props => props.submit ? '#040B30' : (props.secondary ? '#040B30' : '#FFFFFF')};
   background-color: ${props => props.submit ? '#707070' : '#29B3F1'};
   text-align: center;
-  font-size: 3.8vh;
+  font-size: 175%;
+  padding: 0px 25px;
   color: #FFFFFF;
   transition: background-color 0.2s, border-color 0.2s, color 0.2s;
 
