@@ -1,38 +1,21 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const navItemBasis = {
-  paddingLeft: 12,
-  paddingRight: 12,
-}
+const MenuText = styled.h5`
+  padding: 0px 6px;
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 110%;
 
-export default class MenuItem extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      hover: 'false',
-      navItemStyle: {
-        ...navItemBasis,
-        color: '#FFFFFF',
-      }
-    }
+  &:hover {
+    color: #29B3F1;
   }
+`
 
-  toggleHover = () => {
-    this.setState({
-      hover: this.state.hover === 'true' ? 'false' : 'true',
-      navItemStyle: {
-        ...navItemBasis,
-        color: this.state.hover === 'true' ? '#FFFFFF' : '#29B3F1',
-      }
-    });
-  }
-
-  render() {
-    return (
-      <div style={{...this.state.navItemStyle, textAlign: 'center', fontSize: '125%'}} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
-        {this.props.name}
-      </div>
-    );
-  }
+export default ({name}) => {
+  return (
+    <MenuText>{name}</MenuText>
+  );
 }
