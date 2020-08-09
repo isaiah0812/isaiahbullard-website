@@ -46,45 +46,23 @@ const CarouselText = styled.div`
   align-items: flex-end;
   font-size: 175%;
   height: 50%;
+  padding-bottom: 2%;
+  padding-top: 2%;
 `
 
 const carouselHeight = window.innerHeight * .5;
 
 export default ({backdrop, logo, description}) => {
   return (
-    // <Container fluid style={{border: 1, borderStyle: 'solid', borderColor: 'red', padding: 0}}>
-    //   <CarouselBackdrop src={this.props.backdrop} height={carouselHeight} />
-    //   <CarouselInfo>
-    //     <Container fluid style={{padding: 12}}>
-    //       <Row sm={12}>
-    //         <Col sm={6}>
-    //           <CarouselImage src={this.props.logo} height={(window.innerHeight * .335)} width={(window.innerHeight * .335)} />
-    //         </Col>
-    //         <Col sm={6}>
-    //           <Row sm={6}>
-    //             <Col sm={12} style={{paddingTop: 12, paddingBottom: 12, height: (window.innerHeight * .335)/2}}>
-    //               <CarouselText style={{height: ((window.innerHeight * .335)/2) - 24}}>{this.props.description}</CarouselText>
-    //             </Col>
-    //           </Row>
-    //           <Row sm={6}>
-    //             <Col sm={12} style={{paddingTop: 12, paddingBottom: 12, height: (window.innerHeight * .335)/2}}>
-    //               <Button text={'Listen'} />
-    //             </Col>
-    //           </Row>
-    //         </Col>
-    //       </Row>
-    //     </Container>
-    //   </CarouselInfo>
-    // </Container>
     <Container fluid style={{padding: 0, height: carouselHeight}}>
       <CarouselSlide fluid backdrop={backdrop}>
         <CarouselSlideFade fluid>
           <CarouselInfo>
-            <Container fluid style={{display: 'flex', justifyContent: 'flex-end', width: '50%', height: '100%'}}>
+            <Container fluid style={{display: 'flex', justifyContent: 'center', width: '50%', height: '100%'}}>
               <CarouselImage src={logo} height="100%" />
             </Container>
             <Container fluid style={{diplay: 'flex', flexDirection: 'column', height: '100%', width: '50%'}}>
-              <CarouselText>Hello</CarouselText>
+              <CarouselText>{description}</CarouselText>
               <Button text={'Listen'} />
             </Container>
           </CarouselInfo>
