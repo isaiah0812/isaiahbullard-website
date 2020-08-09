@@ -30,10 +30,8 @@ export default class MenuItem extends React.Component {
 
   render() {
     return (
-      <div style={this.state.navItemStyle} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
-        <p style={{textAlign: 'center', fontSize: '125%'}}>
-          {this.props.name}
-        </p>
+      <div style={{...this.state.navItemStyle, textAlign: 'center', fontSize: '125%'}} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
+        {this.props.name}
       </div>
     );
   }
