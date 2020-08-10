@@ -10,18 +10,18 @@ export const carousel = [
       name: "Zae's Room",
       backdrop: zr_cover,
       logo: zr_logo,
-      description: '#GraduationIsSoon. Coming 2020.',
+      description: 'Welcome to the show. Coming 2020.',
     },
     {
       name: "The Holly Jolly Tape",
       backdrop: hj_cover,
       logo: hj_logo,
-      description: '#GraduationIsSoon. Coming 2020.',
+      description: 'Merry Christmas. The Holly Jolly Tape is out now.',
     },
     {
       name: "Maestro",
       backdrop: ma_cover,
       logo: ma_logo,
-      description: '#GraduationIsSoon. Coming 2020.',
+      description: 'Home is where the heart is. Maestro is out now.',
     },
   ]
