@@ -12,19 +12,19 @@ const sections = [
   },
   {
     title: 'Music',
-    description: "Producer. Songwriter. Wannabe composer. That's me! I'm open to all serious inquiries that involve music. Hit the button below to contact me and let's get locked in!",
+    description: "All of my music is available for digital streaming and download. Check out my entire discography and get more information about each project!",
     buttonText: 'More',
     href: '/projects',
   },
   {
     title: 'Beats',
-    description: "Producer. Songwriter. Wannabe composer. That's me! I'm open to all serious inquiries that involve music. Hit the button below to contact me and let's get locked in!",
+    description: "I sell beats! Check out my latest beats and all of my beat tapes here. Everything on this page is for sale, so be sure to contact me if you're looking to work together!",
     buttonText: 'Listen',
     href: '/beats',
   },
   {
     title: 'Merch',
-    description: "Producer. Songwriter. Wannabe composer. That's me! I'm open to all serious inquiries that involve music. Hit the button below to contact me and let's get locked in!",
+    description: "Merchandise coming soon.",
     buttonText: 'Shop',
     href: '/merchandise',
   },
