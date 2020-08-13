@@ -62,6 +62,19 @@ const PageSectionTitle = styled.h2`
   font-size: 5vh;
 `
 
+const CreditSection = styled(Container)`
+  display: flex;
+  width: 50%;
+  background-color: #707070;
+  padding: 1%;
+  align-items: left;
+  flex-wrap: wrap;
+
+  @media (max-width: 740px) {
+    width: 100%;
+  }
+`
+
 const albums = [
   {
     title: "Maestro",
@@ -86,6 +99,7 @@ const singles = [
     bandcamp: "389561544",
     soundcloud: "659974718",
     songLink: "1476867847",
+    id: "fast-lane",
   },
   {
     title: "Big Thangs",
@@ -99,6 +113,7 @@ const singles = [
     bandcamp: "1119170738",
     soundcloud: "771594130",
     songLink: "1502027668",
+    id: "big-thangs",
   },
   {
     title: "Evil Plan",
@@ -112,6 +127,7 @@ const singles = [
     bandcamp: "2329859596",
     soundcloud: "795101182",
     songLink: "1506525082",
+    id: "evil-plan",
   },
 ]
 
@@ -141,23 +157,23 @@ export default () => {
           <BannerCaption>Albums, Singles, Production Credits, Placements, Stick Figures, etc.</BannerCaption>
         </BannerText>
       </PageBanner>
-      <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', padding: 60}}>
+      <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', padding: '60px 24px'}}>
         <PageSectionTitle>Albums</PageSectionTitle>
         <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
         <Container style={{
           display: 'flex', 
           flexDirection: 'row', 
-          width: '40%', 
+          width: '38%', 
           padding: 0, 
           flexWrap: 'wrap', 
           justifyContent: 'space-around'
         }}>
           {albums.map((album) => <AlbumCard title={album.title} cover={album.cover} onClick={() => alert("Album Clicked")} />)}
         </Container>
-        <PageSectionTitle>Singles</PageSectionTitle>
+        <PageSectionTitle id="singles">Singles</PageSectionTitle>
         <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-        <Container style={{
-          width: '40%',
+        <Container fluid style={{
+          width: '100%',
           padding: 0,
         }}>
           {open && (<SingleCard open single={singles[openId]} onClick={() => {
@@ -169,6 +185,7 @@ export default () => {
             flexDirection: 'row', 
             flexWrap: 'wrap', 
             justifyContent: 'space-around',
+            width: '38%',
           }}>
             {singles.map((single, id) => {
               if (id === openId) {
@@ -183,16 +200,9 @@ export default () => {
         </Container>
         <PageSectionTitle>Credits</PageSectionTitle>
         <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-        <Container style={{
-          display: 'flex', 
-          width: '40%', 
-          backgroundColor: '#707070', 
-          padding: '1%', 
-          alignItems: 'left', 
-          flexWrap: 'wrap',
-        }}>
+        <CreditSection fluid>
           {credits.map((credit) => <CreditCard credit={credit} />)}
-        </Container>
+        </CreditSection>
       </Container>
     </Container>
   );

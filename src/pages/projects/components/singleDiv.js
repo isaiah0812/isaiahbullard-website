@@ -24,6 +24,18 @@ const SingleDescription = styled.p`
   line-height: normal;
 `
 
+const SingleBox = styled(Container)`
+  background-color: ${props => props.backgroundColor};
+  color: ${props => props.color};
+  width: 60%;
+  padding: 2%;
+
+  @media (max-width: 740px) {
+    width: 100%;
+    padding: 3px;
+  }
+`
+
 const SingleSongLink = styled.a`
   color: ${props => props.color};
 
@@ -39,17 +51,13 @@ const SingleSongLink = styled.a`
 export default ({single}) => {
   const textColor = (single.color < '#800000') ? '#000000' : '#FFFFFF'
   return (
-    <Container style={{
+    <Container fluid style={{
       display: 'flex',
       flexDirection: 'column',
+      padding: 0,
     }}>
       <Triangle color={single.color} />
-      <Container style={{
-        backgroundColor: single.color, 
-        color: textColor,
-        width: '100%',
-        padding: '2%',
-      }}>
+      <SingleBox fluid backgroundColor={single.color} color={textColor}>
         <SingleTitle>{single.title}</SingleTitle>
         {single.features && (
           <SingleFeatures>feat. {single.features.map((feature, id) => {
@@ -65,9 +73,10 @@ export default ({single}) => {
           apple={single.apple}
           bandcamp={single.bandcamp}
           soundcloud={single.soundcloud}
+          textColor={textColor}
         />
         <SingleSongLink href={"https://song.link/us/i/" + single.songLink} color={textColor} target="_blank">Other Sources</SingleSongLink>
-      </Container>
+      </SingleBox>
     </Container>
   )
 }

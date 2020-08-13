@@ -78,7 +78,7 @@ const PageSectionTitle = styled.h2`
 const BeatButton = styled.button`
   height: 96px;
   border: 0px;
-  background: url(${props => props.cover}) center;
+  background: url(${props => props.cover}) no-repeat center;
   background-size: 100%;
   padding: 0px;
 `

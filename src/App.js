@@ -14,7 +14,7 @@ export default class App extends React.Component {
     return (
       <Container fluid style={{padding: 0, display: 'flex', flexDirection: 'column'}}>
         <Menu />
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Switch>
             <Route exact path={['/', '/home']} component={Home} />
             <Route path='/projects' component={Projects} />

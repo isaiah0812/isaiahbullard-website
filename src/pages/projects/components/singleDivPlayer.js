@@ -5,23 +5,23 @@ import Col from 'react-bootstrap/Col';
 import Tab from 'react-bootstrap/Tab';
 import Nav from 'react-bootstrap/Nav';
 
-export default ({spotify, apple, bandcamp, soundcloud}) => {
+export default ({spotify, apple, bandcamp, soundcloud, textColor}) => {
     return (
         <Tab.Container defaultActiveKey="spotify">
           <Col>
             <Row>
               <Nav variant="pills" style={{width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', padding: '2%'}}>
                 <Nav.Item style={{width: '25%'}}>
-                  <Nav.Link eventKey="spotify">Spotify</Nav.Link>
+                  <Nav.Link eventKey="spotify" style={{color: textColor}}>Spotify</Nav.Link>
                 </Nav.Item>
                 <Nav.Item style={{width: '25%'}}>
-                  <Nav.Link eventKey="apple">Apple</Nav.Link>
+                  <Nav.Link eventKey="apple" style={{color: textColor}}>Apple</Nav.Link>
                 </Nav.Item>
                 <Nav.Item style={{width: '25%'}}>
-                  <Nav.Link eventKey="bandcamp">Bandcamp</Nav.Link>
+                  <Nav.Link eventKey="bandcamp" style={{color: textColor}}>Bandcamp</Nav.Link>
                 </Nav.Item>
                 <Nav.Item style={{width: '25%'}}>
-                  <Nav.Link eventKey="soundcloud">SoundCloud</Nav.Link>
+                  <Nav.Link eventKey="soundcloud" style={{color: textColor}}>SoundCloud</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Row>
@@ -54,7 +54,7 @@ export default ({spotify, apple, bandcamp, soundcloud}) => {
                       allow="autoplay *; encrypted-media *;" 
                       style={{
                         width: '100%  ',
-                        height: 150,
+                        height: 250,
                         maxWidth: '660px', 
                         overflow: 'hidden', 
                         background: 'transparent',

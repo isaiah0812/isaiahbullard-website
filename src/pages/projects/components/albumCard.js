@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const AlbumButton = styled.button`
-  width: 20vh;
-  height: 20vh;
-  position: relative;
-  background: url(${props => props.cover});
+  
+  width: 115px;
+  height: 115px;
+  background: url(${props => props.cover}) no-repeat center;
   background-size: 100%;
   border: 0px;
   padding: 0px;
-  margin: 1%;
+  margin: 1px;
 `
 
 const FadeHover = styled.div`

@@ -13,8 +13,9 @@ export default ({single, onClick, open}) => {
         onClick={() => {
           onClick && onClick()
           setDisplay(!display)
-        }
-      }/>
+        }}
+        id={single.id}
+      />
       {display && (
         <SingleDiv single={single} />
       )}
