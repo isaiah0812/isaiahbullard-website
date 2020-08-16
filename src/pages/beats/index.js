@@ -6,7 +6,7 @@ import Accordion from 'react-bootstrap/Accordion';
 
 import banner from './assets/banner.jpg';
 import AlbumCard from '../projects/components/albumCard';
-import { beats, beatTapes } from '../../constants/projects';
+import { beats, beatTapes } from '../../constants/music';
 
 const bannerSize = window.innerHeight * .4;
 
@@ -59,7 +59,17 @@ const PageSectionTitle = styled.h2`
   font-size: 5vh;
 `
 
+const BeatsPageSection = styled(Container)`
+  width: 48%;
+  margin: 1%;
+
+  @media (max-width: 740px) {
+    width: 100%;
+  }
+`
+
 const BeatButton = styled.button`
+  width: 100%;
   height: 96px;
   border: 0px;
   background: url(${props => props.cover}) no-repeat center;
@@ -87,6 +97,7 @@ const BeatButtonHover = styled.div`
 
 const BeatButtonTitle = styled.h2`
   font-weight: normal;
+  width: 100%;
 `
 
 export default () => {
@@ -99,11 +110,18 @@ export default () => {
           <BannerCaption>You either want to make a record or fantasize about your "rap dreams". This page is for you!</BannerCaption>
         </BannerText>
       </PageBanner>
-      <Container fluid style={{display: 'flex', paddingLeft: 0, paddingRight: 0, paddingTop: 60, paddingBottom: 60}}>
-        <Container style={{width: '50%'}}>
+      <Container fluid style={{display: 'flex', flexDirection: 'row-reverse', justifyContent: 'center', flexWrap: 'wrap', padding: '60px 24px'}}>
+        <BeatsPageSection fluid>
+          <PageSectionTitle>Beat Tapes</PageSectionTitle>
+          <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+          <Container style={{width: '80%', display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap'}}>
+            {beatTapes.map((beatTape) => <AlbumCard title={beatTape.title} cover={beatTape.cover} onClick={() => alert("Album Clicked")} />)}
+          </Container>
+        </BeatsPageSection>
+        <BeatsPageSection fluid>
           <PageSectionTitle>Beats</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-          <Container style={{width: '80%'}}>
+          <Container fluid style={{width: '100%'}}>
             <Accordion>
               {beats.map((beat) => (
                 <Card style={{border: 0}}>
@@ -121,14 +139,7 @@ export default () => {
               ))}
             </Accordion>
           </Container>
-        </Container>
-        <Container style={{width: '50%'}}>
-          <PageSectionTitle>Beat Tapes</PageSectionTitle>
-          <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-          <Container style={{width: '80%', display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap'}}>
-            {beatTapes.map((beatTape) => <AlbumCard title={beatTape.title} cover={beatTape.cover} onClick={() => alert("Album Clicked")} />)}
-          </Container>
-        </Container>
+        </BeatsPageSection>
       </Container>
     </Container>
   );

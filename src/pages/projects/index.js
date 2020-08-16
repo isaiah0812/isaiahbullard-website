@@ -6,7 +6,7 @@ import banner from './assets/banner.jpg';
 import AlbumCard from './components/albumCard';
 import SingleCard from './components/singleCard';
 import CreditCard from './components/creditCard';
-import { albums, singles, credits } from '../../constants/projects';
+import { albums, singles, credits } from '../../constants/music';
 
 const bannerSize = window.innerHeight * .4;
 
