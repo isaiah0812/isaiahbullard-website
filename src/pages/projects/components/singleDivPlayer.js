@@ -1,9 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Tab from 'react-bootstrap/Tab';
 import Nav from 'react-bootstrap/Nav';
+
+const PlayerTab = styled(Nav.Link)`
+  color: ${props => props.color};
+  font-size: 100%;
+  word-wrap: break-word;
+
+  @media (max-width: 740px) {
+    font-size: 80%;
+  }
+`
 
 export default ({spotify, apple, bandcamp, soundcloud, textColor}) => {
     return (
@@ -12,23 +23,23 @@ export default ({spotify, apple, bandcamp, soundcloud, textColor}) => {
             <Row>
               <Nav variant="pills" style={{width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', padding: '2%'}}>
                 <Nav.Item style={{width: '25%'}}>
-                  <Nav.Link eventKey="spotify" style={{color: textColor}}>Spotify</Nav.Link>
+                  <PlayerTab eventKey="spotify" color={textColor}>Spotify</PlayerTab>
                 </Nav.Item>
                 <Nav.Item style={{width: '25%'}}>
-                  <Nav.Link eventKey="apple" style={{color: textColor}}>Apple</Nav.Link>
+                  <PlayerTab eventKey="apple" color={textColor}>Apple</PlayerTab>
                 </Nav.Item>
                 <Nav.Item style={{width: '25%'}}>
-                  <Nav.Link eventKey="bandcamp" style={{color: textColor}}>Bandcamp</Nav.Link>
+                  <PlayerTab eventKey="bandcamp" color={textColor}>Bandcamp</PlayerTab>
                 </Nav.Item>
                 <Nav.Item style={{width: '25%'}}>
-                  <Nav.Link eventKey="soundcloud" style={{color: textColor}}>SoundCloud</Nav.Link>
+                  <PlayerTab eventKey="soundcloud" color={textColor}>SoundCloud</PlayerTab>
                 </Nav.Item>
               </Nav>
             </Row>
             <Row>
-              <Tab.Content style={{width: '100%'}}>
+              <Tab.Content style={{width: '100%', marginLeft: '2%', marginRight: '2%'}}>
                 <Tab.Pane eventKey="spotify">
-                  <Container style={{
+                  <Container fluid style={{
                     backgroundColor: '#1DB954',
                     padding: '2%',
                   }}>
@@ -46,7 +57,7 @@ export default ({spotify, apple, bandcamp, soundcloud, textColor}) => {
                   </Container>
                 </Tab.Pane>
                 <Tab.Pane eventKey="apple">
-                  <Container style={{
+                  <Container fluid style={{
                     backgroundColor: '#FA57C1',
                     padding: '2%',
                   }}>
@@ -60,14 +71,13 @@ export default ({spotify, apple, bandcamp, soundcloud, textColor}) => {
                         background: 'transparent',
                         border: 0,
                       }} 
-                      sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
                       src={"https://embed.music.apple.com/us/album/" + apple}
                       title="Apple Music"
                     />
                   </Container>
                 </Tab.Pane>
                 <Tab.Pane eventKey="bandcamp">
-                  <Container style={{
+                  <Container fluid style={{
                     backgroundColor: '#629AA9',
                     padding: '2%',
                   }}>
@@ -84,7 +94,7 @@ export default ({spotify, apple, bandcamp, soundcloud, textColor}) => {
                   </Container>
                 </Tab.Pane>
                 <Tab.Pane eventKey="soundcloud">
-                  <Container style={{
+                  <Container fluid style={{
                     backgroundColor: '#FE5000',
                     padding: '2%',
                   }}>
