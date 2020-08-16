@@ -13,6 +13,9 @@ const AlbumButton = styled.button`
 `
 
 const FadeHover = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.0);
@@ -30,12 +33,9 @@ const FadeHover = styled.div`
 `
 
 const AlbumTitle = styled.h3`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
   font-weight: normal;
+  font-size: 120%;
 `
 
 export default ({title, cover, onClick}) => {
