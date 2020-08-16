@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
+
 import banner from './assets/banner.jpg';
 import AlbumCard from './components/albumCard';
 import SingleCard from './components/singleCard';
 import CreditCard from './components/creditCard';
-import ma_cover from './assets/Maestro.PNG';
-import zr_cover from './assets/Zaes_Room.PNG';
-import bt_cover from './assets/Big_Thangs2.JPG';
-import ep_cover from './assets/Evil_Plan2.png';
-import fl_cover from './assets/Fast_Lane.png';
+import { albums, singles, credits } from '../../constants/projects';
 
 const bannerSize = window.innerHeight * .4;
 
@@ -74,75 +71,6 @@ const CreditSection = styled(Container)`
     width: 100%;
   }
 `
-
-const albums = [
-  {
-    title: "Maestro",
-    cover: ma_cover,
-  },
-  {
-    title: "Zae's Room",
-    cover: zr_cover,
-  },
-];
-
-const singles = [
-  {
-    title: "Fast Lane",
-    cover: fl_cover,
-    color: '#F4750E',
-    features: ["CoreyArnell", "FUZE"],
-    description: "No microphones were burned in the making of this recording. Please leave this type of rapping to the professionals and do not try this at home.",
-    releaseDate: "03.01.2019",
-    spotify: "0zZMvZ0BBAILDipQln4i8O",
-    apple: "fast-lane-supersonic-freestyle-feat-coreyarnell-fuze/1476867846",
-    bandcamp: "389561544",
-    soundcloud: "659974718",
-    songLink: "1476867847",
-    id: "fast-lane",
-  },
-  {
-    title: "Big Thangs",
-    cover: bt_cover,
-    color: '#FF0008',
-    features: ["CoreyArnell", "May"],
-    description: "The first single from Zae's Room. A banger if there ever was one. CoreyArnell is Wes Clinton. May is...well, May. If you're looking for that song to have your girl twerk to, you've come to the right place.",
-    releaseDate: "03.06.2020",
-    spotify: "1X6m8uL9AoGdFEMHtaUnso",
-    apple: "big-thangs-feat-coreyarnell-may/1502027667",
-    bandcamp: "1119170738",
-    soundcloud: "771594130",
-    songLink: "1502027668",
-    id: "big-thangs",
-  },
-  {
-    title: "Evil Plan",
-    cover: ep_cover,
-    color: '#30FFB9',
-    features: ["LouieV T", "FUZE"],
-    description: "The second single from Zae's Room. This beat took 20 minutes to make, and it's still the hardest song you might hear in your life. Trust me, this will get the party going.",
-    releaseDate: "04.10.2020",
-    spotify: "1fZHvbksavmt5XEtAmTBCR",
-    apple: "evil-plan-feat-louiev-t-fuze-single/1506525081",
-    bandcamp: "2329859596",
-    soundcloud: "795101182",
-    songLink: "1506525082",
-    id: "evil-plan",
-  },
-]
-
-const credits = [
-  {
-    title: "Safari",
-    artist: "FUZE",
-    link: "https://soundcloud.com/igotwoezz/safari-feat-subzero-prod",
-  },
-  {
-    title: "Toonami",
-    artist: "Community Service",
-    link: "https://soundcloud.com/community-service/toonami",
-  },
-]
 
 export default () => {
   const [openId, setOpenId] = useState(-1)
