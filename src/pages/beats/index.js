@@ -99,6 +99,23 @@ const BeatButtonTitle = styled.h2`
   font-weight: normal;
   width: 100%;
 `
+const BeatSectionInfoBlock = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+`
+const BeatSectionTitle = styled.h4`
+  font-weight: normal;
+  text-align: center;
+`
+
+const BeatSectionInfo = styled.h6`
+  font-weight: normal;
+  text-align: left;
+`
 
 export default () => {
   return (
@@ -131,8 +148,28 @@ export default () => {
                     </BeatButtonHover>
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey={beat.id}>
-                    <Card.Body style={{backgroundColor: '#040B30'}}>
-                      <iframe id="player" title="beat" type="text/html" width="100%" src={"http://www.youtube.com/embed/" + beat.youtube + "?enablejsapi=1&origin=zaemadethis.com"} frameborder="0"></iframe>
+                    <Card.Body style={{backgroundColor: '#040B30', color: '#FFFFFF', display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
+                      <BeatSectionInfoBlock>
+                        <BeatSectionTitle>{beat.title}</BeatSectionTitle>
+                        <BeatSectionInfo>
+                          <ul style={{listStyleType: 'square', margin: 0}}>
+                            <li style={{padding: 2}}>
+                              Key Signature: {beat.keySignature}
+                            </li>
+                            <li style={{padding: 2}}>
+                              Tempo: 90bpm
+                            </li>
+                            <li style={{padding: 2}}>
+                              Price (2-Track): $40
+                            </li>
+                            <li style={{padding: 2}}>
+                              Price (Track-Outs): $80
+                            </li>
+                          </ul>
+                        </BeatSectionInfo>
+                      </BeatSectionInfoBlock>
+                      <hr style={{width: '50%', borderWidth: 1, borderColor: '#FFFFFF'}} />
+                      <iframe id="player" title="beat" type="text/html" width="100%" height="300px" src={"http://www.youtube.com/embed/" + beat.youtube + "?enablejsapi=1&origin=zaemadethis.com"} frameborder="0"></iframe>
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
