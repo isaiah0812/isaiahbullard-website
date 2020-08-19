@@ -28,6 +28,10 @@ export const BannerText = styled(Container)`
   align-items: center;
   justify-content: center;
   padding: 0px;
+
+  @media (max-width: 740px) {
+    width: 100%;
+  }
 `
 
 export const BannerTitle = styled.h1`
