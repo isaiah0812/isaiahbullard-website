@@ -59,9 +59,15 @@ const PageSectionTitle = styled.h2`
   font-size: 5vh;
 `
 
+const PageSectionInfo = styled.h6`
+  margin: 0;
+  color: #707070;
+`
+
 const BeatsPageSection = styled(Container)`
   width: 48%;
   margin: 1%;
+  text-align: center;
 
   @media (max-width: 740px) {
     width: 100%;
@@ -131,14 +137,18 @@ export default () => {
         <BeatsPageSection fluid>
           <PageSectionTitle>Beat Tapes</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-          <Container style={{width: '80%', display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap'}}>
+          <PageSectionInfo>All beats on Beat Tapes are for sale for the same prices as normal beats.</PageSectionInfo>
+          <br />
+          <Container style={{width: '80%', display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', padding: 0}}>
             {beatTapes.map((beatTape) => <AlbumCard title={beatTape.title} cover={beatTape.cover} onClick={() => alert("Album Clicked")} />)}
           </Container>
         </BeatsPageSection>
         <BeatsPageSection fluid>
           <PageSectionTitle>Beats</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-          <Container fluid style={{width: '100%'}}>
+          <PageSectionInfo>2-Track: $40; Track-Outs: $80</PageSectionInfo>
+          <br />
+          <Container fluid style={{width: '100%', padding: 0}}>
             <Accordion>
               {beats.map((beat) => (
                 <Card style={{border: 0}}>
@@ -152,24 +162,20 @@ export default () => {
                       <BeatSectionInfoBlock>
                         <BeatSectionTitle>{beat.title}</BeatSectionTitle>
                         <BeatSectionInfo>
-                          <ul style={{listStyleType: 'square', margin: 0}}>
+                          <ul style={{listStyleType: 'circle', margin: 0}}>
                             <li style={{padding: 2}}>
                               Key Signature: {beat.keySignature}
                             </li>
                             <li style={{padding: 2}}>
-                              Tempo: 90bpm
-                            </li>
-                            <li style={{padding: 2}}>
-                              Price (2-Track): $40
-                            </li>
-                            <li style={{padding: 2}}>
-                              Price (Track-Outs): $80
+                              Tempo: {`${beat.tempo}bpm`}
                             </li>
                           </ul>
                         </BeatSectionInfo>
                       </BeatSectionInfoBlock>
                       <hr style={{width: '50%', borderWidth: 1, borderColor: '#FFFFFF'}} />
-                      <iframe id="player" title="beat" type="text/html" width="100%" height="300px" src={"http://www.youtube.com/embed/" + beat.youtube + "?enablejsapi=1&origin=zaemadethis.com"} frameborder="0"></iframe>
+                      <Container fluid style={{width: '100%', height: 300, backgroundColor: '#FF0000', padding: 0}}>
+                        <iframe id="player" title="beat" type="text/html" style={{width: '100.1%', height: '100%', border: 0}} src={"http://www.youtube.com/embed/" + beat.youtube + "?enablejsapi=1&origin=zaemadethis.com"}></iframe>
+                      </Container>
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>

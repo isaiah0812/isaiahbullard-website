@@ -66,6 +66,7 @@ export const beats = [
     id: "8-bit",
     youtube: 'qTwnXDdWcSw',
     keySignature: KEY_SIGS.DSHARPMINOR,
+    tempo: 87,
   },
   {
     title: "Argentina",
@@ -73,6 +74,7 @@ export const beats = [
     id: "argentina",
     youtube: 'uJfq9FYBjKw',
     keySignature: KEY_SIGS.FSHARPMAJOR,
+    tempo: 140,
   },
   {
     title: "Birds",
@@ -80,6 +82,7 @@ export const beats = [
     id: "birds",
     youtube: 'K0z40_Pm3uw',
     keySignature: KEY_SIGS.FSHARPMINOR,
+    tempo: 141,
   },
   {
     title: "Crispy",
@@ -87,6 +90,7 @@ export const beats = [
     id: "crispy",
     youtube: 'H6KaS-izPIc',
     keySignature: KEY_SIGS.DSHARPMINOR,
+    tempo: 160,
   },
   {
     title: "Dexter",
@@ -94,6 +98,7 @@ export const beats = [
     id: "dexter",
     youtube: 'TCnoe1IIqL4',
     keySignature: KEY_SIGS.FSHARPMINOR,
+    tempo: 149,
   },
   {
     title: "Discover",
@@ -101,6 +106,7 @@ export const beats = [
     id: "discover",
     youtube: 'e-66HcQUZYM',
     keySignature: KEY_SIGS.GMINOR,
+    tempo: 140,
   },
   {
     title: "Gangsta Symphony",
@@ -108,6 +114,7 @@ export const beats = [
     id: "gangsta-symphony",
     youtube: 'qdNes5V1UEQ',
     keySignature: KEY_SIGS.DMINOR,
+    tempo: 82,
   },
   {
     title: "Gunslinger",
@@ -115,6 +122,7 @@ export const beats = [
     id: "gunslinger",
     youtube: '_V-SCWio3ao',
     keySignature: KEY_SIGS.GMINOR,
+    tempo: 81,
   },
   {
     title: "Laughter",
@@ -122,6 +130,7 @@ export const beats = [
     id: "laughter",
     youtube: 'AbMocRL-RsA',
     keySignature: KEY_SIGS.FMAJOR,
+    tempo: 92,
   },
   {
     title: "Luke Cage",
@@ -129,6 +138,7 @@ export const beats = [
     id: "luke-cage",
     youtube: 'sqtcQOwGFzY',
     keySignature: KEY_SIGS.ASHARPMINOR,
+    tempo: 86,
   },
   {
     title: "Make Believe",
@@ -136,6 +146,7 @@ export const beats = [
     id: "make-believe",
     youtube: 'N1VzywunJAA',
     keySignature: KEY_SIGS.AMAJOR,
+    tempo: 161,
   },
   {
     title: "Pacman",
@@ -143,6 +154,7 @@ export const beats = [
     id: "pacman",
     youtube: 'OTKCNJH9_ig',
     keySignature: KEY_SIGS.DMINOR,
+    tempo: 182,
   },
   {
     title: "Primetime",
@@ -150,6 +162,7 @@ export const beats = [
     id: "primetime",
     youtube: 'EqJCc4jFvhg',
     keySignature: KEY_SIGS.EMINOR,
+    tempo: 97,
   },
   {
     title: "Tattoos",
@@ -157,6 +170,7 @@ export const beats = [
     id: "tattoos",
     youtube: 'P3nTHd8IOSM',
     keySignature: KEY_SIGS.FMINOR,
+    tempo: 85,
   },
   {
     title: "TMNT",
@@ -164,6 +178,7 @@ export const beats = [
     id: "tmnt",
     youtube: 'duhUAWe79rg',
     keySignature: KEY_SIGS.DSHARPMINOR,
+    tempo: 96,
   },
   {
     title: "Virtuoso",
@@ -171,6 +186,7 @@ export const beats = [
     id: "virtuoso",
     youtube: 'A1jwLZbWVBQ',
     keySignature: KEY_SIGS.CMINOR,
+    tempo: 124,
   },
 ];
 
