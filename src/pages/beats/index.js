@@ -7,62 +7,15 @@ import Accordion from 'react-bootstrap/Accordion';
 import banner from './assets/banner.jpg';
 import AlbumCard from '../projects/components/albumCard';
 import { beats, beatTapes } from '../../constants/music';
-
-const bannerSize = window.innerHeight * .4;
-
-const PageBanner = styled.div`
-  width: 100%;
-  height: ${bannerSize};
-  position: relative;
-`
-
-const BannerImage = styled.img`
-  width: 100%;
-  object-fit: cover;
-  position: center;
-  filter: brightness(48%) blur(4.5px);
-  -webkit-filter: brightness(48%) blur(4.5px);
-`
-
-const BannerText = styled.div`
-  width: 25%;
-  height: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`
-
-const BannerTitle = styled.h1`
-  color: #FFFFFF;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  font-size: 9.5vh;
-  font-weight: normal;
-`
-
-const BannerCaption = styled.h4`
-  color: #FFFFFF;
-  text-align: center;
-  position: relative;
-  top: 70%;
-  font-size: 2.3vh;
-  font-weight: normal;
-`
-
-const PageSectionTitle = styled.h2`
-  color: #040B30;
-  text-align: center;
-  font-size: 5vh;
-`
-
-const PageSectionInfo = styled.h6`
-  margin: 0;
-  color: #707070;
-`
+import { 
+  PageBanner, 
+  PageBannerFade, 
+  BannerText, 
+  BannerTitle, 
+  BannerCaption, 
+  PageSectionTitle,
+  PageSectionInfo,
+} from '../../constants/styled-components';
 
 const BeatsPageSection = styled(Container)`
   width: 48%;
@@ -126,12 +79,13 @@ const BeatSectionInfo = styled.h6`
 export default () => {
   return (
     <Container fluid style={{padding: 0}}>
-      <PageBanner>
-        <BannerImage src={banner} height={bannerSize} />
-        <BannerText>
-          <BannerTitle>Beats</BannerTitle>
-          <BannerCaption>You either want to make a record or fantasize about your "rap dreams". This page is for you!</BannerCaption>
-        </BannerText>
+      <PageBanner fluid background={banner}>
+        <PageBannerFade fluid>
+          <BannerText fluid>
+            <BannerTitle>Beats</BannerTitle>
+            <BannerCaption>You either want to make a record or fantasize about your "rap dreams". This page is for you!</BannerCaption>
+          </BannerText>
+        </PageBannerFade>
       </PageBanner>
       <Container fluid style={{display: 'flex', flexDirection: 'row-reverse', justifyContent: 'center', flexWrap: 'wrap', padding: '60px 24px'}}>
         <BeatsPageSection fluid>

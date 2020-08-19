@@ -31,6 +31,7 @@ export const BannerText = styled(Container)`
 
   @media (max-width: 740px) {
     width: 100%;
+    padding: 4px;
   }
 `
 
@@ -50,4 +51,9 @@ export const PageSectionTitle = styled.h2`
   color: #040B30;
   text-align: center;
   font-size: 5vh;
+`
+
+export const PageSectionInfo = styled.h6`
+  margin: 0;
+  color: #707070;
 `
