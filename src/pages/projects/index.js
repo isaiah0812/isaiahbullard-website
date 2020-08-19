@@ -7,57 +7,14 @@ import AlbumCard from './components/albumCard';
 import SingleCard from './components/singleCard';
 import CreditCard from './components/creditCard';
 import { albums, singles, credits } from '../../constants/music';
-
-const bannerSize = window.innerHeight * .4;
-
-const PageBanner = styled.div`
-  width: 100%;
-  height: ${bannerSize};
-  position: relative;
-`
-
-const BannerImage = styled.img`
-  width: 100%;
-  object-fit: cover;
-  position: center;
-  filter: brightness(48%) blur(4.5px);
-  -webkit-filter: brightness(48%) blur(4.5px);
-`
-
-const BannerText = styled.div`
-  width: 25%;
-  height: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`
-
-const BannerTitle = styled.h1`
-  color: #FFFFFF;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  font-size: 9.5vh;
-  font-weight: normal;
-`
-
-const BannerCaption = styled.h4`
-  color: #FFFFFF;
-  text-align: center;
-  position: relative;
-  top: 70%;
-  font-size: 2.3vh;
-  font-weight: normal;
-`
-
-const PageSectionTitle = styled.h2`
-  color: #040B30;
-  text-align: center;
-  font-size: 5vh;
-`
+import { 
+  PageBanner, 
+  PageBannerFade, 
+  BannerText, 
+  BannerTitle, 
+  BannerCaption, 
+  PageSectionTitle,
+} from '../../constants/styled-components';
 
 const CreditSection = styled(Container)`
   display: flex;
@@ -77,13 +34,14 @@ export default () => {
   const [open, setOpen] = useState(undefined)
 
   return (
-    <Container fluid style={{padding: 0}}>
-      <PageBanner>
-        <BannerImage src={banner} height={bannerSize} />
-        <BannerText>
-          <BannerTitle>Projects</BannerTitle>
-          <BannerCaption>Albums, Singles, Production Credits, Placements, Stick Figures, etc.</BannerCaption>
-        </BannerText>
+    <Container fluid style={{padding: 0, width: '100%'}}>
+      <PageBanner fluid background={banner}>
+        <PageBannerFade fluid>
+          <BannerText fluid>
+            <BannerTitle>Projects</BannerTitle>
+            <BannerCaption>Albums, Singles, Production Credits, Placements, Stick Figures, etc.</BannerCaption>
+          </BannerText>
+        </PageBannerFade>
       </PageBanner>
       <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', padding: '60px 24px'}}>
         <PageSectionTitle>Albums</PageSectionTitle>
