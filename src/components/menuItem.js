@@ -8,9 +8,14 @@ const MenuText = styled.h5`
   font-weight: normal;
   line-height: normal;
   font-size: 110%;
+  transition: background-color 0.2s, border-color 0.2s, border-radius 0.2s, color 0.2s;
 
   &:hover {
     color: #29B3F1;
+    background-color: #040B30;
+    border: 10px;
+    border-color: #FFFFFF;
+    border-radius: 7px;
   }
 `
 

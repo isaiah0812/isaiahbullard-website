@@ -7,6 +7,7 @@ export const PageBanner = styled(Container)`
   background: url(${props => props.background}) no-repeat center;
   background-size: 100%;
   padding: 0px;
+  box-shadow: 0px 7px 20px #000000;
 `
 
 export const PageBannerFade = styled(Container)`
