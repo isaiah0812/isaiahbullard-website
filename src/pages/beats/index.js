@@ -174,7 +174,7 @@ export default () => {
                       </BeatSectionInfoBlock>
                       <hr style={{width: '50%', borderWidth: 1, borderColor: '#FFFFFF'}} />
                       <Container fluid style={{width: '100%', height: 300, backgroundColor: '#FF0000', padding: 0}}>
-                        <iframe id="player" title="beat" type="text/html" style={{width: '100.1%', height: '100%', border: 0}} src={"http://www.youtube.com/embed/" + beat.youtube + "?enablejsapi=1&origin=zaemadethis.com"}></iframe>
+                        <iframe id="player" title="beat" type="text/html" style={{width: '100.1%', height: '100.2%', border: 0}} src={"http://www.youtube.com/embed/" + beat.youtube + "?enablejsapi=1&origin=zaemadethis.com"}></iframe>
                       </Container>
                     </Card.Body>
                   </Accordion.Collapse>
