@@ -1,4 +1,5 @@
 import React from 'react';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import styled from 'styled-components';
 
 const CreditLink = styled.a`
@@ -33,10 +34,20 @@ const CreditTitle = styled.h4`
 export default ({credit}) => {
 	return (
     <CreditLink href={credit.link} target="_blank">
-      <CreditButton>
-        <CreditTitle>{credit.title} - {credit.artist}</CreditTitle>
-        Click to listen
-      </CreditButton>
+      <OverlayTrigger 
+        key={credit.id}
+        placement="right"
+        overlay={
+          <Tooltip id={`tooltip-${credit.id}`}>
+            {credit.title} - {credit.artist}
+          </Tooltip>
+        }
+      >
+        <CreditButton>
+          <CreditTitle>{credit.title} - {credit.artist}</CreditTitle>
+          Click to listen
+        </CreditButton>
+      </OverlayTrigger>
     </CreditLink>
 	)
 }

@@ -199,11 +199,13 @@ export const beatTapes = [
 
 export const credits = [
   {
+    id: "safari-fuze",
     title: "Safari",
     artist: "FUZE",
     link: "https://soundcloud.com/igotwoezz/safari-feat-subzero-prod",
   },
   {
+    id: "toonami-communityservice",
     title: "Toonami",
     artist: "Community Service",
     link: "https://soundcloud.com/community-service/toonami",
