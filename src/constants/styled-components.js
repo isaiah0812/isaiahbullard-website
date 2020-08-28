@@ -56,4 +56,5 @@ export const PageSectionTitle = styled.h2`
 export const PageSectionInfo = styled.h6`
   margin: 0;
   color: #707070;
+  text-align: center;
 `

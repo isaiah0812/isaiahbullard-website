@@ -23,6 +23,7 @@ import {
   BannerTitle, 
   BannerCaption, 
   PageSectionTitle,
+  PageSectionInfo,
 } from '../../constants/styled-components';
 
 const HoveringForm = styled.div`
@@ -31,6 +32,7 @@ const HoveringForm = styled.div`
   box-shadow: none;
   transition: box-shadow 0.5s;
   width: 50%;
+  margin: 2% 0%;
 
   @media (max-width: 740px) {
     width: 100%;
@@ -134,6 +136,7 @@ export default class Contact extends React.Component {
         <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '60px 24px'}}>
           <PageSectionTitle>Enter Your Information</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+          <PageSectionInfo>Serious inquiries only, please.</PageSectionInfo>
           <Container fluid style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', padding: 0}}>
             <HoveringForm>
               <Form onSubmit={() => this.onSubmit()} style={{backgroundColor: '#707070', color: '#FFFFFF', padding: 24, width: '100%'}}>
@@ -145,6 +148,7 @@ export default class Contact extends React.Component {
                     onChange={(e) => this.setState({yourName: e.target.value})}
                     type={'text'} 
                     placeholder={'Your Name'} 
+                    required
                   />
                 </FormGroup>
                 <FormGroup>
@@ -165,6 +169,7 @@ export default class Contact extends React.Component {
                     onChange={(e) => this.setState({email: e.target.value})} 
                     type={'email'} 
                     placeholder={'example@example.com'} 
+                    required
                   />
                 </FormGroup>
                 <FormGroup>
@@ -238,6 +243,7 @@ export default class Contact extends React.Component {
                     onChange={(e) => this.setState({statement: e.target.value})}
                     as={'textarea'} 
                     rows={15} 
+                    required
                   />
                 </FormGroup>
                 <Button submit text={'Submit'} />
