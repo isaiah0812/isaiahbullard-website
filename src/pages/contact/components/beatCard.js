@@ -18,6 +18,9 @@ const BeatCard = styled(Card)`
   }
 `
 
+/**
+ * @todo make this a class component
+ */
 export default ({ name, cover, onClick }) => {
   return (
     <BeatCard onClick={onClick}>

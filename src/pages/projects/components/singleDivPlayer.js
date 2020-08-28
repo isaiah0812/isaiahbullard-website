@@ -16,6 +16,9 @@ const PlayerTab = styled(Nav.Link)`
   }
 `
 
+/**
+ * @todo make this a class component
+ */
 export default ({spotify, apple, bandcamp, soundcloud, textColor}) => {
     return (
         <Tab.Container defaultActiveKey="spotify">

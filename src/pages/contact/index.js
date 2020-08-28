@@ -44,6 +44,10 @@ const HoveringForm = styled.div`
   }
 `
 
+/**
+ * @todo Inject emailjs?
+ * @todo Make selecting beats required when chekcing the checkbox
+ */
 export default class Contact extends React.Component {
   
   constructor(props) {
@@ -85,6 +89,7 @@ export default class Contact extends React.Component {
       organization: "",
       email: "",
       statement: "",
+      alertVisible: true,
     })
   }
 
@@ -142,11 +147,10 @@ export default class Contact extends React.Component {
           </PageBannerFade>
         </PageBanner>
         <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '60px 24px'}}>
-          {/* <Alert>There are words here</Alert> */}
           <PageSectionTitle>Enter Your Information</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
           <PageSectionInfo>Serious inquiries only, please.</PageSectionInfo>
-          <Container fluid style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', padding: 0}}>
+          <Container fluid style={{display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 0}}>
             <HoveringForm>
               <Form onSubmit={(e) => this.onSubmit(e)} style={{backgroundColor: '#707070', color: '#FFFFFF', padding: 24, width: '100%'}}>
                 <FormGroup>
@@ -256,6 +260,16 @@ export default class Contact extends React.Component {
                   />
                 </FormGroup>
                 <Button submit text={'Submit'} />
+                <Alert 
+                  style={{width: '100%', margin: '2% 0%'}} 
+                  variant={'success'} 
+                  show={this.state.alertVisible}
+                  onClose={() => this.setState({alertVisible: false})} 
+                  dismissible
+                >
+                  <Alert.Heading>Submitted Successfuly!</Alert.Heading>
+                  Thank you for contacting me! I will get back to you as soon as I can.
+                </Alert>
               </Form>
             </HoveringForm>
           </Container>
@@ -264,9 +278,3 @@ export default class Contact extends React.Component {
     );
   }
 }
-
-// TODO Character Limits
-
-// TODO Required Fields
-
-// TODO Notification Modal

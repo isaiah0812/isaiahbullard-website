@@ -31,6 +31,9 @@ const CreditTitle = styled.h4`
   text-overflow: ellipsis;
 `
 
+/**
+ * @todo make this a class component
+ */
 export default ({credit}) => {
 	return (
     <CreditLink href={credit.link} target="_blank">

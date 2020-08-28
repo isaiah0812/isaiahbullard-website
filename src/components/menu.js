@@ -16,6 +16,9 @@ const navBrandStyle = {
   fontSize: '175%',
 }
 
+/**
+ * @todo make this a class component
+ */
 export default () => {
   return (
     <Navbar expand='lg' style={navbarStyle} sticky='top'>

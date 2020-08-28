@@ -19,6 +19,9 @@ const MenuText = styled.h5`
   }
 `
 
+/**
+ * @todo make this a class component
+ */
 export default ({name}) => {
   return (
     <MenuText>{name}</MenuText>

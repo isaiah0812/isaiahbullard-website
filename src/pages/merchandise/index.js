@@ -10,6 +10,9 @@ import {
   PageSectionTitle,
 } from '../../constants/styled-components';
 
+/**
+ * @todo make this a class component
+ */
 export default () => {
   return (
     <Container fluid style={{padding: 0}}>

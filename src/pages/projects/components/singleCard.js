@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import AlbumCard from './albumCard';
 import SingleDiv from './singleDiv';
 
+/**
+ * @todo make this a class component
+ */
 export default ({single, onClick, open}) => {
   const [display, setDisplay] = useState(open);
 

@@ -4,6 +4,10 @@ import Container from 'react-bootstrap/container';
 import HomeSection from './components/homeSection';
 import { sections } from '../../constants/home';
 
+/**
+ * @todo Make this a class component
+ * @todo link to project pages
+ */
 export default () => {
   return (
     <Container fluid style={{padding: 0}}>

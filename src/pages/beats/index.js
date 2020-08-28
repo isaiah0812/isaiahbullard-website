@@ -76,6 +76,11 @@ const BeatSectionInfo = styled.h6`
   text-align: left;
 `
 
+/**
+ * @todo add buttons links to contact form
+ * @todo migrate all of the components to components folder
+ * @todo make this a class component
+ */
 export default () => {
   return (
     <Container fluid style={{padding: 0}}>

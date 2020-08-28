@@ -38,6 +38,10 @@ const AlbumTitle = styled.h3`
   font-size: 120%;
 `
 
+/**
+ * @todo make this a class component
+ * @todo add links to project pages
+ */
 export default ({title, cover, onClick}) => {
     return (
       <AlbumButton cover={cover} onClick={onClick}>

@@ -29,6 +29,10 @@ const CreditSection = styled(Container)`
   }
 `
 
+/**
+ * @todo make this a class component
+ * @todo MAKE THE FREAKING PROJECT PAGES
+ */
 export default () => {
   const [openId, setOpenId] = useState(-1)
   const [open, setOpen] = useState(undefined)

@@ -48,6 +48,9 @@ const SingleSongLink = styled.a`
   }
 `
 
+/**
+ * @todo make this a class component
+ */
 export default ({single}) => {
   const textColor = (single.color < '#800000') ? '#000000' : '#FFFFFF'
   return (

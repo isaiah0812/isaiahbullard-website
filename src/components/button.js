@@ -28,6 +28,9 @@ const StyledButton = styled(Button)`
 
 `
 
+/**
+ * @todo make this a class component
+ */
 export default ({submit, secondary, text, href}) => {
   return (
     <StyledButton 
