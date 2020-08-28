@@ -9,6 +9,7 @@ import {
   FormText,
   Toast,
   FormCheck,
+  Alert
 } from 'react-bootstrap';
 
 import banner from './assets/banner.jpg';
@@ -53,6 +54,7 @@ export default class Contact extends React.Component {
       email: "",
       statement: "",
       toastVisible: false,
+      alertVisible: false,
       selected: [],
       recentBeat: beats[0],
       added: true,
@@ -60,7 +62,6 @@ export default class Contact extends React.Component {
     }
 
     this.handleChange = this.addBeat.bind(this);
-    this.handleSubmit = this.onSubmit.bind(this);
   }
 
   closeToast = () => {
@@ -69,7 +70,8 @@ export default class Contact extends React.Component {
     })
   }
   
-  onSubmit = () => {
+  onSubmit = (e) => {
+    e.preventDefault();
     const newLineRegex = /\n/gi;
 
     const emailString = 'mailto:beatsbyzae12@gmail.com?subject=Contacting Isaiah Bullard&body='
@@ -78,6 +80,12 @@ export default class Contact extends React.Component {
                         + this.state.organization  + ' ' + this.state.email;
 
     window.location.assign(emailString);
+    this.setState({
+      yourName: "",
+      organization: "",
+      email: "",
+      statement: "",
+    })
   }
 
   addBeat = (event) => {
@@ -134,12 +142,13 @@ export default class Contact extends React.Component {
           </PageBannerFade>
         </PageBanner>
         <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '60px 24px'}}>
+          {/* <Alert>There are words here</Alert> */}
           <PageSectionTitle>Enter Your Information</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
           <PageSectionInfo>Serious inquiries only, please.</PageSectionInfo>
           <Container fluid style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', padding: 0}}>
             <HoveringForm>
-              <Form onSubmit={() => this.onSubmit()} style={{backgroundColor: '#707070', color: '#FFFFFF', padding: 24, width: '100%'}}>
+              <Form onSubmit={(e) => this.onSubmit(e)} style={{backgroundColor: '#707070', color: '#FFFFFF', padding: 24, width: '100%'}}>
                 <FormGroup>
                   <FormLabel>Your Name</FormLabel>
                   <FormControl 
@@ -251,7 +260,6 @@ export default class Contact extends React.Component {
             </HoveringForm>
           </Container>
         </Container>
-        
       </Container>
     );
   }
