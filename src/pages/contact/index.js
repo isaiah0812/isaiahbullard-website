@@ -1,14 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import { 
+  Container,
+  Form, 
+  FormGroup, 
+  FormLabel, 
+  FormControl, 
+  FormText,
+  Toast,
+  FormCheck,
+} from 'react-bootstrap';
+
 import banner from './assets/banner.jpg';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import FormGroup from 'react-bootstrap/FormGroup';
-import FormLabel from 'react-bootstrap/FormLabel';
-import FormControl from 'react-bootstrap/FormControl';
-import FormCheck from 'react-bootstrap/FormCheck';
 import Button from '../../components/button';
-import { useForm } from 'react-hook-form';
+import BeatCard from './components/beatCard';
+import { beats } from '../../constants/music';
+
 import { 
   PageBanner, 
   PageBannerFade, 
@@ -23,86 +30,229 @@ const HoveringForm = styled.div`
   justify-content: center;
   box-shadow: none;
   transition: box-shadow 0.5s;
-  width: 40%;
+  width: 50%;
+
+  @media (max-width: 740px) {
+    width: 100%;
+  }
 
   &:hover {
     box-shadow: 0px 10px 10px;
   }
 `
 
-export default function Contact () {
-  const { handleSubmit, register } = useForm();
+export default class Contact extends React.Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = {
+      yourName: "",
+      organization: "",
+      email: "",
+      statement: "",
+      toastVisible: false,
+      selected: [],
+      recentBeat: beats[0],
+      added: true,
+      purchasingBeats: false,
+    }
 
-  const onSubmit = (values) => {
+    this.handleChange = this.addBeat.bind(this);
+    this.handleSubmit = this.onSubmit.bind(this);
+  }
+
+  closeToast = () => {
+    this.setState({
+      toastVisible: false,
+    })
+  }
+  
+  onSubmit = () => {
     const newLineRegex = /\n/gi;
 
-    const emailString = 'mailto:beatsbyzae12@gmail.com?subject=' +
-                        (values.beat ? 'Beat Purchase' : 'Contacting Isaiah Bullard') +
-                        '&body=' + values.statement.replace(newLineRegex, '%0A%0D') + '%0A%0D%0A%0DEmail from ' + values.firstName + ' ' + values.lastName + 
-                        (values.stageName ? '%0A%0D"' + values.stageName + '"' : '') + (values.email ? '%0A%0D' + values.email : '') + 
-                        (values.phoneNumber ? '%0A%0D' + values.phoneNumber : '');
+    const emailString = 'mailto:beatsbyzae12@gmail.com?subject=Contacting Isaiah Bullard&body='
+                        + this.state.statement.replace(newLineRegex, '%0A%0D') 
+                        + '%0A%0D%0A%0DEmail from ' + this.state.yourName + ' ' 
+                        + this.state.organization  + ' ' + this.state.email;
 
     window.location.assign(emailString);
   }
 
-  return (
-    <Container fluid style={{padding: 0}}>
-      <PageBanner fluid background={banner}>
-        <PageBannerFade fluid>
-          <BannerText fluid>
-            <BannerTitle>Contact</BannerTitle>
-            <BannerCaption>Ask me about my services! I make beats and websites. I also make a mean macaroni necklace.</BannerCaption>
-          </BannerText>
-        </PageBannerFade>
-      </PageBanner>
-      <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 60}}>
-        <PageSectionTitle>Fill Out the Form</PageSectionTitle>
-        <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-        <Container fluid style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-          <HoveringForm>
-            <Form onSubmit={handleSubmit(onSubmit)} style={{backgroundColor: '#707070', color: '#FFFFFF', padding: 24, width: '100%'}}>
-              <FormGroup>
-                <FormLabel>First Name</FormLabel>
-                <FormControl name='firstName' ref={register} type={'text'} placeHolder={'First Name'} />
-              </FormGroup>
-              <FormGroup>
-                <FormLabel>Last Name</FormLabel>
-                <FormControl name='lastName' ref={register} type={'text'} placeHolder={'Last Name'} />
-              </FormGroup>
-              <FormGroup>
-                <FormLabel>Stage Name/Rap Name/Company Name/Super Hero Name</FormLabel>
-                <FormControl name='stageName' ref={register} type={'text'} placeHolder={'Stage Name/Rap Name/Company Name/Super Hero Name'} />
-              </FormGroup>
-              <FormGroup>
-                <FormLabel>Email Address</FormLabel>
-                <FormControl name='email' ref={register} type={'email'} placeHolder={'example@example.com'} />
-              </FormGroup>
-              <FormGroup>
-                <FormLabel>Phone Number</FormLabel>
-                <FormControl name='phoneNumber' ref={register} type={'text'} placeHolder={'(XXX) XXX-XXXX'} />
-              </FormGroup>
-              <FormGroup>
-                <FormCheck name='beat' ref={register} type={'checkbox'} label={"I'm purchasing a beat!"} />
-              </FormGroup>
-              <FormGroup>
-                <FormLabel>State Your Business</FormLabel>
-                <FormControl name='statement' ref={register} as={'textarea'} rows={15} />
-              </FormGroup>
-              <Button submit text={'Submit'} />
-            </Form>
-          </HoveringForm>
-        </Container>
-      </Container>
-    </Container>
-  );
-}
+  addBeat = (event) => {
+    const value = event.target.value;
+    if(value !== "") {
+      let newSelected = this.state.selected;
+      const addedBeat = this.findBeat(value);
+      if(!this.beatSelected(addedBeat)){
+        newSelected.push(addedBeat);
+      }
+      this.setState({
+        selected: newSelected,
+        toastVisible: true,
+        recentBeat: addedBeat,
+        added: true,
+      });
+    }
+  }
 
-// TODO Select Beats when checked
+  removeBeat = (id) => {
+    const ndx = this.findSelectedBeat(id);
+    const newSelected = this.state.selected;
+    const removedBeat = newSelected.splice(ndx, 1)[0];
+    console.log(removedBeat);
+    this.setState({
+      selected: newSelected,
+      toastVisible: true,
+      recentBeat: removedBeat,
+      added: false,
+    })
+  }
+
+  findBeat = (id) => {
+    return beats.find(beat => beat.id === id);
+  }
+
+  findSelectedBeat = (id) => {
+    return this.state.selected.findIndex(beat => beat.id === id);
+  }
+
+  beatSelected = (beat) => {
+    return this.state.selected.find(item => item.id === beat.id);
+  }
+
+  render () {
+    return (
+      <Container fluid style={{padding: 0}}>
+        <PageBanner fluid background={banner}>
+          <PageBannerFade fluid>
+            <BannerText fluid>
+              <BannerTitle>Contact</BannerTitle>
+              <BannerCaption>Ask me about my services! I make beats and websites. I also make a mean macaroni necklace.</BannerCaption>
+            </BannerText>
+          </PageBannerFade>
+        </PageBanner>
+        <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '60px 24px'}}>
+          <PageSectionTitle>Enter Your Information</PageSectionTitle>
+          <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+          <Container fluid style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', padding: 0}}>
+            <HoveringForm>
+              <Form onSubmit={() => this.onSubmit()} style={{backgroundColor: '#707070', color: '#FFFFFF', padding: 24, width: '100%'}}>
+                <FormGroup>
+                  <FormLabel>Your Name</FormLabel>
+                  <FormControl 
+                    name='yourName' 
+                    value={this.state.yourName} 
+                    onChange={(e) => this.setState({yourName: e.target.value})}
+                    type={'text'} 
+                    placeholder={'Your Name'} 
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <FormLabel>Organization (If Applicable)</FormLabel>
+                  <FormControl 
+                    name='organization' 
+                    value={this.state.organization} 
+                    onChange={(e) => this.setState({organization: e.target.value})}
+                    type={'text'} 
+                    placeholder={'Organization'} 
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <FormLabel>Email Address</FormLabel>
+                  <FormControl 
+                    name='email' 
+                    value={this.state.email}
+                    onChange={(e) => this.setState({email: e.target.value})} 
+                    type={'email'} 
+                    placeholder={'example@example.com'} 
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <FormCheck 
+                    name="purchasingBeats" 
+                    type={'checkbox'} 
+                    label="I'm purchasing a beat" 
+                    onChange={() => this.setState({purchasingBeats: !this.state.purchasingBeats})}
+                  />
+                  {
+                    !this.state.purchasingBeats 
+                    ? <FormText>Only select this if you're purchasing a beat that is on the <a href="/beats" style={{ color: '#29B3F1' }}>beats page</a>. If you want a custom beat (regardless of if you want to purchase one from this website), please mention that in the "State Your Business" section.</FormText>
+                    : <FormText>If you want a custom beat (regardless of if you want to purchase one from this website), please mention that in the "State Your Business" section.</FormText>
+                  }
+                </FormGroup>
+                {this.state.purchasingBeats && (
+                  <FormGroup>
+                    <FormLabel>Select Beats to Purchase</FormLabel>
+                    <FormControl name='beatList' as={'select'} onChange={this.handleChange} value="">
+                      <option value="" />
+                      {beats.filter((beat) => !this.beatSelected(beat)).map((beat) => (
+                        <option value={beat.id}>{beat.title}</option>
+                      ))}
+                    </FormControl>
+                    <FormText>
+                      Please only select beats if you intend to purchase them. All beats are sold exclusively and on a first-come-first-serve basis.
+                    </FormText>
+                    <Toast 
+                      style={{ 
+                        marginTop: 5, 
+                        marginBottom: 5,
+                        backgroundColor: '#040B30',
+                      }}
+                      show={this.state.toastVisible}
+                      onClose={() => this.closeToast()}
+                    >
+                      <Toast.Header>
+                        <strong>Beat {this.state.added ? "added" : "removed"}!</strong>
+                      </Toast.Header>
+                      <Toast.Body>
+                        {this.state.recentBeat.title} has been {this.state.added ? "added" : "removed"}.
+                      </Toast.Body>
+                    </Toast>
+                    {this.state.selected.length > 0 && (
+                      <Container 
+                        fluid 
+                        style={{ 
+                          display: 'flex', 
+                          flexDirection: 'row', 
+                          flexWrap: 'wrap', 
+                          padding: 10, 
+                          width: '100%' 
+                        }}
+                      >
+                        {this.state.selected.map((beat) => (
+                          <BeatCard 
+                            name={beat.title} 
+                            cover={beat.cover} 
+                            onClick={() => this.removeBeat(beat.id)} 
+                          />
+                        ))}
+                      </Container>
+                    )}
+                  </FormGroup>
+                )}
+                <FormGroup>
+                  <FormLabel>State Your Business</FormLabel>
+                  <FormControl 
+                    name='statement' 
+                    value={this.state.statement} 
+                    onChange={(e) => this.setState({statement: e.target.value})}
+                    as={'textarea'} 
+                    rows={15} 
+                  />
+                </FormGroup>
+                <Button submit text={'Submit'} />
+              </Form>
+            </HoveringForm>
+          </Container>
+        </Container>
+        
+      </Container>
+    );
+  }
+}
 
 // TODO Character Limits
 
 // TODO Required Fields
-
-// TODO Phone Number notification
 
 // TODO Notification Modal

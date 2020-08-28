@@ -25,7 +25,7 @@ export default () => {
         <Nav>
           {routes.map((route) => {
             return (
-              <Nav.Link href={route.path}>
+              <Nav.Link key={route.key} href={route.path}>
                 <MenuItem name={route.name} />
               </Nav.Link>
             );

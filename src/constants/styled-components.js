@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const PageBanner = styled(Container)`
   width: 100%;
-  height: 250px;
+  height: 225px;
   background: url(${props => props.background}) no-repeat center;
   background-size: 100%;
   padding: 0px;

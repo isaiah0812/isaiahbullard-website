@@ -6,8 +6,8 @@ const StyledButton = styled(Button)`
   border-width: 7px;
   border-style: solid;
   border-radius: 16px;
-  border-color: ${props => props.submit ? '#040B30' : (props.secondary ? '#040B30' : '#FFFFFF')};
-  background-color: ${props => props.submit ? '#707070' : '#29B3F1'};
+  border-color: ${props => props.type === "submit" ? '#040B30' : (props.secondary ? '#040B30' : '#FFFFFF')};
+  background-color: ${props => props.type === "submit" ? '#707070' : '#29B3F1'};
   text-align: center;
   font-size: 150%;
   color: #FFFFFF;
@@ -32,9 +32,8 @@ export default ({submit, secondary, text, href}) => {
   return (
     <StyledButton 
       type={submit ? 'submit' : 'button'} 
-      submit={submit} 
       secondary={secondary} 
-      href={submit ? undefined : href}
+      href={href}
     >
       {text}
     </StyledButton>

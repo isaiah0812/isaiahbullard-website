@@ -100,7 +100,11 @@ export default () => {
         <BeatsPageSection fluid>
           <PageSectionTitle>Beats</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
-          <PageSectionInfo>2-Track: $40; Track-Outs: $80</PageSectionInfo>
+          <PageSectionInfo>
+            2-Track: $40; Track-Outs: $80
+            <br />
+            All beats are sold exclusively and on a first-come-first-serve basis.
+          </PageSectionInfo>
           <br />
           <Container fluid style={{width: '100%', padding: 0}}>
             <Accordion>
