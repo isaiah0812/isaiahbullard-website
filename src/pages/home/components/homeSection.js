@@ -24,6 +24,9 @@ const SectionDescription = styled.div`
   }
 `
 
+/**
+ * @todo make this a class component
+ */
 export default ({primary, title, description, buttonText, href}) => {
   return (
     <Container 

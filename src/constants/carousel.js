@@ -11,6 +11,7 @@ export const carousel = [
       backdrop: zr_cover,
       logo: zr_logo,
       description: 'Welcome to the show. Coming 2020.',
+      link: '/projects/zaes-room'
     },
     {
       name: "The Holly Jolly Tape",
@@ -23,5 +24,6 @@ export const carousel = [
       backdrop: ma_cover,
       logo: ma_logo,
       description: 'Home is where the heart is. Maestro is out now.',
+      link: '/projects/maestro',
     },
   ]

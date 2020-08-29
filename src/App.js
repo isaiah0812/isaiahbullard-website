@@ -13,6 +13,7 @@ import Container from 'react-bootstrap/Container';
  * @todo make this a class component
  * @todo flex sizing of all components
  * @todo add routing for project pages
+ * @todo add constants for all colors
  */
 export default class App extends React.Component {
   render () {

@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import SingleDivPlayer from './singleDivPlayer';
 
+import { SongLink } from '../../../constants/styled-components';
+
 const Triangle = styled.div`
   width: 0px;
   height: 0px;
@@ -36,18 +38,6 @@ const SingleBox = styled(Container)`
   }
 `
 
-const SingleSongLink = styled.a`
-  color: ${props => props.color};
-
-  &:hover {
-    color: ${props => props.color};
-  }
-
-  &:visited {
-    color: ${props => props.color};
-  }
-`
-
 /**
  * @todo make this a class component
  */
@@ -78,7 +68,7 @@ export default ({single}) => {
           soundcloud={single.soundcloud}
           textColor={textColor}
         />
-        <SingleSongLink href={"https://song.link/us/i/" + single.songLink} color={textColor} target="_blank">Other Sources</SingleSongLink>
+        <SongLink href={"https://song.link/us/i/" + single.songLink} color={textColor} target="_blank">Other Sources</SongLink>
       </SingleBox>
     </Container>
   )

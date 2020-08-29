@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Link, Switch, useRouteMatch } from 'react-router-dom';
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
@@ -65,7 +65,7 @@ class ProjectsHome extends React.Component {
           }}>
             {albums.map((album) => 
               <Link to={`${this.props.url}/${album.id}`}>
-                <AlbumCard title={album.title} cover={album.cover} onClick={() => alert("Album Clicked")} />
+                <AlbumCard title={album.title} cover={album.cover} />
               </Link>
             )}
           </Container>
@@ -115,6 +115,9 @@ class ProjectsHome extends React.Component {
 export default () => {
     let { path, url } = useRouteMatch();
 
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    })
     return (
       <Switch>
         <Route exact path={path}>
@@ -122,7 +125,7 @@ export default () => {
         </Route>
         {albums.map(album => (
           <Route path={`${path}/${album.id}`}>
-            <ProjectPage text={album.title} />
+            <ProjectPage album={album} />
           </Route>
         ))}
       </Switch>

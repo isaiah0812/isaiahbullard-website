@@ -1,4 +1,4 @@
-import { Container } from 'react-bootstrap';
+import { Container, Nav } from 'react-bootstrap';
 import styled from 'styled-components';
 
 export const PageBanner = styled(Container)`
@@ -57,4 +57,33 @@ export const PageSectionInfo = styled.h6`
   margin: 0;
   color: #707070;
   text-align: center;
+`
+
+export const PlayerTab = styled(Nav.Link)`
+  color: ${props => props.color};
+  font-size: 100%;
+  word-wrap: break-word;
+  text-align: center;
+
+  @media (max-width: 740px) {
+    font-size: 80%;
+  }
+
+  &:hover {
+    color: ${props => props.color === '#FFFFFF' ? '#000000' : '#FFFFFF'};
+  }
+`
+
+export const SongLink = styled.a`
+  color: ${props => props.color};
+  text-align: center;
+  font-size: 1.2em;
+
+  &:hover {
+    color: ${props => props.color};
+  }
+
+  &:visited {
+    color: ${props => props.color};
+  }
 `

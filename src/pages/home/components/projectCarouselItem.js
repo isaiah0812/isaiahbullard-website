@@ -54,7 +54,10 @@ const CarouselText = styled.h3`
   }
 `
 
-export default ({backdrop, logo, description}) => {
+/**
+ * @todo make this a class component
+ */
+export default ({backdrop, logo, description, link}) => {
   return (
     <Container fluid style={{padding: 0, height: 300}}>
       <CarouselSlide fluid backdrop={backdrop}>
@@ -63,7 +66,7 @@ export default ({backdrop, logo, description}) => {
             <CarouselImage src={logo} />
             <Container fluid style={{diplay: 'flex', width: '45%', alignSelf: 'center', height: 'auto', margin: 0}}>
               <CarouselText>{description}</CarouselText>
-              <Button text={'Listen'} />
+              <Button text={'Listen'} href={link} />
             </Container>
           </CarouselInfo>
         </CarouselSlideFade>

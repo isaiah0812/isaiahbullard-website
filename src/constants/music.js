@@ -70,6 +70,21 @@ export const albums = [
       'Gilleland'
     ],
     description: "This a description for an album.",
+    albumCredits: {
+      albumId: 'maestro',
+      mixedBy: ['Isaiah Bullard (@zaemadethis)'],
+      engineeredBy: ['Isaiah Bullard (@zaemadethis)'],
+      masteredBy: ['CoreyArnell (@arnellcorey)'],
+      artworkBy: ['Isaiah Bullard (@zaemadethis)'],
+      songwriters: [
+        'Isaiah Solomon Bullard',
+        'Bobby Bullard'
+      ],
+      specialThanks: [
+        'Jason Link',
+        'Bobby Bullard'
+      ]
+    }
   },
   {
     title: "Zae's Room",
@@ -108,6 +123,20 @@ export const albums = [
         'Rell Gibson',
         'Community Service (@communtyservce)'
       ],
+      songwriters: [
+        'Bobby Terrell Bullard',
+        'Corey Arnell Bullard',
+        'Isaiah Solomon Bullard',
+        'Jerry "JC" Connerly III',
+        'Larell Gibson',
+        'Mason Nooks',
+        'Mark Pheonix',
+        'Scott Phri',
+        'De\'John Linward Tinsley',
+        'Terrance Ari Walker',
+        'Zachary Alexander Washington',
+        'Uriel Christopher Winston',
+      ],
       mixedBy: ['Isaiah Bullard (@zaemadethis)'],
       engineeredBy: [
         'Isaiah Bullard (@zaemadethis)', 
@@ -116,20 +145,6 @@ export const albums = [
       ],
       masteredBy: ['Isaiah Bullard (@zaemadethis)'],
       artworkBy: ['SHOKKA (@shokkayo)'],
-      songWriters: [
-        'Isaiah Solomon Bullard',
-        'Zachary Alexander Washington',
-        'Mark Pheonix',
-        'Corey Arnell Bullard',
-        'Scott Phri',
-        'Mason Nooks',
-        'Jerry "JC" Connerly III',
-        'Terrance Ari Walker',
-        'De\'John Linward Tinsley',
-        'Uriel Christopher Winston',
-        'Bobby Terrell Bullard',
-        'Larell Gibson',
-      ],
       specialThanks: [
         'Isaac Bullard (@ibullyy)',
         'Sabrina Bell (@slbell1129)',
