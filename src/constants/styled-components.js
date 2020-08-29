@@ -87,3 +87,9 @@ export const SongLink = styled.a`
     color: ${props => props.color};
   }
 `
+
+export const PlayerSelector = styled(Nav.Item)`
+  background-color: ${props => props.bg};
+  border-radius: ${props => props.album ? '10px 0px 0px 10px' : '10px 10px 0px 0px'};
+  border: 0px;
+`

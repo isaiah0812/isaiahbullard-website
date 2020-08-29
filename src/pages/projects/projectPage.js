@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container, Row, Col, Tab, Nav } from 'react-bootstrap';
 
-import { PlayerTab, SongLink } from '../../constants/styled-components';
+import { PlayerTab, SongLink, PlayerSelector } from '../../constants/styled-components';
 
 const ProjectPageSection = styled(Container)`
   width: 100%;
@@ -51,12 +51,6 @@ const ProjectPageList = styled.ul`
 const ProjectPageInfoParagraph = styled.p`
   margin-left: 0.75rem;
   margin-right: 0.75rem;
-`
-
-const PlayerSelector = styled(Nav.Item)`
-  background-color: ${props => props.bg};
-  border-radius: 10px 0px 0px 10px;
-  border: 0px;
 `
 
 export default class ProjectPage extends React.Component {
@@ -182,16 +176,16 @@ export default class ProjectPage extends React.Component {
                 <Row>
                   <Col sm={3} style={{padding: 0}}>
                     <Nav className="flex-column">
-                      <PlayerSelector style={{backgroundColor: this.state.spotifyBgColor}}>
+                      <PlayerSelector album bg={this.state.spotifyBgColor}>
                         <PlayerTab eventKey="spotify" color={this.state.spotifyBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>Spotify</PlayerTab>
                       </PlayerSelector>
-                      <PlayerSelector style={{backgroundColor: this.state.appleBgColor}}>
+                      <PlayerSelector album bg={this.state.appleBgColor}>
                         <PlayerTab eventKey="apple" color={this.state.appleBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>Apple Music</PlayerTab>
                       </PlayerSelector>
-                      <PlayerSelector style={{backgroundColor: this.state.bandcampBgColor}}>
+                      <PlayerSelector album bg={this.state.bandcampBgColor}>
                         <PlayerTab eventKey="bandcamp" color={this.state.bandcampBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>Bandcamp</PlayerTab>
                       </PlayerSelector>
-                      <PlayerSelector style={{backgroundColor: this.state.soundcloudBgColor}}>
+                      <PlayerSelector album bg={this.state.soundcloudBgColor}>
                         <PlayerTab eventKey="soundcloud" color={this.state.soundcloudBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>SoundCloud</PlayerTab>
                       </PlayerSelector>
                     </Nav>
