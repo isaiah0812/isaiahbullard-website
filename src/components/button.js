@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from 'react-bootstrap/Button';
+import { Button as RBButton } from 'react-bootstrap';
 
-const StyledButton = styled(Button)`
+const StyledButton = styled(RBButton)`
   border-width: 7px;
   border-style: solid;
   border-radius: 16px;
@@ -31,14 +31,17 @@ const StyledButton = styled(Button)`
 /**
  * @todo make this a class component
  */
-export default ({submit, secondary, text, href}) => {
-  return (
-    <StyledButton 
-      type={submit ? 'submit' : 'button'} 
-      secondary={secondary} 
-      href={href}
-    >
-      {text}
-    </StyledButton>
-  );
+export default class Button extends React.Component {
+  render() {
+    const { submit, secondary, text, href } = this.props;
+    return (
+      <StyledButton 
+        type={submit ? 'submit' : 'button'} 
+        secondary={secondary} 
+        href={href}
+      >
+        {text}
+      </StyledButton>
+    );
+  }
 }
