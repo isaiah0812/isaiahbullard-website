@@ -48,117 +48,6 @@ const KEY_SIGS = {
   GSHARPMINOR: 'G#/Ab Minor',
 }
 
-export const albums = [
-  {
-    title: "Maestro",
-    cover: ma_cover,
-    id: "maestro",
-    releaseDate: "08.10.2018",
-    beatTape: false,
-    songList: [
-      'Fantasies and Fedoras',
-      'Ding-Dong',
-      'Sneakin Around in A Harmonic',
-      'Auxiliary',
-      'One in the Same',
-      'Gametime',
-      'Monroe',
-      'Sunday (Interlude)',
-      'S.A.M.',
-      'Prom Date',
-      'To Be Different',
-      'Gilleland'
-    ],
-    description: "This a description for an album.",
-    albumCredits: {
-      albumId: 'maestro',
-      mixedBy: ['Isaiah Bullard (@zaemadethis)'],
-      engineeredBy: ['Isaiah Bullard (@zaemadethis)'],
-      masteredBy: ['CoreyArnell (@arnellcorey)'],
-      artworkBy: ['Isaiah Bullard (@zaemadethis)'],
-      songwriters: [
-        'Isaiah Solomon Bullard',
-        'Bobby Bullard'
-      ],
-      specialThanks: [
-        'Jason Link',
-        'Bobby Bullard'
-      ]
-    }
-  },
-  {
-    title: "Zae's Room",
-    cover: zr_cover,
-    id: "zaes-room",
-    releaseDate: "10.16.2020",
-    beatTape: false,
-    songList: [
-      'Welcome To the Show',
-      'Toy Box',
-      'Big Thangs',
-      'Supervillain',
-      'Evil Plan',
-      'Brainstorm',
-      'KKK',
-      'Life Update (Interlude)',
-      'Famous Friends',
-      'Smoove',
-      'Good Luck Charm (Sheer Perfection)',
-      'By Design'
-    ],
-    description: "This a description for an album.",
-    albumCredits: {
-      albumId: 'zaes-room',
-      features: [
-        'FUZE (@igotwoezz)',
-        'Mark Pheonix (@markpheonix)',
-        'CoreyArnell (@arnellcorey)',
-        'Phri (@aintshitphri)',
-        'May',
-        '101 (@_blessyasoul)',
-        'LouieV T (@louiev.t)',
-        'De\'John Linward (@dejohnlinward)',
-        'Chris Winston (@chriswinston)',
-        'Bluu Suede (@bluusuede)',
-        'Rell Gibson',
-        'Community Service (@communtyservce)'
-      ],
-      songwriters: [
-        'Bobby Terrell Bullard',
-        'Corey Arnell Bullard',
-        'Isaiah Solomon Bullard',
-        'Jerry "JC" Connerly III',
-        'Larell Gibson',
-        'Mason Nooks',
-        'Mark Pheonix',
-        'Scott Phri',
-        'De\'John Linward Tinsley',
-        'Terrance Ari Walker',
-        'Zachary Alexander Washington',
-        'Uriel Christopher Winston',
-      ],
-      mixedBy: ['Isaiah Bullard (@zaemadethis)'],
-      engineeredBy: [
-        'Isaiah Bullard (@zaemadethis)', 
-        'Lucky Genius (@lucky777genius)', 
-        'Bluu Suede (@bluusuede)'
-      ],
-      masteredBy: ['Isaiah Bullard (@zaemadethis)'],
-      artworkBy: ['SHOKKA (@shokkayo)'],
-      specialThanks: [
-        'Isaac Bullard (@ibullyy)',
-        'Sabrina Bell (@slbell1129)',
-        'Isabella Valenzuela-Huefner (@bbella_v)',
-        'Ryan Hill (@literally_ryanhill)',
-        'Joshua Pane (@joshua.pane)',
-        'Michael Coffey',
-        'Schaeffer Duncan (@kingschaeffer)',
-        'Troy Robb (@troyrobb25)',
-      ]
-    }
-  },
-];
-
 export const beats = [
   {
     title: "8-Bit",
@@ -287,15 +176,6 @@ export const beats = [
     youtube: 'A1jwLZbWVBQ',
     keySignature: KEY_SIGS.CMINOR,
     tempo: 124,
-  },
-];
-
-export const beatTapes = [
-  {
-    title: "The Holly Jolly Tape",
-    cover: hj_cover,
-    id: "the-holly-jolly-tape",
-    beatTape: true,
   },
 ];
 
