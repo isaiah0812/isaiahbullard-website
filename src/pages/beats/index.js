@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Route, Link, Switch, useRouteMatch } from 'react-router-dom'
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import Accordion from 'react-bootstrap/Accordion';
 
 import banner from './assets/banner.jpg';
 import AlbumCard from '../projects/components/albumCard';
-import { beats, beatTapes } from '../../constants/music';
+import { beats, projects } from '../../constants/music';
 import { 
   PageBanner, 
   PageBannerFade, 
@@ -16,6 +17,7 @@ import {
   PageSectionInfo,
 } from '../../constants/styled-components';
 import BeatDisplay from './components/beatDisplay';
+import ProjectPage from '../projects/projectPage';
 
 const BeatsPageSection = styled(Container)`
   width: 48%;
@@ -27,11 +29,7 @@ const BeatsPageSection = styled(Container)`
   }
 `
 
-/**
- * @todo make the beats pages
- * @todo routing for beats pages
- */
-export default class Beats extends React.Component {
+class BeatsHome extends React.Component {
   render() {
     return (
       <Container fluid style={{padding: 0}}>
@@ -50,7 +48,11 @@ export default class Beats extends React.Component {
             <PageSectionInfo>All beats on Beat Tapes are for sale for the same prices as normal beats.</PageSectionInfo>
             <br />
             <Container style={{width: '80%', display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', padding: 0}}>
-              {beatTapes.map((beatTape) => <AlbumCard title={beatTape.title} cover={beatTape.cover} onClick={() => alert("Album Clicked")} />)}
+              {projects.filter(project => project.beatTape).map((beatTape) => 
+                <Link to={`${this.props.url}/${beatTape.id}`}>
+                  <AlbumCard title={beatTape.title} cover={beatTape.cover} />
+                </Link>
+              )}
             </Container>
           </BeatsPageSection>
           <BeatsPageSection fluid>
@@ -74,4 +76,29 @@ export default class Beats extends React.Component {
       </Container>
     );
   }
+}
+
+/**
+ * @todo make the beats pages
+ * @todo routing for beats pages
+ */
+export default () => {
+  let { path, url } = useRouteMatch();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
+  return (
+    <Switch>
+      <Route exact path={path}>
+        <BeatsHome url={url} />
+      </Route>
+      {projects.filter(project => project.beatTape).map(beatTape => (
+        <Route path={`${path}/${beatTape.id}`}>
+          <ProjectPage album={beatTape} />
+        </Route>
+      ))}
+    </Switch>
+  );
 }

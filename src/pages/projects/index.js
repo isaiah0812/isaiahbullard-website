@@ -7,7 +7,7 @@ import banner from './assets/banner.jpg';
 import AlbumCard from './components/albumCard';
 import SingleCard from './components/singleCard';
 import CreditCard from './components/creditCard';
-import { albums, singles, credits } from '../../constants/music';
+import { singles, credits, projects } from '../../constants/music';
 import { 
   PageBanner, 
   PageBannerFade, 
@@ -63,7 +63,7 @@ class ProjectsHome extends React.Component {
             flexWrap: 'wrap', 
             justifyContent: 'space-around'
           }}>
-            {albums.map((album) => 
+            {projects.filter(project => !project.beatTape).map((album) => 
               <Link to={`${this.props.url}/${album.id}`}>
                 <AlbumCard title={album.title} cover={album.cover} />
               </Link>
@@ -113,21 +113,21 @@ class ProjectsHome extends React.Component {
  * @todo MAKE THE FREAKING PROJECT PAGES
  */
 export default () => {
-    let { path, url } = useRouteMatch();
+  let { path, url } = useRouteMatch();
 
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    })
-    return (
-      <Switch>
-        <Route exact path={path}>
-          <ProjectsHome url={url}/>
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  })
+  return (
+    <Switch>
+      <Route exact path={path}>
+        <ProjectsHome url={url}/>
+      </Route>
+      {projects.filter(project => !project.beatTape).map(album => (
+        <Route path={`${path}/${album.id}`}>
+          <ProjectPage album={album} />
         </Route>
-        {albums.map(album => (
-          <Route path={`${path}/${album.id}`}>
-            <ProjectPage album={album} />
-          </Route>
-        ))}
-      </Switch>
-    );
+      ))}
+    </Switch>
+  );
 }

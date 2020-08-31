@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Row, Col, Tab, Nav } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
-import { PlayerTab, SongLink, PlayerSelector } from '../../constants/styled-components';
+import { SongLink } from '../../constants/styled-components';
+import AlbumPlayer from './components/albumPlayer';
+import BeatTapePlayer from './components/beatTapePlayer';
 
 const ProjectPageSection = styled(Container)`
   width: 100%;
@@ -90,24 +92,38 @@ export default class ProjectPage extends React.Component {
                     </ProjectPageList>
                   </ProjectPageInfoParagraph>
                 )}
-                <ProjectPageInfoParagraph>
-                  <strong>Songwriter(s):</strong>
-                  <ProjectPageList>
-                    {this.album.albumCredits.songwriters.map(songwriter => <li>{songwriter}</li>)}
-                  </ProjectPageList>
-                </ProjectPageInfoParagraph>
+                {this.album.beatTape ?
+                  (
+                    <ProjectPageInfoParagraph>
+                      <strong>Sample(s):</strong>
+                      <ProjectPageList>
+                        {this.album.albumCredits.samples.map(sample => <li>{sample}</li>)}
+                      </ProjectPageList>
+                    </ProjectPageInfoParagraph>
+                  ) :
+                  (
+                    <ProjectPageInfoParagraph>
+                      <strong>Songwriter(s):</strong>
+                      <ProjectPageList>
+                        {this.album.albumCredits.songwriters.map(songwriter => <li>{songwriter}</li>)}
+                      </ProjectPageList>
+                    </ProjectPageInfoParagraph>
+                  )
+                }
                 <ProjectPageInfoParagraph>
                   <strong>Mixing Engineer(s):</strong>
                   <ProjectPageList>
                     {this.album.albumCredits.mixedBy.map(mixer => <li>{mixer}</li>)}
                   </ProjectPageList>
                 </ProjectPageInfoParagraph>
-                <ProjectPageInfoParagraph>
-                  <strong>Vocal Engineer(s):</strong>
-                  <ProjectPageList>
-                    {this.album.albumCredits.engineeredBy.map(engineer => <li>{engineer}</li>)}
-                  </ProjectPageList>
-                </ProjectPageInfoParagraph>
+                {this.album.albumCredits.engineeredBy && (
+                  <ProjectPageInfoParagraph>
+                    <strong>Vocal Engineer(s):</strong>
+                    <ProjectPageList>
+                      {this.album.albumCredits.engineeredBy.map(engineer => <li>{engineer}</li>)}
+                    </ProjectPageList>
+                  </ProjectPageInfoParagraph>
+                )}
                 <ProjectPageInfoParagraph>
                   <strong>Mastering Engineer(s):</strong>
                   <ProjectPageList>
@@ -120,150 +136,21 @@ export default class ProjectPage extends React.Component {
                     {this.album.albumCredits.artworkBy.map(artist => <li>{artist}</li>)}
                   </ProjectPageList>
                 </ProjectPageInfoParagraph>
-                <ProjectPageInfoParagraph>
-                  <strong>Special Thanks:</strong>
-                  <ProjectPageList>
-                    {this.album.albumCredits.specialThanks.map(thanks => <li>{thanks}</li>)}
-                  </ProjectPageList>
-                </ProjectPageInfoParagraph>
+                {this.album.specialThanks && (
+                  <ProjectPageInfoParagraph>
+                    <strong>Special Thanks:</strong>
+                    <ProjectPageList>
+                      {this.album.albumCredits.specialThanks.map(thanks => <li>{thanks}</li>)}
+                    </ProjectPageList>
+                  </ProjectPageInfoParagraph>
+                )}
               </Container>
             </Container>
           </Container>
           <Container fluid style={{width: '50%', padding: 0, backgroundColor: '#29B3F1'}}>
             <Container fluid style={{padding: '4%', width: '100%', position: 'sticky', top: '7%', display: 'flex', flexDirection: 'column'}}>
               <ProjectPageSecondaryTitle style={{color: '#FFFFFF'}}>Listen</ProjectPageSecondaryTitle>
-              <Tab.Container 
-                defaultActiveKey="spotify"
-                onSelect={(e) => {
-                  switch(e) {
-                    case 'spotify': this.setState({
-                      spotifyBgColor: '#1DB954',
-                      appleBgColor: 'transparent',
-                      bandcampBgColor: 'transparent',
-                      soundcloudBgColor: 'transparent',
-                    });
-                    break;
-                    case 'apple': this.setState({
-                      spotifyBgColor: 'transparent',
-                      appleBgColor: '#FA57C1',
-                      bandcampBgColor: 'transparent',
-                      soundcloudBgColor: 'transparent',
-                    });
-                    break;
-                    case 'bandcamp': this.setState({
-                      spotifyBgColor: 'transparent',
-                      appleBgColor: 'transparent',
-                      bandcampBgColor: '#629AA9',
-                      soundcloudBgColor: 'transparent',
-                    });
-                    break;
-                    case 'soundcloud': this.setState({
-                      spotifyBgColor: 'transparent',
-                      appleBgColor: 'transparent',
-                      bandcampBgColor: 'transparent',
-                      soundcloudBgColor: '#FE5000',
-                    });
-                    break;
-                    default: this.setState({
-                      spotifyBgColor: 'transparent',
-                      appleBgColor: 'transparent',
-                      bandcampBgColor: 'transparent',
-                      soundcloudBgColor: 'transparent',
-                    })
-                  }
-                }} 
-              >
-                <Row>
-                  <Col sm={3} style={{padding: 0}}>
-                    <Nav className="flex-column">
-                      <PlayerSelector album bg={this.state.spotifyBgColor}>
-                        <PlayerTab eventKey="spotify" color={this.state.spotifyBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>Spotify</PlayerTab>
-                      </PlayerSelector>
-                      <PlayerSelector album bg={this.state.appleBgColor}>
-                        <PlayerTab eventKey="apple" color={this.state.appleBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>Apple Music</PlayerTab>
-                      </PlayerSelector>
-                      <PlayerSelector album bg={this.state.bandcampBgColor}>
-                        <PlayerTab eventKey="bandcamp" color={this.state.bandcampBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>Bandcamp</PlayerTab>
-                      </PlayerSelector>
-                      <PlayerSelector album bg={this.state.soundcloudBgColor}>
-                        <PlayerTab eventKey="soundcloud" color={this.state.soundcloudBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>SoundCloud</PlayerTab>
-                      </PlayerSelector>
-                    </Nav>
-                  </Col>
-                  <Col sm={9} style={{padding: 0}}>
-                    <Tab.Content>
-                      <Tab.Pane eventKey="spotify" style={{
-                        backgroundColor: '#1DB954',
-                        padding: '2%',
-                      }}>
-                        <iframe 
-                          title="Spotify" 
-                          src="https://open.spotify.com/embed/album/3vbvMwip1WpplVodTHHOrb" 
-                          style={{
-                            width: '100%',
-                            height: 420,
-                            border: 0,
-                          }}
-                          allowtransparency="true" 
-                          allow="encrypted-media" 
-                        />
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="apple" style={{
-                        backgroundColor: '#FA57C1',
-                        padding: '2%',
-                      }}>
-                        <iframe 
-                          title="Apple Music" 
-                          src="https://embed.music.apple.com/us/album/maestro/1422921065?app=music&amp;itsct=music_box&amp;itscg=30200&amp;ls=1" 
-                          height="450px" 
-                          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" 
-                          allow="autoplay *; encrypted-media *;" 
-                          style={{
-                            width: '100%', 
-                            height: 420,
-                            maxWidth: '660px', 
-                            overflow: 'hidden', 
-                            borderRadius: '10px', 
-                            background: 'transparent',
-                            border: 0
-                          }} 
-                        />
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="bandcamp" style={{
-                        backgroundColor: '#629AA9',
-                        padding: '2%',
-                      }}>
-                        <iframe 
-                          title="Bandcamp" 
-                          style={{
-                            border: 0, 
-                            width: '100%', 
-                            height: 420,
-                          }} 
-                          src="https://bandcamp.com/EmbeddedPlayer/album=2239082049/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" 
-                          seamless 
-                        />
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="soundcloud" style={{
-                        backgroundColor: '#FE5000',
-                        padding: '2%',
-                      }}>
-                        <iframe 
-                          title="SoundCloud" 
-                          style={{
-                            width: '100%',
-                            height: 420,
-                            border: 0,
-                          }}
-                          scrolling="no" 
-                          allow="autoplay" 
-                          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/580055703&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" 
-                        />
-                      </Tab.Pane>
-                    </Tab.Content>
-                  </Col>
-                </Row>
-              </Tab.Container>
+              {this.album.beatTape ? <BeatTapePlayer /> : <AlbumPlayer />}
               <SongLink href={"https://album.link/s/3vbvMwip1WpplVodTHHOrb"} color={'#000000'} target="_blank">Other Sources</SongLink>
             </Container>
           </Container>

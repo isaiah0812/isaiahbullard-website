@@ -18,6 +18,7 @@ export const carousel = [
       backdrop: hj_cover,
       logo: hj_logo,
       description: 'Merry Christmas. The Holly Jolly Tape is out now.',
+      link: '/beats/the-holly-jolly-tape'
     },
     {
       name: "Maestro",

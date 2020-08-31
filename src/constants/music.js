@@ -314,6 +314,159 @@ export const credits = [
   },
 ];
 
+export const projects = [
+  {
+    title: "Maestro",
+    cover: ma_cover,
+    id: "maestro",
+    releaseDate: "08.10.2018",
+    beatTape: false,
+    songList: [
+      'Fantasies and Fedoras',
+      'Ding-Dong',
+      'Sneakin Around in A Harmonic',
+      'Auxiliary',
+      'One in the Same',
+      'Gametime',
+      'Monroe',
+      'Sunday (Interlude)',
+      'S.A.M.',
+      'Prom Date',
+      'To Be Different',
+      'Gilleland'
+    ],
+    description: "This a description for an album.",
+    albumCredits: {
+      albumId: 'maestro',
+      producedBy: ['Isaiah Bullard (@zaemadethis)'],
+      mixedBy: ['Isaiah Bullard (@zaemadethis)'],
+      engineeredBy: ['Isaiah Bullard (@zaemadethis)'],
+      masteredBy: ['CoreyArnell (@arnellcorey)'],
+      artworkBy: ['Isaiah Bullard (@zaemadethis)'],
+      songwriters: [
+        'Isaiah Solomon Bullard',
+        'Bobby Bullard'
+      ],
+      specialThanks: [
+        'Jason Link',
+        'Bobby Bullard'
+      ]
+    },
+  },
+  {
+    title: "The Holly Jolly Tape",
+    cover: hj_cover,
+    id: "the-holly-jolly-tape",
+    releaseDate: '12.27.2019',
+    beatTape: true,
+    songList: [
+      'Dreamers',
+      'Mean',
+      'Tina',
+      'Grandma',
+      'Take a Look At Me',
+      'Slip \'N Slide',
+      'Snitch',
+      'Tingly',
+      'Lullaby',
+      'Be'
+    ],
+    description: "This a description for a beat tape.",
+    albumCredits: {
+      albumId: 'the-holly-jolly-tape',
+      samples: [
+        'I\'ll Be Home For Christmas - Michael Bublé',
+        'You\'re A Mean One, Mr. Grinch - Thurl Ravenscroft',
+        'Feliz Navidad',
+        'Grandma Got Run Over By a Reindeer',
+        'It\'s Beginning to Look A Lot Like Christmas - Bing Crosby',
+        'It\'s Beginning to Look A Lot Like Christmas - Some Sisters',
+        'Santa Baby - Ariana Grande',
+        'I Saw Mommy Kissing Santa Claus - The Jackson 5',
+        'Sleigh Ride - Ella Fitzgerald',
+        'Merry Christmas, Darling',
+        'This Christmas'
+      ],
+      producedBy: ['Isaiah Bullard (@zaemadethis)'],
+      mixedBy: ['Isaiah Bullard (@zaemadethis)'],
+      masteredBy: ['Isaiah Bullard (@zaemadethis)'],
+      artworkBy: ['Isaiah Bullard (@zaemadethis)'],
+    },
+  },
+  {
+    title: "Zae's Room",
+    cover: zr_cover,
+    id: "zaes-room",
+    releaseDate: "10.16.2020",
+    beatTape: false,
+    songList: [
+      'Welcome To the Show',
+      'Toy Box',
+      'Big Thangs',
+      'Supervillain',
+      'Evil Plan',
+      'Brainstorm',
+      'KKK',
+      'Life Update (Interlude)',
+      'Famous Friends',
+      'Smoove',
+      'Good Luck Charm (Sheer Perfection)',
+      'By Design'
+    ],
+    description: "This a description for an album.",
+    albumCredits: {
+      albumId: 'zaes-room',
+      features: [
+        'FUZE (@igotwoezz)',
+        'Mark Pheonix (@markpheonix)',
+        'CoreyArnell (@arnellcorey)',
+        'Phri (@aintshitphri)',
+        'May',
+        '101 (@_blessyasoul)',
+        'LouieV T (@louiev.t)',
+        'De\'John Linward (@dejohnlinward)',
+        'Chris Winston (@chriswinston)',
+        'Bluu Suede (@bluusuede)',
+        'Rell Gibson',
+        'Community Service (@communtyservce)'
+      ],
+      songwriters: [
+        'Bobby Terrell Bullard',
+        'Corey Arnell Bullard',
+        'Isaiah Solomon Bullard',
+        'Jerry "JC" Connerly III',
+        'Larell Gibson',
+        'Mason Nooks',
+        'Mark Pheonix',
+        'Scott Phri',
+        'De\'John Linward Tinsley',
+        'Terrance Ari Walker',
+        'Zachary Alexander Washington',
+        'Uriel Christopher Winston',
+      ],
+      producedBy: ['Isaiah Bullard (@zaemadethis)'],
+      mixedBy: ['Isaiah Bullard (@zaemadethis)'],
+      engineeredBy: [
+        'Isaiah Bullard (@zaemadethis)', 
+        'Lucky Genius (@lucky777genius)', 
+        'Bluu Suede (@bluusuede)'
+      ],
+      masteredBy: ['Isaiah Bullard (@zaemadethis)'],
+      artworkBy: ['SHOKKA (@shokkayo)'],
+      specialThanks: [
+        'Isaac Bullard (@ibullyy)',
+        'Sabrina Bell (@slbell1129)',
+        'Isabella Valenzuela-Huefner (@bbella_v)',
+        'Ryan Hill (@literally_ryanhill)',
+        'Joshua Pane (@joshua.pane)',
+        'Michael Coffey',
+        'Schaeffer Duncan (@kingschaeffer)',
+        'Troy Robb (@troyrobb25)',
+      ]
+    },
+  },
+];
+
 export const singles = [
   {
     title: "Fast Lane",
