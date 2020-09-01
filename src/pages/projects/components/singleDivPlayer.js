@@ -3,9 +3,6 @@ import { Container, Tab, Nav } from 'react-bootstrap';
 
 import { PlayerTab, PlayerSelector } from '../../../constants/styled-components'
 
-/**
- * @todo make this a class component
- */
 export default class SingleDivPlayer extends React.Component {
 
   constructor(props) {

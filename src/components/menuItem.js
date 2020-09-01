@@ -19,11 +19,11 @@ const MenuText = styled.h5`
   }
 `
 
-/**
- * @todo make this a class component
- */
-export default ({name}) => {
-  return (
-    <MenuText>{name}</MenuText>
-  );
+export default class MenuItem extends React.Component {
+  render() {
+    const { name } = this.props;
+    return (
+      <MenuText>{name}</MenuText>
+    );
+  }
 }

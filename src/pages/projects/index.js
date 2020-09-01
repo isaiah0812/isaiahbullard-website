@@ -108,10 +108,6 @@ class ProjectsHome extends React.Component {
   }
 }
 
-/**
- * @todo make this a class component
- * @todo MAKE THE FREAKING PROJECT PAGES
- */
 export default () => {
   let { path, url } = useRouteMatch();
 

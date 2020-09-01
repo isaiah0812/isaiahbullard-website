@@ -1,27 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AlbumCard from './albumCard';
 import SingleDiv from './singleDiv';
 
-/**
- * @todo make this a class component
- */
-export default ({single, onClick, open}) => {
-  const [display, setDisplay] = useState(open);
+export default class SingleCard extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div>
-      <AlbumCard 
-        title={single.title} 
-        cover={single.cover} 
-        onClick={() => {
-          onClick && onClick()
-          setDisplay(!display)
-        }}
-        id={single.id}
-      />
-      {display && (
-        <SingleDiv single={single} />
-      )}
-    </div>
-  );
+    this.state = {
+      display: this.props.open,
+    }
+  }
+
+  render() {
+    const { single, onClick } = this.props;
+    return (
+      <div>
+        <AlbumCard 
+          title={single.title} 
+          cover={single.cover} 
+          onClick={() => {
+            onClick && onClick()
+            this.setState({
+              display: !this.state.display,
+            })
+          }}
+          id={single.id}
+        />
+        {this.state.display && (
+          <SingleDiv single={single} />
+        )}
+      </div>
+    );
+  }
 }

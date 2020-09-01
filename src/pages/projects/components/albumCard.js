@@ -38,11 +38,10 @@ const AlbumTitle = styled.h3`
   font-size: 120%;
 `
 
-/**
- * @todo make this a class component
- * @todo add links to project pages
- */
-export default ({title, cover, onClick}) => {
+export default class AlbumCard extends React.Component {
+  render() {
+    const { title, cover, onClick } = this.props;
+
     return (
       <AlbumButton cover={cover} onClick={onClick}>
         <FadeHover>
@@ -50,4 +49,5 @@ export default ({title, cover, onClick}) => {
         </FadeHover>
       </AlbumButton>
     );
+  }
 }

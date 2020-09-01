@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Card, CardImg } from 'react-bootstrap';
 
-const BeatCard = styled(Card)`
+const StyledBeatCard = styled(Card)`
   width: 10em;
   background-color: #040B30;
   margin: 5px;
@@ -18,17 +18,17 @@ const BeatCard = styled(Card)`
   }
 `
 
-/**
- * @todo make this a class component
- */
-export default ({ name, cover, onClick }) => {
-  return (
-    <BeatCard onClick={onClick}>
-      <CardImg src={cover} />
-      <Card.Body>
-        <Card.Title>{name}</Card.Title>
-        <Card.Text>Click to Remove</Card.Text>
-      </Card.Body>
-    </BeatCard>
-  );
+export default class BeatCard extends React.Component {
+  render() {
+    const { name, cover, onClick } = this.props;
+    return (
+      <StyledBeatCard onClick={onClick}>
+        <CardImg src={cover} />
+        <Card.Body>
+          <Card.Title>{name}</Card.Title>
+          <Card.Text>Click to Remove</Card.Text>
+        </Card.Body>
+      </StyledBeatCard>
+    );
+  }
 }

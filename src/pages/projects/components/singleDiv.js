@@ -38,38 +38,38 @@ const SingleBox = styled(Container)`
   }
 `
 
-/**
- * @todo make this a class component
- */
-export default ({single}) => {
-  const textColor = (single.color < '#800000') ? '#000000' : '#FFFFFF'
-  return (
-    <Container fluid style={{
-      display: 'flex',
-      flexDirection: 'column',
-      padding: 0,
-    }}>
-      <Triangle color={single.color} />
-      <SingleBox fluid backgroundColor={single.color} color={textColor}>
-        <SingleTitle>{single.title}</SingleTitle>
-        {single.features && (
-          <SingleFeatures>feat. {single.features.map((feature, id) => {
-            if(id === single.features.length - 2) return feature + " "
-            else if(id === single.features.length - 1) return "& " + feature
-            else return feature + ", "
-          })}</SingleFeatures>
-        )}
-        <SingleDescription>{single.description}</SingleDescription>
-        <p>Release Date: {single.releaseDate}</p>
-        <SingleDivPlayer 
-          spotify={single.spotify}
-          apple={single.apple}
-          bandcamp={single.bandcamp}
-          soundcloud={single.soundcloud}
-          textColor={textColor}
-        />
-        <SongLink href={"https://song.link/us/i/" + single.songLink} color={textColor} target="_blank">Other Sources</SongLink>
-      </SingleBox>
-    </Container>
-  )
+export default class SingleDiv extends React.Component {
+  render() {
+    const { single } = this.props;
+    const textColor = (single.color < '#800000') ? '#000000' : '#FFFFFF'
+    return (
+      <Container fluid style={{
+        display: 'flex',
+        flexDirection: 'column',
+        padding: 0,
+      }}>
+        <Triangle color={single.color} />
+        <SingleBox fluid backgroundColor={single.color} color={textColor}>
+          <SingleTitle>{single.title}</SingleTitle>
+          {single.features && (
+            <SingleFeatures>feat. {single.features.map((feature, id) => {
+              if(id === single.features.length - 2) return feature + " "
+              else if(id === single.features.length - 1) return "& " + feature
+              else return feature + ", "
+            })}</SingleFeatures>
+          )}
+          <SingleDescription>{single.description}</SingleDescription>
+          <p>Release Date: {single.releaseDate}</p>
+          <SingleDivPlayer 
+            spotify={single.spotify}
+            apple={single.apple}
+            bandcamp={single.bandcamp}
+            soundcloud={single.soundcloud}
+            textColor={textColor}
+          />
+          <SongLink href={"https://song.link/us/i/" + single.songLink} color={textColor} target="_blank">Other Sources</SongLink>
+        </SingleBox>
+      </Container>
+    );
+  }
 }

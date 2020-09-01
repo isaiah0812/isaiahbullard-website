@@ -24,29 +24,31 @@ const SectionDescription = styled.div`
   }
 `
 
-/**
- * @todo make this a class component
- */
-export default ({primary, title, description, buttonText, href}) => {
-  return (
-    <Container 
-      fluid 
-      style={{
-        padding: '2%', 
-        display: 'flex', 
-        flexWrap: 'wrap', 
-        justifyContent: 'space-around', 
-        alignItems: 'center', 
-        minHeight: 300, 
-        backgroundColor: primary ? '#040B30' : '#FFFFFF', 
-        color: primary ? '#FFFFFF' : '#040B30',
-      }}
-    >
-      <SectionTitle>{title}</SectionTitle>
-      <Container fluid style={{display: 'flex', flexDirection: 'column', width: '40%', padding: 0, margin: 0}}>
-        <SectionDescription>{description}</SectionDescription>
-        <Button text={buttonText} secondary={!primary} href={href} />
+export default class HomeSection extends React.Component {
+
+  render() {
+    const { primary, title, description, buttonText, href } = this.props;
+
+    return (
+      <Container 
+        fluid 
+        style={{
+          padding: '2%', 
+          display: 'flex', 
+          flexWrap: 'wrap', 
+          justifyContent: 'space-around', 
+          alignItems: 'center', 
+          minHeight: 300, 
+          backgroundColor: primary ? '#040B30' : '#FFFFFF', 
+          color: primary ? '#FFFFFF' : '#040B30',
+        }}
+      >
+        <SectionTitle>{title}</SectionTitle>
+        <Container fluid style={{display: 'flex', flexDirection: 'column', width: '40%', padding: 0, margin: 0}}>
+          <SectionDescription>{description}</SectionDescription>
+          <Button text={buttonText} secondary={!primary} href={href} />
+        </Container>
       </Container>
-    </Container>
-  );
+    );
+  }
 }

@@ -54,23 +54,23 @@ const CarouselText = styled.h3`
   }
 `
 
-/**
- * @todo make this a class component
- */
-export default ({backdrop, logo, description, link}) => {
-  return (
-    <Container fluid style={{padding: 0, height: 300}}>
-      <CarouselSlide fluid backdrop={backdrop}>
-        <CarouselSlideFade fluid>
-          <CarouselInfo fluid>
-            <CarouselImage src={logo} />
-            <Container fluid style={{diplay: 'flex', width: '45%', alignSelf: 'center', height: 'auto', margin: 0}}>
-              <CarouselText>{description}</CarouselText>
-              <Button text={'Listen'} href={link} />
-            </Container>
-          </CarouselInfo>
-        </CarouselSlideFade>
-      </CarouselSlide>
-    </Container>
-  );
+export default class ProjectCarouselItem extends React.Component {
+  render() {
+    const { backdrop, logo, description, link } = this.props;
+    return (
+      <Container fluid style={{padding: 0, height: 300}}>
+        <CarouselSlide fluid backdrop={backdrop}>
+          <CarouselSlideFade fluid>
+            <CarouselInfo fluid>
+              <CarouselImage src={logo} />
+              <Container fluid style={{diplay: 'flex', width: '45%', alignSelf: 'center', height: 'auto', margin: 0}}>
+                <CarouselText>{description}</CarouselText>
+                <Button text={'Listen'} href={link} />
+              </Container>
+            </CarouselInfo>
+          </CarouselSlideFade>
+        </CarouselSlide>
+      </Container>
+    );
+  }
 }

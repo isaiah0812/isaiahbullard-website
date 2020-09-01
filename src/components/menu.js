@@ -16,25 +16,24 @@ const navBrandStyle = {
   fontSize: '175%',
 }
 
-/**
- * @todo make this a class component
- */
-export default () => {
-  return (
-    <Navbar expand='lg' style={navbarStyle} sticky='top'>
-      <Navbar.Brand href='/' style={navBrandStyle}>Isaiah Bullard</Navbar.Brand>
-      <Navbar.Toggle aria-controls='basic-navbar-nav'><FontAwesomeIcon icon={faBars} style={{color: 'white'}}/></Navbar.Toggle>
-      <Navbar.Collapse id='basic-navbar-nav'>
-        <Nav>
-          {routes.map((route) => {
-            return (
-              <Nav.Link key={route.key} href={route.path}>
-                <MenuItem name={route.name} />
-              </Nav.Link>
-            );
-          })}
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-  );
+export default class Menu extends React.Component {
+  render() {
+    return (
+      <Navbar expand='lg' style={navbarStyle} sticky='top'>
+        <Navbar.Brand href='/' style={navBrandStyle}>Isaiah Bullard</Navbar.Brand>
+        <Navbar.Toggle aria-controls='basic-navbar-nav'><FontAwesomeIcon icon={faBars} style={{color: 'white'}}/></Navbar.Toggle>
+        <Navbar.Collapse id='basic-navbar-nav'>
+          <Nav>
+            {routes.map((route) => {
+              return (
+                <Nav.Link key={route.key} href={route.path}>
+                  <MenuItem name={route.name} />
+                </Nav.Link>
+              );
+            })}
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    );
+  }
 }

@@ -10,23 +10,22 @@ import {
   PageSectionTitle,
 } from '../../constants/styled-components';
 
-/**
- * @todo make this a class component
- */
-export default () => {
-  return (
-    <Container fluid style={{padding: 0}}>
-      <PageBanner fluid background={banner}>
-        <PageBannerFade fluid>
-          <BannerText fluid>
-            <BannerTitle>Merchandise</BannerTitle>
-            <BannerCaption>Merchandise coming soon ;)</BannerCaption>
-          </BannerText>
-        </PageBannerFade>
-      </PageBanner>
-      <Container style={{padding: 60}}>
-        <PageSectionTitle>Coming Soon</PageSectionTitle>
+export default class Merchandise extends React.Component {
+  render() {
+    return (
+      <Container fluid style={{padding: 0}}>
+        <PageBanner fluid background={banner}>
+          <PageBannerFade fluid>
+            <BannerText fluid>
+              <BannerTitle>Merchandise</BannerTitle>
+              <BannerCaption>Merchandise coming soon ;)</BannerCaption>
+            </BannerText>
+          </PageBannerFade>
+        </PageBanner>
+        <Container style={{padding: 60}}>
+          <PageSectionTitle>Coming Soon</PageSectionTitle>
+        </Container>
       </Container>
-    </Container>
-  );
+    );
+  }
 }

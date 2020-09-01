@@ -78,10 +78,7 @@ class BeatsHome extends React.Component {
   }
 }
 
-/**
- * @todo make the beats pages
- * @todo routing for beats pages
- */
+// This has to be a functional component in order to use useRouteMatch()
 export default () => {
   let { path, url } = useRouteMatch();
 

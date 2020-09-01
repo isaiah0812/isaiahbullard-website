@@ -31,26 +31,26 @@ const CreditTitle = styled.h4`
   text-overflow: ellipsis;
 `
 
-/**
- * @todo make this a class component
- */
-export default ({credit}) => {
-	return (
-    <CreditLink href={credit.link} target="_blank">
-      <OverlayTrigger 
-        key={credit.id}
-        placement="right"
-        overlay={
-          <Tooltip id={`tooltip-${credit.id}`}>
-            {credit.title} - {credit.artist}
-          </Tooltip>
-        }
-      >
-        <CreditButton>
-          <CreditTitle>{credit.title} - {credit.artist}</CreditTitle>
-          Click to listen
-        </CreditButton>
-      </OverlayTrigger>
-    </CreditLink>
-	)
+export default class CreditCard extends React.Component {
+  render() {
+    const { credit } = this.props;
+    return (
+      <CreditLink href={credit.link} target="_blank">
+        <OverlayTrigger 
+          key={credit.id}
+          placement="right"
+          overlay={
+            <Tooltip id={`tooltip-${credit.id}`}>
+              {credit.title} - {credit.artist}
+            </Tooltip>
+          }
+        >
+          <CreditButton>
+            <CreditTitle>{credit.title} - {credit.artist}</CreditTitle>
+            Click to listen
+          </CreditButton>
+        </OverlayTrigger>
+      </CreditLink>
+    )
+  }
 }

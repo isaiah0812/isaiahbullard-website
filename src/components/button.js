@@ -28,9 +28,6 @@ const StyledButton = styled(RBButton)`
 
 `
 
-/**
- * @todo make this a class component
- */
 export default class Button extends React.Component {
   render() {
     const { submit, secondary, text, href } = this.props;
