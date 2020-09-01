@@ -62,11 +62,13 @@ export const PageSectionInfo = styled.h6`
 export const PlayerTab = styled(Nav.Link)`
   color: ${props => props.color};
   font-size: 100%;
-  word-wrap: break-word;
   text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 
   @media (max-width: 740px) {
-    font-size: 80%;
+    font-size: 74%;
   }
 
   &:hover {
@@ -92,4 +94,9 @@ export const PlayerSelector = styled(Nav.Item)`
   background-color: ${props => props.bg};
   border-radius: ${props => props.album ? '10px 0px 0px 10px' : '10px 10px 0px 0px'};
   border: 0px;
+  width: 100%;
+
+  @media (max-width: 575px) {
+    border-radius: ${props => props.album ? '10px 10px 10px 10px' : '10px 10px 0px 0px'};
+  }
 `

@@ -64,7 +64,7 @@ class ProjectsHome extends React.Component {
             justifyContent: 'space-around'
           }}>
             {projects.filter(project => !project.beatTape).map((album) => 
-              <Link to={`${this.props.url}/${album.id}`}>
+              <Link key={album.id} to={`${this.props.url}/${album.id}`}>
                 <AlbumCard title={album.title} cover={album.cover} />
               </Link>
             )}
@@ -90,7 +90,7 @@ class ProjectsHome extends React.Component {
                 if (id === this.state.openId) {
                   return false
                 }
-                return (<SingleCard single={single} onClick={() => this.setState({
+                return (<SingleCard key={single.id} single={single} onClick={() => this.setState({
                   open: single, 
                   openId: id,
                 })} />)
@@ -100,7 +100,7 @@ class ProjectsHome extends React.Component {
           <PageSectionTitle>Credits</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
           <CreditSection fluid>
-            {credits.map((credit) => <CreditCard credit={credit} />)}
+            {credits.map((credit) => <CreditCard key={credit.id} credit={credit} />)}
           </CreditSection>
         </Container>
       </Container>
@@ -124,7 +124,7 @@ export default () => {
         <ProjectsHome url={url}/>
       </Route>
       {projects.filter(project => !project.beatTape).map(album => (
-        <Route path={`${path}/${album.id}`}>
+        <Route key={album.id} path={`${path}/${album.id}`}>
           <ProjectPage album={album} />
         </Route>
       ))}

@@ -3,8 +3,8 @@ import { Row, Col, Tab, Nav } from 'react-bootstrap';
 import { PlayerTab, PlayerSelector } from '../../../constants/styled-components';
 
 export default class AlbumPlayer extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       spotifyBgColor: '#1DB954',
@@ -78,13 +78,14 @@ export default class AlbumPlayer extends React.Component {
               <Tab.Pane eventKey="spotify" style={{
                 backgroundColor: '#1DB954',
                 padding: '2%',
+                height: 420,
               }}>
                 <iframe 
                   title="Spotify" 
                   src="https://open.spotify.com/embed/album/3vbvMwip1WpplVodTHHOrb" 
                   style={{
                     width: '100%',
-                    height: 420,
+                    height: '100%',
                     border: 0,
                   }}
                   allowtransparency="true" 
@@ -94,6 +95,7 @@ export default class AlbumPlayer extends React.Component {
               <Tab.Pane eventKey="apple" style={{
                 backgroundColor: '#FA57C1',
                 padding: '2%',
+                height: 420,
               }}>
                 <iframe 
                   title="Apple Music" 
@@ -103,7 +105,7 @@ export default class AlbumPlayer extends React.Component {
                   allow="autoplay *; encrypted-media *;" 
                   style={{
                     width: '100%', 
-                    height: 420,
+                    height: '100%',
                     maxWidth: '660px', 
                     overflow: 'hidden', 
                     borderRadius: '10px', 
@@ -115,13 +117,14 @@ export default class AlbumPlayer extends React.Component {
               <Tab.Pane eventKey="bandcamp" style={{
                 backgroundColor: '#629AA9',
                 padding: '2%',
+                height: 420,
               }}>
                 <iframe 
                   title="Bandcamp" 
                   style={{
                     border: 0, 
                     width: '100%', 
-                    height: 420,
+                    height: '100%',
                   }} 
                   src="https://bandcamp.com/EmbeddedPlayer/album=2239082049/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" 
                   seamless 
@@ -130,12 +133,13 @@ export default class AlbumPlayer extends React.Component {
               <Tab.Pane eventKey="soundcloud" style={{
                 backgroundColor: '#FE5000',
                 padding: '2%',
+                height: 420,
               }}>
                 <iframe 
                   title="SoundCloud" 
                   style={{
                     width: '100%',
-                    height: 420,
+                    height: '100%',
                     border: 0,
                   }}
                   scrolling="no" 

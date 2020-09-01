@@ -12,10 +12,16 @@ const ProjectPageSection = styled(Container)`
   display: flex;
   flex-direction: row;
   color: #040B30;
+  flex-wrap: wrap;
 `
 
 const ProjectPageCover = styled.img`
   width: 50%;
+  height: 100%;
+
+  @media (max-width: 740px) {
+    width: 100%;
+  }
 `
 
 const ProjectPageHeader = styled(Container)`
@@ -27,12 +33,21 @@ const ProjectPageHeader = styled(Container)`
   align-items: center;
   background-color: #040B30;
   color: #FFFFFF;
+  padding: 2%;
+
+  @media (max-width: 740px) {
+    width: 100%;
+  }
 `
 
 const ProjectPageTitle = styled.h1`
   font-weight: normal;
   font-size: 4.5em;
   text-align: center;
+
+  @media (max-width: 740px) {
+    font-size: 4em;
+  }
 `
 
 const ProjectPageReleaseDate = styled.h3`
@@ -55,6 +70,15 @@ const ProjectPageInfoParagraph = styled.p`
   margin-right: 0.75rem;
 `
 
+const ProjectPageInfoSection = styled(Container)`
+  width: 50%;
+  padding: 10px;
+
+  @media (max-width: 740px) {
+    width: 100%;
+  }
+`
+
 export default class ProjectPage extends React.Component {
   constructor(props) {
     super(props);
@@ -71,7 +95,7 @@ export default class ProjectPage extends React.Component {
   render() {
     return (
       <Container fluid style={{ padding: 0 }}>
-        <ProjectPageSection fluid style={{width: '100%', padding: 0, display: 'flex', flexDirection: 'row'}}>
+        <ProjectPageSection fluid style={{flexWrap: 'wrap-reverse'}}>
           <ProjectPageCover src={this.album.cover} />
           <ProjectPageHeader fluid>
             <ProjectPageTitle>{this.album.title}</ProjectPageTitle>
@@ -79,8 +103,8 @@ export default class ProjectPage extends React.Component {
           </ProjectPageHeader>
         </ProjectPageSection>
         <ProjectPageSection fluid>
-          <Container fluid style={{width: '50%', padding: 0}}>
-            <Container fluid style={{width: '100%', padding: '4%'}}>
+          <ProjectPageInfoSection fluid>
+            <Container fluid style={{width: '100%', padding: '4%', top: '7.5%'}}>
               <ProjectPageSecondaryTitle>{this.album.title}</ProjectPageSecondaryTitle>
               <ProjectPageInfoParagraph>{this.album.description}</ProjectPageInfoParagraph>
               <Container fluid style={{padding: 0, display: 'flex', flexWrap: 'wrap'}}>
@@ -146,14 +170,14 @@ export default class ProjectPage extends React.Component {
                 )}
               </Container>
             </Container>
-          </Container>
-          <Container fluid style={{width: '50%', padding: 0, backgroundColor: '#29B3F1'}}>
-            <Container fluid style={{padding: '4%', width: '100%', position: 'sticky', top: '7%', display: 'flex', flexDirection: 'column'}}>
+          </ProjectPageInfoSection>
+          <ProjectPageInfoSection fluid style={{backgroundColor: '#29B3F1'}}>
+            <Container fluid style={{padding: '4%', width: '100%', position: 'sticky', top: '7.5%', display: 'flex', flexDirection: 'column'}}>
               <ProjectPageSecondaryTitle style={{color: '#FFFFFF'}}>Listen</ProjectPageSecondaryTitle>
               {this.album.beatTape ? <BeatTapePlayer /> : <AlbumPlayer />}
               <SongLink href={"https://album.link/s/3vbvMwip1WpplVodTHHOrb"} color={'#000000'} target="_blank">Other Sources</SongLink>
             </Container>
-          </Container>
+          </ProjectPageInfoSection>
         </ProjectPageSection>
       </Container>
     )

@@ -8,7 +8,7 @@ import { routes } from '../constants/routing';
 
 const navbarStyle = {
   backgroundColor: 'black',
-  boxShadow: '0px 5px 20px #000000',
+  boxShadow: '0px 5px 10px #000000',
 }
 
 const navBrandStyle = {
