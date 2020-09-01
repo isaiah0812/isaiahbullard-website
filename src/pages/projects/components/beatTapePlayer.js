@@ -104,7 +104,7 @@ export default class BeatTapePlayer extends React.Component {
                   }}
                   src="https://www.youtube.com/embed/videoseries?list=PLFzSU3ciTsEdcdV4b1BQs2YlmdVb8g39h" 
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen
+                  allowFullScreen
                 />
               </Tab.Pane>
             </Tab.Content>
