@@ -27,7 +27,7 @@ const SingleDescription = styled.p`
 `
 
 const SingleBox = styled(Container)`
-  background-color: ${props => props.backgroundColor};
+  background-color: ${props => props.backgroundcolor};
   color: ${props => props.color};
   width: 60%;
   padding: 2%;
@@ -49,7 +49,7 @@ export default class SingleDiv extends React.Component {
         padding: 0,
       }}>
         <Triangle color={single.color} />
-        <SingleBox fluid backgroundColor={single.color} color={textColor}>
+        <SingleBox fluid backgroundcolor={single.color} color={textColor}>
           <SingleTitle>{single.title}</SingleTitle>
           {single.features && (
             <SingleFeatures>feat. {single.features.map((feature, id) => {

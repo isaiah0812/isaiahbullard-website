@@ -6,7 +6,7 @@ const StyledButton = styled(RBButton)`
   border-width: 7px;
   border-style: solid;
   border-radius: 16px;
-  border-color: ${props => props.type === "submit" ? '#040B30' : (props.secondary ? '#040B30' : '#FFFFFF')};
+  border-color: ${props => props.type === "submit" ? '#040B30' : (props.secondary === 'true' ? '#040B30' : '#FFFFFF')};
   background-color: ${props => props.type === "submit" ? '#707070' : '#29B3F1'};
   text-align: center;
   font-size: 150%;

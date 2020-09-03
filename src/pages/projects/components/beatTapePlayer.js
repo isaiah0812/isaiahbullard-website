@@ -47,13 +47,13 @@ export default class BeatTapePlayer extends React.Component {
         <Row>
           <Col sm={3} style={{padding: 0}}>
             <Nav className="flex-column">
-              <PlayerSelector album bg={this.state.bandcampBgColor}>
+              <PlayerSelector album={1} bg={this.state.bandcampBgColor}>
                 <PlayerTab eventKey="bandcamp" color={this.state.bandcampBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>Bandcamp</PlayerTab>
               </PlayerSelector>
-              <PlayerSelector album bg={this.state.soundcloudBgColor}>
+              <PlayerSelector album={1} bg={this.state.soundcloudBgColor}>
                 <PlayerTab eventKey="soundcloud" color={this.state.soundcloudBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>SoundCloud</PlayerTab>
               </PlayerSelector>
-              <PlayerSelector album bg={this.state.youtubeBgColor}>
+              <PlayerSelector album={1} bg={this.state.youtubeBgColor}>
                 <PlayerTab eventKey="youtube" color={this.state.youtubeBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>YouTube</PlayerTab>
               </PlayerSelector>
             </Nav>

@@ -8,8 +8,8 @@ export default class ProjectCarousel extends React.Component {
   render() {
     return (
       <Carousel style={{height: 300}} interval={5000}>
-        {carousel.map((entry) => (
-          <CarouselItem style={{height: '100%'}}>
+        {carousel.map((entry, index) => (
+          <CarouselItem key={index} style={{height: '100%'}}>
             <ProjectCarouselItem 
               backdrop={entry.backdrop} 
               logo={entry.logo} 

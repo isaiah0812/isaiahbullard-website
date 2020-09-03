@@ -59,16 +59,16 @@ export default class AlbumPlayer extends React.Component {
         <Row>
           <Col sm={3} style={{padding: 0}}>
             <Nav className="flex-column">
-              <PlayerSelector album bg={this.state.spotifyBgColor}>
+              <PlayerSelector album={1} bg={this.state.spotifyBgColor}>
                 <PlayerTab eventKey="spotify" color={this.state.spotifyBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>Spotify</PlayerTab>
               </PlayerSelector>
-              <PlayerSelector album bg={this.state.appleBgColor}>
+              <PlayerSelector album={1} bg={this.state.appleBgColor}>
                 <PlayerTab eventKey="apple" color={this.state.appleBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>Apple Music</PlayerTab>
               </PlayerSelector>
-              <PlayerSelector album bg={this.state.bandcampBgColor}>
+              <PlayerSelector album={1} bg={this.state.bandcampBgColor}>
                 <PlayerTab eventKey="bandcamp" color={this.state.bandcampBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>Bandcamp</PlayerTab>
               </PlayerSelector>
-              <PlayerSelector album bg={this.state.soundcloudBgColor}>
+              <PlayerSelector album={1} bg={this.state.soundcloudBgColor}>
                 <PlayerTab eventKey="soundcloud" color={this.state.soundcloudBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>SoundCloud</PlayerTab>
               </PlayerSelector>
             </Nav>
@@ -100,8 +100,6 @@ export default class AlbumPlayer extends React.Component {
                 <iframe 
                   title="Apple Music" 
                   src="https://embed.music.apple.com/us/album/maestro/1422921065?app=music&amp;itsct=music_box&amp;itscg=30200&amp;ls=1" 
-                  height="450px" 
-                  sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" 
                   allow="autoplay *; encrypted-media *;" 
                   style={{
                     width: '100%', 

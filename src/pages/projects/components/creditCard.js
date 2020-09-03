@@ -38,7 +38,7 @@ export default class CreditCard extends React.Component {
       <CreditLink href={credit.link} target="_blank">
         <OverlayTrigger 
           key={credit.id}
-          placement="right"
+          placement="top"
           overlay={
             <Tooltip id={`tooltip-${credit.id}`}>
               {credit.title} - {credit.artist}

@@ -11,6 +11,7 @@ export default class Home extends React.Component {
         <ProjectCarousel />
         {sections.map((section, index) => (
           <HomeSection 
+            key={index}
             primary={index%2 === 0}
             title={section.title}
             description={section.description}

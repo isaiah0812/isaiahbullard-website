@@ -49,7 +49,7 @@ class BeatsHome extends React.Component {
             <br />
             <Container style={{width: '80%', display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', padding: 0}}>
               {projects.filter(project => project.beatTape).map((beatTape) => 
-                <Link to={`${this.props.url}/${beatTape.id}`}>
+                <Link key={beatTape.id} to={`${this.props.url}/${beatTape.id}`}>
                   <AlbumCard title={beatTape.title} cover={beatTape.cover} />
                 </Link>
               )}
@@ -67,7 +67,7 @@ class BeatsHome extends React.Component {
             <Container fluid style={{width: '100%', padding: 0}}>
               <Accordion>
                 {beats.map((beat) => (
-                  <BeatDisplay beat={beat} />
+                  <BeatDisplay key={beat.id} beat={beat} />
                 ))}
               </Accordion>
             </Container>
@@ -92,7 +92,7 @@ export default () => {
         <BeatsHome url={url} />
       </Route>
       {projects.filter(project => project.beatTape).map(beatTape => (
-        <Route path={`${path}/${beatTape.id}`}>
+        <Route key={beatTape.id} path={`${path}/${beatTape.id}`}>
           <ProjectPage album={beatTape} />
         </Route>
       ))}

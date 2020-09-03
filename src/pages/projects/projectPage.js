@@ -65,7 +65,7 @@ const ProjectPageList = styled.ul`
   list-style-type: none;
 `
 
-const ProjectPageInfoParagraph = styled.p`
+const ProjectPageInfoParagraph = styled.div`
   margin-left: 0.75rem;
   margin-right: 0.75rem;
 `
@@ -112,7 +112,7 @@ export default class ProjectPage extends React.Component {
                   <ProjectPageInfoParagraph>
                     <strong>Featuring (in order of appearance):</strong>
                     <ProjectPageList>
-                      {this.album.albumCredits.features.map(feature => <li>{feature}</li>)}
+                      {this.album.albumCredits.features.map((feature, index) => <li key={index}>{feature}</li>)}
                     </ProjectPageList>
                   </ProjectPageInfoParagraph>
                 )}
@@ -121,7 +121,7 @@ export default class ProjectPage extends React.Component {
                     <ProjectPageInfoParagraph>
                       <strong>Sample(s):</strong>
                       <ProjectPageList>
-                        {this.album.albumCredits.samples.map(sample => <li>{sample}</li>)}
+                        {this.album.albumCredits.samples.map((sample, index) => <li key={index}>{sample}</li>)}
                       </ProjectPageList>
                     </ProjectPageInfoParagraph>
                   ) :
@@ -129,7 +129,7 @@ export default class ProjectPage extends React.Component {
                     <ProjectPageInfoParagraph>
                       <strong>Songwriter(s):</strong>
                       <ProjectPageList>
-                        {this.album.albumCredits.songwriters.map(songwriter => <li>{songwriter}</li>)}
+                        {this.album.albumCredits.songwriters.map((songwriter, index) => <li key={index}>{songwriter}</li>)}
                       </ProjectPageList>
                     </ProjectPageInfoParagraph>
                   )
@@ -137,34 +137,34 @@ export default class ProjectPage extends React.Component {
                 <ProjectPageInfoParagraph>
                   <strong>Mixing Engineer(s):</strong>
                   <ProjectPageList>
-                    {this.album.albumCredits.mixedBy.map(mixer => <li>{mixer}</li>)}
+                    {this.album.albumCredits.mixedBy.map((mixer, index) => <li key={index}>{mixer}</li>)}
                   </ProjectPageList>
                 </ProjectPageInfoParagraph>
                 {this.album.albumCredits.engineeredBy && (
                   <ProjectPageInfoParagraph>
                     <strong>Vocal Engineer(s):</strong>
                     <ProjectPageList>
-                      {this.album.albumCredits.engineeredBy.map(engineer => <li>{engineer}</li>)}
+                      {this.album.albumCredits.engineeredBy.map((engineer, index) => <li key={index}>{engineer}</li>)}
                     </ProjectPageList>
                   </ProjectPageInfoParagraph>
                 )}
                 <ProjectPageInfoParagraph>
                   <strong>Mastering Engineer(s):</strong>
                   <ProjectPageList>
-                    {this.album.albumCredits.masteredBy.map(master => <li>{master}</li>)}
+                    {this.album.albumCredits.masteredBy.map((master, index) => <li key={index}>{master}</li>)}
                   </ProjectPageList>
                 </ProjectPageInfoParagraph>
                 <ProjectPageInfoParagraph>
                   <strong>Artwork By:</strong>
                   <ProjectPageList>
-                    {this.album.albumCredits.artworkBy.map(artist => <li>{artist}</li>)}
+                    {this.album.albumCredits.artworkBy.map((artist, index) => <li key={index}>{artist}</li>)}
                   </ProjectPageList>
                 </ProjectPageInfoParagraph>
                 {this.album.specialThanks && (
                   <ProjectPageInfoParagraph>
                     <strong>Special Thanks:</strong>
                     <ProjectPageList>
-                      {this.album.albumCredits.specialThanks.map(thanks => <li>{thanks}</li>)}
+                      {this.album.albumCredits.specialThanks.map((thanks, index) => <li key={index}>{thanks}</li>)}
                     </ProjectPageList>
                   </ProjectPageInfoParagraph>
                 )}

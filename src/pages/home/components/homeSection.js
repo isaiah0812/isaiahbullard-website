@@ -46,7 +46,7 @@ export default class HomeSection extends React.Component {
         <SectionTitle>{title}</SectionTitle>
         <Container fluid style={{display: 'flex', flexDirection: 'column', width: '40%', padding: 0, margin: 0}}>
           <SectionDescription>{description}</SectionDescription>
-          <Button text={buttonText} secondary={!primary} href={href} />
+          <Button text={buttonText} secondary={!primary ? 'true' : 'false'} href={href} />
         </Container>
       </Container>
     );
