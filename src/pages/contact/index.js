@@ -11,6 +11,7 @@ import {
   FormCheck,
   Alert
 } from 'react-bootstrap';
+import { init, send } from 'emailjs-com';
 
 import banner from './assets/banner.jpg';
 import Button from '../../components/button';
@@ -45,8 +46,7 @@ const HoveringForm = styled.div`
 `
 
 /**
- * @todo Inject emailjs?
- * @todo Make selecting beats required when chekcing the checkbox
+ * @todo Send selected beats when purchasing beats
  */
 export default class Contact extends React.Component {
   
@@ -65,6 +65,7 @@ export default class Contact extends React.Component {
       purchasingBeats: false,
     }
 
+    init("user_NhpX6mA3wYfbJ5YRxETqn");
     this.handleChange = this.addBeat.bind(this);
   }
 
@@ -76,21 +77,33 @@ export default class Contact extends React.Component {
   
   onSubmit = (e) => {
     e.preventDefault();
-    const newLineRegex = /\n/gi;
 
-    const emailString = 'mailto:beatsbyzae12@gmail.com?subject=Contacting Isaiah Bullard&body='
-                        + this.state.statement.replace(newLineRegex, '%0A%0D') 
-                        + '%0A%0D%0A%0DEmail from ' + this.state.yourName + ' ' 
-                        + this.state.organization  + ' ' + this.state.email;
-
-    window.location.assign(emailString);
-    this.setState({
-      yourName: "",
-      organization: "",
-      email: "",
-      statement: "",
-      alertVisible: true,
+    send(
+      "service_22v4zop", 
+      "template_fe1k1ey", {
+        name: this.state.yourName,
+        organization: this.state.organization,
+        user_email: this.state.email,
+        statement: this.state.statement,
+        subject: "Test Subject",
+      })
+    .then((result) => {
+      console.log(result);
+      this.setState({
+        yourName: "",
+        organization: "",
+        email: "",
+        statement: "",
+        alertVisible: true,
+        selected: [],
+        toastVisible: false,
+        recentBeat: beats[0],
+        purchasingBeats: false,
+      }, (error) => {
+        console.log(error);
+      })
     })
+    
   }
 
   addBeat = (event) => {
@@ -191,6 +204,7 @@ export default class Contact extends React.Component {
                     type={'checkbox'} 
                     label="I'm purchasing a beat" 
                     onChange={() => this.setState({purchasingBeats: !this.state.purchasingBeats})}
+                    checked={this.state.purchasingBeats}
                   />
                   {
                     !this.state.purchasingBeats 
@@ -201,7 +215,13 @@ export default class Contact extends React.Component {
                 {this.state.purchasingBeats && (
                   <FormGroup>
                     <FormLabel>Select Beats to Purchase</FormLabel>
-                    <FormControl name='beatList' as={'select'} onChange={this.handleChange} value="">
+                    <FormControl 
+                      name='beatList' 
+                      as={'select'} 
+                      onChange={this.handleChange} 
+                      value=""
+                      required={this.state.selected.length === 0}
+                    >
                       <option value="" />
                       {beats.filter((beat) => !this.beatSelected(beat)).map((beat) => (
                         <option value={beat.id}>{beat.title}</option>
