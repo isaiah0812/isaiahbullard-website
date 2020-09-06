@@ -96,7 +96,7 @@ export default class Contact extends React.Component {
         beats: this.selectedToString(),
       })
     .then((result) => {
-      console.log(result);
+      console.info(result);
       this.setState({
         yourName: "",
         organization: "",
@@ -109,7 +109,7 @@ export default class Contact extends React.Component {
         purchasingBeats: false,
         spinnerVisible: false,
       }, (error) => {
-        console.log(error);
+        console.error(error);
         this.setState({
           spinnerVisible: false,
         })
