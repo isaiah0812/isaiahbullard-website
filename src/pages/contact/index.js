@@ -9,14 +9,15 @@ import {
   FormText,
   Toast,
   FormCheck,
-  Alert
+  Alert,
+  Spinner,
 } from 'react-bootstrap';
 import { init, send } from 'emailjs-com';
 
 import banner from './assets/banner.jpg';
 import Button from '../../components/button';
 import BeatCard from './components/beatCard';
-import { beats } from '../../constants/music';
+import { beats, projects } from '../../constants/music';
 
 import { 
   PageBanner, 
@@ -63,10 +64,13 @@ export default class Contact extends React.Component {
       recentBeat: beats[0],
       added: true,
       purchasingBeats: false,
+      spinnerVisible: false,
     }
 
     init("user_NhpX6mA3wYfbJ5YRxETqn");
     this.handleChange = this.addBeat.bind(this);
+
+    this.allBeats = [...beats].concat(...projects.filter(project => project.beatTape).map(beatTape => {return beatTape.beats}));
   }
 
   closeToast = () => {
@@ -77,6 +81,9 @@ export default class Contact extends React.Component {
   
   onSubmit = (e) => {
     e.preventDefault();
+    this.setState({
+      spinnerVisible: true,
+    })
 
     send(
       "service_22v4zop", 
@@ -100,8 +107,12 @@ export default class Contact extends React.Component {
         toastVisible: false,
         recentBeat: beats[0],
         purchasingBeats: false,
+        spinnerVisible: false,
       }, (error) => {
         console.log(error);
+        this.setState({
+          spinnerVisible: false,
+        })
       })
     })
     
@@ -128,7 +139,6 @@ export default class Contact extends React.Component {
     const ndx = this.findSelectedBeat(id);
     const newSelected = this.state.selected;
     const removedBeat = newSelected.splice(ndx, 1)[0];
-    console.log(removedBeat);
     this.setState({
       selected: newSelected,
       toastVisible: true,
@@ -138,7 +148,7 @@ export default class Contact extends React.Component {
   }
 
   findBeat = (id) => {
-    return beats.find(beat => beat.id === id);
+    return this.allBeats.find(beat => beat.id === id);
   }
 
   findSelectedBeat = (id) => {
@@ -151,10 +161,7 @@ export default class Contact extends React.Component {
 
   selectedToString = () => {
     let selected = [];
-
     this.state.selected.map(beat => selected.push(beat.title));
-
-    console.log(selected);
 
     return selected;
   }
@@ -234,8 +241,15 @@ export default class Contact extends React.Component {
                       required={this.state.selected.length === 0}
                     >
                       <option value="" />
+                      {projects.filter((project) => project.beatTape).map((beatTape) => (
+                        <optgroup key={beatTape.id} label={beatTape.title}>
+                          {beatTape.beats.filter((beat) => !this.beatSelected(beat)).map((beat) => (
+                            <option key={beatTape.id} value={beat.id}>{beat.title}</option>
+                          ))}
+                        </optgroup>
+                      ))}
                       {beats.filter((beat) => !this.beatSelected(beat)).map((beat) => (
-                        <option value={beat.id}>{beat.title}</option>
+                        <option key={beat.id} value={beat.id}>{beat.title}</option>
                       ))}
                     </FormControl>
                     <FormText>
@@ -270,6 +284,7 @@ export default class Contact extends React.Component {
                       >
                         {this.state.selected.map((beat) => (
                           <BeatCard 
+                            key={beat.id}
                             name={beat.title} 
                             cover={beat.cover} 
                             onClick={() => this.removeBeat(beat.id)} 
@@ -291,6 +306,10 @@ export default class Contact extends React.Component {
                   />
                 </FormGroup>
                 <Button submit text={'Submit'} />
+                <br />
+                {this.state.spinnerVisible && (
+                  <Spinner animation="border" style={{margin: '2% 0%', color: '#29B3F1'}} />
+                )}
                 <Alert 
                   style={{width: '100%', margin: '2% 0%'}} 
                   variant={'success'} 
