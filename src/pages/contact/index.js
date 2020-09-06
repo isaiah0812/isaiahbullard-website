@@ -46,9 +46,6 @@ const HoveringForm = styled.div`
   }
 `
 
-/**
- * @todo Send selected beats when purchasing beats
- */
 export default class Contact extends React.Component {
   
   constructor(props) {

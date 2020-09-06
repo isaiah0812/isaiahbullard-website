@@ -10,7 +10,6 @@ import NotFound from './pages/notFound/';
 import Container from 'react-bootstrap/Container';
 
 /**
- * @todo flex sizing of all components
  * @todo add constants for all colors
  */
 export default class App extends React.Component {
