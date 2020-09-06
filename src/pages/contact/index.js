@@ -80,12 +80,13 @@ export default class Contact extends React.Component {
 
     send(
       "service_22v4zop", 
-      "template_fe1k1ey", {
+      this.state.purchasingBeats ? "template_bjrhf54" : "template_fe1k1ey", 
+      {
         name: this.state.yourName,
         organization: this.state.organization,
-        user_email: this.state.email,
+        email: this.state.email,
         statement: this.state.statement,
-        subject: "Test Subject",
+        beats: this.selectedToString(),
       })
     .then((result) => {
       console.log(result);
@@ -146,6 +147,16 @@ export default class Contact extends React.Component {
 
   beatSelected = (beat) => {
     return this.state.selected.find(item => item.id === beat.id);
+  }
+
+  selectedToString = () => {
+    let selected = [];
+
+    this.state.selected.map(beat => selected.push(beat.title));
+
+    console.log(selected);
+
+    return selected;
   }
 
   render () {

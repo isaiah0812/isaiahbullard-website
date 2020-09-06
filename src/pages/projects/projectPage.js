@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container } from 'react-bootstrap';
 
-import { SongLink } from '../../constants/styled-components';
 import AlbumPlayer from './components/albumPlayer';
 import BeatTapePlayer from './components/beatTapePlayer';
 
@@ -175,7 +174,6 @@ export default class ProjectPage extends React.Component {
             <Container fluid style={{padding: '4%', width: '100%', position: 'sticky', top: '7.5%', display: 'flex', flexDirection: 'column'}}>
               <ProjectPageSecondaryTitle style={{color: '#FFFFFF'}}>Listen</ProjectPageSecondaryTitle>
               {this.album.beatTape ? <BeatTapePlayer /> : <AlbumPlayer />}
-              <SongLink href={"https://album.link/s/3vbvMwip1WpplVodTHHOrb"} color={'#000000'} target="_blank">Other Sources</SongLink>
             </Container>
           </ProjectPageInfoSection>
         </ProjectPageSection>

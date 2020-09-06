@@ -60,13 +60,13 @@ export default class BeatDisplay extends React.Component {
       <Card style={{border: 0}}>
         <Accordion.Toggle as={BeatButton} cover={beat.cover} eventKey={beat.id}>
           <BeatButtonHover>
-            <BeatButtonTitle>{beat.title}</BeatButtonTitle>
+            <BeatButtonTitle>{beat.title}{beat.sold && " [SOLD]"}</BeatButtonTitle>
           </BeatButtonHover>
         </Accordion.Toggle>
         <Accordion.Collapse eventKey={beat.id}>
           <Card.Body style={{backgroundColor: '#040B30', color: '#FFFFFF', display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
             <BeatSectionInfoBlock>
-              <BeatSectionTitle>{beat.title}</BeatSectionTitle>
+              <BeatSectionTitle>{beat.title}{beat.sold && " [SOLD]"}</BeatSectionTitle>
               <BeatSectionInfo>
                 <ul style={{listStyleType: 'circle', margin: 0}}>
                   <li style={{padding: 2}}>

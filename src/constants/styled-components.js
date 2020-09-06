@@ -80,6 +80,8 @@ export const SongLink = styled.a`
   color: ${props => props.color};
   text-align: center;
   font-size: 1.2em;
+  display: flex;
+  justify-content: center;
 
   &:hover {
     color: ${props => props.color};

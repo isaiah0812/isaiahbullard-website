@@ -56,6 +56,7 @@ export const beats = [
     youtube: 'qTwnXDdWcSw',
     keySignature: KEY_SIGS.DSHARPMINOR,
     tempo: 87,
+    sold: false,
   },
   {
     title: "Argentina",
@@ -64,6 +65,7 @@ export const beats = [
     youtube: 'uJfq9FYBjKw',
     keySignature: KEY_SIGS.FSHARPMAJOR,
     tempo: 140,
+    sold: false,
   },
   {
     title: "Birds",
@@ -72,6 +74,7 @@ export const beats = [
     youtube: 'K0z40_Pm3uw',
     keySignature: KEY_SIGS.FSHARPMINOR,
     tempo: 141,
+    sold: false,
   },
   {
     title: "Crispy",
@@ -80,6 +83,7 @@ export const beats = [
     youtube: 'H6KaS-izPIc',
     keySignature: KEY_SIGS.DSHARPMINOR,
     tempo: 160,
+    sold: false,
   },
   {
     title: "Dexter",
@@ -88,6 +92,7 @@ export const beats = [
     youtube: 'TCnoe1IIqL4',
     keySignature: KEY_SIGS.FSHARPMINOR,
     tempo: 149,
+    sold: false,
   },
   {
     title: "Discover",
@@ -96,6 +101,7 @@ export const beats = [
     youtube: 'e-66HcQUZYM',
     keySignature: KEY_SIGS.GMINOR,
     tempo: 140,
+    sold: false,
   },
   {
     title: "Gangsta Symphony",
@@ -104,6 +110,7 @@ export const beats = [
     youtube: 'qdNes5V1UEQ',
     keySignature: KEY_SIGS.DMINOR,
     tempo: 82,
+    sold: false,
   },
   {
     title: "Gunslinger",
@@ -112,6 +119,7 @@ export const beats = [
     youtube: '_V-SCWio3ao',
     keySignature: KEY_SIGS.GMINOR,
     tempo: 81,
+    sold: false,
   },
   {
     title: "Laughter",
@@ -120,6 +128,7 @@ export const beats = [
     youtube: 'AbMocRL-RsA',
     keySignature: KEY_SIGS.FMAJOR,
     tempo: 92,
+    sold: false,
   },
   {
     title: "Luke Cage",
@@ -128,6 +137,7 @@ export const beats = [
     youtube: 'sqtcQOwGFzY',
     keySignature: KEY_SIGS.ASHARPMINOR,
     tempo: 86,
+    sold: false,
   },
   {
     title: "Make Believe",
@@ -136,6 +146,7 @@ export const beats = [
     youtube: 'N1VzywunJAA',
     keySignature: KEY_SIGS.AMAJOR,
     tempo: 161,
+    sold: false,
   },
   {
     title: "Pacman",
@@ -144,6 +155,7 @@ export const beats = [
     youtube: 'OTKCNJH9_ig',
     keySignature: KEY_SIGS.DMINOR,
     tempo: 182,
+    sold: false,
   },
   {
     title: "Primetime",
@@ -152,6 +164,7 @@ export const beats = [
     youtube: 'EqJCc4jFvhg',
     keySignature: KEY_SIGS.EMINOR,
     tempo: 97,
+    sold: false,
   },
   {
     title: "Tattoos",
@@ -160,6 +173,7 @@ export const beats = [
     youtube: 'P3nTHd8IOSM',
     keySignature: KEY_SIGS.FMINOR,
     tempo: 85,
+    sold: false,
   },
   {
     title: "TMNT",
@@ -168,6 +182,7 @@ export const beats = [
     youtube: 'duhUAWe79rg',
     keySignature: KEY_SIGS.DSHARPMINOR,
     tempo: 96,
+    sold: false,
   },
   {
     title: "Virtuoso",
@@ -176,6 +191,7 @@ export const beats = [
     youtube: 'A1jwLZbWVBQ',
     keySignature: KEY_SIGS.CMINOR,
     tempo: 124,
+    sold: false,
   },
 ];
 
@@ -251,7 +267,7 @@ export const projects = [
       'Lullaby',
       'Be'
     ],
-    description: "This a description for a beat tape.",
+    description: "This is a description of a beat tape.",
     albumCredits: {
       albumId: 'the-holly-jolly-tape',
       samples: [
