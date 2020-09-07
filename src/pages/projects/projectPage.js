@@ -177,7 +177,7 @@ export default class ProjectPage extends React.Component {
           <ProjectPageInfoSection fluid style={{backgroundColor: lightBlue}}>
             <Container fluid style={{padding: '4%', width: '100%', position: 'sticky', top: '7.5%', display: 'flex', flexDirection: 'column'}}>
               <ProjectPageSecondaryTitle style={{color: white}}>Listen</ProjectPageSecondaryTitle>
-              {this.album.beatTape ? <BeatTapePlayer /> : <AlbumPlayer />}
+              {this.album.beatTape ? <BeatTapePlayer beatTape={this.album} /> : <AlbumPlayer album={this.album} />}
             </Container>
           </ProjectPageInfoSection>
         </ProjectPageSection>

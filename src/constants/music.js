@@ -248,6 +248,11 @@ export const projects = [
         'Bobby Bullard'
       ]
     },
+    spotify: '3vbvMwip1WpplVodTHHOrb',
+    apple: 'maestro/1422921065',
+    bandcamp: '2239082049',
+    soundCloud: '580055703',
+    songLink: '1422921065',
   },
   {
     title: "The Holly Jolly Tape",
@@ -442,6 +447,11 @@ export const projects = [
         'Troy Robb (@troyrobb25)',
       ]
     },
+    spotify: '6VdEQ3Hb9JLlFoM5mGMOCz',
+    apple: 'superb-ep/1475852445',
+    bandcamp: '1413079885',
+    soundCloud: '662403879',
+    songLink: '1475852445',
   },
 ];
 

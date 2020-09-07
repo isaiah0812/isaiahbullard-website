@@ -13,6 +13,8 @@ export default class BeatTapePlayer extends React.Component {
       soundcloudBgColor: 'transparent',
       youtubeBgColor: 'transparent'
     }
+
+    this.beatTape = this.props.beatTape;
   }
   render() {
     return (

@@ -4,8 +4,8 @@ import { applePink, bandcampBlue, black, soundcloudOrange, spotifyGreen, white }
 import { PlayerTab, PlayerSelector, SongLink } from '../../../constants/styled-components';
 
 export default class AlbumPlayer extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       spotifyBgColor: spotifyGreen,
@@ -13,6 +13,8 @@ export default class AlbumPlayer extends React.Component {
       bandcampBgColor: 'transparent',
       soundcloudBgColor: 'transparent',
     }
+
+    this.album = this.props.album
   }
   render() {
     return (
@@ -84,7 +86,7 @@ export default class AlbumPlayer extends React.Component {
                 }}>
                   <iframe 
                     title="Spotify" 
-                    src="https://open.spotify.com/embed/album/3vbvMwip1WpplVodTHHOrb" 
+                    src={`https://open.spotify.com/embed/album/${this.album.spotify}`}
                     style={{
                       width: '100%',
                       height: '100%',
@@ -101,7 +103,7 @@ export default class AlbumPlayer extends React.Component {
                 }}>
                   <iframe 
                     title="Apple Music" 
-                    src="https://embed.music.apple.com/us/album/maestro/1422921065?app=music&amp;itsct=music_box&amp;itscg=30200&amp;ls=1" 
+                    src={`https://embed.music.apple.com/us/album/${this.album.apple}?app=music&amp;itsct=music_box&amp;itscg=30200&amp;ls=1`}
                     allow="autoplay *; encrypted-media *;" 
                     style={{
                       width: '100%', 
@@ -126,7 +128,7 @@ export default class AlbumPlayer extends React.Component {
                       width: '100%', 
                       height: '100%',
                     }} 
-                    src="https://bandcamp.com/EmbeddedPlayer/album=2239082049/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" 
+                    src={`https://bandcamp.com/EmbeddedPlayer/album=${this.album.bandcamp}/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/`}
                     seamless 
                   />
                 </Tab.Pane>
@@ -144,14 +146,14 @@ export default class AlbumPlayer extends React.Component {
                     }}
                     scrolling="no" 
                     allow="autoplay" 
-                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/580055703&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" 
+                    src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/${this.album.soundCloud}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`} 
                   />
                 </Tab.Pane>
               </Tab.Content>
             </Col>
           </Row>
         </Tab.Container>
-        <SongLink href={"https://album.link/s/3vbvMwip1WpplVodTHHOrb"} color={black} target="_blank">Other Sources</SongLink>
+        <SongLink href={`https://album.link/i/${this.album.songLink}`} color={black} target="_blank">Other Sources</SongLink>
       </Container>
     );
   }
