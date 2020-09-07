@@ -76,7 +76,7 @@ export default class BeatTapePlayer extends React.Component {
                       width: '100%', 
                       height: 400,
                     }} 
-                    src="https://bandcamp.com/EmbeddedPlayer/album=2239082049/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" 
+                    src={`https://bandcamp.com/EmbeddedPlayer/album=${this.beatTape.bandcamp}/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/`}
                     seamless 
                   />
                 </Tab.Pane>
@@ -93,7 +93,7 @@ export default class BeatTapePlayer extends React.Component {
                     }}
                     scrolling="no" 
                     allow="autoplay" 
-                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/580055703&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" 
+                    src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/${this.beatTape.soundCloud}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`}
                   />
                 </Tab.Pane>
                 <Tab.Pane eventKey="youtube" style={{
@@ -107,7 +107,7 @@ export default class BeatTapePlayer extends React.Component {
                       height: 400,
                       border: 0,
                     }}
-                    src="https://www.youtube.com/embed/videoseries?list=PLFzSU3ciTsEdcdV4b1BQs2YlmdVb8g39h" 
+                    src={`https://www.youtube.com/embed/videoseries?list=${this.beatTape.youTube}`} 
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                     allowFullScreen
                   />

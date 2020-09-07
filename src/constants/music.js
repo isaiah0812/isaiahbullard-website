@@ -293,6 +293,9 @@ export const projects = [
       masteredBy: ['Isaiah Bullard (@zaemadethis)'],
       artworkBy: ['Isaiah Bullard (@zaemadethis)'],
     },
+    bandcamp: '402273398',
+    soundCloud: '662403879',
+    youTube: 'OLAK5uy_lHvgQeq70ANHH58v9aFgQ_aKPF85iPLrw',
     beats: [
       {
         title: "Dreamers",

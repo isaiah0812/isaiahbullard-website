@@ -17,6 +17,7 @@ import Footer from './components/footer';
  * @todo create a README
  * @todo upgrade to soundcloud pro
  * @todo upload Holly Jolly Tape to YouTube and Soundcloud
+ * @todo add React Helmet
  */
 export default class App extends React.Component {
   render () {
