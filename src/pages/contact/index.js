@@ -52,7 +52,6 @@ export default class Contact extends React.Component {
     super(props);
     this.state = {
       yourName: "",
-      organization: "",
       email: "",
       statement: "",
       toastVisible: false,
@@ -87,7 +86,6 @@ export default class Contact extends React.Component {
       this.state.purchasingBeats ? "template_bjrhf54" : "template_fe1k1ey", 
       {
         name: this.state.yourName,
-        organization: this.state.organization,
         email: this.state.email,
         statement: this.state.statement,
         beats: this.selectedToString(),
@@ -96,7 +94,6 @@ export default class Contact extends React.Component {
       console.info(result);
       this.setState({
         yourName: "",
-        organization: "",
         email: "",
         statement: "",
         alertVisible: true,
@@ -190,16 +187,6 @@ export default class Contact extends React.Component {
                     type={'text'} 
                     placeholder={'Your Name'} 
                     required
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <FormLabel>Organization (If Applicable)</FormLabel>
-                  <FormControl 
-                    name='organization' 
-                    value={this.state.organization} 
-                    onChange={(e) => this.setState({organization: e.target.value})}
-                    type={'text'} 
-                    placeholder={'Organization'} 
                   />
                 </FormGroup>
                 <FormGroup>
