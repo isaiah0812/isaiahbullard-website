@@ -12,6 +12,12 @@ import Footer from './components/footer';
 
 /**
  * @todo add constants for all colors
+ * @todo change all of the fonts to be good
+ * @todo document all classes
+ * @todo document all functions
+ * @todo create a README
+ * @todo upgrade to soundcloud pro
+ * @todo upload Holly Jolly Tape to YouTube and Soundcloud
  */
 export default class App extends React.Component {
   render () {

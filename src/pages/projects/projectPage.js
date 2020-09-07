@@ -78,6 +78,9 @@ const ProjectPageInfoSection = styled(Container)`
   }
 `
 
+/**
+ * @todo dynamically load projects
+ */
 export default class ProjectPage extends React.Component {
   constructor(props) {
     super(props);
