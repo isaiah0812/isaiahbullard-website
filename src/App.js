@@ -8,6 +8,7 @@ import Merchandise from './pages/merchandise/';
 import Contact from './pages/contact/';
 import NotFound from './pages/notFound/';
 import Container from 'react-bootstrap/Container';
+import Footer from './components/footer';
 
 /**
  * @todo add constants for all colors
@@ -27,6 +28,7 @@ export default class App extends React.Component {
             <Route component={NotFound} />
           </Switch>
         </Router>
+        <Footer />
       </Container>
     );
   }

@@ -22,7 +22,7 @@ export default class Merchandise extends React.Component {
             </BannerText>
           </PageBannerFade>
         </PageBanner>
-        <Container style={{padding: 60}}>
+        <Container style={{padding: 60, height: '55vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
           <PageSectionTitle>Coming Soon</PageSectionTitle>
         </Container>
       </Container>
