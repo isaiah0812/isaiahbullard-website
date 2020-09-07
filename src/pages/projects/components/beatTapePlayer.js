@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Tab, Nav, Container } from 'react-bootstrap';
 import Button from '../../../components/button';
+import { bandcampBlue, black, soundcloudOrange, white, youtubeRed } from '../../../constants/colors';
 import { PlayerTab, PlayerSelector } from '../../../constants/styled-components';
 
 export default class BeatTapePlayer extends React.Component {
@@ -8,7 +9,7 @@ export default class BeatTapePlayer extends React.Component {
     super(props);
 
     this.state = {
-      bandcampBgColor: '#629AA9',
+      bandcampBgColor: bandcampBlue,
       soundcloudBgColor: 'transparent',
       youtubeBgColor: 'transparent'
     }
@@ -21,21 +22,21 @@ export default class BeatTapePlayer extends React.Component {
           onSelect={(e) => {
             switch(e) {
               case 'bandcamp': this.setState({
-                bandcampBgColor: '#629AA9',
+                bandcampBgColor: bandcampBlue,
                 soundcloudBgColor: 'transparent',
                 youtubeBgColor: 'transparent',
               });
               break;
               case 'soundcloud': this.setState({
                 bandcampBgColor: 'transparent',
-                soundcloudBgColor: '#FE5000',
+                soundcloudBgColor: soundcloudOrange,
                 youtubeBgColor: 'transparent',
               });
               break;
               case 'youtube': this.setState({
                 bandcampBgColor: 'transparent',
                 soundcloudBgColor: 'transparent',
-                youtubeBgColor: '#FF0000',
+                youtubeBgColor: youtubeRed,
               });
               break;
               default: this.setState({
@@ -50,20 +51,20 @@ export default class BeatTapePlayer extends React.Component {
             <Col sm={3} style={{padding: 0}}>
               <Nav className="flex-column">
                 <PlayerSelector album={1} bg={this.state.bandcampBgColor}>
-                  <PlayerTab eventKey="bandcamp" color={this.state.bandcampBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>Bandcamp</PlayerTab>
+                  <PlayerTab eventKey="bandcamp" color={this.state.bandcampBgColor === 'transparent' ? black : white}>Bandcamp</PlayerTab>
                 </PlayerSelector>
                 <PlayerSelector album={1} bg={this.state.soundcloudBgColor}>
-                  <PlayerTab eventKey="soundcloud" color={this.state.soundcloudBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>SoundCloud</PlayerTab>
+                  <PlayerTab eventKey="soundcloud" color={this.state.soundcloudBgColor === 'transparent' ? black : white}>SoundCloud</PlayerTab>
                 </PlayerSelector>
                 <PlayerSelector album={1} bg={this.state.youtubeBgColor}>
-                  <PlayerTab eventKey="youtube" color={this.state.youtubeBgColor === 'transparent' ? '#000000' : '#FFFFFF'}>YouTube</PlayerTab>
+                  <PlayerTab eventKey="youtube" color={this.state.youtubeBgColor === 'transparent' ? black : white}>YouTube</PlayerTab>
                 </PlayerSelector>
               </Nav>
             </Col>
             <Col sm={9} style={{padding: 0}}>
               <Tab.Content>
                 <Tab.Pane eventKey="bandcamp" style={{
-                  backgroundColor: '#629AA9',
+                  backgroundColor: bandcampBlue,
                   padding: '2%',
                 }}>
                   <iframe 
@@ -78,7 +79,7 @@ export default class BeatTapePlayer extends React.Component {
                   />
                 </Tab.Pane>
                 <Tab.Pane eventKey="soundcloud" style={{
-                  backgroundColor: '#FE5000',
+                  backgroundColor: soundcloudOrange,
                   padding: '2%',
                 }}>
                   <iframe 
@@ -94,7 +95,7 @@ export default class BeatTapePlayer extends React.Component {
                   />
                 </Tab.Pane>
                 <Tab.Pane eventKey="youtube" style={{
-                  backgroundColor: '#FF0000',
+                  backgroundColor: youtubeRed,
                   padding: '2%',
                 }}>
                   <iframe 

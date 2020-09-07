@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Tab, Nav } from 'react-bootstrap';
+import { applePink, bandcampBlue, soundcloudOrange, spotifyGreen } from '../../../constants/colors';
 
 import { PlayerTab, PlayerSelector } from '../../../constants/styled-components'
 
@@ -9,7 +10,7 @@ export default class SingleDivPlayer extends React.Component {
     super(props);
 
     this.state = {
-      spotifyBgColor: '#1DB954',
+      spotifyBgColor: spotifyGreen,
       appleBgColor: 'transparent',
       bandcampBgColor: 'transparent',
       soundcloudBgColor: 'transparent',
@@ -24,7 +25,7 @@ export default class SingleDivPlayer extends React.Component {
         onSelect={(e) => {
           switch(e) {
             case 'spotify': this.setState({
-              spotifyBgColor: '#1DB954',
+              spotifyBgColor: spotifyGreen,
               appleBgColor: 'transparent',
               bandcampBgColor: 'transparent',
               soundcloudBgColor: 'transparent',
@@ -32,7 +33,7 @@ export default class SingleDivPlayer extends React.Component {
             break;
             case 'apple': this.setState({
               spotifyBgColor: 'transparent',
-              appleBgColor: '#FA57C1',
+              appleBgColor: applePink,
               bandcampBgColor: 'transparent',
               soundcloudBgColor: 'transparent',
             });
@@ -40,7 +41,7 @@ export default class SingleDivPlayer extends React.Component {
             case 'bandcamp': this.setState({
               spotifyBgColor: 'transparent',
               appleBgColor: 'transparent',
-              bandcampBgColor: '#629AA9',
+              bandcampBgColor: bandcampBlue,
               soundcloudBgColor: 'transparent',
             });
             break;
@@ -48,7 +49,7 @@ export default class SingleDivPlayer extends React.Component {
               spotifyBgColor: 'transparent',
               appleBgColor: 'transparent',
               bandcampBgColor: 'transparent',
-              soundcloudBgColor: '#FE5000',
+              soundcloudBgColor: soundcloudOrange,
             });
             break;
             default: this.setState({
@@ -79,7 +80,7 @@ export default class SingleDivPlayer extends React.Component {
         <Container fluid style={{padding: 0}}>
           <Tab.Content style={{width: '100%', padding: 0}}>
             <Tab.Pane eventKey="spotify" style={{
-              backgroundColor: '#1DB954',
+              backgroundColor: spotifyGreen,
               padding: '2%',
             }}>
               <iframe 
@@ -95,7 +96,7 @@ export default class SingleDivPlayer extends React.Component {
               />
             </Tab.Pane>
             <Tab.Pane eventKey="apple" style={{
-              backgroundColor: '#FA57C1',
+              backgroundColor: applePink,
               padding: '2%',
             }}>
               <iframe 
@@ -113,7 +114,7 @@ export default class SingleDivPlayer extends React.Component {
               />
             </Tab.Pane>
             <Tab.Pane eventKey="bandcamp" style={{
-              backgroundColor: '#629AA9',
+              backgroundColor: bandcampBlue,
               padding: '2%',
             }}>
               <iframe 
@@ -128,7 +129,7 @@ export default class SingleDivPlayer extends React.Component {
               />
             </Tab.Pane>
             <Tab.Pane eventKey="soundcloud" style={{
-              backgroundColor: '#FE5000',
+              backgroundColor: soundcloudOrange,
               padding: '2%',
             }}>
               <iframe 

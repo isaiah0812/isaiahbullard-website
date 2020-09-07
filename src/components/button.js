@@ -1,24 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Button as RBButton } from 'react-bootstrap';
+import { darkBlue, lightBlue, silver, white } from '../constants/colors'
 
 const StyledButton = styled(RBButton)`
   border-width: 7px;
   border-style: solid;
   border-radius: 16px;
-  border-color: ${props => props.type === "submit" ? '#040B30' : (props.secondary === 'true' ? '#040B30' : '#FFFFFF')};
-  background-color: ${props => props.type === "submit" ? '#707070' : '#29B3F1'};
+  border-color: ${props => props.type === "submit" ? darkBlue : (props.secondary === 'true' ? darkBlue : white)};
+  background-color: ${props => props.type === "submit" ? silver : lightBlue};
   text-align: center;
   font-size: 150%;
-  color: #FFFFFF;
+  color: ${white};
   padding: 0%;
   width: 150px;
   transition: background-color 0.2s, border-color 0.2s, color 0.2s;
 
   &:hover {
-    background-color: #FFFFFF;
-    border-color: #29B3F1;
-    color: #29B3F1;
+    background-color: ${white};
+    border-color: ${lightBlue};
+    color: ${lightBlue};
   }
 
   @media (max-width: 740px) {

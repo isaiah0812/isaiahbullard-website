@@ -4,13 +4,14 @@ import { Container } from 'react-bootstrap';
 
 import AlbumPlayer from './components/albumPlayer';
 import BeatTapePlayer from './components/beatTapePlayer';
+import { darkBlue, lightBlue, spotifyGreen, white } from '../../constants/colors';
 
 const ProjectPageSection = styled(Container)`
   width: 100%;
   padding: 0px;
   display: flex;
   flex-direction: row;
-  color: #040B30;
+  color: ${darkBlue};
   flex-wrap: wrap;
 `
 
@@ -30,8 +31,8 @@ const ProjectPageHeader = styled(Container)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #040B30;
-  color: #FFFFFF;
+  background-color: ${darkBlue};
+  color: ${white};
   padding: 2%;
 
   @media (max-width: 740px) {
@@ -86,7 +87,7 @@ export default class ProjectPage extends React.Component {
     super(props);
 
     this.state = {
-      spotifyBgColor: '#1DB954',
+      spotifyBgColor: spotifyGreen,
       appleBgColor: 'transparent',
       bandcampBgColor: 'transparent',
       soundcloudBgColor: 'transparent',
@@ -173,9 +174,9 @@ export default class ProjectPage extends React.Component {
               </Container>
             </Container>
           </ProjectPageInfoSection>
-          <ProjectPageInfoSection fluid style={{backgroundColor: '#29B3F1'}}>
+          <ProjectPageInfoSection fluid style={{backgroundColor: lightBlue}}>
             <Container fluid style={{padding: '4%', width: '100%', position: 'sticky', top: '7.5%', display: 'flex', flexDirection: 'column'}}>
-              <ProjectPageSecondaryTitle style={{color: '#FFFFFF'}}>Listen</ProjectPageSecondaryTitle>
+              <ProjectPageSecondaryTitle style={{color: white}}>Listen</ProjectPageSecondaryTitle>
               {this.album.beatTape ? <BeatTapePlayer /> : <AlbumPlayer />}
             </Container>
           </ProjectPageInfoSection>

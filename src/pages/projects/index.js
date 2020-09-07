@@ -17,11 +17,12 @@ import {
   PageSectionTitle,
 } from '../../constants/styled-components';
 import ProjectPage from './projectPage';
+import { silver } from '../../constants/colors';
 
 const CreditSection = styled(Container)`
   display: flex;
   width: 50%;
-  background-color: #707070;
+  background-color: ${silver};
   padding: 1%;
   align-items: left;
   flex-wrap: wrap;
@@ -54,7 +55,7 @@ class ProjectsHome extends React.Component {
         </PageBanner>
         <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', padding: '60px 24px'}}>
           <PageSectionTitle>Albums</PageSectionTitle>
-          <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+          <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
           <Container style={{
             display: 'flex', 
             flexDirection: 'row', 
@@ -70,7 +71,7 @@ class ProjectsHome extends React.Component {
             )}
           </Container>
           <PageSectionTitle id="singles">Singles</PageSectionTitle>
-          <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+          <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
           <Container fluid style={{
             width: '100%',
             padding: 0,
@@ -98,7 +99,7 @@ class ProjectsHome extends React.Component {
             </Container>
           </Container>
           <PageSectionTitle>Credits</PageSectionTitle>
-          <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+          <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
           <CreditSection fluid>
             {credits.map((credit) => <CreditCard key={credit.id} credit={credit} />)}
           </CreditSection>

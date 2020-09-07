@@ -2,6 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import styled from 'styled-components';
 import Button from '../../../components/button';
+import { darkBlue, white } from '../../../constants/colors';
 
 const SectionTitle = styled.h3`
   font-weight: normal;
@@ -39,8 +40,8 @@ export default class HomeSection extends React.Component {
           justifyContent: 'space-around', 
           alignItems: 'center', 
           minHeight: 300, 
-          backgroundColor: primary ? '#040B30' : '#FFFFFF', 
-          color: primary ? '#FFFFFF' : '#040B30',
+          backgroundColor: primary ? darkBlue : white, 
+          color: primary ? white : darkBlue,
         }}
       >
         <SectionTitle>{title}</SectionTitle>

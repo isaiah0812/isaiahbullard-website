@@ -18,6 +18,7 @@ import {
 } from '../../constants/styled-components';
 import BeatDisplay from './components/beatDisplay';
 import ProjectPage from '../projects/projectPage';
+import { silver } from '../../constants/colors';
 
 const BeatsPageSection = styled(Container)`
   width: 48%;
@@ -44,7 +45,7 @@ class BeatsHome extends React.Component {
         <Container fluid style={{display: 'flex', flexDirection: 'row-reverse', justifyContent: 'center', flexWrap: 'wrap', padding: '60px 24px'}}>
           <BeatsPageSection fluid>
             <PageSectionTitle>Beat Tapes</PageSectionTitle>
-            <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+            <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
             <PageSectionInfo>All beats on Beat Tapes are for sale for the same prices as normal beats.</PageSectionInfo>
             <br />
             <Container style={{width: '80%', display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', padding: 0}}>
@@ -57,7 +58,7 @@ class BeatsHome extends React.Component {
           </BeatsPageSection>
           <BeatsPageSection fluid>
             <PageSectionTitle>Beats</PageSectionTitle>
-            <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+            <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
             <PageSectionInfo>
               2-Track: $40; Track-Outs: $80
               <br />

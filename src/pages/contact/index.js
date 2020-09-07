@@ -28,6 +28,7 @@ import {
   PageSectionTitle,
   PageSectionInfo,
 } from '../../constants/styled-components';
+import { darkBlue, lightBlue, silver, white } from '../../constants/colors';
 
 const HoveringForm = styled.div`
   display: flex;
@@ -173,11 +174,11 @@ export default class Contact extends React.Component {
         </PageBanner>
         <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '60px 24px'}}>
           <PageSectionTitle>Enter Your Information</PageSectionTitle>
-          <hr style={{width: '5%', borderWidth: 3, borderColor: '#707070'}} />
+          <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
           <PageSectionInfo>Serious inquiries only, please.</PageSectionInfo>
           <Container fluid style={{display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 0}}>
             <HoveringForm>
-              <Form onSubmit={(e) => this.onSubmit(e)} style={{backgroundColor: '#707070', color: '#FFFFFF', padding: 24, width: '100%'}}>
+              <Form onSubmit={(e) => this.onSubmit(e)} style={{backgroundColor: silver, color: white, padding: 24, width: '100%'}}>
                 <FormGroup>
                   <FormLabel>Your Name</FormLabel>
                   <FormControl 
@@ -210,7 +211,7 @@ export default class Contact extends React.Component {
                   />
                   {
                     !this.state.purchasingBeats 
-                    ? <FormText>Only select this if you're purchasing a beat that is on the <a href="/beats" style={{ color: '#29B3F1' }}>beats page</a>. If you want a custom beat (regardless of if you want to purchase one from this website), please mention that in the "State Your Business" section.</FormText>
+                    ? <FormText>Only select this if you're purchasing a beat that is on the <a href="/beats" style={{ color: lightBlue }}>beats page</a>. If you want a custom beat (regardless of if you want to purchase one from this website), please mention that in the "State Your Business" section.</FormText>
                     : <FormText>If you want a custom beat (regardless of if you want to purchase one from this website), please mention that in the "State Your Business" section.</FormText>
                   }
                 </FormGroup>
@@ -243,7 +244,7 @@ export default class Contact extends React.Component {
                       style={{ 
                         marginTop: 5, 
                         marginBottom: 5,
-                        backgroundColor: '#040B30',
+                        backgroundColor: darkBlue,
                       }}
                       show={this.state.toastVisible}
                       onClose={() => this.closeToast()}
@@ -292,7 +293,7 @@ export default class Contact extends React.Component {
                 <Button submit text={'Submit'} />
                 <br />
                 {this.state.spinnerVisible && (
-                  <Spinner animation="border" style={{margin: '2% 0%', color: '#29B3F1'}} />
+                  <Spinner animation="border" style={{margin: '2% 0%', color: lightBlue}} />
                 )}
                 <Alert 
                   style={{width: '100%', margin: '2% 0%'}} 

@@ -1,18 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Card, CardImg } from 'react-bootstrap';
+import { white, black, lightBlue, darkBlue } from '../../../constants/colors';
 
 const StyledBeatCard = styled(Card)`
   width: 10em;
-  background-color: #040B30;
+  background-color: ${darkBlue};
   margin: 5px;
   cursor: pointer;
-  color: #FFFFFF;
+  color: ${white};
   transition: background-color 0.2s, color 0.2s, top 0.2s, box-shadow 0.2s;
 
   &:hover {
-    background-color: #29B3F1;
-    color: #000000;
+    background-color: ${lightBlue};
+    color: ${black};
     top: -4px;
     box-shadow: 0px 10px 10px;
   }

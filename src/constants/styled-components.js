@@ -1,5 +1,6 @@
 import { Container, Nav } from 'react-bootstrap';
 import styled from 'styled-components';
+import { white, black, darkBlue, silver } from './colors';
 
 export const PageBanner = styled(Container)`
   width: 100%;
@@ -36,26 +37,26 @@ export const BannerText = styled(Container)`
 `
 
 export const BannerTitle = styled.h1`
-  color: #FFFFFF;
+  color: ${white};
   text-align: center;
   font-weight: normal;
 `
 
 export const BannerCaption = styled.h5`
-  color: #FFFFFF;
+  color: ${white};
   text-align: center;
   font-weight: normal;
 `
 
 export const PageSectionTitle = styled.h2`
-  color: #040B30;
+  color: ${darkBlue};
   text-align: center;
   font-size: 5vh;
 `
 
 export const PageSectionInfo = styled.h6`
   margin: 0;
-  color: #707070;
+  color: ${silver};
   text-align: center;
 `
 
@@ -72,7 +73,7 @@ export const PlayerTab = styled(Nav.Link)`
   }
 
   &:hover {
-    color: ${props => props.color === '#FFFFFF' ? '#000000' : '#FFFFFF'};
+    color: ${props => props.color === white ? black : white};
   }
 `
 

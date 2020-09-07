@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { white } from '../../../constants/colors';
 
 const AlbumButton = styled.button`
   
@@ -26,7 +27,7 @@ const FadeHover = styled.div`
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.5);
-    color: #FFFFFF;
+    color: ${white};
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }

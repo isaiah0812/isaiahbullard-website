@@ -1,6 +1,7 @@
 import React from 'react';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import styled from 'styled-components';
+import { black, darkBlue, lightBlue, white } from '../../../constants/colors';
 
 const CreditLink = styled.a`
   width: 48%;
@@ -8,19 +9,19 @@ const CreditLink = styled.a`
 `
 
 const CreditButton = styled.button`
-  background-color: #FFFFFF;
+  background-color: ${white};
   width: 100%;
 	border: 0px;
 	border-radius: 16px;
   text-align: center;
   font-size: 100%;
-	color: #040B30;
+	color: ${darkBlue};
 	box-shadow: none;
 	transition: color 0.2s, box-shadow 0.5s;
 
   &:hover {
-		color: #29B3F1;
-		box-shadow: 0px 2px 10px #000000;
+		color: ${lightBlue};
+		box-shadow: 0px 2px 10px ${black};
   }
 `
 

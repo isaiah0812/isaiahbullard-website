@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Accordion, Card, Container } from 'react-bootstrap';
 import Button from '../../../components/button';
+import { darkBlue, white, youtubeRed } from '../../../constants/colors';
 
 const BeatButton = styled.button`
   width: 100%;
@@ -24,7 +25,7 @@ const BeatButtonHover = styled.div`
   transition: background-color 0.3s, color 0.3s;
 
   &:hover {
-    color: #FFFFFF;
+    color: ${white};
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(8px);
   }
@@ -64,7 +65,7 @@ export default class BeatDisplay extends React.Component {
           </BeatButtonHover>
         </Accordion.Toggle>
         <Accordion.Collapse eventKey={beat.id}>
-          <Card.Body style={{backgroundColor: '#040B30', color: '#FFFFFF', display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
+          <Card.Body style={{backgroundColor: darkBlue, color: white, display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
             <BeatSectionInfoBlock>
               <BeatSectionTitle>{beat.title}{beat.sold && " [SOLD]"}</BeatSectionTitle>
               <BeatSectionInfo>
@@ -78,11 +79,11 @@ export default class BeatDisplay extends React.Component {
                 </ul>
               </BeatSectionInfo>
             </BeatSectionInfoBlock>
-            <hr style={{width: '50%', borderWidth: 1, borderColor: '#FFFFFF'}} />
-            <Container fluid style={{width: '100%', height: 300, backgroundColor: '#FF0000', padding: 0}}>
+            <hr style={{width: '50%', borderWidth: 1, borderColor: white}} />
+            <Container fluid style={{width: '100%', height: 300, backgroundColor: youtubeRed, padding: 0}}>
               <iframe id="player" title="beat" type="text/html" allowFullScreen style={{width: '100.1%', height: '100.2%', border: 0}} src={"http://www.youtube.com/embed/" + beat.youtube + "?enablejsapi=1&origin=zaemadethis.com"}></iframe>
             </Container>
-            <hr style={{width: '50%', borderWidth: 1, borderColor: '#FFFFFF'}} />
+            <hr style={{width: '50%', borderWidth: 1, borderColor: white}} />
             <Container fluid style={{padding: 0, display: 'flex', justifyContent: 'center'}}>
               <Button text={'Purchase'} href={'/contact'} />
             </Container>

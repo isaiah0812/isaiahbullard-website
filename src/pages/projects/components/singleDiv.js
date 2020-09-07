@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import SingleDivPlayer from './singleDivPlayer';
 
 import { SongLink } from '../../../constants/styled-components';
+import { black, white } from '../../../constants/colors';
 
 const Triangle = styled.div`
   width: 0px;
@@ -41,7 +42,7 @@ const SingleBox = styled(Container)`
 export default class SingleDiv extends React.Component {
   render() {
     const { single } = this.props;
-    const textColor = (single.color < '#800000') ? '#000000' : '#FFFFFF'
+    const textColor = (single.color < '#800000') ? black : white;
     return (
       <Container fluid style={{
         display: 'flex',

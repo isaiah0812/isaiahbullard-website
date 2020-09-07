@@ -5,10 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import MenuItem from './menuItem';
 import { routes } from '../constants/routing';
+import { black } from '../constants/colors';
 
 const navbarStyle = {
   backgroundColor: 'black',
-  boxShadow: '0px 5px 10px #000000',
+  boxShadow: `0px 5px 10px ${black}`,
 }
 
 const navBrandStyle = {
