@@ -54,6 +54,7 @@ const ProjectPageTitle = styled.h1`
 const ProjectPageReleaseDate = styled.h3`
   font-weight: normal;
   font-style: italic;
+  text-align: center;
 `
 
 const ProjectPageSecondaryTitle = styled.h2`
