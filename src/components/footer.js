@@ -12,7 +12,7 @@ import {
   faSoundcloud,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
-import {ReactComponent as AppleMusicLogo} from '../assets/apple-music-icon/apple-music-icon/Apple_Music_Icon_blk.svg';
+import {ReactComponent as AppleMusicLogo} from '../assets/Apple_Music_Icon_blk.svg';
 import { white, black, silver, spotifyGreen, applePink, bandcampBlue, soundcloudOrange, youtubeRed } from '../constants/colors';
 
 const StyledFaIcon = styled(FontAwesomeIcon)`

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Route, Link, Switch, useRouteMatch } from 'react-router-dom'
 import styled from 'styled-components';
-import Container from 'react-bootstrap/Container';
-import Accordion from 'react-bootstrap/Accordion';
+import { Container, Accordion } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 
 import banner from './assets/banner.jpg';
 import AlbumCard from '../projects/components/albumCard';
@@ -34,6 +34,10 @@ class BeatsHome extends React.Component {
   render() {
     return (
       <Container fluid style={{padding: 0}}>
+        <Helmet>
+          <title>Beats - Isaiah Bullard</title>
+          <meta name="description" content="Beats and Beat Tapes for purchase by Isaiah Bullard." />
+        </Helmet>
         <PageBanner fluid background={banner}>
           <PageBannerFade fluid>
             <BannerText fluid>

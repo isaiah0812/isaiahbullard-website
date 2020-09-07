@@ -13,6 +13,7 @@ import {
   Spinner,
 } from 'react-bootstrap';
 import { init, send } from 'emailjs-com';
+import { Helmet } from 'react-helmet';
 
 import banner from './assets/banner.jpg';
 import Button from '../../components/button';
@@ -164,6 +165,10 @@ export default class Contact extends React.Component {
   render () {
     return (
       <Container fluid style={{padding: 0}}>
+        <Helmet>
+          <title>Contact - Isaiah Bullard</title>
+          <meta name="description" content="A form to contact Isaiah Bullard" />
+        </Helmet>
         <PageBanner fluid background={banner}>
           <PageBannerFade fluid>
             <BannerText fluid>
@@ -206,7 +211,10 @@ export default class Contact extends React.Component {
                     name="purchasingBeats" 
                     type={'checkbox'} 
                     label="I'm purchasing a beat" 
-                    onChange={() => this.setState({purchasingBeats: !this.state.purchasingBeats})}
+                    onChange={() => this.setState({
+                      purchasingBeats: !this.state.purchasingBeats,
+                      toastVisible: false,
+                    })}
                     checked={this.state.purchasingBeats}
                   />
                   {

@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { Route, Link, Switch, useRouteMatch } from 'react-router-dom';
 import styled from 'styled-components';
-import Container from 'react-bootstrap/Container';
+import { Container } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 
 import banner from './assets/banner.jpg';
 import AlbumCard from './components/albumCard';
@@ -45,6 +46,10 @@ class ProjectsHome extends React.Component {
   render () {
     return (
       <Container fluid style={{padding: 0, width: '100%'}}>
+        <Helmet>
+          <title>Projects - Isaiah Bullard</title>
+          <meta name="description" content="The projects page, for displaying albums, singles, and the placements of Isaiah Bullard." />
+        </Helmet>
         <PageBanner fluid background={banner}>
           <PageBannerFade fluid>
             <BannerText fluid>

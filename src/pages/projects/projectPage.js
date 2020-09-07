@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 
 import AlbumPlayer from './components/albumPlayer';
 import BeatTapePlayer from './components/beatTapePlayer';
@@ -79,9 +80,6 @@ const ProjectPageInfoSection = styled(Container)`
   }
 `
 
-/**
- * @todo dynamically load projects
- */
 export default class ProjectPage extends React.Component {
   constructor(props) {
     super(props);
@@ -98,6 +96,10 @@ export default class ProjectPage extends React.Component {
   render() {
     return (
       <Container fluid style={{ padding: 0 }}>
+        <Helmet>
+          <title>{this.album.title} - Isaiah Bullard</title>
+          <meta name="description" content={`${this.album.title}, by Isaiah Bullard`} />
+        </Helmet>
         <ProjectPageSection fluid style={{flexWrap: 'wrap-reverse'}}>
           <ProjectPageCover src={this.album.cover} />
           <ProjectPageHeader fluid>

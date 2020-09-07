@@ -6,6 +6,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import MenuItem from './menuItem';
 import { routes } from '../constants/routing';
 import { black } from '../constants/colors';
+import IBIcon from '../assets/IBLogo_Icon.png';
 
 const navbarStyle = {
   backgroundColor: 'black',
@@ -21,7 +22,7 @@ export default class Menu extends React.Component {
   render() {
     return (
       <Navbar expand='lg' style={navbarStyle} sticky='top'>
-        <Navbar.Brand href='/' style={navBrandStyle}>Isaiah Bullard</Navbar.Brand>
+        <Navbar.Brand href='/' style={navBrandStyle}><img src={IBIcon} alt="Isaiah Bullard" style={{width: '2em', height: '2em'}} /></Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav'><FontAwesomeIcon icon={faBars} style={{color: 'white'}}/></Navbar.Toggle>
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav>
