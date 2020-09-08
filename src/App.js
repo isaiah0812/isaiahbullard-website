@@ -11,7 +11,6 @@ import Container from 'react-bootstrap/Container';
 import Footer from './components/footer';
 
 /**
- * @todo change all of the fonts to be good
  * @todo document all classes
  * @todo document all functions
  * @todo create a README

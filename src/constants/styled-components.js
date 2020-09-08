@@ -18,6 +18,7 @@ export const PageBannerFade = styled(Container)`
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
   padding: 0px;
 `
 

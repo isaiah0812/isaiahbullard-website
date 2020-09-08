@@ -22,12 +22,14 @@ const BeatButtonHover = styled.div`
   justify-content: center;
   color: transparent;
   backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
   transition: background-color 0.3s, color 0.3s;
 
   &:hover {
     color: ${white};
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 `
 

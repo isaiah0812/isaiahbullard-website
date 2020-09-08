@@ -18,6 +18,7 @@ const CarouselSlideFade = styled(Container)`
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   background-color: rgba(0, 0, 0, 0.5);
   padding: 0px;
 `
