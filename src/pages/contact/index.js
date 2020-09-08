@@ -237,7 +237,7 @@ export default class Contact extends React.Component {
                       {projects.filter((project) => project.beatTape).map((beatTape) => (
                         <optgroup key={beatTape.id} label={beatTape.title}>
                           {beatTape.beats.filter((beat) => !this.beatSelected(beat)).map((beat) => (
-                            <option key={beatTape.id} value={beat.id}>{beat.title}</option>
+                            <option key={beat.id} value={beat.id}>{beat.title}</option>
                           ))}
                         </optgroup>
                       ))}

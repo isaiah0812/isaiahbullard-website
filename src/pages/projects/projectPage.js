@@ -166,7 +166,7 @@ export default class ProjectPage extends React.Component {
                     {this.album.albumCredits.artworkBy.map((artist, index) => <li key={index}>{artist}</li>)}
                   </ProjectPageList>
                 </ProjectPageInfoParagraph>
-                {this.album.specialThanks && (
+                {this.album.albumCredits.specialThanks && (
                   <ProjectPageInfoParagraph>
                     <strong>Special Thanks:</strong>
                     <ProjectPageList>
@@ -178,7 +178,7 @@ export default class ProjectPage extends React.Component {
             </Container>
           </ProjectPageInfoSection>
           <ProjectPageInfoSection fluid style={{backgroundColor: lightBlue}}>
-            <Container fluid style={{padding: '4%', width: '100%', position: 'sticky', top: '7.5%', display: 'flex', flexDirection: 'column'}}>
+            <Container fluid style={{padding: '4%', width: '100%', position: 'sticky', top: '9%', display: 'flex', flexDirection: 'column'}}>
               <ProjectPageSecondaryTitle style={{color: white}}>Listen</ProjectPageSecondaryTitle>
               {this.album.beatTape ? <BeatTapePlayer beatTape={this.album} /> : <AlbumPlayer album={this.album} />}
             </Container>
