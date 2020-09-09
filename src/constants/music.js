@@ -15,11 +15,11 @@ import ta_cover from '../pages/beats/assets/beats/Tattoos.png';
 import tm_cover from '../pages/beats/assets/beats/TMNT.png';
 import vi_cover from '../pages/beats/assets/beats/Virtuoso.jpg';
 import hj_cover from '../pages/beats/assets/beatTapes/HollyJolly.png';
-import ma_cover from '../pages/projects/assets/Maestro.PNG';
-import zr_cover from '../pages/projects/assets/Zaes_Room.PNG';
-import bt_cover from '../pages/projects/assets/Big_Thangs2.JPG';
-import ep_cover from '../pages/projects/assets/Evil_Plan2.png';
-import fl_cover from '../pages/projects/assets/Fast_Lane.png';
+import ma_cover from '../pages/projects/assets/albums/Maestro.PNG';
+import zr_cover from '../pages/projects/assets/albums/Zaes_Room.PNG';
+import bt_cover from '../pages/projects/assets/singles/Big_Thangs.JPG';
+import ep_cover from '../pages/projects/assets/singles/Evil_Plan.png';
+import fl_cover from '../pages/projects/assets/singles/Fast_Lane.png';
 
 const KEY_SIGS = {
   AMAJOR: 'A Major',
@@ -299,7 +299,7 @@ export const projects = [
     beats: [
       {
         title: "Dreamers",
-        cover: hj_cover,
+        beatTapeId: 'the-holly-jolly-tape',
         id: "dreamers",
         keySignature: KEY_SIGS.FMAJOR,
         tempo: 93,
@@ -307,7 +307,7 @@ export const projects = [
       },
       {
         title: "Mean",
-        cover: hj_cover,
+        beatTapeId: 'the-holly-jolly-tape',
         id: "mean",
         keySignature: KEY_SIGS.GMINOR,
         tempo: 95,
@@ -315,7 +315,7 @@ export const projects = [
       },
       {
         title: "Tina",
-        cover: hj_cover,
+        beatTapeId: 'the-holly-jolly-tape',
         id: "tina",
         keySignature: KEY_SIGS.CMINOR,
         tempo: 120,
@@ -323,7 +323,7 @@ export const projects = [
       },
       {
         title: "Grandma",
-        cover: hj_cover,
+        beatTapeId: 'the-holly-jolly-tape',
         id: "grandma",
         keySignature: KEY_SIGS.EMINOR,
         tempo: 142,
@@ -331,7 +331,7 @@ export const projects = [
       },
       {
         title: "Take A Look At Me",
-        cover: hj_cover,
+        beatTapeId: 'the-holly-jolly-tape',
         id: "take-a-look-at-me",
         keySignature: KEY_SIGS.EMAJOR,
         tempo: 88,
@@ -339,7 +339,7 @@ export const projects = [
       },
       {
         title: "Slip 'N Slide",
-        cover: hj_cover,
+        beatTapeId: 'the-holly-jolly-tape',
         id: "slip-n-slide",
         keySignature: KEY_SIGS.CSHARPMAJOR,
         tempo: 98,
@@ -347,7 +347,7 @@ export const projects = [
       },
       {
         title: "Snitch",
-        cover: hj_cover,
+        beatTapeId: 'the-holly-jolly-tape',
         id: "snitch",
         keySignature: KEY_SIGS.DMAJOR,
         tempo: 116,
@@ -355,7 +355,7 @@ export const projects = [
       },
       {
         title: "Tingly",
-        cover: hj_cover,
+        beatTapeId: 'the-holly-jolly-tape',
         id: "tingly",
         keySignature: KEY_SIGS.BMAJOR,
         tempo: 97,
@@ -363,7 +363,7 @@ export const projects = [
       },
       {
         title: "Lullaby",
-        cover: hj_cover,
+        beatTapeId: 'the-holly-jolly-tape',
         id: "lullaby",
         keySignature: KEY_SIGS.AMAJOR,
         tempo: 90,
@@ -371,7 +371,7 @@ export const projects = [
       },
       {
         title: "Be",
-        cover: hj_cover,
+        beatTapeId: 'the-holly-jolly-tape',
         id: "be",
         keySignature: KEY_SIGS.GMAJOR,
         tempo: 89,

@@ -1,9 +1,9 @@
-import zr_cover from '../pages/home/assets/Zaes_Room.png';
-import zr_logo from '../pages/home/assets/ZaesRoom_Logo.png';
-import hj_cover from '../pages/home/assets/Holly_Jolly.png';
-import hj_logo from '../pages/home/assets/HollyJolly_Logo.png';
-import ma_cover from '../pages/home/assets/Maestro.png';
-import ma_logo from '../pages/home/assets/Maestro_Logo.png';
+import zr_cover from '../pages/projects/assets/albums/Zaes_Room.PNG';
+import zr_logo from '../pages/projects/assets/albums/ZaesRoom_Logo.png';
+import hj_cover from '../pages/beats/assets/beatTapes/HollyJolly.png';
+import hj_logo from '../pages/beats/assets/beatTapes/HollyJolly_Logo.png';
+import ma_cover from '../pages/projects/assets/albums/Maestro.PNG';
+import ma_logo from '../pages/projects/assets/albums/Maestro_Logo.png';
 
 export const carousel = [
     {
