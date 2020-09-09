@@ -1,7 +1,14 @@
 import React from 'react';
-import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 import styled from 'styled-components';
-import { black, darkBlue, lightBlue, white } from '../../../constants/colors';
+
+import { 
+  black, 
+  darkBlue, 
+  lightBlue, 
+  white 
+} from '../../../constants/colors';
 
 const CreditLink = styled.a`
   width: 48%;

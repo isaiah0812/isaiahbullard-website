@@ -1,7 +1,14 @@
 import React from 'react';
-import { Container, Tab, Nav } from 'react-bootstrap';
-import { applePink, bandcampBlue, soundcloudOrange, spotifyGreen } from '../../../constants/colors';
+import Container from 'react-bootstrap/Container';
+import Tab from 'react-bootstrap/Tab';
+import Nav from 'react-bootstrap/Nav';
 
+import { 
+  applePink, 
+  bandcampBlue, 
+  soundcloudOrange, 
+  spotifyGreen 
+} from '../../../constants/colors';
 import { PlayerTab, PlayerSelector } from '../../../constants/styled-components'
 
 export default class SingleDivPlayer extends React.Component {

@@ -1,4 +1,5 @@
-import { Container, Nav } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
 import styled from 'styled-components';
 import { white, black, darkBlue, silver } from './colors';
 

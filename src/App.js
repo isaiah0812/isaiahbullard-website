@@ -1,13 +1,13 @@
 import React from 'react';
-import Menu from './components/menu';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Menu from './components/menu';
 import Home from './pages/home/';
 import Projects from './pages/projects/';
 import Beats from './pages/beats/';
 import Merchandise from './pages/merchandise/';
 import Contact from './pages/contact/';
 import NotFound from './pages/notFound/';
-import Container from 'react-bootstrap/Container';
 import Footer from './components/footer';
 
 /**

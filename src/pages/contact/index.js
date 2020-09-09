@@ -1,17 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { 
-  Container,
-  Form, 
-  FormGroup, 
-  FormLabel, 
-  FormControl, 
-  FormText,
-  Toast,
-  FormCheck,
-  Alert,
-  Spinner,
-} from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import FormGroup from 'react-bootstrap/FormGroup';
+import FormLabel from 'react-bootstrap/FormLabel';
+import FormControl from 'react-bootstrap/FormControl';
+import FormText from 'react-bootstrap/FormText';
+import Toast from 'react-bootstrap/Toast';
+import FormCheck from 'react-bootstrap/FormCheck';
+import Alert from 'react-bootstrap/Alert';
+import Spinner from 'react-bootstrap/Spinner';
 import { init, send } from 'emailjs-com';
 import { Helmet } from 'react-helmet';
 

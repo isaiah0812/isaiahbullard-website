@@ -1,8 +1,22 @@
 import React from 'react';
-import { Row, Col, Tab, Nav, Container } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Tab from 'react-bootstrap/Tab';
+import Nav from 'react-bootstrap/Nav';
+import Container from 'react-bootstrap/Container';
 import Button from '../../../components/button';
-import { bandcampBlue, black, soundcloudOrange, white, youtubeRed } from '../../../constants/colors';
-import { PlayerTab, PlayerSelector } from '../../../constants/styled-components';
+
+import { 
+  bandcampBlue, 
+  black, 
+  soundcloudOrange, 
+  white, 
+  youtubeRed 
+} from '../../../constants/colors';
+import { 
+  PlayerTab, 
+  PlayerSelector 
+} from '../../../constants/styled-components';
 
 export default class BeatTapePlayer extends React.Component {
   constructor(props) {

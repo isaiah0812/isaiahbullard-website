@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Accordion, Card, Container } from 'react-bootstrap';
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
 import Button from '../../../components/button';
 import { darkBlue, white, youtubeRed } from '../../../constants/colors';
 

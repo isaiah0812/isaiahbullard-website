@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Route, Link, Switch, useRouteMatch } from 'react-router-dom';
 import styled from 'styled-components';
-import { Container } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 import { Helmet } from 'react-helmet';
 
 import banner from './assets/banner.jpg';

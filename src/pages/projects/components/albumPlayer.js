@@ -1,7 +1,23 @@
 import React from 'react';
-import { Row, Col, Tab, Nav, Container } from 'react-bootstrap';
-import { applePink, bandcampBlue, black, soundcloudOrange, spotifyGreen, white } from '../../../constants/colors';
-import { PlayerTab, PlayerSelector, SongLink } from '../../../constants/styled-components';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Tab from 'react-bootstrap/Tab';
+import Nav from 'react-bootstrap/Nav';
+import Container from 'react-bootstrap/Container';
+
+import { 
+  applePink, 
+  bandcampBlue, 
+  black, 
+  soundcloudOrange, 
+  spotifyGreen, 
+  white 
+} from '../../../constants/colors';
+import { 
+  PlayerTab, 
+  PlayerSelector, 
+  SongLink 
+} from '../../../constants/styled-components';
 
 export default class AlbumPlayer extends React.Component {
   constructor(props) {

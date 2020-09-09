@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectCarousel from './components/projectCarousel';
-import Container from 'react-bootstrap/container';
+import Container from 'react-bootstrap/Container';
 import HomeSection from './components/homeSection';
 import { sections } from '../../constants/home';
 import { Helmet } from 'react-helmet';

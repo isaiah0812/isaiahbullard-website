@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 import { Helmet } from 'react-helmet';
 
 import AlbumPlayer from './components/albumPlayer';

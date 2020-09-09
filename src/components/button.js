@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button as RBButton } from 'react-bootstrap';
+import { default as RBButton } from 'react-bootstrap/Button';
 import { darkBlue, lightBlue, silver, white } from '../constants/colors'
 
 const StyledButton = styled(RBButton)`

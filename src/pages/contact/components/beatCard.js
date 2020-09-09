@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Card, CardImg } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
+import CardImg from 'react-bootstrap/CardImg';
 import { white, black, lightBlue, darkBlue } from '../../../constants/colors';
 
 const StyledBeatCard = styled(Card)`
