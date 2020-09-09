@@ -55,7 +55,8 @@ export default class Contact extends React.Component {
       email: "",
       statement: "",
       toastVisible: false,
-      alertVisible: false,
+      successAlertVisible: false,
+      failureAlertVisible: false,
       selected: [],
       recentBeat: beats[0],
       added: true,
@@ -96,17 +97,24 @@ export default class Contact extends React.Component {
         yourName: "",
         email: "",
         statement: "",
-        alertVisible: true,
+        successAlertVisible: true,
         selected: [],
         toastVisible: false,
         recentBeat: beats[0],
         purchasingBeats: false,
         spinnerVisible: false,
       }, (error) => {
-        console.error(error);
+        console.info(error);
         this.setState({
           spinnerVisible: false,
+          failureAlertVisible: true,
         })
+      })
+    }).catch((error) => {
+      console.error(error);
+      this.setState({
+        spinnerVisible: false,
+        failureAlertVisible: true,
       })
     })
     
@@ -304,12 +312,22 @@ export default class Contact extends React.Component {
                 <Alert 
                   style={{width: '100%', margin: '2% 0%'}} 
                   variant={'success'} 
-                  show={this.state.alertVisible}
-                  onClose={() => this.setState({alertVisible: false})} 
+                  show={this.state.successAlertVisible}
+                  onClose={() => this.setState({successAlertVisible: false})} 
                   dismissible
                 >
                   <Alert.Heading>Submitted Successfuly!</Alert.Heading>
                   Thank you for contacting me! I will get back to you as soon as I can.
+                </Alert>
+                <Alert 
+                  style={{width: '100%', margin: '2% 0%'}} 
+                  variant={'danger'} 
+                  show={this.state.failureAlertVisible}
+                  onClose={() => this.setState({failureAlertVisible: false})} 
+                  dismissible
+                >
+                  <Alert.Heading>Sumbission Failed.</Alert.Heading>
+                  Please try again.
                 </Alert>
               </Form>
             </HoveringForm>
