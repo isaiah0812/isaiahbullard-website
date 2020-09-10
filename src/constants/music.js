@@ -15,9 +15,9 @@ import ta_cover from '../pages/beats/assets/beats/Tattoos.png';
 import tm_cover from '../pages/beats/assets/beats/TMNT.png';
 import vi_cover from '../pages/beats/assets/beats/Virtuoso.jpg';
 import hj_cover from '../pages/beats/assets/beatTapes/HollyJolly.png';
-import ma_cover from '../pages/projects/assets/albums/Maestro.PNG';
-import zr_cover from '../pages/projects/assets/albums/Zaes_Room.PNG';
-import bt_cover from '../pages/projects/assets/singles/Big_Thangs.JPG';
+import ma_cover from '../pages/projects/assets/albums/Maestro.png';
+import zr_cover from '../pages/projects/assets/albums/Zaes_Room.png';
+import bt_cover from '../pages/projects/assets/singles/Big_Thangs.jpg';
 import ep_cover from '../pages/projects/assets/singles/Evil_Plan.png';
 import fl_cover from '../pages/projects/assets/singles/Fast_Lane.png';
 

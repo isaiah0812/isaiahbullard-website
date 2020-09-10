@@ -47,6 +47,10 @@ const HoveringForm = styled.div`
 `
 
 export default class Contact extends React.Component {
+
+  service = process.env.REACT_APP_EMAILJS_SERVICE;
+  username = process.env.REACT_APP_EMAILJS_ID;
+  templates = [process.env.REACT_APP_EMAILJS_TEMPLATE_BEATS, process.env.REACT_APP_EMAILJS_TEMPLATE_CONTACT];
   
   constructor(props) {
     super(props);
@@ -64,7 +68,7 @@ export default class Contact extends React.Component {
       spinnerVisible: false,
     }
 
-    init("user_NhpX6mA3wYfbJ5YRxETqn");
+    init(this.username);
     this.handleChange = this.addBeat.bind(this);
 
     this.allBeats = [...beats].concat(...projects.filter(project => project.beatTape).map(beatTape => {return beatTape.beats}));
@@ -80,11 +84,13 @@ export default class Contact extends React.Component {
     e.preventDefault();
     this.setState({
       spinnerVisible: true,
+      successAlertVisible: false,
+      failureAlertVisible: false,
     })
 
     send(
-      "service_22v4zop", 
-      this.state.purchasingBeats ? "template_bjrhf54" : "template_fe1k1ey", 
+      this.service, 
+      this.state.purchasingBeats ? this.templates[0] : this.templates[1], 
       {
         name: this.state.yourName,
         email: this.state.email,
@@ -104,18 +110,22 @@ export default class Contact extends React.Component {
         purchasingBeats: false,
         spinnerVisible: false,
       }, (error) => {
-        console.info(error);
+        if(error) {
+          console.info(error);
+          this.setState({
+            spinnerVisible: false,
+            failureAlertVisible: true,
+          })
+        }
+      })
+    }).catch((error) => {
+      if(error) {
+        console.error(error);
         this.setState({
           spinnerVisible: false,
           failureAlertVisible: true,
-        })
-      })
-    }).catch((error) => {
-      console.error(error);
-      this.setState({
-        spinnerVisible: false,
-        failureAlertVisible: true,
-      })
+        });
+      }
     })
     
   }
