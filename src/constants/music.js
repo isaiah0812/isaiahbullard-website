@@ -231,7 +231,7 @@ export const projects = [
       'To Be Different',
       'Gilleland'
     ],
-    description: "This a description for an album.",
+    description: '/descriptions/Maestro.txt',
     albumCredits: {
       albumId: 'maestro',
       producedBy: ['Isaiah Bullard (@zaemadethis)'],
@@ -272,7 +272,7 @@ export const projects = [
       'Lullaby',
       'Be'
     ],
-    description: "This is a description of a beat tape.",
+    description: '/descriptions/The_Holly_Jolly_Tape.txt',
     albumCredits: {
       albumId: 'the-holly-jolly-tape',
       samples: [
@@ -396,10 +396,10 @@ export const projects = [
       'Life Update (Interlude)',
       'Famous Friends',
       'Smoove',
-      'Good Luck Charm (Sheer Perfection)',
+      'Good Luck Charm',
       'By Design'
     ],
-    description: "This a description for an album.",
+    description: '/descriptions/Zaes_Room.txt',
     albumCredits: {
       albumId: 'zaes-room',
       features: [

@@ -90,10 +90,26 @@ export default class ProjectPage extends React.Component {
       appleBgColor: 'transparent',
       bandcampBgColor: 'transparent',
       soundcloudBgColor: 'transparent',
+      description: '',
     }
 
     this.album = this.props.album;
   }
+
+  componentDidMount = () => {
+    this.printDescription(this.album.description);
+  }
+
+  printDescription = (description) => {
+    fetch(description)
+    .then(r => r.text())
+    .then(text => {
+      this.setState({
+        description: text,
+      })
+    });
+  }
+
   render() {
     return (
       <Container fluid style={{ padding: 0 }}>
@@ -112,7 +128,11 @@ export default class ProjectPage extends React.Component {
           <ProjectPageInfoSection fluid>
             <Container fluid style={{width: '100%', padding: '4%', top: '7.5%'}}>
               <ProjectPageSecondaryTitle>{this.album.title}</ProjectPageSecondaryTitle>
-              <ProjectPageInfoParagraph>{this.album.description}</ProjectPageInfoParagraph>
+              <ProjectPageInfoParagraph>
+                {this.state.description.split('\n').map(pg => {
+                  return pg.length > 0 ? (<p>{pg}</p>) : "";
+                })}
+              </ProjectPageInfoParagraph>
               <Container fluid style={{padding: 0, display: 'flex', flexWrap: 'wrap'}}>
                 {this.album.albumCredits.features && (
                   <ProjectPageInfoParagraph>
