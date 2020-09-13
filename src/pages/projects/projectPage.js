@@ -134,6 +134,12 @@ export default class ProjectPage extends React.Component {
                 })}
               </ProjectPageInfoParagraph>
               <Container fluid style={{padding: 0, display: 'flex', flexWrap: 'wrap'}}>
+                <ProjectPageInfoParagraph>
+                  <strong>Track List:</strong>
+                  <ProjectPageList>
+                    {this.album.songList.map((song, index) => <li key={index}>{song}</li>)}
+                  </ProjectPageList>
+                </ProjectPageInfoParagraph>
                 {this.album.albumCredits.features && (
                   <ProjectPageInfoParagraph>
                     <strong>Featuring (in order of appearance):</strong>

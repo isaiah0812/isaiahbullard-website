@@ -241,7 +241,8 @@ export const projects = [
       artworkBy: ['Isaiah Bullard (@zaemadethis)'],
       songwriters: [
         'Isaiah Solomon Bullard',
-        'Bobby Bullard'
+        'Bobby Bullard',
+        'Jason Allen Link'
       ],
       specialThanks: [
         'Jason Link',
@@ -278,15 +279,15 @@ export const projects = [
       samples: [
         'I\'ll Be Home For Christmas - Michael Bublé',
         'You\'re A Mean One, Mr. Grinch - Thurl Ravenscroft',
-        'Feliz Navidad',
-        'Grandma Got Run Over By a Reindeer',
+        'Feliz Navidad - José Feliciano',
+        'Grandma Got Run Over By a Reindeer - Elmo & Patsy',
         'It\'s Beginning to Look A Lot Like Christmas - Bing Crosby',
-        'It\'s Beginning to Look A Lot Like Christmas - Some Sisters',
+        'It\'s Beginning to Look A Lot Like Christmas - Perry Como & The Fontane Sisters',
         'Santa Baby - Ariana Grande',
         'I Saw Mommy Kissing Santa Claus - The Jackson 5',
         'Sleigh Ride - Ella Fitzgerald',
-        'Merry Christmas, Darling',
-        'This Christmas'
+        'Merry Christmas, Darling - The Carpenters',
+        'This Christmas - Donny Hathaway'
       ],
       producedBy: ['Isaiah Bullard (@zaemadethis)'],
       mixedBy: ['Isaiah Bullard (@zaemadethis)'],
@@ -386,18 +387,18 @@ export const projects = [
     releaseDate: "10.16.2020",
     beatTape: false,
     songList: [
-      'Welcome To the Show',
-      'Toy Box',
-      'Big Thangs',
-      'Supervillain',
-      'Evil Plan',
-      'Brainstorm',
-      'KKK',
+      'Welcome To the Show (feat. FUZE)',
+      'Toy Box (feat. Mark Pheonix, CoreyArnell & Phri)',
+      'Big Thangs (feat. CoreyArnell & May)',
+      'Supervillain (feat. 101 & CoreyArnell)',
+      'Evil Plan (feat. LouieV T & FUZE)',
+      'Brainstorm (feat. De\'John Linward & FUZE',
+      'KKK (feat. CoreyArnell)',
       'Life Update (Interlude)',
-      'Famous Friends',
-      'Smoove',
-      'Good Luck Charm',
-      'By Design'
+      'Famous Friends (feat. May & Chris Winston)',
+      'Smoove (feat. Bluu Suede & Rell Gibson)',
+      'Good Luck Charm (feat. FUZE)',
+      'By Design (feat. Community Service)'
     ],
     description: '/descriptions/Zaes_Room.txt',
     albumCredits: {
