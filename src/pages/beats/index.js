@@ -43,7 +43,7 @@ class BeatsHome extends React.Component {
           <PageBannerFade fluid>
             <BannerText fluid>
               <BannerTitle>Beats</BannerTitle>
-              <BannerCaption>You either want to make a record or fantasize about your "rap dreams". This page is for you!</BannerCaption>
+              <BannerCaption>If you either want to make a record with me or fantasize about your "rap dreams", this page is for you!</BannerCaption>
             </BannerText>
           </PageBannerFade>
         </PageBanner>

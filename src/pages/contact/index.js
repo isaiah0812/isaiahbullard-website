@@ -189,7 +189,7 @@ export default class Contact extends React.Component {
           <PageBannerFade fluid>
             <BannerText fluid>
               <BannerTitle>Contact</BannerTitle>
-              <BannerCaption>Ask me about my services! I make beats and websites. I also make a mean macaroni necklace.</BannerCaption>
+              <BannerCaption>Fill out the form and we can have a conversation about the thing that you want to have a conversation about.</BannerCaption>
             </BannerText>
           </PageBannerFade>
         </PageBanner>

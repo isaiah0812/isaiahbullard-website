@@ -1,26 +1,26 @@
 export const sections = [
     {
       title: 'About Me',
-      description: "Producer. Songwriter. Wannabe composer. That's me! I'm open to all serious inquiries that involve music. Hit the button below to contact me and let's get locked in!",
+      description: "Since 2017, I have been a self-taught music producer, songwriter, composer, and mixing engineer. Raised in Pflugerville, Texas, my influences come from genres such as hip-hop, R&B, classical, jazz, rock, and gospel. His passion for music started at a young age with the drumset and the piano. That same passion is now seen in music production alongside a new found passion to the art of music with the world.",
       buttonText: 'Contact',
       href: '/contact',
     },
     {
       title: 'Music',
-      description: "All of my music is available for digital streaming and download. Check out my entire discography and get more information about each project!",
-      buttonText: 'More',
+      description: "All of my music is available for digital streaming and download. This page includes singles and all of my prduction credits, along with detailed information on all of my solo albums. Check out my entire discography and get more information about each project!",
+      buttonText: 'Projects',
       href: '/projects',
     },
     {
       title: 'Beats',
-      description: "I sell beats! Check out my latest beats and all of my beat tapes here. Everything on this page is for sale, so be sure to contact me if you're looking to work together!",
-      buttonText: 'Listen',
+      description: "All of the beats located on this page are for sale. You'll also find detailed information on all of my released beat tapes, which are available for free listening or download. The beats on those beat tapes can also be purchased individually for commercial use. Listen to the beats now!",
+      buttonText: 'Beats',
       href: '/beats',
     },
     {
       title: 'Merch',
       description: "Merchandise coming soon.",
-      buttonText: 'Shop',
+      buttonText: 'Merch',
       href: '/merchandise',
     },
   ]

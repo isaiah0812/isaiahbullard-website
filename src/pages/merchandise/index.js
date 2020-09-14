@@ -23,7 +23,7 @@ export default class Merchandise extends React.Component {
           <PageBannerFade fluid>
             <BannerText fluid>
               <BannerTitle>Merchandise</BannerTitle>
-              <BannerCaption>Merchandise coming soon ;)</BannerCaption>
+              <BannerCaption>Merchandise coming soon.</BannerCaption>
             </BannerText>
           </PageBannerFade>
         </PageBanner>
