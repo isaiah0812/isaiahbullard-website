@@ -7,7 +7,7 @@ import { carousel } from '../../../constants/carousel';
 export default class ProjectCarousel extends React.Component {
   render() {
     return (
-      <Carousel style={{height: 300}} interval={5000}>
+      <Carousel style={{minHeight: 300}} interval={5000}>
         {carousel.map((entry, index) => (
           <CarouselItem key={index} style={{height: '100%'}}>
             <ProjectCarouselItem 

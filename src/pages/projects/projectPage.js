@@ -129,8 +129,8 @@ export default class ProjectPage extends React.Component {
             <Container fluid style={{width: '100%', padding: '4%', top: '7.5%'}}>
               <ProjectPageSecondaryTitle>{this.album.title}</ProjectPageSecondaryTitle>
               <ProjectPageInfoParagraph>
-                {this.state.description.split('\n').map(pg => {
-                  return pg.length > 0 ? (<p>{pg}</p>) : "";
+                {this.state.description.split('\n').map((pg, index) => {
+                  return pg.length > 0 ? (<p key={index}>{pg}</p>) : "";
                 })}
               </ProjectPageInfoParagraph>
               <Container fluid style={{padding: 0, display: 'flex', flexWrap: 'wrap'}}>
