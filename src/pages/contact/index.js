@@ -12,6 +12,7 @@ import Alert from 'react-bootstrap/Alert';
 import Spinner from 'react-bootstrap/Spinner';
 import { init, send } from 'emailjs-com';
 import { Helmet } from 'react-helmet';
+import { ReCAPTCHA } from 'react-google-recaptcha';
 
 import banner from './assets/banner.jpg';
 import Button from '../../components/button';
@@ -51,6 +52,7 @@ export default class Contact extends React.Component {
   service = process.env.REACT_APP_EMAILJS_SERVICE;
   username = process.env.REACT_APP_EMAILJS_ID;
   templates = [process.env.REACT_APP_EMAILJS_TEMPLATE_BEATS, process.env.REACT_APP_EMAILJS_TEMPLATE_CONTACT];
+  recaptchaRef = React.createRef();
   
   constructor(props) {
     super(props);
@@ -66,6 +68,7 @@ export default class Contact extends React.Component {
       added: true,
       purchasingBeats: false,
       spinnerVisible: false,
+      submitVisible: false,
     }
 
     init(this.username);
@@ -78,6 +81,10 @@ export default class Contact extends React.Component {
     this.setState({
       toastVisible: false,
     })
+  }
+
+  verify = () => {
+    alert("Wassup")
   }
   
   onSubmit = (e) => {
@@ -314,6 +321,10 @@ export default class Contact extends React.Component {
                     required
                   />
                 </FormGroup>
+                <ReCAPTCHA 
+                  onChange={this.verify} 
+                  sitekey={process.env.REACT_APP_RECAPTCHA_KEY} 
+                />
                 <Button submit text={'Submit'} />
                 <br />
                 {this.state.spinnerVisible && (
