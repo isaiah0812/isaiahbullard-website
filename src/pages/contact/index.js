@@ -12,7 +12,7 @@ import Alert from 'react-bootstrap/Alert';
 import Spinner from 'react-bootstrap/Spinner';
 import { init, send } from 'emailjs-com';
 import { Helmet } from 'react-helmet';
-import { ReCAPTCHA } from 'react-google-recaptcha';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import banner from './assets/banner.jpg';
 import Button from '../../components/button';
@@ -68,7 +68,6 @@ export default class Contact extends React.Component {
       added: true,
       purchasingBeats: false,
       spinnerVisible: false,
-      submitVisible: false,
     }
 
     init(this.username);
@@ -321,10 +320,12 @@ export default class Contact extends React.Component {
                     required
                   />
                 </FormGroup>
-                <ReCAPTCHA 
-                  onChange={this.verify} 
-                  sitekey={process.env.REACT_APP_RECAPTCHA_KEY} 
-                />
+                <FormGroup>
+                  <ReCAPTCHA 
+                    sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
+                  />
+                  <FormText>You must verify before submitting the form.</FormText>
+                </FormGroup>
                 <Button submit text={'Submit'} />
                 <br />
                 {this.state.spinnerVisible && (
