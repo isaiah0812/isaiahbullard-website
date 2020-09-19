@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import banner from './assets/banner.jpg';
+import { Helmet } from 'react-helmet';
+
 import { 
   PageBanner, 
   PageBannerFade, 
@@ -9,8 +10,16 @@ import {
   BannerCaption, 
   PageSectionTitle,
 } from '../../constants/styled-components';
-import { Helmet } from 'react-helmet';
 
+import banner from './assets/banner.jpg';
+
+/**
+ * The Merchandise page, yet to be implemented.
+ * @name Merchandise
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <Merchandise />
+ */
 export default class Merchandise extends React.Component {
   render() {
     return (

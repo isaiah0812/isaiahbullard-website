@@ -1,9 +1,18 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import CarouselItem from 'react-bootstrap/CarouselItem';
-import ProjectCarouselItem from './projectCarouselItem';
+
 import { carousel } from '../../../constants/carousel';
 
+import ProjectCarouselItem from './projectCarouselItem';
+
+/**
+ * The Carousel that displays on the Home Page, showing the latest projects from Isaiah Bullard
+ * @name ProjectCarousel
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <ProjectCarousel />
+ */
 export default class ProjectCarousel extends React.Component {
   render() {
     return (

@@ -1,3 +1,9 @@
+/**
+ * All routes for the Menu
+ * @constant
+ * @name routes
+ * @type {object[]}
+ */
 export const routes = [
   {
     key: 'projects',

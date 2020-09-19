@@ -1,12 +1,17 @@
 import React, { useEffect } from 'react';
-import { Route, Link, Switch, useRouteMatch } from 'react-router-dom'
+import { 
+  Route, 
+  Link, 
+  Switch, 
+  useRouteMatch 
+} from 'react-router-dom'
 import styled from 'styled-components';
-import Container from 'react-bootstrap/Container';
 import Accordion from 'react-bootstrap/Accordion';
+import Container from 'react-bootstrap/Container';
 import { Helmet } from 'react-helmet';
 
-import banner from './assets/banner.jpg';
-import AlbumCard from '../projects/components/albumCard';
+
+import { silver } from '../../constants/colors';
 import { beats, projects } from '../../constants/music';
 import { 
   PageBanner, 
@@ -17,10 +22,20 @@ import {
   PageSectionTitle,
   PageSectionInfo,
 } from '../../constants/styled-components';
-import BeatDisplay from './components/beatDisplay';
-import ProjectPage from '../projects/projectPage';
-import { silver } from '../../constants/colors';
 
+import AlbumCard from '../projects/components/albumCard';
+import ProjectPage from '../projects/projectPage';
+
+import banner from './assets/banner.jpg';
+import BeatDisplay from './components/beatDisplay';
+
+/**
+ * Responsive section on the beat's page to go to vertical on Mobile mode
+ * @constant
+ * @name BeatsPageSection
+ * @type {import('styled-components').StyledComponent}
+ * @example <BeatsPageSection>...</BeatsPageSection>
+ */
 const BeatsPageSection = styled(Container)`
   width: 48%;
   margin: 1%;
@@ -31,6 +46,13 @@ const BeatsPageSection = styled(Container)`
   }
 `
 
+/**
+ * The home of the beats page, showing both the beat list and the beat tape list.
+ * @name BeatsHome
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <BeatsHome />
+ */
 class BeatsHome extends React.Component {
   render() {
     return (
@@ -85,9 +107,17 @@ class BeatsHome extends React.Component {
 }
 
 // This has to be a functional component in order to use useRouteMatch()
+/**
+ * The entire beats page, including every beat tape sub route.
+ * @name Beats
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <Beats />
+ */
 export default () => {
   let { path, url } = useRouteMatch();
 
+  // Scrolls to the top when changing pages on the beats page.
   useEffect(() => {
     window.scrollTo(0, 0);
   });
@@ -95,8 +125,10 @@ export default () => {
   return (
     <Switch>
       <Route exact path={path}>
+        {/* Loads the home page for the beats page */}
         <BeatsHome url={url} />
       </Route>
+      {/* Loads each route for the beat tapes */}
       {projects.filter(project => project.beatTape).map(beatTape => (
         <Route key={beatTape.id} path={`${path}/${beatTape.id}`}>
           <ProjectPage album={beatTape} />

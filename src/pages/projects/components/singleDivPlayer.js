@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import Tab from 'react-bootstrap/Tab';
 import Nav from 'react-bootstrap/Nav';
+import Tab from 'react-bootstrap/Tab';
 
 import { 
   applePink, 
@@ -9,8 +9,15 @@ import {
   soundcloudOrange, 
   spotifyGreen 
 } from '../../../constants/colors';
-import { PlayerTab, PlayerSelector } from '../../../constants/styled-components'
+import { PlayerTab, PlayerSelector } from '../../../constants/styled-components';
 
+/**
+ * A container with a Spotify, Apple Music, Bandcamp, and SoundCloud player, as well as a SongLink for a single.
+ * @name SingleDivPlayer
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <SingleDivPlayer album={album} />
+ */
 export default class SingleDivPlayer extends React.Component {
 
   constructor(props) {

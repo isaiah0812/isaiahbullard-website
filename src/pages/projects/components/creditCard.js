@@ -10,11 +10,25 @@ import {
   white 
 } from '../../../constants/colors';
 
+/**
+ * An anchor tag that leads to the production credit.
+ * @constant
+ * @name CreditLink
+ * @type {import('styled-components').StyledComponent}
+ * @example <CreditLink href="https://www.example.com">Credit</CreditLink>
+ */
 const CreditLink = styled.a`
   width: 48%;
   margin: 1%;
 `
 
+/**
+ * The display for each credit.
+ * @constant
+ * @name CreditButton
+ * @type {import('styled-components').StyledComponent}
+ * @example <CreditButton>...</CreditButton>
+ */
 const CreditButton = styled.button`
   background-color: ${white};
   width: 100%;
@@ -32,6 +46,13 @@ const CreditButton = styled.button`
   }
 `
 
+/**
+ * The title of the credit.
+ * @constant
+ * @name CreditTitle
+ * @type {import('styled-components').StyledComponent}
+ * @example <CreditTitle>Title</CreditTitle>
+ */
 const CreditTitle = styled.h4`
   font-weight: normal;
   overflow: hidden;
@@ -39,6 +60,13 @@ const CreditTitle = styled.h4`
   text-overflow: ellipsis;
 `
 
+/**
+ * A card that displays a production credit on the Projects Page.
+ * @name CreditCard
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <CreditCard credit={credit} />
+ */
 export default class CreditCard extends React.Component {
   render() {
     const { credit } = this.props;

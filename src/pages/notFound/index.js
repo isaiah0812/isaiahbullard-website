@@ -4,6 +4,13 @@ import { Helmet } from 'react-helmet';
 
 import { darkBlue, white } from '../../constants/colors';
 
+/**
+ * The Not found page, directed here when a route in the site is not recognizable
+ * @name NotFound
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <NotFound />
+ */
 export default class NotFound extends React.Component {
   render() {
     return (

@@ -1,8 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
+
 import Button from '../../../components/button';
 
+/**
+ * The background image on a ProjectCarousel's slide
+ * @constant
+ * @name CarouselSlide
+ * @type {import('styled-components').StyledComponent}
+ * @example <CarouselSlide backdrop="backdrop.jpg">...</CarouselSlide>
+ */
 const CarouselSlide = styled(Container)`
   width: 100%;
   min-height: 300px;
@@ -11,6 +19,13 @@ const CarouselSlide = styled(Container)`
   padding: 0px;
 `
 
+/**
+ * The fade effect over a CarouselSlide
+ * @constant
+ * @name CarouselSlideFade
+ * @type {StyledComponent}
+ * @example <CarouselSlideFade>...</CarouselSlideFade>
+ */
 const CarouselSlideFade = styled(Container)`
   width: 100%;
   min-height: 300px;
@@ -22,6 +37,13 @@ const CarouselSlideFade = styled(Container)`
   justify-content: center;
 `
 
+/**
+ * A section on th CarouselSlide
+ * @constant
+ * @name CarouselInfo
+ * @type {import('styled-components').StyledComponent}
+ * @example <CarouselInfo>...</CarouselInfo>
+ */
 const CarouselInfo = styled(Container)`
   padding: 0px;
   width: 100%;
@@ -33,6 +55,12 @@ const CarouselInfo = styled(Container)`
   align-self: center;
 `
 
+/**
+ * A logo for a project
+ * @name CarouselImage
+ * @type {import('styled-components').StyledComponent}
+ * @example <CarouselImage src="logo.png" alt="logo" />
+ */
 const CarouselImage = styled.img`
   margin: 0;
   align-self: flex-end;
@@ -44,6 +72,13 @@ const CarouselImage = styled.img`
   }
 `
 
+/**
+ * The short text describing the project
+ * @constant
+ * @name CarouselText
+ * @type {import('styled-components').StyledComponent}
+ * @example <CarouselText>Some text...</CarouselText>
+ */
 const CarouselText = styled.h3`
   padding: 2% 0%;
   line-height: normal;
@@ -59,6 +94,13 @@ const CarouselText = styled.h3`
   }
 `
 
+/**
+ * Container containing the text and button on a CarouselSlide
+ * @constant
+ * @name CarouselInfoSection
+ * @type {import('styled-components').StyledComponent}
+ * @example <CarouselInfoSection>...</CarouselInfoSection>
+ */
 const CarouselInfoSection = styled(Container)`
   width: 40%;
   height: 100%;
@@ -76,9 +118,21 @@ const CarouselInfoSection = styled(Container)`
   }
 `
 
+/**
+ * One slide on a the ProjectCarousel on the Home page.
+ * @name ProjectCarouselItem
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <ProjectCarouselItem backdrop="backdrop.png" logo="logo.png" description="Description of things" link="https://example.com/project_page" />
+ */
 export default class ProjectCarouselItem extends React.Component {
   render() {
-    const { backdrop, logo, description, link } = this.props;
+    const { 
+      backdrop, 
+      logo, 
+      description, 
+      link 
+    } = this.props;
     return (
       <Container fluid style={{padding: 0, minHeight: 300}}>
         <CarouselSlide fluid backdrop={backdrop}>

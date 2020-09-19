@@ -12,9 +12,27 @@ import {
   faSoundcloud,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
-import {ReactComponent as AppleMusicLogo} from '../assets/Apple_Music_Icon_blk.svg';
-import { white, black, silver, spotifyGreen, applePink, bandcampBlue, soundcloudOrange, youtubeRed } from '../constants/colors';
 
+import {ReactComponent as AppleMusicLogo} from '../assets/Apple_Music_Icon_blk.svg';
+
+import { 
+  white, 
+  black, 
+  silver, 
+  spotifyGreen, 
+  applePink, 
+  bandcampBlue, 
+  soundcloudOrange, 
+  youtubeRed 
+} from '../constants/colors';
+
+/**
+ * A regular styled FontAwesomeIcon using a StyledComponent
+ * @constant
+ * @type {import('styled-components').StyledComponent}
+ * @name StyledFaIcon
+ * @example <StyledFaIcon color="red" />
+ */
 const StyledFaIcon = styled(FontAwesomeIcon)`
   color: ${white};
   margin: .4em;
@@ -24,6 +42,13 @@ const StyledFaIcon = styled(FontAwesomeIcon)`
   }
 `
 
+/**
+ * A styled Apple Music SVG object, used because FontAwesome doesn't have the apple music logo
+ * @constant
+ * @type {import('styled-components').StyledComponent}
+ * @name StyledAppleMusicIcon
+ * @example <StyledAppleMusicIcon color="red" />
+ */
 const StyledAppleMusicIcon = styled(AppleMusicLogo)`
   fill: ${white};
   margin: .4em;
@@ -33,11 +58,24 @@ const StyledAppleMusicIcon = styled(AppleMusicLogo)`
   }
 `
 
+/**
+ * Common height and width of the footer icons.
+ * @constant
+ * @name iconDimensions
+ * @type {object}
+ */
 const iconDimensions = {
   width: '2.75em',
   height: '2.75em',
 }
 
+/**
+ * The Footer container with all social media links
+ * @name Footer
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <Footer />
+ */
 export default class Footer extends React.Component {
   render() {
     return (

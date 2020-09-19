@@ -1,9 +1,10 @@
 import React from 'react';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Tab from 'react-bootstrap/Tab';
-import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Row from 'react-bootstrap/Row';
+import Tab from 'react-bootstrap/Tab';
+
 import Button from '../../../components/button';
 
 import { 
@@ -18,7 +19,18 @@ import {
   PlayerSelector 
 } from '../../../constants/styled-components';
 
+/**
+ * A container with a Bandcamp, SoundCloud, and YouTube player, and a button to go to the Contact Page for a beat tape.
+ * @name BeatTapePlayer
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <BeatTapePlayer beatTape={beatTape} />
+ */
 export default class BeatTapePlayer extends React.Component {
+  /**
+   * @constructor
+   * @param {object} props Properties that may be passed when using the AlbumPlayer
+   */
   constructor(props) {
     super(props);
 
@@ -30,6 +42,7 @@ export default class BeatTapePlayer extends React.Component {
 
     this.beatTape = this.props.beatTape;
   }
+
   render() {
     return (
       <Container fluid style={{padding: 0}}>

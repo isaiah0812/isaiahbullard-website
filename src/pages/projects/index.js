@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
-import { Route, Link, Switch, useRouteMatch } from 'react-router-dom';
-import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import { Helmet } from 'react-helmet';
+import { 
+  Route, 
+  Link, 
+  Switch, 
+  useRouteMatch 
+} from 'react-router-dom';
+import styled from 'styled-components';
 
-import banner from './assets/banner.jpg';
-import AlbumCard from './components/albumCard';
-import SingleCard from './components/singleCard';
-import CreditCard from './components/creditCard';
+import { silver } from '../../constants/colors';
 import { singles, credits, projects } from '../../constants/music';
 import { 
   PageBanner, 
@@ -17,9 +19,20 @@ import {
   BannerCaption, 
   PageSectionTitle,
 } from '../../constants/styled-components';
-import ProjectPage from './projectPage';
-import { silver } from '../../constants/colors';
 
+import banner from './assets/banner.jpg';
+import AlbumCard from './components/albumCard';
+import SingleCard from './components/singleCard';
+import CreditCard from './components/creditCard';
+import ProjectPage from './projectPage';
+
+/**
+ * Container that goes around the CreditCard objects.
+ * @constant
+ * @name CreditSection
+ * @type {import('styled-components').StyledComponent}
+ * @example <CreditSection>...</CreditSection>
+ */
 const CreditSection = styled(Container)`
   display: flex;
   width: 50%;
@@ -33,7 +46,18 @@ const CreditSection = styled(Container)`
   }
 `
 
+/**
+ * The home of the Projects page, showing all albums, singles, production credits, and other placements (to be implemented).
+ * @name ProjectsHome
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <ProjectsHome />
+ */
 class ProjectsHome extends React.Component {
+  /**
+   * @constructor
+   * @param {object} props Properties that may be passed when using the AlbumPlayer
+   */
   constructor(props) {
     super(props);
 
@@ -114,17 +138,28 @@ class ProjectsHome extends React.Component {
   }
 }
 
+// This has to be a functional component in order to use useRouteMatch()
+/**
+ * The entire beats page, including every beat tape sub route.
+ * @name Beats
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <Beats />
+ */
 export default () => {
   let { path, url } = useRouteMatch();
 
+  // Scrolls to the top when changing pages on the beats page.
   useEffect(() => {
     window.scrollTo(0, 0);
   })
   return (
     <Switch>
+      {/* Loads home page for the Projects page */}
       <Route exact path={path}>
         <ProjectsHome url={url}/>
       </Route>
+      {/* Loads each route for the albums */}
       {projects.filter(project => !project.beatTape).map(album => (
         <Route key={album.id} path={`${path}/${album.id}`}>
           <ProjectPage album={album} />

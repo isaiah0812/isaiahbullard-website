@@ -1,8 +1,18 @@
+/**
+ * @author Isaiah Bullard
+ */
 import React from 'react';
 import styled from 'styled-components';
 import { default as RBButton } from 'react-bootstrap/Button';
+
 import { darkBlue, lightBlue, silver, white } from '../constants/colors'
 
+/**
+ * @constant
+ * @type {import('styled-components').StyledComponent}
+ * @name StyledButton
+ * @example <StyledButton type="submit" secondary="true" href="http://www.example.com">Button Text</StyledButton>
+ */
 const StyledButton = styled(RBButton)`
   border-width: 7px;
   border-style: solid;
@@ -29,13 +39,32 @@ const StyledButton = styled(RBButton)`
 
 `
 
+/**
+ * The common Button object used throughout the project.
+ * @name Button
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <Button submit secondary href="https://www.example.com" />
+ */
 export default class Button extends React.Component {
+  /**
+   * @name render
+   * @returns {React.Component}
+   */
   render() {
-    const { submit, secondary, text, href } = this.props;
+    /**
+     * @since 1.0.0
+     */
+    const { 
+      submit, 
+      secondary, 
+      text, 
+      href 
+    } = this.props;
     return (
       <StyledButton 
-        type={submit ? 'submit' : 'button'} 
-        secondary={secondary} 
+        type={submit ? 'submit' : 'button'} // Has to be strings in order to get rid of the warnings in Chrome
+        secondary={secondary}
         href={href}
       >
         {text}

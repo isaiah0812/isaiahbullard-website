@@ -1,9 +1,9 @@
 import React from 'react';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Tab from 'react-bootstrap/Tab';
-import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Row from 'react-bootstrap/Row';
+import Tab from 'react-bootstrap/Tab';
 
 import { 
   applePink, 
@@ -19,7 +19,18 @@ import {
   SongLink 
 } from '../../../constants/styled-components';
 
+/**
+ * A container with a Spotify, Apple Music, Bandcamp, and SoundCloud player, as well as a SongLink for an album.
+ * @name AlbumPlayer
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <AlbumPlayer album={album} />
+ */
 export default class AlbumPlayer extends React.Component {
+  /**
+   * @constructor
+   * @param {object} props Properties that may be passed when using the AlbumPlayer
+   */
   constructor(props) {
     super(props);
 
@@ -32,6 +43,7 @@ export default class AlbumPlayer extends React.Component {
 
     this.album = this.props.album
   }
+
   render() {
     return (
       <Container fluid style={{padding: 0}}>

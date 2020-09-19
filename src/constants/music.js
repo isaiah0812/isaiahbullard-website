@@ -21,6 +21,12 @@ import bt_cover from '../pages/projects/assets/singles/Big_Thangs.jpg';
 import ep_cover from '../pages/projects/assets/singles/Evil_Plan.png';
 import fl_cover from '../pages/projects/assets/singles/Fast_Lane.png';
 
+/**
+ * All available key signatures for beats.
+ * @constant
+ * @name KEY_SIGS
+ * @type {object}
+ */
 const KEY_SIGS = {
   AMAJOR: 'A Major',
   AMINOR: 'A Minor',
@@ -48,6 +54,12 @@ const KEY_SIGS = {
   GSHARPMINOR: 'G#/Ab Minor',
 }
 
+/**
+ * Beats that are not available on a beat tape.
+ * @constant
+ * @name beats
+ * @type {object[]}
+ */
 export const beats = [
   {
     title: "8-Bit",
@@ -195,6 +207,12 @@ export const beats = [
   },
 ];
 
+/**
+ * All song production credits for the Projects page
+ * @constant
+ * @name credits
+ * @type {object[]}
+ */
 export const credits = [
   {
     id: "safari-fuze",
@@ -210,6 +228,12 @@ export const credits = [
   },
 ];
 
+/**
+ * Albums and beat tapes.
+ * @constant
+ * @name projects
+ * @type {object[]}
+ */
 export const projects = [
   {
     title: "Maestro",
@@ -459,6 +483,12 @@ export const projects = [
   },
 ];
 
+/**
+ * All available singles for the projects page
+ * @constant
+ * @name singles
+ * @type {object[]}
+ */
 export const singles = [
   {
     title: "Fast Lane",

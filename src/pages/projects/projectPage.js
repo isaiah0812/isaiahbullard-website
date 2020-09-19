@@ -1,12 +1,25 @@
 import React from 'react';
-import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import { Helmet } from 'react-helmet';
+import styled from 'styled-components';
+
+import { 
+  darkBlue, 
+  lightBlue, 
+  spotifyGreen, 
+  white 
+} from '../../constants/colors';
 
 import AlbumPlayer from './components/albumPlayer';
 import BeatTapePlayer from './components/beatTapePlayer';
-import { darkBlue, lightBlue, spotifyGreen, white } from '../../constants/colors';
 
+/**
+ * Half of a project page.
+ * @constant
+ * @name ProjectPageSection
+ * @type {import('styled-components').StyledComponent}
+ * @example <ProjectPageSection>...</ProjectPageSection>
+ */
 const ProjectPageSection = styled(Container)`
   width: 100%;
   padding: 0px;
@@ -16,6 +29,13 @@ const ProjectPageSection = styled(Container)`
   flex-wrap: wrap;
 `
 
+/**
+ * The cover art of a project
+ * @constant
+ * @name ProjectPageCover
+ * @type {import('styled-components').StyledComponent}
+ * @example <ProjectPageCover src="cover.png" alt="cover" />
+ */
 const ProjectPageCover = styled.img`
   width: 50%;
   height: 100%;
@@ -25,6 +45,13 @@ const ProjectPageCover = styled.img`
   }
 `
 
+/**
+ * Container with project title and release date.
+ * @constant
+ * @name ProjectPageHeader
+ * @type {import('styled-components').StyledComponent}
+ * @example <ProjectPageHeader>...</ProjectPageHeader>
+ */
 const ProjectPageHeader = styled(Container)`
   width: 50%;
   height: auto;
@@ -41,6 +68,13 @@ const ProjectPageHeader = styled(Container)`
   }
 `
 
+/**
+ * The text for the title of a Project
+ * @constant
+ * @name ProjectPageTitle
+ * @type {import('styled-components').StyledComponent}
+ * @example <ProjectPageTitle>Title</ProjectPageTitle>
+ */
 const ProjectPageTitle = styled.h1`
   font-weight: normal;
   font-size: 4.5em;
@@ -51,27 +85,62 @@ const ProjectPageTitle = styled.h1`
   }
 `
 
+/**
+ * The text for the release date of a project.
+ * @constant
+ * @name ProjectPageReleaseDate
+ * @type {import('styled-components').StyledComponent}
+ * @example <ProjectPageReleaseDate>Date</ProjectPageReleaseDate>
+ */
 const ProjectPageReleaseDate = styled.h3`
   font-weight: normal;
   font-style: italic;
   text-align: center;
 `
 
+/**
+ * The text displaying the title of the project above its description.
+ * @constant
+ * @name ProjectPageSecondaryTitle
+ * @type {import('styled-components').StyledComponent}
+ * @example <ProjectPageSecondaryTitle>Title</ProjectPageSecondaryTitle>
+ */
 const ProjectPageSecondaryTitle = styled.h2`
   font-weight: normal;
   text-align: center;
   font-size: 2.3em;
 `
 
+/**
+ * A list of items on the project page.
+ * @constant
+ * @name ProjectPageList
+ * @type {import('styled-components').StyledComponent}
+ * @example <ProjectPageList><li>...</li></ProjectPageList>
+ */
 const ProjectPageList = styled.ul`
   list-style-type: none;
 `
 
+/**
+ * A section within the project description and credits.
+ * @constant
+ * @name ProjectPageInfoParagraph
+ * @type {import('styled-components').StyledComponent}
+ * @example <ProjectPageInfoParagraph>...</ProjectPageInfoParagraph>
+ */
 const ProjectPageInfoParagraph = styled.div`
   margin-left: 0.75rem;
   margin-right: 0.75rem;
 `
 
+/**
+ * One half of the description section on a ProjectPage, located below the cover art and header.
+ * @constant
+ * @name ProjectPageInfoSection
+ * @type {import('styled-components').StyledComponent}
+ * @example <ProjectPageInfoSection>...</ProjectPageInfoSection>
+ */
 const ProjectPageInfoSection = styled(Container)`
   width: 50%;
   padding: 10px;
@@ -81,15 +150,40 @@ const ProjectPageInfoSection = styled(Container)`
   }
 `
 
+/**
+ * A page displaying information about an Album or a Beat Tape. 
+ * Information displayed is based on the type of project.
+ * 
+ * An Album contains the following information:
+ * * Description
+ * * Track List
+ * * Features (if any)
+ * * Songwriters
+ * * Mixing Engineers(s)
+ * * Vocal Engineer(s)
+ * * Mastering Engineer(s)
+ * * Artwork Artist
+ * * Special Thanks
+ * 
+ * A Beat Tape contains the following information:
+ * * Description
+ * * Track List
+ * * Features (if any)
+ * * Samples
+ * * Mixing Engineers(s)
+ * * Mastering Engineer(s)
+ * * Artwork Artist
+ * 
+ * @name ProjectPage
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <ProjectPage album={album} />
+ */
 export default class ProjectPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      spotifyBgColor: spotifyGreen,
-      appleBgColor: 'transparent',
-      bandcampBgColor: 'transparent',
-      soundcloudBgColor: 'transparent',
       description: '',
     }
 

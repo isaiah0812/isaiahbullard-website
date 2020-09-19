@@ -1,7 +1,13 @@
+/**
+ * The information for the containers located below the carousel on the Home Page
+ * @constant
+ * @name sections
+ * @type {object[]}
+ */
 export const sections = [
     {
       title: 'About Me',
-      description: "Since 2017, I have been a self-taught music producer, songwriter, composer, and mixing engineer. Raised in Pflugerville, Texas, my influences come from genres such as hip-hop, R&B, classical, jazz, rock, and gospel. His passion for music started at a young age with the drumset and the piano. That same passion is now seen in music production alongside a new found passion to the art of music with the world.",
+      description: "Since 2017, I have been a self-taught music producer, songwriter, composer, and mixing engineer. Raised in Pflugerville, Texas, my influences come from genres such as hip-hop, R&B, classical, jazz, rock, and gospel. My passion for music started at a young age with the drumset and the piano. That same passion is now seen in music production alongside a new found passion to the art of music with the world.",
       buttonText: 'Contact',
       href: '/contact',
     },

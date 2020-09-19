@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import FormGroup from 'react-bootstrap/FormGroup';
@@ -8,17 +9,14 @@ import FormControl from 'react-bootstrap/FormControl';
 import FormText from 'react-bootstrap/FormText';
 import Toast from 'react-bootstrap/Toast';
 import FormCheck from 'react-bootstrap/FormCheck';
-import Alert from 'react-bootstrap/Alert';
 import Spinner from 'react-bootstrap/Spinner';
 import { init, send } from 'emailjs-com';
 import { Helmet } from 'react-helmet';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-import banner from './assets/banner.jpg';
 import Button from '../../components/button';
-import BeatCard from './components/beatCard';
-import { beats, projects } from '../../constants/music';
 
+import { beats, projects } from '../../constants/music';
 import { 
   PageBanner, 
   PageBannerFade, 
@@ -30,6 +28,17 @@ import {
 } from '../../constants/styled-components';
 import { darkBlue, lightBlue, silver, white } from '../../constants/colors';
 
+import banner from './assets/banner.jpg';
+
+import BeatCard from './components/beatCard';
+
+/**
+ * The container that gives the form it's hover affect.
+ * @constant
+ * @name HoveringForm
+ * @type {import('styled-components').StyledComponent}
+ * @example <HoveringForm><Form>...</Form><HoveringForm>
+ */
 const HoveringForm = styled.div`
   display: flex;
   justify-content: center;
@@ -47,13 +56,32 @@ const HoveringForm = styled.div`
   }
 `
 
+/**
+ * The Contact page, containing a form that sends a message to Isaiah Bullard
+ * @name Contact
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <Contact />
+ */
 export default class Contact extends React.Component {
 
+  /**
+   * The emailjs service id
+   */
   service = process.env.REACT_APP_EMAILJS_SERVICE;
+  /**
+   * The user id for emailjs
+   */
   username = process.env.REACT_APP_EMAILJS_ID;
+  /**
+   * The options of templates to use in the contact form.
+   */
   templates = [process.env.REACT_APP_EMAILJS_TEMPLATE_BEATS, process.env.REACT_APP_EMAILJS_TEMPLATE_CONTACT];
-  recaptchaRef = React.createRef();
   
+  /**
+   * @constructor
+   * @param {object} props a set of properties that may be passed into the Contact object
+   */
   constructor(props) {
     super(props);
     this.state = {
@@ -73,19 +101,29 @@ export default class Contact extends React.Component {
     init(this.username);
     this.handleChange = this.addBeat.bind(this);
 
-    this.allBeats = [...beats].concat(...projects.filter(project => project.beatTape).map(beatTape => {return beatTape.beats}));
+    this.allBeats = [...beats]
+                    .concat(...projects.filter(project => project.beatTape)
+                    .map(beatTape => {return beatTape.beats}));
   }
 
+  /**
+   * Closes the toast that shows when the "X" is clicked
+   * 
+   * @name closeToast
+   * @returns
+   */
   closeToast = () => {
     this.setState({
       toastVisible: false,
     })
   }
-
-  verify = () => {
-    alert("Wassup")
-  }
   
+  /**
+   * The set of commands that sends the message to the server once the contact form is submitted.
+   * 
+   * @param {Event} e the event that occurs when the submit button is clicked
+   * @returns
+   */
   onSubmit = (e) => {
     e.preventDefault();
     this.setState({
@@ -101,7 +139,7 @@ export default class Contact extends React.Component {
         name: this.state.yourName,
         email: this.state.email,
         statement: this.state.statement,
-        beats: this.selectedToString(),
+        beats: this.selectedToString(), // Doesn't matter which template it is.
       })
     .then((result) => {
       console.info(result);
@@ -136,6 +174,11 @@ export default class Contact extends React.Component {
     
   }
 
+  /**
+   * Displays a toast and adds a new beat to the selected beat list.
+   * @param {Event} event the event that contains the selected beat
+   * @returns
+   */
   addBeat = (event) => {
     const value = event.target.value;
     if(value !== "") {
@@ -153,6 +196,11 @@ export default class Contact extends React.Component {
     }
   }
 
+  /**
+   * Removes a beat from the selected beat list and displays a toast
+   * @param {string} id 
+   * @returns
+   */
   removeBeat = (id) => {
     const ndx = this.findSelectedBeat(id);
     const newSelected = this.state.selected;
@@ -165,18 +213,37 @@ export default class Contact extends React.Component {
     })
   }
 
+  /**
+   * Gets one beat by id
+   * @param {string} id 
+   * @returns {object} the beat with a matching id, or undefined if not found
+   */
   findBeat = (id) => {
     return this.allBeats.find(beat => beat.id === id);
   }
 
+  /**
+   * Gets a selected beat's index in the selected array by id
+   * @param {string} id 
+   * @returns {number} the id of a beat with a matching id, or -1 if not found
+   */
   findSelectedBeat = (id) => {
     return this.state.selected.findIndex(beat => beat.id === id);
   }
 
+  /**
+   * Finds a beat in the selected beats array
+   * @param {object} beat 
+   * @returns {object} the beat in the selected beat array if found, or undefined if not found
+   */
   beatSelected = (beat) => {
     return this.state.selected.find(item => item.id === beat.id);
   }
 
+  /**
+   * Creates a string of the names of the beats selected when sending an email.
+   * @returns {string[]} array of selected beat's names
+   */
   selectedToString = () => {
     let selected = [];
     this.state.selected.map(beat => selected.push(beat.title));
@@ -331,6 +398,7 @@ export default class Contact extends React.Component {
                 {this.state.spinnerVisible && (
                   <Spinner animation="border" style={{margin: '2% 0%', color: lightBlue}} />
                 )}
+                {/* Success Alert */}
                 <Alert 
                   style={{width: '100%', margin: '2% 0%'}} 
                   variant={'success'} 
@@ -341,6 +409,7 @@ export default class Contact extends React.Component {
                   <Alert.Heading>Submitted Successfuly!</Alert.Heading>
                   Thank you for contacting me! I will get back to you as soon as I can.
                 </Alert>
+                {/* Failure Alert */}
                 <Alert 
                   style={{width: '100%', margin: '2% 0%'}} 
                   variant={'danger'} 

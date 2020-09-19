@@ -1,8 +1,20 @@
 import React from 'react';
+
 import AlbumCard from './albumCard';
 import SingleDiv from './singleDiv';
 
+/**
+ * An album card that's made for a single, with single information.
+ * @constant
+ * @name SingleCard
+ * @type {import('styled-components').StyledComponent}
+ * @example <SingleCard open />
+ */
 export default class SingleCard extends React.Component {
+  /**
+   * @constructor
+   * @param {object} props Properties that may be passed when using the AlbumPlayer
+   */
   constructor(props) {
     super(props);
 

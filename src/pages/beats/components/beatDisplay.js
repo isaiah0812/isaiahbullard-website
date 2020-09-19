@@ -3,9 +3,22 @@ import styled from 'styled-components';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
-import Button from '../../../components/button';
-import { darkBlue, white, youtubeRed } from '../../../constants/colors';
 
+import Button from '../../../components/button';
+
+import { 
+  darkBlue, 
+  white, 
+  youtubeRed 
+} from '../../../constants/colors';
+
+/**
+ * Accordion item in the beat list on the Beats page.
+ * @constant
+ * @name BeatButton
+ * @type {import('styled-components').StyledComponent}
+ * @example <BeatButton cover="beat.jpg">...</BeatButon>
+ */
 const BeatButton = styled.button`
   width: 100%;
   height: 96px;
@@ -15,6 +28,13 @@ const BeatButton = styled.button`
   padding: 0px;
 `
 
+/**
+ * Fade effect over a BeatButton
+ * @constant
+ * @name BeatButtonHover
+ * @type {import('styled-components').StyledComponent}
+ * @example <BeatButtonHover>...</BeatButtonHover>
+ */
 const BeatButtonHover = styled.div`
   display: flex;
   width: 100%;
@@ -35,10 +55,25 @@ const BeatButtonHover = styled.div`
   }
 `
 
+/**
+ * Title of a Beat in the beat list on the Beats page.
+ * @constant
+ * @name BeatButtonTitle
+ * @type {import('styled-components').StyledComponent}
+ * @example <BeatButtonTitle>Title</BeatButtonTitle>
+ */
 const BeatButtonTitle = styled.h2`
   font-weight: normal;
   width: 100%;
 `
+
+/**
+ * The container containing the name, tempo, key signature, and sale status of a beat
+ * @constant
+ * @name BeatSectionInfoBlock
+ * @type {import('styled-components').StyledComponent}
+ * @example <BeatSectionInfoBlock>...</BeatSectionInfoBlock>
+ */
 const BeatSectionInfoBlock = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -47,16 +82,38 @@ const BeatSectionInfoBlock = styled.div`
   align-items: center;
   align-self: center;
 `
+
+/**
+ * The Title of a beat within the BeatSectionInfoBlock
+ * @constant
+ * @name BeatSectionTitle
+ * @type {import('styled-components').StyledComponent}
+ * @example <BeatSectionTitle>Title</BeatSectionTitle>
+ */
 const BeatSectionTitle = styled.h4`
   font-weight: normal;
   text-align: center;
 `
 
+/**
+ * Information on the beat (key signature, tempo) shown in the BeatSectionInfoBlock
+ * @constant
+ * @name BeatSectionInfo
+ * @type {import('styled-components').StyledComponent}
+ * @example <BeatSectionInfo>Tempo: 140bpm</BeatSectionInfo>
+ */
 const BeatSectionInfo = styled.h6`
   font-weight: normal;
   text-align: left;
 `
 
+/**
+ * An accordion Item in the Beat list on the Beats page
+ * @name BeatDisplay
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <BeatDisplay beat={beat} />
+ */
 export default class BeatDisplay extends React.Component {
   render() {
     const { beat } = this.props;

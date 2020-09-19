@@ -1,10 +1,19 @@
 import React from 'react';
-import ProjectCarousel from './components/projectCarousel';
 import Container from 'react-bootstrap/Container';
-import HomeSection from './components/homeSection';
-import { sections } from '../../constants/home';
 import { Helmet } from 'react-helmet';
 
+import { sections } from '../../constants/home';
+
+import HomeSection from './components/homeSection';
+import ProjectCarousel from './components/projectCarousel';
+
+/**
+ * The Home page of the website. The landing page.
+ * @name Home
+ * @author Isaiah Bullard
+ * @version 1.0.0
+ * @example <Home />
+ */
 export default class Home extends React.Component {
   render() {
     return (
