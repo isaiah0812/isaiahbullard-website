@@ -87,7 +87,7 @@ class BeatsHome extends React.Component {
             <PageSectionTitle>Beats</PageSectionTitle>
             <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
             <PageSectionInfo>
-              2-Track: $40; Track-Outs: $80
+              2-Track: $100; Track-Outs: $200
               <br />
               All beats are sold exclusively and on a first-come-first-serve basis.
             </PageSectionInfo>

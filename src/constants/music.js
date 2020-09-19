@@ -215,12 +215,6 @@ export const beats = [
  */
 export const credits = [
   {
-    id: "safari-fuze",
-    title: "Safari",
-    artist: "FUZE",
-    link: "https://soundcloud.com/igotwoezz/safari-feat-subzero-prod",
-  },
-  {
     id: "toonami-communityservice",
     title: "Toonami",
     artist: "Community Service",
@@ -408,7 +402,7 @@ export const projects = [
     title: "Zae's Room",
     cover: zr_cover,
     id: "zaes-room",
-    releaseDate: "10.16.2020",
+    releaseDate: "11.20.2020",
     beatTape: false,
     songList: [
       'Welcome To the Show (feat. FUZE)',
@@ -416,9 +410,9 @@ export const projects = [
       'Big Thangs (feat. CoreyArnell & May)',
       'Supervillain (feat. 101 & CoreyArnell)',
       'Evil Plan (feat. LouieV T & FUZE)',
-      'Brainstorm (feat. De\'John Linward & FUZE',
+      'Brainstorm (feat. De\'John Linward & FUZE)',
       'KKK (feat. CoreyArnell)',
-      'Life Update (Interlude)',
+      'Life Update (Skit)',
       'Famous Friends (feat. May & Chris Winston)',
       'Smoove (feat. Bluu Suede & Rell Gibson)',
       'Good Luck Charm (feat. FUZE)',
@@ -470,7 +464,7 @@ export const projects = [
         'Isabella Valenzuela-Huefner (@bbella_v)',
         'Ryan Hill (@literally_ryanhill)',
         'Joshua Pane (@joshua.pane)',
-        'Michael Coffey',
+        'Michael Coffey (@michael_coffey70)',
         'Schaeffer Duncan (@kingschaeffer)',
         'Troy Robb (@troyrobb25)',
       ]

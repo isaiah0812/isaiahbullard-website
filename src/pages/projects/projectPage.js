@@ -6,8 +6,7 @@ import styled from 'styled-components';
 import { 
   darkBlue, 
   lightBlue, 
-  spotifyGreen, 
-  white 
+  white,
 } from '../../constants/colors';
 
 import AlbumPlayer from './components/albumPlayer';
