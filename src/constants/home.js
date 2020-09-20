@@ -7,13 +7,13 @@
 export const sections = [
     {
       title: 'About Me',
-      description: "Since 2017, I have been a self-taught music producer, songwriter, composer, and mixing engineer. Raised in Pflugerville, Texas, my influences come from genres such as hip-hop, R&B, classical, jazz, rock, and gospel. My passion for music started at a young age with the drumset and the piano. That same passion is now seen in music production alongside a new found passion to the art of music with the world.",
+      description: "Since 2017, I have been a self-taught music producer, songwriter, composer, and mixing engineer. Raised in Pflugerville, Texas, my influences come from genres such as hip-hop, R&B, classical, jazz, rock, and gospel. My passion for music started at a young age with the drumset and the piano. That same passion is now seen in music production alongside a newfound passion for the art of music with the world.",
       buttonText: 'Contact',
       href: '/contact',
     },
     {
       title: 'Music',
-      description: "All of my music is available for digital streaming and download. This page includes singles and all of my prduction credits, along with detailed information on all of my solo albums. Check out my entire discography and get more information about each project!",
+      description: "All of my music is available for digital streaming and download. This page includes singles and all of my production credits, along with detailed information on all of my solo albums. Check out my entire discography and get more information about each project!",
       buttonText: 'Projects',
       href: '/projects',
     },
