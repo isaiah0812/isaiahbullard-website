@@ -11,6 +11,7 @@ import {
 
 import AlbumPlayer from './components/albumPlayer';
 import BeatTapePlayer from './components/beatTapePlayer';
+import SocialMediaCredit from './components/socialMediaCredit';
 
 /**
  * Half of a project page.
@@ -237,7 +238,7 @@ export default class ProjectPage extends React.Component {
                   <ProjectPageInfoParagraph>
                     <strong>Featuring (in order of appearance):</strong>
                     <ProjectPageList>
-                      {this.album.albumCredits.features.map((feature, index) => <li key={index}>{feature}</li>)}
+                      {this.album.albumCredits.features.map((feature, index) => <li key={index}><SocialMediaCredit projectCredit={feature} /></li>)}
                     </ProjectPageList>
                   </ProjectPageInfoParagraph>
                 )}
@@ -262,34 +263,34 @@ export default class ProjectPage extends React.Component {
                 <ProjectPageInfoParagraph>
                   <strong>Mixing Engineer(s):</strong>
                   <ProjectPageList>
-                    {this.album.albumCredits.mixedBy.map((mixer, index) => <li key={index}>{mixer}</li>)}
+                    {this.album.albumCredits.mixedBy.map((mixer, index) => <li key={index}><SocialMediaCredit projectCredit={mixer} /></li>)}
                   </ProjectPageList>
                 </ProjectPageInfoParagraph>
                 {this.album.albumCredits.engineeredBy && (
                   <ProjectPageInfoParagraph>
                     <strong>Vocal Engineer(s):</strong>
                     <ProjectPageList>
-                      {this.album.albumCredits.engineeredBy.map((engineer, index) => <li key={index}>{engineer}</li>)}
+                      {this.album.albumCredits.engineeredBy.map((engineer, index) => <li key={index}><SocialMediaCredit projectCredit={engineer} /></li>)}
                     </ProjectPageList>
                   </ProjectPageInfoParagraph>
                 )}
                 <ProjectPageInfoParagraph>
                   <strong>Mastering Engineer(s):</strong>
                   <ProjectPageList>
-                    {this.album.albumCredits.masteredBy.map((master, index) => <li key={index}>{master}</li>)}
+                    {this.album.albumCredits.masteredBy.map((master, index) => <li key={index}><SocialMediaCredit projectCredit={master} /></li>)}
                   </ProjectPageList>
                 </ProjectPageInfoParagraph>
                 <ProjectPageInfoParagraph>
                   <strong>Artwork By:</strong>
                   <ProjectPageList>
-                    {this.album.albumCredits.artworkBy.map((artist, index) => <li key={index}>{artist}</li>)}
+                    {this.album.albumCredits.artworkBy.map((artist, index) => <li key={index}><SocialMediaCredit projectCredit={artist} /></li>)}
                   </ProjectPageList>
                 </ProjectPageInfoParagraph>
                 {this.album.albumCredits.specialThanks && (
                   <ProjectPageInfoParagraph>
                     <strong>Special Thanks:</strong>
                     <ProjectPageList>
-                      {this.album.albumCredits.specialThanks.map((thanks, index) => <li key={index}>{thanks}</li>)}
+                      {this.album.albumCredits.specialThanks.map((thanks, index) => <li key={index}><SocialMediaCredit projectCredit={thanks} /></li>)}
                     </ProjectPageList>
                   </ProjectPageInfoParagraph>
                 )}
