@@ -1,68 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Isaiah Bullard's Website (zaemadthis.com)
 
-## Available Scripts
+## Overview
+This app is the informational website for Isaiah Bullard. It contains information on his projects including, but not limited to, albums, beat tapes, and production credits. It also contains information on beat the beats that he currently has for sale, available for purchase through the contact page of the site. The merchandise page is meant to display any available merchandise for the "Isaiah Bullard" brand, or any other brands affiliated with Isaiah Bullard.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+### Requirements
+* [Node.js](https://nodejs.org/en/download/)
+  1. Download Node.js from [here](https://nodejs.org/en/download/).
+  1. Verify Node.js is downloaded by running the following commands:
+      ```
+      node -v
+      npm -v
+      ```
+  _Note: you can use [Yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable) as a local dependency manager as well, but this project was built with Node.js and [create-react-app](https://create-react-app.dev/)._
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Developing
+1. Open your Command Prompt or Terminal and clone the project from the [repository](https://github.com/isaiah0812/isaiahbullard-website/tree/master) using `git clone`.
+    ```
+    git clone https://github.com/isaiah0812/isaiahbullard-website.git
+    ```
+2. Download all dependencies in this project using the following command:
+    ```
+    npm install
+    ```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+3. The project uses environment variables. To add these environment variables, create a file in the root of the project called `.env.local` and copy the following contents to the file:
+    ```
+    REACT_APP_EMAILJS_ID=user_NhpX6mA3wYfbJ5YRxETqn
+    REACT_APP_EMAILJS_SERVICE=service_22v4zop
+    REACT_APP_EMAILJS_TEMPLATE_BEATS=template_bjrhf54
+    REACT_APP_EMAILJS_TEMPLATE_CONTACT=template_fe1k1ey
+    REACT_APP_RECAPTCHA_KEY=6LfuwswZAAAAAFoIl6kd7FIhSxyE9bPZTRPDuf15
+    ```
 
-### `npm test`
+### Running the Project
+Run the project with the following command:
+```
+npm start
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+### Pages
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### `Home`
+The landing page for the site. Contains a carousel previewing the most recent projects, an "About Me" section that links to the contact page, and short descriptions of each page, with buttons that link to their respective pages. See the [Home Page README](./src/pages/home/README.md) for more information.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### `Projects`
+A list of all released albums, singles, production credits, and other placements. Each album card links to a [Project Page](#project-page). See the [Projects Page README](./src/pages/projects/README.md) for more information.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### `Project Page`
+A project showcase page for any released album or beat tape, showing a description of the project, credits, and an interface for listening to the project on streaming platforms. See the ["Project Page" section in the Projects Page README](./src/pages/projects/README.md#project-page) for more information.
 
-### `npm run eject`
+#### `Beats`
+A list of all individual beats for sale and all beat tapes. Each individual beat contains information on that beat, as well each one's respective YouTube `iframe`. Each beat tape card links to a [Project Page](#project-page). See the [Beats Page README](./src/pages/beats/README.md) for more information.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### `Merchandise`
+An online shop for all merchandise. To be implemented.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+#### `Contact`
+Contains a form to send an email to Isaiah Bullard. The form includes a Google ReCAPTCHA verification step that is necessary in order to send the form. See the [Contact Page README](./src/pages/contact/README.md) for more information.
