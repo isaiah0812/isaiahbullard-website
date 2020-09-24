@@ -102,6 +102,8 @@ A [Project](#project) that is monetized on all streaming platforms. Albums are a
 * Bandcamp
 * SoundCloud
 
+Albums also contain a [Song Link](#song-link).
+
 #### `Album Credit`
 See [Credit](#credit).
 
@@ -138,8 +140,6 @@ A single that is produced in part or as a whole by Isaiah Bullard. Listed under 
 
 #### `Project`
 A collection of released songs. Classified as an [Album](#album) or a [Beat Tape](#beat-tape).
-
-Albums also contain a [Song Link](#song-link).
 
 #### `Single`
 A monetized song released on the following platforms:
