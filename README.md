@@ -1,9 +1,10 @@
-# Isaiah Bullard's Website (zaemadthis.com)
+# Isaiah Bullard's Website (zaemadethis.com)
 
 ## Overview
 This app is the informational website for Isaiah Bullard. It contains information on his projects including, but not limited to, albums, beat tapes, and production credits. It also contains information on beat the beats that he currently has for sale, available for purchase through the contact page of the site. The merchandise page is meant to display any available merchandise for the "Isaiah Bullard" brand, or any other brands affiliated with Isaiah Bullard.
 
-## Installation
+---
+## Development
 
 ### Requirements
 * [Node.js](https://nodejs.org/en/download/)
@@ -13,9 +14,9 @@ This app is the informational website for Isaiah Bullard. It contains informatio
       node -v
       npm -v
       ```
-  _Note: you can use [Yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable) as a local dependency manager as well, but this project was built with Node.js and [create-react-app](https://create-react-app.dev/)._
+  *Note: you can use [Yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable) as a local dependency manager as well, but this project was built with Node.js and [create-react-app](https://create-react-app.dev/).*
 
-### Developing
+### Installation
 1. Open your Command Prompt or Terminal and clone the project from the [repository](https://github.com/isaiah0812/isaiahbullard-website/tree/master) using `git clone`.
     ```
     git clone https://github.com/isaiah0812/isaiahbullard-website.git
@@ -27,12 +28,13 @@ This app is the informational website for Isaiah Bullard. It contains informatio
 
 3. The project uses environment variables. To add these environment variables, create a file in the root of the project called `.env.local` and copy the following contents to the file:
     ```
-    REACT_APP_EMAILJS_ID=user_NhpX6mA3wYfbJ5YRxETqn
-    REACT_APP_EMAILJS_SERVICE=service_22v4zop
-    REACT_APP_EMAILJS_TEMPLATE_BEATS=template_bjrhf54
-    REACT_APP_EMAILJS_TEMPLATE_CONTACT=template_fe1k1ey
-    REACT_APP_RECAPTCHA_KEY=6LfuwswZAAAAAFoIl6kd7FIhSxyE9bPZTRPDuf15
+    REACT_APP_EMAILJS_ID=key_goes_here
+    REACT_APP_EMAILJS_SERVICE=key_goes_here
+    REACT_APP_EMAILJS_TEMPLATE_BEATS=key_goes_here
+    REACT_APP_EMAILJS_TEMPLATE_CONTACT=key_goes_here
+    REACT_APP_RECAPTCHA_KEY=key_goes_here
     ```
+    Contact the repository owner [here](mailto:isaiah0812@yahoo.com) to obtain secret keys. These keys are proprietary to the repository owner, so do not share these private keys.
 
 ### Running the Project
 Run the project with the following command:
@@ -40,6 +42,15 @@ Run the project with the following command:
 npm start
 ```
 
+### Publishing
+When publishing any changes to the app, you must have a [Render](https://render.com/) account. Request access to the static site from the repository owner [here](mailto:isaiah0812@yahoo.com).
+
+*Note: EmailJS updates the messaging quota on the first of every month. Changes to the [Contact Page](#contact) should be made with this in mind.*
+
+### [Render](https://render.com/)
+Render is a platform with the capability of running static sites and any app related to a project. When a pull request is made, an copy of the production build with the changes from the pull request shown in the new instance. To obtain access to the project and make changes to production, contact the repository owner at [here](mailto:isaiah0812@yahoo.com).
+
+---
 ## Features
 
 ### Pages
@@ -61,3 +72,86 @@ An online shop for all merchandise. To be implemented.
 
 #### `Contact`
 Contains a form to send an email to Isaiah Bullard. The form includes a Google ReCAPTCHA verification step that is necessary in order to send the form. See the [Contact Page README](./src/pages/contact/README.md) for more information.
+
+### Packages
+
+#### `React Router`
+The routing in this app is handled by React Router's `BrowserRouter` component. Some of the links in the app use the `Link` component to navigate to other pages within the app.
+
+#### `React Bootstrap`
+This app uses React Bootstrap as its primary User Interface library. The [documentation](https://react-bootstrap.github.io/getting-started/introduction) recommends importing the individual components to the project as opposed to the full package in each usage.
+```js
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+...
+```
+
+#### `EmailJS`
+In order to send emails, the contact form uses EmailJS, a free javascript library that allows users to send emails through SMTP. To use the contact page in a development environment, the ids for the service, template, and user are required.
+
+*Note: Use of the contact form in a development environment should be limited, as there is a limit to how many emails can be sent per month.*
+
+---
+## Glossary
+A few terms to help with the business logic of the app.
+
+#### `Album`
+A [Project](#project) that is monetized on all streaming platforms. Albums are available on all streaming platforms including:
+* Spotify
+* Apple Music
+* Bandcamp
+* SoundCloud
+
+#### `Album Credit`
+See [Credit](#credit).
+
+#### `Beat`
+An single instrumental that can be sold individually or in a [Beat Tape](#beat-tape). Beats that are not included on a beat tape are released on the following platforms:
+* SoundCloud
+* YouTube
+
+#### `Beat Tape`
+A [Project](#project) that is released for free listening. Beat Tapes are released on the following platforms:
+* Bandcamp
+* Soundcloud
+* Youtube
+
+#### `Credit`
+In reference to a [Project](#project), a credit refers to a person who contributes to a Project's completion. Credits include:
+* Features
+* Songwriters
+* Samples
+* Producers
+* Mixing Engineers
+* Vocal Engineers
+* Mastering Engineers
+* Artwork Artist
+* Special Thanks
+
+#### `Page`
+A component that utilizes a path in the [Router](#router).
+
+Each individual beat from a Beat Tape is available for purchase through the [Contact Page](#contact-page).
+
+#### `Production Credit`
+A single that is produced in part or as a whole by Isaiah Bullard. Listed under the `Credits` section on the [Projects Page](#projects-page).
+
+#### `Project`
+A collection of released songs. Classified as an [Album](#album) or a [Beat Tape](#beat-tape).
+
+Albums also contain a [Song Link](#song-link).
+
+#### `Single`
+A monetized song released on the following platforms:
+* Spotify
+* Apple Music
+* Bandcamp
+* SoundCloud
+
+Singles also contain a [Song Link](#song-link).
+
+#### `Song Link`
+A single page containing all available platforms for listening to a release, provided by [Odesli](https://odesli.co/).
+
+#### `Streaming Platform`
+An on-demand, online source for streaming music or videos.
