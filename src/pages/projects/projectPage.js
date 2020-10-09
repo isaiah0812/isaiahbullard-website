@@ -266,14 +266,6 @@ export default class ProjectPage extends React.Component {
                     {this.album.albumCredits.mixedBy.map((mixer, index) => <li key={index}><SocialMediaCredit projectCredit={mixer} /></li>)}
                   </ProjectPageList>
                 </ProjectPageInfoParagraph>
-                {this.album.albumCredits.engineeredBy && (
-                  <ProjectPageInfoParagraph>
-                    <strong>Vocal Engineer(s):</strong>
-                    <ProjectPageList>
-                      {this.album.albumCredits.engineeredBy.map((engineer, index) => <li key={index}><SocialMediaCredit projectCredit={engineer} /></li>)}
-                    </ProjectPageList>
-                  </ProjectPageInfoParagraph>
-                )}
                 <ProjectPageInfoParagraph>
                   <strong>Mastering Engineer(s):</strong>
                   <ProjectPageList>

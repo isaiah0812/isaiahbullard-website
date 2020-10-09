@@ -258,5 +258,58 @@ The `BeatDisplay` component is not used for Beats on a Beat Tape, as the beat ta
 
 ---
 ## Project Page (zaemadethis.com/beats/{beatTape_id})
+A [Project Page](https://github.com/isaiah0812/isaiahbullard-website#project-page) displays information regarding a full length Project, which can either be an Album or a Beat Tape. These pages also provide a section to play the project via a selection of [Streaming Platforms](https://github.com/isaiah0812/isaiahbullard-website#streaming-platforms).
+
+[Beat Tapes](https://github.com/isaiah0812/isaiahbullard-website#beat-tape) are released for free listening. Their project pages are loaded via `BeatTape` objects, provided by the `projects` array in [`../../constants/music.js`](../../constants/music.js). Users can stream Beat Tapes as many times as they want, and are free for download via Bandcamp. All of the [Beats](https://github.com/isaiah0812/isaiahbullard-website#beats) on Beat Tapes are for sale as well, and each Beat Tape's Project Page contains a `Button` below the player that leads the user to the [Contact Page](https://github.com/isaiah0812/isaiahbullard-website#contact-page), where they can opt to purchase the individual Beats for commercial use.
 
 ### Album Credits
+The `albumCredits` property of a `Project` object contains credited individuals for their various contributions to a Project. This object is known as a `AlbumCredits` object.
+
+Beat Tapes may contain the following credits:
+* Features
+    * A list of artists who appeared alongside Isaiah Bullard
+* Samples
+    * A list of the [sampled songs](https://github.com/isaiah0812/isaiahbullard-website#sample) used in a Project.
+* Producers
+    * A list of the music producers who contributed to the project through providing beats or adding to existing beats.
+* Mixing Engineers
+    * A list of audio engineers that took part in the mixing process of one or more of the entries on the track listing.
+* Mastering Engineers
+    * A list of audio engineers that took part in the mastering process of one or more of the entries on the track listing.
+* Artwork Artist
+    * One or more individuals that contributed to the creation of a Project's cover art.
+
+An example `AlbumCredits` object can be found below, where this object would be used in a `BeatTape` object.
+```javascript
+{
+  albumId: 'beat-tape-id',
+  samples: [
+    'Sample 1 - Artist 1',
+    'Sample 2 - Artist 2',
+    'Sample 3 - Artist 3',
+    'Sample 4 - Artist 4',
+    'Sample 5 - Artist 5',
+    'Sample 6 - Artist 6',
+    'Sample 7 - Artist 7',
+    'Sample 8 - Artist 8',
+    'Sample 9 - Artist 9',
+    'Sample 10 - Artist 10',
+  ],
+  producedBy: [{name: 'Producer 1', username: 'producer1Username', instagram: true}],
+  mixedBy: [{name: 'Engineer 1', username: 'engineer1Username', instagram: false}],
+  masteredBy: [{name: 'Engineer 2'}],
+  artworkBy: [{name: 'Artist 1', username: 'artist1Username', instagram: true}],
+}
+```
+
+`albumId` - The `id` property of the parent `Project` object
+
+`samples` - A string array containing the list of samples used a Beat Tape.
+
+`producedBy` - An array of [`SocialMediaCredit`](../projects/README.md#social-media-credit) objects, containing the producer(s) of a Project.
+
+`mixedBy` - An array of [`SocialMediaCredit`](../projects/README.md#social-media-credit) objects, containing the mixing engineer(s) of a Project.
+
+`masteredBy` - An array of [`SocialMediaCredit`](../projects/README.md#social-media-credit) objects, containing the mastering engineer(s) of a Project.
+
+`artworkBy` - An array of [`SocialMediaCredit`](../projects/README.md#social-media-credit) objects, containing the artist(s) who made the cover art of a Project.

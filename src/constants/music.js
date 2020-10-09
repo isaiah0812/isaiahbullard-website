@@ -254,7 +254,6 @@ export const projects = [
       albumId: 'maestro',
       producedBy: [{name: 'Isaiah Bullard', username: 'zaemadethis', instagram: true}],
       mixedBy: [{name: 'Isaiah Bullard', username: 'zaemadethis', instagram: true}],
-      engineeredBy: [{name: 'Isaiah Bullard', username: 'zaemadethis', instagram: true}],
       masteredBy: [{name: 'CoreyArnell', username: 'arnellcorey', instagram: true}],
       artworkBy: [{name: 'Isaiah Bullard', username: 'zaemadethis', instagram: true}],
       songwriters: [
@@ -413,7 +412,7 @@ export const projects = [
       'Brainstorm (feat. De\'John Linward & FUZE)',
       'KKK (feat. CoreyArnell)',
       'Life Update (Skit)',
-      'Famous Friends (feat. May & Chris Winston)',
+      'Famous Friends (feat. May, Chris Winston & De\'John Linward)',
       'Smoove (feat. Bluu Suede & Rell Gibson)',
       'Good Luck Charm (feat. FUZE)',
       'By Design (feat. Community Service)'
@@ -450,8 +449,7 @@ export const projects = [
         'Uriel Christopher Winston',
       ],
       producedBy: [{name: 'Isaiah Bullard', username: 'zaemadethis', instagram: true}],
-      mixedBy: [{name: 'Isaiah Bullard', username: 'zaemadethis', instagram: true}],
-      engineeredBy: [
+      mixedBy: [
         {name: 'Isaiah Bullard', username: 'zaemadethis', instagram: true}, 
         {name: 'Lucky Genius', username: 'lucky777genius', instagram: true}, 
         {name: 'Bluu Suede', username: 'bluusuede', instagram: true}

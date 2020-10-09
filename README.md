@@ -141,6 +141,11 @@ A single that is produced in part or as a whole by Isaiah Bullard. Listed under 
 #### `Project`
 A collection of released songs. Classified as an [Album](#album) or a [Beat Tape](#beat-tape).
 
+#### `Sample`
+A previously existing musical work or sound that is used in the creation of another musical work. Samples must be cleared before the musical work that it is used in can be sold for commercial profit.
+
+_Note: [Beat Tapes](#beat-tape) are free, and listeners can donate via Bandcamp along with their purchase, but if an artist purchases a [Beat](#beat) from a beat tape, then it is the purchasing artist's job to clear the sample prior to releasing their musical work for commercial use._
+
 #### `Single`
 A monetized song released on the following platforms:
 * Spotify
