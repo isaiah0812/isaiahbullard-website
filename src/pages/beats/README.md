@@ -1,6 +1,6 @@
 # Beats Page (zaemadethis.com/beats)
 ## Overview
-The Beats Page displays a catalog of available beats for sale from Isaiah Bullard, along with [Beat Tapes](https://github.com/isaiah0812/isaiahbullard-website#beat-tape) that are available for free listening. Each beat that is not in a Beat Tape is displayed with a [BeatDisplay](#beat-display) component and should have a YouTube video uploaded to Isaiah Bullard's YouTube channel.
+The Beats Page displays a catalog of available [Beats](https://github.com/isaiah0812/isaiahbullard-website#beat) for sale from Isaiah Bullard, along with [Beat Tapes](https://github.com/isaiah0812/isaiahbullard-website#beat-tape) that are available for free listening. Each beat that is not in a Beat Tape is displayed with a [BeatDisplay](#beat-display) component and should have a YouTube video uploaded to Isaiah Bullard's YouTube channel.
 
 ### Beats
 A beat can be defined [here](https://github.com/isaiah0812/isaiahbullard-website#beat). Beats are loaded from the `beats` array in [`../../constants/music.js](../../constants/music.js). An example `Beat` object can be found below.
