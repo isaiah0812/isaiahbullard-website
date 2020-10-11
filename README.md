@@ -125,7 +125,6 @@ In reference to a [Project](#project), a credit refers to a person who contribut
 * Samples
 * Producers
 * Mixing Engineers
-* Vocal Engineers
 * Mastering Engineers
 * Artwork Artist
 * Special Thanks
