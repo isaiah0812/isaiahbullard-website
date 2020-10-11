@@ -136,7 +136,7 @@ A component that utilizes a path in the [Router](#router).
 Each individual beat from a Beat Tape is available for purchase through the [Contact Page](#contact-page).
 
 #### `Production Credit`
-A single that is produced in part or as a whole by Isaiah Bullard. Listed under the `Credits` section on the [Projects Page](#projects-page).
+A [Single](#single) or [Project](#project) that is produced in part or as a whole by Isaiah Bullard. Listed under the `Credits` section on the [Projects Page](#projects-page).
 
 #### `Project`
 A collection of released songs. Classified as an [Album](#album) or a [Beat Tape](#beat-tape).
@@ -160,3 +160,5 @@ A single page containing all available platforms for listening to a release, pro
 
 #### `Streaming Platform`
 An on-demand, online source for streaming music or videos.
+
+_Note: This entire project is written in plain React.js, so there are no **actual** object names. The ones that are used are merely for reference, as it is planned to migrate this entire site to a TypeScript Create React App template. I'll try to be less of an idiot next time and use TypeScript if we can for some type-safety and all that jazz lol._

@@ -424,7 +424,7 @@ export const projects = [
         {name: 'FUZE', username: 'igotwoezz', instagram: true},
         {name: 'Mark Pheonix', username: 'markpheonix', instagram: true},
         {name: 'CoreyArnell', username: 'arnellcorey', instagram: true},
-        {name: 'Phri', username: 'aintshitphri'},
+        {name: 'Phri', username: 'aintshitphri', instagram: true},
         {name: 'May'},
         {name: '101', username: '_blessyasoul', instagram: true},
         {name: 'LouieV T', username: 'louiev.t', instagram: true},
