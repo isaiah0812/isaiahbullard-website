@@ -431,7 +431,7 @@ export const projects = [
         {name: 'De\'John Linward', username: 'dejohnlinward', instagram: true},
         {name: 'Chris Winston', username: 'chriswinston', instagram: true},
         {name: 'Bluu Suede', username: 'bluusuede', instagram: true},
-        {name: 'Rell Gibson', username: 'RelllLM', instagram: false},
+        {name: 'Rell Gibson', username: 'Kingdoughmane', instagram: false},
         {name: 'Community Service', username: 'communtyservce', instagram: true}
       ],
       songwriters: [
