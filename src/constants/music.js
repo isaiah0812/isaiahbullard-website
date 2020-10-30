@@ -452,6 +452,7 @@ export const projects = [
       mixedBy: [
         {name: 'Isaiah Bullard', username: 'zaemadethis', instagram: true}, 
         {name: 'Lucky Genius', username: 'lucky777genius', instagram: true}, 
+        {name: 'Chris Winston', username: 'chriswinston', instagram: true},
         {name: 'Bluu Suede', username: 'bluusuede', instagram: true}
       ],
       masteredBy: [{name: 'Isaiah Bullard', username: 'zaemadethis', instagram: true}],
