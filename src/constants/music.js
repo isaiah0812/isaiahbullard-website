@@ -435,6 +435,7 @@ export const projects = [
         {name: 'Community Service', username: 'communtyservce', instagram: true}
       ],
       songwriters: [
+        'Sabrina Lynn Bell',
         'Bobby Terrell Bullard',
         'Corey Arnell Bullard',
         'Isaiah Solomon Bullard',
