@@ -38,7 +38,7 @@ The Carousel is a [React Bootstrap](https://github.com/isaiah0812/isaiahbullard-
 
 ---
 ## Sections
-Each section on the Home Page - everything except for the Carousel - is created with a `HomeSection` component. The component includes a title, a short description, and a `Button` linking to another page. The Home Page loads the sections from the `sections` array in [`../../constants/home.js`](../../constants/home.js). An example `Section` object can be found below.
+Each section on the Home Page - everything except for the Carousel - is created with a `HomeSection` component. The component includes a title, a short description, and a `Button` linking to another page. The Home Page loads the sections from the array in [`../../constants/home.json`](../../constants/home.json). An example `Section` object can be found below.
 
 ```js
 {
