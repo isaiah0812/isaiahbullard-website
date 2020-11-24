@@ -5,7 +5,7 @@ This is the landing page of the site containing a Carousel displaying the most r
 
 ---
 ## Carousel
-The Carousel is a [React Bootstrap](https://github.com/isaiah0812/isaiahbullard-website#react-bootstrap) Carousel populated via the `carousel` array in [../../constants/carousel.js](../../constants/carousel.js). It will display the 5 most recent projects from Isaiah Bullard, and include links to their respective [Project Pages](https://github.com/isaiah0812/isaiahbullard-website#project-page). Example `CarouselItem` objects can be found below.
+The Carousel is a [React Bootstrap](https://github.com/isaiah0812/isaiahbullard-website#react-bootstrap) Carousel populated via the array in [../../constants/carousel.json](../../constants/carousel.json). It will display the 5 most recent projects from Isaiah Bullard, and include links to their respective [Project Pages](https://github.com/isaiah0812/isaiahbullard-website#project-page). Example `CarouselItem` objects can be found below.
 
 ```js
 {
