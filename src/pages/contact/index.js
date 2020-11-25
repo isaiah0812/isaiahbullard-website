@@ -17,7 +17,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import Button from '../../components/button';
 
 import beats from '../../constants/beats.json';
-import { projects } from '../../constants/music';
+import projects from '../../constants/projects.json';
 import { 
   PageBanner, 
   PageBannerFade, 
@@ -369,7 +369,7 @@ export default class Contact extends React.Component {
                           <BeatCard 
                             key={beat.id}
                             name={beat.title} 
-                            cover={beat.beatTapeId ? projects.find(project => project.id === beat.beatTapeId).cover : "assets/" + beat.cover} 
+                            cover={beat.beatTapeId ? "assets/" + projects.find(project => project.id === beat.beatTapeId).cover : "assets/" + beat.cover} 
                             onClick={() => this.removeBeat(beat.id)} 
                           />
                         ))}

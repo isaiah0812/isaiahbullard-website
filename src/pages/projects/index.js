@@ -11,7 +11,8 @@ import styled from 'styled-components';
 
 import { silver } from '../../constants/colors';
 import credits from '../../constants/credits.json';
-import { singles, projects } from '../../constants/music';
+import projects from '../../constants/projects.json';
+import { singles } from '../../constants/music';
 import { 
   PageBanner, 
   PageBannerFade, 
@@ -96,7 +97,7 @@ class ProjectsHome extends React.Component {
           }}>
             {projects.filter(project => !project.beatTape).map((album) => 
               <Link key={album.id} to={`${this.props.url}/${album.id}`}>
-                <AlbumCard title={album.title} cover={album.cover} />
+                <AlbumCard title={album.title} cover={"assets/" + album.cover} />
               </Link>
             )}
           </Container>

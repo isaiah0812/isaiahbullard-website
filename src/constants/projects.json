@@ -1,0 +1,248 @@
+[
+  {
+    "title": "Maestro",
+    "cover": "projects/albums/Maestro.png",
+    "id": "maestro",
+    "releaseDate": "08.10.2018",
+    "beatTape": false,
+    "songList": [
+      "Fantasies and Fedoras",
+      "Ding-Dong",
+      "Sneakin Around in A Harmonic",
+      "Auxiliary",
+      "One in the Same",
+      "Gametime",
+      "Monroe",
+      "Sunday (Interlude)",
+      "S.A.M.",
+      "Prom Date",
+      "To Be Different",
+      "Gilleland"
+    ],
+    "description": "/descriptions/Maestro.txt",
+    "albumCredits": {
+      "albumId": "maestro",
+      "producedBy": [{"name": "Isaiah Bullard", "username": "zaemadethis", "instagram": true}],
+      "mixedBy": [{"name": "Isaiah Bullard", "username": "zaemadethis", "instagram": true}],
+      "masteredBy": [{"name": "CoreyArnell", "username": "arnellcorey", "instagram": true}],
+      "artworkBy": [{"name": "Isaiah Bullard", "username": "zaemadethis", "instagram": true}],
+      "songwriters": [
+        "Isaiah Solomon Bullard",
+        "Bobby Bullard",
+        "Jason Allen Link"
+      ],
+      "specialThanks": [
+        {"name": "Jason Link"},
+        {"name": "Bobby Bullard"}
+      ]
+    },
+    "spotify": "3vbvMwip1WpplVodTHHOrb",
+    "apple": "maestro/1422921065",
+    "bandcamp": "2239082049",
+    "soundCloud": "580055703",
+    "songLink": "1422921065"
+  },
+  {
+    "title": "The Holly Jolly Tape",
+    "cover": "beats/beatTapes/HollyJolly.png",
+    "id": "the-holly-jolly-tape",
+    "releaseDate": "12.27.2019",
+    "beatTape": true,
+    "songList": [
+      "Dreamers",
+      "Mean",
+      "Tina",
+      "Grandma",
+      "Take a Look At Me",
+      "Slip 'N Slide",
+      "Snitch",
+      "Tingly",
+      "Lullaby",
+      "Be"
+    ],
+    "description": "/descriptions/The_Holly_Jolly_Tape.txt",
+    "albumCredits": {
+      "albumId": "the-holly-jolly-tape",
+      "samples": [
+        "I'll Be Home For Christmas - Michael Bublé",
+        "You're A Mean One, Mr. Grinch - Thurl Ravenscroft",
+        "Feliz Navidad - José Feliciano",
+        "Grandma Got Run Over By a Reindeer - Elmo & Patsy",
+        "It's Beginning to Look A Lot Like Christmas - Bing Crosby",
+        "It's Beginning to Look A Lot Like Christmas - Perry Como & The Fontane Sisters",
+        "Santa Baby - Ariana Grande",
+        "I Saw Mommy Kissing Santa Claus - The Jackson 5",
+        "Sleigh Ride - Ella Fitzgerald",
+        "Merry Christmas, Darling - The Carpenters",
+        "This Christmas - Donny Hathaway"
+      ],
+      "producedBy": [{"name": "Isaiah Bullard", "username": "zaemadethis", "instagram": true}],
+      "mixedBy": [{"name": "Isaiah Bullard", "username": "zaemadethis", "instagram": true}],
+      "masteredBy": [{"name": "Isaiah Bullard", "username": "zaemadethis", "instagram": true}],
+      "artworkBy": [{"name": "Isaiah Bullard", "username": "zaemadethis", "instagram": true}]
+    },
+    "bandcamp": "402273398",
+    "soundCloud": "662403879",
+    "youTube": "OLAK5uy_lHvgQeq70ANHH58v9aFgQ_aKPF85iPLrw",
+    "beats": [
+      {
+        "title": "Dreamers",
+        "beatTapeId": "the-holly-jolly-tape",
+        "id": "dreamers",
+        "keySignature": "F Major",
+        "tempo": 93,
+        "sold": false
+      },
+      {
+        "title": "Mean",
+        "beatTapeId": "the-holly-jolly-tape",
+        "id": "mean",
+        "keySignature": "G Minor",
+        "tempo": 95,
+        "sold": false
+      },
+      {
+        "title": "Tina",
+        "beatTapeId": "the-holly-jolly-tape",
+        "id": "tina",
+        "keySignature": "C Minor",
+        "tempo": 120,
+        "sold": false
+      },
+      {
+        "title": "Grandma",
+        "beatTapeId": "the-holly-jolly-tape",
+        "id": "grandma",
+        "keySignature": "E Minor",
+        "tempo": 142,
+        "sold": false
+      },
+      {
+        "title": "Take A Look At Me",
+        "beatTapeId": "the-holly-jolly-tape",
+        "id": "take-a-look-at-me",
+        "keySignature": "D#/Eb Major",
+        "tempo": 88,
+        "sold": false
+      },
+      {
+        "title": "Slip 'N Slide",
+        "beatTapeId": "the-holly-jolly-tape",
+        "id": "slip-n-slide",
+        "keySignature": "C#/Db Major",
+        "tempo": 98,
+        "sold": false
+      },
+      {
+        "title": "Snitch",
+        "beatTapeId": "the-holly-jolly-tape",
+        "id": "snitch",
+        "keySignature": "D Major",
+        "tempo": 116,
+        "sold": false
+      },
+      {
+        "title": "Tingly",
+        "beatTapeId": "the-holly-jolly-tape",
+        "id": "tingly",
+        "keySignature": "B Major",
+        "tempo": 97,
+        "sold": false
+      },
+      {
+        "title": "Lullaby",
+        "beatTapeId": "the-holly-jolly-tape",
+        "id": "lullaby",
+        "keySignature": "A Major",
+        "tempo": 90,
+        "sold": false
+      },
+      {
+        "title": "Be",
+        "beatTapeId": "the-holly-jolly-tape",
+        "id": "be",
+        "keySignature": "G Major",
+        "tempo": 89,
+        "sold": false
+      }
+    ]
+  },
+  {
+    "title": "Zae's Room",
+    "cover": "projects/albums/Zaes_Room.png",
+    "id": "zaes-room",
+    "releaseDate": "11.20.2020",
+    "beatTape": false,
+    "songList": [
+      "Welcome To the Show (feat. FUZE)",
+      "Toy Box (feat. Mark Pheonix, CoreyArnell & Phri)",
+      "Big Thangs (feat. CoreyArnell & May)",
+      "Supervillain (feat. 101 & CoreyArnell)",
+      "Evil Plan (feat. LouieV T & FUZE)",
+      "Brainstorm (feat. De'John Linward & FUZE)",
+      "KKK (feat. CoreyArnell)",
+      "Life Update (Skit)",
+      "Famous Friends (feat. May, Chris Winston & De'John Linward)",
+      "Smoove (feat. Bluu Suede & Rell Gibson)",
+      "Good Luck Charm (feat. FUZE)",
+      "By Design (feat. Community Service)"
+    ],
+    "description": "/descriptions/Zaes_Room.txt",
+    "albumCredits": {
+      "albumId": "zaes-room",
+      "features": [
+        {"name": "FUZE", "username": "igotwoezz", "instagram": true},
+        {"name": "Mark Pheonix", "username": "markpheonix", "instagram": true},
+        {"name": "CoreyArnell", "username": "arnellcorey", "instagram": true},
+        {"name": "Phri", "username": "aintshitphri", "instagram": true},
+        {"name": "May"},
+        {"name": "101", "username": "_blessyasoul", "instagram": true},
+        {"name": "LouieV T", "username": "louiev.t", "instagram": true},
+        {"name": "De'John Linward", "username": "dejohnlinward", "instagram": true},
+        {"name": "Chris Winston", "username": "chriswinston", "instagram": true},
+        {"name": "Bluu Suede", "username": "bluusuede", "instagram": true},
+        {"name": "Rell Gibson", "username": "Kingdoughmane", "instagram": false},
+        {"name": "Community Service", "username": "communtyservce", "instagram": true}
+      ],
+      "songwriters": [
+        "Sabrina Lynn Bell",
+        "Bobby Terrell Bullard",
+        "Corey Arnell Bullard",
+        "Isaiah Solomon Bullard",
+        "Jerry \"JC\" Connerly III",
+        "Larell Gibson",
+        "Mason Nooks",
+        "Mark Pheonix",
+        "Scott Phri",
+        "De'John Linward Tinsley",
+        "Terrance Ari Walker",
+        "Zachary Alexander Washington",
+        "Uriel Christopher Winston"
+      ],
+      "producedBy": [{"name": "Isaiah Bullard", "username": "zaemadethis", "instagram": true}],
+      "mixedBy": [
+        {"name": "Isaiah Bullard", "username": "zaemadethis", "instagram": true}, 
+        {"name": "Lucky Genius", "username": "lucky777genius", "instagram": true}, 
+        {"name": "Chris Winston", "username": "chriswinston", "instagram": true},
+        {"name": "Bluu Suede", "username": "bluusuede", "instagram": true}
+      ],
+      "masteredBy": [{"name": "Isaiah Bullard", "username": "zaemadethis", "instagram": true}],
+      "artworkBy": [{"name": "SHOKKA", "username": "shokkayo", "instagram": true}],
+      "specialThanks": [
+        {"name": "Isaac Bullard", "username": "ibullyy", "instagram": true},
+        {"name": "Sabrina Bell", "username": "slbell1129", "instagram": true},
+        {"name": "Isabella Valenzuela-Huefner", "username": "bbella_v", "instagram": true},
+        {"name": "Ryan Hill", "username": "literally_ryanhill", "instagram": true},
+        {"name": "Joshua Pane", "username": "joshua.pane", "instagram": true},
+        {"name": "Michael Coffey", "username": "michael_coffey70", "instagram": true},
+        {"name": "Schaeffer Duncan", "username": "kingschaeffer", "instagram": true},
+        {"name": "Troy Robb", "username": "troyrobb25", "instagram": true}
+      ]
+    },
+    "spotify": "6VdEQ3Hb9JLlFoM5mGMOCz",
+    "apple": "superb-ep/1475852445",
+    "bandcamp": "1413079885",
+    "soundCloud": "662403879",
+    "songLink": "1475852445"
+  }
+]

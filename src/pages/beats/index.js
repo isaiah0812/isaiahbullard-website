@@ -13,7 +13,7 @@ import { Helmet } from 'react-helmet';
 
 import { silver } from '../../constants/colors';
 import beats from '../../constants/beats.json';
-import { projects } from '../../constants/music';
+import projects from '../../constants/projects.json';
 import { 
   PageBanner, 
   PageBannerFade, 
@@ -79,7 +79,7 @@ class BeatsHome extends React.Component {
             <Container style={{width: '80%', display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', padding: 0}}>
               {projects.filter(project => project.beatTape).map((beatTape) => 
                 <Link key={beatTape.id} to={`${this.props.url}/${beatTape.id}`}>
-                  <AlbumCard title={beatTape.title} cover={beatTape.cover} />
+                  <AlbumCard title={beatTape.title} cover={"assets/" + beatTape.cover} />
                 </Link>
               )}
             </Container>
