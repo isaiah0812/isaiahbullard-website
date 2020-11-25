@@ -17,18 +17,16 @@ export default class ProjectCarousel extends React.Component {
   render() {    
     return (
       <Carousel style={{minHeight: 300}} interval={5000}>
-        {carousel.map((entry, index) => {
-          return (
-            <CarouselItem key={index} style={{height: '100%'}}>
-              <ProjectCarouselItem 
-                backdrop={entry.backdrop} 
-                logo={entry.logo} 
-                description={entry.description} 
-                link={entry.link} 
-              />
-            </CarouselItem>
-          )
-        })}
+        {carousel.map((entry, index) => (
+          <CarouselItem key={index} style={{height: '100%'}}>
+            <ProjectCarouselItem 
+              backdrop={entry.backdrop} 
+              logo={entry.logo} 
+              description={entry.description} 
+              link={entry.link} 
+            />
+          </CarouselItem>
+        ))}
       </Carousel>
     );
   }
