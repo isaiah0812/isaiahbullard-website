@@ -12,7 +12,7 @@ import styled from 'styled-components';
 import { silver } from '../../constants/colors';
 import credits from '../../constants/credits.json';
 import projects from '../../constants/projects.json';
-import { singles } from '../../constants/music';
+import singles from '../../constants/singles.json';
 import { 
   PageBanner, 
   PageBannerFade, 
