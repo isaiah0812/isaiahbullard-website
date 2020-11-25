@@ -120,7 +120,7 @@ export default class BeatDisplay extends React.Component {
 
     return (
       <Card style={{border: 0}}>
-        <Accordion.Toggle as={BeatButton} cover={beat.cover} eventKey={beat.id}>
+        <Accordion.Toggle as={BeatButton} cover={"assets/" + beat.cover} eventKey={beat.id}>
           <BeatButtonHover>
             <BeatButtonTitle>{beat.title}{beat.sold && " [SOLD]"}</BeatButtonTitle>
           </BeatButtonHover>

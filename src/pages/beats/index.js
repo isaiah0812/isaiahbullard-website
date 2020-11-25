@@ -12,7 +12,8 @@ import { Helmet } from 'react-helmet';
 
 
 import { silver } from '../../constants/colors';
-import { beats, projects } from '../../constants/music';
+import beats from '../../constants/beats.json';
+import { projects } from '../../constants/music';
 import { 
   PageBanner, 
   PageBannerFade, 
