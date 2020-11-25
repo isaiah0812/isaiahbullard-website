@@ -1,7 +1,7 @@
 [
   {
     "title": "8-Bit",
-    "cover": "beats/beats/8_Bit.png",
+    "cover": "assets/beats/beats/8_Bit.png",
     "id": "8-bit",
     "youtube": "qTwnXDdWcSw",
     "keySignature": "D#/Eb Minor",
@@ -10,7 +10,7 @@
   },
   {
     "title": "Argentina",
-    "cover": "beats/beats/Argentina.png",
+    "cover": "assets/beats/beats/Argentina.png",
     "id": "argentina",
     "youtube": "uJfq9FYBjKw",
     "keySignature": "F#/Gb Minor",
@@ -19,7 +19,7 @@
   },
   {
     "title": "Birds",
-    "cover": "beats/beats/Birds.png",
+    "cover": "assets/beats/beats/Birds.png",
     "id": "birds",
     "youtube": "K0z40_Pm3uw",
     "keySignature": "F#/Gb Minor",
@@ -28,7 +28,7 @@
   },
   {
     "title": "Crispy",
-    "cover": "beats/beats/Crispy.png",
+    "cover": "assets/beats/beats/Crispy.png",
     "id": "crispy",
     "youtube": "H6KaS-izPIc",
     "keySignature": "D#/Eb Minor",
@@ -37,7 +37,7 @@
   },
   {
     "title": "Dexter",
-    "cover": "beats/beats/Dexter.png",
+    "cover": "assets/beats/beats/Dexter.png",
     "id": "dexter",
     "youtube": "TCnoe1IIqL4",
     "keySignature": "F#/Gb Minor",
@@ -46,7 +46,7 @@
   },
   {
     "title": "Discover",
-    "cover": "beats/beats/Discover.png",
+    "cover": "assets/beats/beats/Discover.png",
     "id": "discover",
     "youtube": "e-66HcQUZYM",
     "keySignature": "G Minor",
@@ -55,7 +55,7 @@
   },
   {
     "title": "Gangsta Symphony",
-    "cover": "beats/beats/Gangsta_Symphony.png",
+    "cover": "assets/beats/beats/Gangsta_Symphony.png",
     "id": "gangsta-symphony",
     "youtube": "qdNes5V1UEQ",
     "keySignature": "D Minor",
@@ -64,7 +64,7 @@
   },
   {
     "title": "Gunslinger",
-    "cover": "beats/beats/Gunslinger.png",
+    "cover": "assets/beats/beats/Gunslinger.png",
     "id": "gunslinger",
     "youtube": "_V-SCWio3ao",
     "keySignature": "G Minor",
@@ -73,7 +73,7 @@
   },
   {
     "title": "Laughter",
-    "cover": "beats/beats/Laughter.png",
+    "cover": "assets/beats/beats/Laughter.png",
     "id": "laughter",
     "youtube": "AbMocRL-RsA",
     "keySignature": "F Major",
@@ -82,7 +82,7 @@
   },
   {
     "title": "Luke Cage",
-    "cover": "beats/beats/Luke_Cage.png",
+    "cover": "assets/beats/beats/Luke_Cage.png",
     "id": "luke-cage",
     "youtube": "sqtcQOwGFzY",
     "keySignature": "A#/Bb MInor",
@@ -91,7 +91,7 @@
   },
   {
     "title": "Make Believe",
-    "cover": "beats/beats/MakeBelieve.png",
+    "cover": "assets/beats/beats/MakeBelieve.png",
     "id": "make-believe",
     "youtube": "N1VzywunJAA",
     "keySignature": "A Major",
@@ -100,7 +100,7 @@
   },
   {
     "title": "Pacman",
-    "cover": "beats/beats/Pacman.png",
+    "cover": "assets/beats/beats/Pacman.png",
     "id": "pacman",
     "youtube": "OTKCNJH9_ig",
     "keySignature": "D Minor",
@@ -109,7 +109,7 @@
   },
   {
     "title": "Primetime",
-    "cover": "beats/beats/Primetime.png",
+    "cover": "assets/beats/beats/Primetime.png",
     "id": "primetime",
     "youtube": "EqJCc4jFvhg",
     "keySignature": "E Minor",
@@ -118,7 +118,7 @@
   },
   {
     "title": "Tattoos",
-    "cover": "beats/beats/Tattoos.png",
+    "cover": "assets/beats/beats/Tattoos.png",
     "id": "tattoos",
     "youtube": "P3nTHd8IOSM",
     "keySignature": "F Minor",
@@ -127,7 +127,7 @@
   },
   {
     "title": "TMNT",
-    "cover": "beats/beats/TMNT.png",
+    "cover": "assets/beats/beats/TMNT.png",
     "id": "tmnt",
     "youtube": "duhUAWe79rg",
     "keySignature": "D#/Eb Minor",
@@ -136,7 +136,7 @@
   },
   {
     "title": "Virtuoso",
-    "cover": "beats/beats/Virtuoso.jpg",
+    "cover": "assets/beats/beats/Virtuoso.jpg",
     "id": "virtuoso",
     "youtube": "A1jwLZbWVBQ",
     "keySignature": "C Minor",

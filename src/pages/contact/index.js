@@ -369,7 +369,7 @@ export default class Contact extends React.Component {
                           <BeatCard 
                             key={beat.id}
                             name={beat.title} 
-                            cover={beat.beatTapeId ? "assets/" + projects.find(project => project.id === beat.beatTapeId).cover : "assets/" + beat.cover} 
+                            cover={beat.beatTapeId ? projects.find(project => project.id === beat.beatTapeId).cover : beat.cover} 
                             onClick={() => this.removeBeat(beat.id)} 
                           />
                         ))}

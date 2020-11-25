@@ -97,7 +97,7 @@ class ProjectsHome extends React.Component {
           }}>
             {projects.filter(project => !project.beatTape).map((album) => 
               <Link key={album.id} to={`${this.props.url}/${album.id}`}>
-                <AlbumCard title={album.title} cover={"assets/" + album.cover} />
+                <AlbumCard title={album.title} cover={album.cover} />
               </Link>
             )}
           </Container>

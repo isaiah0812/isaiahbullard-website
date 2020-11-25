@@ -1,7 +1,7 @@
 [
   {
     "title": "Maestro",
-    "cover": "projects/albums/Maestro.png",
+    "cover": "/assets/projects/albums/Maestro.png",
     "id": "maestro",
     "releaseDate": "08.10.2018",
     "beatTape": false,
@@ -44,7 +44,7 @@
   },
   {
     "title": "The Holly Jolly Tape",
-    "cover": "beats/beatTapes/HollyJolly.png",
+    "cover": "/assets/beats/beatTapes/HollyJolly.png",
     "id": "the-holly-jolly-tape",
     "releaseDate": "12.27.2019",
     "beatTape": true,
@@ -169,7 +169,7 @@
   },
   {
     "title": "Zae's Room",
-    "cover": "projects/albums/Zaes_Room.png",
+    "cover": "/assets/projects/albums/Zaes_Room.png",
     "id": "zaes-room",
     "releaseDate": "11.20.2020",
     "beatTape": false,

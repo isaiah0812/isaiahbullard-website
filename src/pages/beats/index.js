@@ -79,7 +79,7 @@ class BeatsHome extends React.Component {
             <Container style={{width: '80%', display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', padding: 0}}>
               {projects.filter(project => project.beatTape).map((beatTape) => 
                 <Link key={beatTape.id} to={`${this.props.url}/${beatTape.id}`}>
-                  <AlbumCard title={beatTape.title} cover={"assets/" + beatTape.cover} />
+                  <AlbumCard title={beatTape.title} cover={beatTape.cover} />
                 </Link>
               )}
             </Container>

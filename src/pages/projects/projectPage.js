@@ -212,7 +212,7 @@ export default class ProjectPage extends React.Component {
           <meta name="description" content={`${this.album.title}, by Isaiah Bullard`} />
         </Helmet>
         <ProjectPageSection fluid style={{flexWrap: 'wrap-reverse'}}>
-          <ProjectPageCover src={"/assets/" + this.album.cover} />
+          <ProjectPageCover src={this.album.cover} />
           <ProjectPageHeader fluid>
             <ProjectPageTitle>{this.album.title}</ProjectPageTitle>
             <ProjectPageReleaseDate>Release Date: {this.album.releaseDate}</ProjectPageReleaseDate>
