@@ -10,7 +10,8 @@ import {
 import styled from 'styled-components';
 
 import { silver } from '../../constants/colors';
-import { singles, credits, projects } from '../../constants/music';
+import credits from '../../constants/credits.json';
+import { singles, projects } from '../../constants/music';
 import { 
   PageBanner, 
   PageBannerFade, 
