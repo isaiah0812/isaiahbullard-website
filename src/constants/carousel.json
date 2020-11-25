@@ -1,22 +1,22 @@
 [
   {
     "name": "Zae's Room",
-    "backdrop": "projects/albums/Zaes_Room.png",
-    "logo": "projects/albums/ZaesRoom_Logo.png",
+    "backdrop": "assets/projects/albums/Zaes_Room.png",
+    "logo": "assets/projects/albums/ZaesRoom_Logo.png",
     "description": "Welcome to the show. Coming 2020.",
     "link": "/projects/zaes-room"
   },
   {
     "name": "The Holly Jolly Tape",
-    "backdrop": "beats/beatTapes/HollyJolly.png",
-    "logo": "beats/beatTapes/HollyJolly_Logo.png",
+    "backdrop": "assets/beats/beatTapes/HollyJolly.png",
+    "logo": "assets/beats/beatTapes/HollyJolly_Logo.png",
     "description": "Merry Christmas. The Holly Jolly Tape is out now.",
     "link": "/beats/the-holly-jolly-tape"
   },
   {
     "name": "Maestro",
-    "backdrop": "projects/albums/Maestro.png",
-    "logo": "projects/albums/Maestro_Logo.png",
+    "backdrop": "assets/projects/albums/Maestro.png",
+    "logo": "assets/projects/albums/Maestro_Logo.png",
     "description": "Home is where the heart is. Maestro is out now.",
     "link": "/projects/maestro"
   }
