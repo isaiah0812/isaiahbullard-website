@@ -6,7 +6,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 import IBIcon from '../assets/IBLogo_Icon.png';
 
-import { routes } from '../constants/routing';
+import routes from '../constants/routing.json';
 import { black } from '../constants/colors';
 
 import MenuItem from './menuItem';

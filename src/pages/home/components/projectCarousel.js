@@ -2,7 +2,7 @@ import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import CarouselItem from 'react-bootstrap/CarouselItem';
 
-import { carousel } from '../../../constants/carousel';
+import carousel from '../../../constants/carousel.json';
 
 import ProjectCarouselItem from './projectCarouselItem';
 
@@ -14,7 +14,7 @@ import ProjectCarouselItem from './projectCarouselItem';
  * @example <ProjectCarousel />
  */
 export default class ProjectCarousel extends React.Component {
-  render() {
+  render() {    
     return (
       <Carousel style={{minHeight: 300}} interval={5000}>
         {carousel.map((entry, index) => (

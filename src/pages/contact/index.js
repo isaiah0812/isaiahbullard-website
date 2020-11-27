@@ -16,7 +16,8 @@ import ReCAPTCHA from 'react-google-recaptcha';
 
 import Button from '../../components/button';
 
-import { beats, projects } from '../../constants/music';
+import beats from '../../constants/beats.json';
+import projects from '../../constants/projects.json';
 import { 
   PageBanner, 
   PageBannerFade, 
