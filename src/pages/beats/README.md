@@ -3,7 +3,7 @@
 The Beats Page displays a catalog of available [Beats](https://github.com/isaiah0812/isaiahbullard-website#beat) for sale from Isaiah Bullard, along with [Beat Tapes](https://github.com/isaiah0812/isaiahbullard-website#beat-tape) that are available for free listening. Each beat that is not in a Beat Tape is displayed with a [BeatDisplay](#beat-display) component and should have a YouTube video uploaded to Isaiah Bullard's YouTube channel.
 
 ### Beats
-A Beat can be defined [here](https://github.com/isaiah0812/isaiahbullard-website#beat). Beats are loaded from the `beats` array in [`../../constants/music.js](../../constants/music.js). An example `Beat` object can be found below.
+A Beat can be defined [here](https://github.com/isaiah0812/isaiahbullard-website#beat). Beats are loaded from the array in [`../../constants/beats.json](../../constants/beats.json). An example `Beat` object can be found below.
 
 ```js
 {
@@ -37,14 +37,14 @@ A Beat can be defined [here](https://github.com/isaiah0812/isaiahbullard-website
 
 `youtube` - The unique identifier of the YouTube video where the beat is uploaded on Isaiah Bullard's YouTube channel. See ["Finding a Beat on YouTube"](#finding-a-beat-on-youtube) for more information on how to find this value. This is not included within a beat on a Beat Tape.
 
-`keySignature` - The key signature of the beat. All possible key signatures are kept as constants in the `KEYSIGS` array in [`../../constants/music.js`](../../constants/music.js). 
+`keySignature` - The key signature of the beat.
 
 `tempo` - The numerical value of the tempo of the beat.
 
 `sold` - A boolean value determining whether or not the beat has been sold.
 
 ### Beat Tape
-A Beat Tape can be defined [here](https://github.com/isaiah0812/isaiahbullard-website#beat-tape). These projects contain only Beats, and these Beats are listed for sale on the site, just as any other beat from the Beats Page. Beat Tapes are loaded from the `projects` array in [../../constants/music.js](../../constants/music.js). An example `BeatTape` object can be found below, where a `BeatTape` object is an extension of a `Project` object.
+A Beat Tape can be defined [here](https://github.com/isaiah0812/isaiahbullard-website#beat-tape). These projects contain only Beats, and these Beats are listed for sale on the site, just as any other beat from the Beats Page. Beat Tapes are loaded from the array in [../../constants/projects.json](../../constants/projects.json). An example `BeatTape` object can be found below, where a `BeatTape` object is an extension of a `Project` object.
 
 ```js
 {
@@ -260,7 +260,7 @@ The `BeatDisplay` component is not used for Beats on a Beat Tape, as the beat ta
 ## Project Page (zaemadethis.com/beats/{beatTape_id})
 A [Project Page](https://github.com/isaiah0812/isaiahbullard-website#project-page) displays information regarding a full length Project, which can either be an Album or a Beat Tape. These pages also provide a section to play the project via a selection of [Streaming Platforms](https://github.com/isaiah0812/isaiahbullard-website#streaming-platforms).
 
-Beat Tapes are released for free listening. Their project pages are loaded via `BeatTape` objects, provided by the `projects` array in [`../../constants/music.js`](../../constants/music.js). Users can stream Beat Tapes as many times as they want, and are free for download via Bandcamp. All of the [Beats](https://github.com/isaiah0812/isaiahbullard-website#beats) on Beat Tapes are for sale as well, and each Beat Tape's Project Page contains a `Button` below the player that leads the user to the [Contact Page](https://github.com/isaiah0812/isaiahbullard-website#contact-page), where they can opt to purchase the individual Beats for commercial use.
+Beat Tapes are released for free listening. Their project pages are loaded via `BeatTape` objects, provided by the array in [`../../constants/projects.json`](../../constants/projects.json). Users can stream Beat Tapes as many times as they want, and are free for download via Bandcamp. All of the [Beats](https://github.com/isaiah0812/isaiahbullard-website#beats) on Beat Tapes are for sale as well, and each Beat Tape's Project Page contains a `Button` below the player that leads the user to the [Contact Page](https://github.com/isaiah0812/isaiahbullard-website#contact-page), where they can opt to purchase the individual Beats for commercial use.
 
 ### Album Credits
 The `albumCredits` property of a `Project` object contains credited individuals for their various contributions to a Project. This object is known as a `AlbumCredits` object.
