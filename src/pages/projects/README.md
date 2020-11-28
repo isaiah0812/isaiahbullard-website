@@ -3,7 +3,7 @@
 The Projects Page is a catalog of all [Albums](https://github.com/isaiah0812/isaiahbullard-website#album), [Singles](https://github.com/isaiah0812/isaiahbullard-website#single), and [Production Credits](https://github.com/isaiah0812/isaiahbullard-website#production-credit) from Isaiah Bullard. Each section contains a different user experience. Clicking on an [`AlbumCard`](#album-card) component leads to an Album's [Project Page](#project-page). Clicking on a [`SingleCard`](#single-card) component opens a `SingleDiv` component that displays information and a `SingleDivPlayer` component, where the user can listen to a Single. Clicking on a [`CreditCard`](#credit-card) component leads the user to another site where they can listen to the desired Production Credit.
 
 ### Albums
-An Album can be defined [here](https://github.com/isaiah0812/isaiahbullard-website#beat). Albums are loaded from the `projects` array in [`../../constants/music.js](../../constants/music.js), where `Album` objects are an extension of a `Project` object, where the `beatTape` property is false. An example `Album` object can be found below.
+An Album can be defined [here](https://github.com/isaiah0812/isaiahbullard-website#beat). Albums are loaded from the array in [`../../constants/projects.json](../../constants/projects.json), where `Album` objects are an extension of a `Project` object, where the `beatTape` property is false. An example `Album` object can be found below.
 
 ```js
 {
@@ -86,7 +86,7 @@ An Album can be defined [here](https://github.com/isaiah0812/isaiahbullard-websi
 `songLink` - The unique identifier of the SongLink entry where the Album is found on [Odesli](https://odesli.co/). See ["Finding an Album"](#finding-an-album) for more information on how to find this value.
 
 ### Singles
-A Single can be defined [here](https://github.com/isaiah0812/isaiahbullard-website#single). A single is available on the same streaming services that an [Album](#albums) is released on. Singles are loaded from the `singles` array in [../../constants/music.js](../../constants/music.js). An example `Single` object can be found below.
+A Single can be defined [here](https://github.com/isaiah0812/isaiahbullard-website#single). A single is available on the same streaming services that an [Album](#albums) is released on. Singles are loaded from the array in [../../constants/projects.json](../../constants/projects.json). An example `Single` object can be found below.
 
 ```js
 {
@@ -130,7 +130,7 @@ A Single can be defined [here](https://github.com/isaiah0812/isaiahbullard-websi
 `id` - The id of the `Single` object. The format for this id is the lowercase `title` with hyphens in the place of spaces (i.e. if `title` === "The Holly Jolly Tape", then `id` === "the-holly-jolly-tape").
 
 ### Production Credits
-A Production Credit can be defined [here](https://github.com/isaiah0812/isaiahbullard-website#production-credit). Clicking a `CreditCard` component leads to another page, where the user can listen to the Production Credit. Production Credits are loaded from the `credits` array in [`../../constants/music.js](../../constants/music.js). An example `Credit` object can be found below.
+A Production Credit can be defined [here](https://github.com/isaiah0812/isaiahbullard-website#production-credit). Clicking a `CreditCard` component leads to another page, where the user can listen to the Production Credit. Production Credits are loaded from the array in [`../../constants/projects.json](../../constants/projects.json). An example `Credit` object can be found below.
 
 ```js
 {
@@ -275,7 +275,7 @@ The `songLink` property's value is the id of the [Song Link](https://github.com/
 ## Project Page (zaemadethis.com/projects/{project_id})
 A [Project Page](https://github.com/isaiah0812/isaiahbullard-website#project-page) displays information regarding a full length Project, which can either be an Album or a Beat Tape. These pages also provide a section to play the project via a selection of [Streaming Platforms](https://github.com/isaiah0812/isaiahbullard-website#streaming-platforms).
 
-Albums are released for paid listening. Their project pages are loaded via `Album` objects, provided by the `projects` array in [`../../constants/music.js`](../../constants/music.js). Users are able to stream Albums from Streaming Platforms, as long as they have a subscription to one or more of those platforms. Albums are also available for purchase on Bandcamp (which does not require an account for streaming), iTunes, Amazon Music, etc.
+Albums are released for paid listening. Their project pages are loaded via `Album` objects, provided by the array in [`../../constants/projects.json`](../../constants/projects.json). Users are able to stream Albums from Streaming Platforms, as long as they have a subscription to one or more of those platforms. Albums are also available for purchase on Bandcamp (which does not require an account for streaming), iTunes, Amazon Music, etc.
 
 ### Album Credits
 The `albumCredits` property of a `Project` object contains credited individuals for their various contributions to a Project. This object is known as a `AlbumCredits` object.

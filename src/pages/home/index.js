@@ -2,7 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import { Helmet } from 'react-helmet';
 
-import { sections } from '../../constants/home';
+import sections from '../../constants/home.json';
 
 import HomeSection from './components/homeSection';
 import ProjectCarousel from './components/projectCarousel';
