@@ -3,7 +3,7 @@
     "title": "Fast Lane",
     "cover": "assets/projects/singles/Fast_Lane.png",
     "color": "#F4750E",
-    "features": ["CoreyArnell", "FUZE"],
+    "features": ["CoreyArnell", "$hortFuze"],
     "description": "No microphones were burned in the making of this recording. Please leave this type of rapping to the professionals and do not try this at home.",
     "releaseDate": "03.01.2019",
     "spotify": "0zZMvZ0BBAILDipQln4i8O",
@@ -31,7 +31,7 @@
     "title": "Evil Plan",
     "cover": "assets/projects/singles/Evil_Plan.png",
     "color": "#30FFB9",
-    "features": ["LouieV T", "FUZE"],
+    "features": ["LouieV T", "$hortFuze"],
     "description": "The second single from Zae's Room. This beat took 20 minutes to make, and it's still the hardest song you might hear in your life. Trust me, this will get the party going.",
     "releaseDate": "04.10.2020",
     "spotify": "1fZHvbksavmt5XEtAmTBCR",
@@ -40,5 +40,19 @@
     "soundcloud": "795101182",
     "songLink": "1506525082",
     "id": "evil-plan"
+  },
+  {
+    "title": "Toy Box",
+    "cover": "assets/projects/singles/Toy_Box.JPG",
+    "color": "#fe4855",
+    "features": ["Mark Pheonix", "CoreyArnell", "Mark Pheonix"],
+    "description": "Look at the cover art. We're sitting on top of a Rubik's cube...while I'm solving a Rubik's cube. Ain't that somthing? This track is the spirit of Zae's Room. 2021 is our year.",
+    "releaseDate": "01.01.2021",
+    "spotify": "5r75wpUxnSTBXGOcRn0jWR",
+    "apple": "toy-box-feat-mark-pheonix-coreyarnell-phri-single/1547306457",
+    "bandcamp": "1805792918",
+    "soundcloud": "955379350",
+    "songLink": "1547306458",
+    "id": "toy-box"
   }
 ]
