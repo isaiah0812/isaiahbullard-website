@@ -26,7 +26,7 @@ const ProjectPageSection = styled(Container)`
   display: flex;
   flex-direction: row;
   color: ${darkBlue};
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
 `
 
 /**
@@ -211,7 +211,7 @@ export default class ProjectPage extends React.Component {
           <title>{this.album.title} - Isaiah Bullard</title>
           <meta name="description" content={`${this.album.title}, by Isaiah Bullard`} />
         </Helmet>
-        <ProjectPageSection fluid style={{flexWrap: 'wrap-reverse'}}>
+        <ProjectPageSection fluid>
           <ProjectPageCover src={this.album.cover} />
           <ProjectPageHeader fluid>
             <ProjectPageTitle>{this.album.title}</ProjectPageTitle>
