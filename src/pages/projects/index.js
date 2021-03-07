@@ -144,7 +144,7 @@ class ProjectsHome extends React.Component {
           <br />
           <PageSectionTitle>Videos</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
-          {videos.map((video) => <YoutubeCard title={video.title} youtube={video.youtube} />)}
+          {videos.map((video) => <YoutubeCard key={video.id} title={video.title} youtube={video.youtube} />)}
         </Container>
       </Container>
     );
