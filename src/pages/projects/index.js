@@ -13,6 +13,7 @@ import { silver } from '../../constants/colors';
 import credits from '../../constants/credits.json';
 import projects from '../../constants/projects.json';
 import singles from '../../constants/singles.json';
+import videos from '../../constants/videos.json';
 import { 
   PageBanner, 
   PageBannerFade, 
@@ -27,6 +28,7 @@ import AlbumCard from './components/albumCard';
 import SingleCard from './components/singleCard';
 import CreditCard from './components/creditCard';
 import ProjectPage from './projectPage';
+import YoutubeCard from './components/youtubeCard';
 
 /**
  * Container that goes around the CreditCard objects.
@@ -101,6 +103,8 @@ class ProjectsHome extends React.Component {
               </Link>
             )}
           </Container>
+          <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
+          <br />
           <PageSectionTitle id="singles">Singles</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
           <Container fluid style={{
@@ -129,11 +133,18 @@ class ProjectsHome extends React.Component {
               })}
             </Container>
           </Container>
+          <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
+          <br />
           <PageSectionTitle>Credits</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
           <CreditSection fluid>
             {credits.map((credit) => <CreditCard key={credit.id} credit={credit} />)}
           </CreditSection>
+          <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
+          <br />
+          <PageSectionTitle>Videos</PageSectionTitle>
+          <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
+          {videos.map((video) => <YoutubeCard title={video.title} youtube={video.youtube} />)}
         </Container>
       </Container>
     );

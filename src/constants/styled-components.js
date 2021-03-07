@@ -102,6 +102,7 @@ export const PageSectionTitle = styled.h2`
   color: ${darkBlue};
   text-align: center;
   font-size: 5vh;
+  line-height: 0px;
 `
 
 /**
