@@ -130,7 +130,7 @@ A Single can be defined [here](https://github.com/isaiah0812/isaiahbullard-websi
 `id` - The id of the `Single` object. The format for this id is the lowercase `title` with hyphens in the place of spaces (i.e. if `title` === "The Holly Jolly Tape", then `id` === "the-holly-jolly-tape").
 
 ### Production Credits
-A Production Credit can be defined [here](https://github.com/isaiah0812/isaiahbullard-website#production-credit). Clicking a `CreditCard` component leads to another page, where the user can listen to the Production Credit. Production Credits are loaded from the array in [`../../constants/projects.json](../../constants/projects.json). An example `Credit` object can be found below.
+A Production Credit can be defined [here](https://github.com/isaiah0812/isaiahbullard-website#production-credit). Clicking a `CreditCard` component leads to another page, where the user can listen to the Production Credit. Production Credits are loaded from the array in [`../../constants/credits.json](../../constants/credits.json). An example `Credit` object can be found below.
 
 ```js
 {
@@ -150,6 +150,23 @@ A Production Credit can be defined [here](https://github.com/isaiah0812/isaiahbu
 `link` - A URL leading to the [Streaming Platform](https://github.com/isaiah0812/isaiahbullard-website#streaming-platform) where the user can listen to or purchase the Production Credit.
 
 _Note: Production Credits are not limited to where they can be uploaded, therefore, it's best to look at typical culprits, such as [Spotify](https://www.spotify.com), [Bandcamp](https://www.bandcamp.com), [SoundCloud](https://www.soundcloud.com), and [YouTube](https://www.youtube.com). However, any Streaming Platform or Online store can be used, so it may require some research._
+
+### Music Videos
+A Music Video can be defined [here](https://github.com/isaiah0812/isaiahbullard-website#music-video). Music Videos are loaded from the array in [`../../constants/videos.json](../../constants/videos.json). An example `Video` object can be found below.
+
+```js
+{
+  "id": "single-name",
+  "title": "Video Title",
+  "youtube": "FIT_DhSPpyw"
+}
+```
+
+`id` - The id of the `Video` object. There is no specific format for this id, but it's preferred if the id is similar to Single's name, for simplicity.
+
+`title` - The title of the Music Video.
+
+`youtube` - The unique identifier of the YouTube video where the music video is uploaded on Isaiah Bullard's YouTube channel. See ["Finding a Beat on YouTube"](#finding-a-beat-on-youtube) for more information on how to find this value. This is not included within a beat on a Beat Tape.
 
 ---
 ## Finding an Album
@@ -270,6 +287,16 @@ The `songLink` property's value is the id of the [Song Link](https://github.com/
 1. Copy the id found after `i/` in the URL. In the URL below, the **bold** text is the id.
     * _https://song.link/i/**1506525082**_
 1. Paste the id from the URL to the `songLink` property of the desired `Single` object.
+
+---
+## Finding a Music Video
+Each Video object contains a `youtube` property, where the value is the id of the YouTube video for the Music Video. This value is used in for the `iframe` in the `YoutubeCard` component. To find the id of a music video, follow these steps:
+1. Go to [Isaiah Bullard's YouTube Channel](https://www.youtube.com/channel/UCMMDfi3G5xXLj7vVqq9yr9w/videos).
+1. Go to the "Videos" tab.
+1. Find the desired Music Video and click it.
+1. Copy the id from the URL, located after the `v=` in the url. In the URL below, the **bold** text is the id.
+    * _https://www.youtube.com/watch?v=**TCnoe1IIqL4**_
+1. Paste the value of the id into the `youtube` property of the Beat object.
 
 ---
 ## Project Page (zaemadethis.com/projects/{project_id})

@@ -129,6 +129,9 @@ In reference to a [Project](#project), a credit refers to a person who contribut
 * Artwork Artist
 * Special Thanks
 
+#### `Music Video`
+A visual companion to one or more [Singles](#single).
+
 #### `Page`
 A component that utilizes a path in the [Router](#router).
 
