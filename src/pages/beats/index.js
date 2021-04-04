@@ -45,7 +45,7 @@ const BeatsPageSection = styled(Container)`
 
   @media (max-width: 740px) {
     width: 100%;
-    margin: 2.5%;
+    margin: 2.5% 1%;
   }
 `
 
