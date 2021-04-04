@@ -29,6 +29,7 @@ import ProjectPage from '../projects/projectPage';
 
 import banner from './assets/banner.jpg';
 import BeatDisplay from './components/beatDisplay';
+import { pageContainer } from '../../constants/styles';
 
 /**
  * Responsive section on the beat's page to go to vertical on Mobile mode
@@ -44,6 +45,7 @@ const BeatsPageSection = styled(Container)`
 
   @media (max-width: 740px) {
     width: 100%;
+    margin: 2.5% 1%;
   }
 `
 
@@ -70,7 +72,7 @@ class BeatsHome extends React.Component {
             </BannerText>
           </PageBannerFade>
         </PageBanner>
-        <Container fluid style={{display: 'flex', flexDirection: 'row-reverse', justifyContent: 'center', flexWrap: 'wrap', padding: '60px 24px'}}>
+        <Container fluid style={{...pageContainer, flexDirection: 'row-reverse', flexWrap: 'wrap'}}>
           <BeatsPageSection fluid>
             <PageSectionTitle>Beat Tapes</PageSectionTitle>
             <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
