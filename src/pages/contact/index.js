@@ -28,6 +28,7 @@ import {
   PageSectionInfo,
 } from '../../constants/styled-components';
 import { darkBlue, lightBlue, silver, white } from '../../constants/colors';
+import { pageContainer } from '../../constants/styles';
 
 import banner from './assets/banner.jpg';
 
@@ -267,7 +268,7 @@ export default class Contact extends React.Component {
             </BannerText>
           </PageBannerFade>
         </PageBanner>
-        <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '60px 24px'}}>
+        <Container fluid style={{...pageContainer}}>
           <PageSectionTitle>Enter Your Information</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
           <PageSectionInfo>Serious inquiries only, please.</PageSectionInfo>

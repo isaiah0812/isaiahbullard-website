@@ -29,6 +29,7 @@ import SingleCard from './components/singleCard';
 import CreditCard from './components/creditCard';
 import ProjectPage from './projectPage';
 import YoutubeCard from './components/youtubeCard';
+import { pageContainer } from '../../constants/styles';
 
 /**
  * Container that goes around the CreditCard objects.
@@ -86,7 +87,7 @@ class ProjectsHome extends React.Component {
             </BannerText>
           </PageBannerFade>
         </PageBanner>
-        <Container fluid style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', padding: '60px 24px'}}>
+        <Container fluid style={{...pageContainer, textAlign: 'center'}}>
           <PageSectionTitle>Albums</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
           <Container style={{

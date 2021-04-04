@@ -103,6 +103,10 @@ export const PageSectionTitle = styled.h2`
   text-align: center;
   font-size: 5vh;
   line-height: 0px;
+
+  @media (max-width: 740px) {
+    font-size: 1.5em;
+  }
 `
 
 /**
