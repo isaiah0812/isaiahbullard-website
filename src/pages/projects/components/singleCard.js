@@ -11,16 +11,8 @@ import SingleDiv from './singleDiv';
  * @example <SingleCard open />
  */
 export default class SingleCard extends React.Component {
-  /**
-   * @constructor
-   * @param {object} props Properties that may be passed when using the AlbumPlayer
-   */
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      display: this.props.open,
-    }
+  state = {
+    display: this.props.open,
   }
 
   render() {
