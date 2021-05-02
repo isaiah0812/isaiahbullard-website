@@ -16,8 +16,6 @@ import ReCAPTCHA from 'react-google-recaptcha';
 
 import Button from '../../components/button';
 
-import beats from '../../constants/beats.json';
-import projects from '../../constants/projects.json';
 import { 
   PageBanner, 
   PageBannerFade, 
@@ -79,33 +77,70 @@ export default class Contact extends React.Component {
    * The options of templates to use in the contact form.
    */
   templates = [process.env.REACT_APP_EMAILJS_TEMPLATE_BEATS, process.env.REACT_APP_EMAILJS_TEMPLATE_CONTACT];
-  
-  /**
-   * @constructor
-   * @param {object} props a set of properties that may be passed into the Contact object
-   */
-  constructor(props) {
-    super(props);
-    this.state = {
-      yourName: "",
-      email: "",
-      statement: "",
-      toastVisible: false,
-      successAlertVisible: false,
-      failureAlertVisible: false,
-      selected: [],
-      recentBeat: beats[0],
-      added: true,
-      purchasingBeats: false,
-      spinnerVisible: false,
-    }
 
-    init(this.username);
-    this.handleChange = this.addBeat.bind(this);
+  state = {
+    yourName: "",
+    email: "",
+    statement: "",
+    toastVisible: false,
+    successAlertVisible: false,
+    failureAlertVisible: false,
+    selected: [],
+    recentBeat: {
+      title: "",
+      cover: "",
+      id: "",
+      youtube: "",
+      keySignature: "",
+      tempo: 0,
+      sold: false
+    },
+    added: true,
+    purchasingBeats: false,
+    spinnerVisible: false,
+    beatsLoaded: false,
+    beatTapesLoaded: false,
+    beats: [],
+    beatTapes: [],
+    beatsError: null,
+    beatTapesError: null,
+    allBeats: []
+  }
 
-    this.allBeats = [...beats]
-                    .concat(...projects.filter(project => project.beatTape)
-                    .map(beatTape => {return beatTape.beats}));
+  componentDidMount() {
+    init(this.username)
+    this.handleChange = this.addBeat.bind(this)
+
+    fetch(`${process.env.REACT_APP_API_URL}/beats`)
+      .then(res => res.json())
+      .then((beats) => {
+        console.log(beats)
+        this.setState({
+          beatsLoaded: true,
+          beats: beats,
+          allBeats: this.state.allBeats.concat(beats)
+        })
+      }, (error) => {
+        this.setState({
+          beatsLoaded: true,
+          error: error
+        })
+      })
+    
+    fetch(`${process.env.REACT_APP_API_URL}/projects?beatTape=true`)
+      .then(res => res.json())
+      .then((beatTapes) => {
+        this.setState({
+          beatTapesLoaded: true,
+          beatTapes: beatTapes,
+          allBeats: this.state.allBeats.concat(...beatTapes.map(beatTape => beatTape.beats))
+        })
+      }, (error) => {
+        this.setState({
+          beatTapesLoaded: true,
+          error: error
+        })
+      })
   }
 
   /**
@@ -152,7 +187,15 @@ export default class Contact extends React.Component {
         successAlertVisible: true,
         selected: [],
         toastVisible: false,
-        recentBeat: beats[0],
+        recentBeat: {
+          title: "",
+          cover: "",
+          id: "",
+          youtube: "",
+          keySignature: "",
+          tempo: 0,
+          sold: false
+        },
         purchasingBeats: false,
         spinnerVisible: false,
       }, (error) => {
@@ -221,7 +264,7 @@ export default class Contact extends React.Component {
    * @returns {object} the beat with a matching id, or undefined if not found
    */
   findBeat = (id) => {
-    return this.allBeats.find(beat => beat.id === id);
+    return this.state.allBeats.find(beat => beat.id === id);
   }
 
   /**
@@ -324,17 +367,23 @@ export default class Contact extends React.Component {
                       value=""
                       required={this.state.selected.length === 0}
                     >
-                      <option value="" />
-                      {projects.filter((project) => project.beatTape).map((beatTape) => (
-                        <optgroup key={beatTape.id} label={beatTape.title}>
-                          {beatTape.beats.filter((beat) => !this.beatSelected(beat)).map((beat) => (
+                      {this.state.beatsLoaded && this.state.beatTapesLoaded ? (
+                        <>
+                          <option value="">Select one...</option>
+                          {this.state.beatTapes.map((beatTape) => (
+                            <optgroup key={beatTape.id} label={beatTape.title}>
+                              {beatTape.beats.filter((beat) => !this.beatSelected(beat)).map((beat) => (
+                                <option key={beat.id} value={beat.id}>{beat.title}</option>
+                              ))}
+                            </optgroup>
+                          ))}
+                          {this.state.beats.filter((beat) => !this.beatSelected(beat)).map((beat) => (
                             <option key={beat.id} value={beat.id}>{beat.title}</option>
                           ))}
-                        </optgroup>
-                      ))}
-                      {beats.filter((beat) => !this.beatSelected(beat)).map((beat) => (
-                        <option key={beat.id} value={beat.id}>{beat.title}</option>
-                      ))}
+                        </>
+                      ) : (
+                        <option>Loading...</option>
+                      )}
                     </FormControl>
                     <FormText>
                       Please only select beats if you intend to purchase them. All beats are sold exclusively and on a first-come-first-serve basis.
@@ -370,7 +419,7 @@ export default class Contact extends React.Component {
                           <BeatCard 
                             key={beat.id}
                             name={beat.title} 
-                            cover={beat.beatTapeId ? projects.find(project => project.id === beat.beatTapeId).cover : beat.cover} 
+                            cover={beat.beatTapeId ? this.state.beatTapes.find(beatTapes => beatTapes.id === beat.beatTapeId).cover : beat.cover} 
                             onClick={() => this.removeBeat(beat.id)} 
                           />
                         ))}

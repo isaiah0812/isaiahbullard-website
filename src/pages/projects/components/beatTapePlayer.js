@@ -27,21 +27,13 @@ import {
  * @example <BeatTapePlayer beatTape={beatTape} />
  */
 export default class BeatTapePlayer extends React.Component {
-  /**
-   * @constructor
-   * @param {object} props Properties that may be passed when using the AlbumPlayer
-   */
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      bandcampBgColor: bandcampBlue,
-      soundcloudBgColor: 'transparent',
-      youtubeBgColor: 'transparent'
-    }
-
-    this.beatTape = this.props.beatTape;
+  state = {
+    bandcampBgColor: bandcampBlue,
+    soundcloudBgColor: 'transparent',
+    youtubeBgColor: 'transparent'
   }
+
+  beatTape = this.props.beatTape
 
   render() {
     return (

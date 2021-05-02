@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
+import Spinner from 'react-bootstrap/Spinner';
 import { Helmet } from 'react-helmet';
 import { 
   Route, 
@@ -9,11 +10,7 @@ import {
 } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { silver } from '../../constants/colors';
-import credits from '../../constants/credits.json';
-import projects from '../../constants/projects.json';
-import singles from '../../constants/singles.json';
-import videos from '../../constants/videos.json';
+import { silver, lightBlue } from '../../constants/colors';
 import { 
   PageBanner, 
   PageBannerFade, 
@@ -59,17 +56,81 @@ const CreditSection = styled(Container)`
  * @example <ProjectsHome />
  */
 class ProjectsHome extends React.Component {
-  /**
-   * @constructor
-   * @param {object} props Properties that may be passed when using the AlbumPlayer
-   */
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      openId: -1,
-      open: undefined,
-    }
+  state = {
+    openId: -1,
+    open: undefined,
+    albumsLoaded: false,
+    albums: [],
+    albumsError: null,
+    singlesLoaded: false,
+    singles: [],
+    singlesError: null,
+    creditsLoaded: false,
+    credits: [],
+    creditsError: null,
+    videosLoaded: false,
+    videos: [],
+    videosError: null,
+  }
+
+  componentDidMount() {
+    fetch(`${process.env.REACT_APP_API_URL}/projects?beatTape=false`)
+      .then(res => res.json())
+      .then((albums) => {
+        this.setState({
+          albumsLoaded: true,
+          albums: albums
+        })
+      }, (error) => {
+        this.setState({
+          albumsLoaded: true,
+          albumsError: error
+        })
+      })
+    
+    fetch(`${process.env.REACT_APP_API_URL}/singles`)
+      .then(res => res.json())
+      .then((singles) => {
+        this.setState({
+          singlesLoaded: true,
+          singles: singles
+        })
+      }, (error) => {
+        this.setState({
+          singlesLoaded: true,
+          singlesError: error
+        })
+      })
+    
+    fetch(`${process.env.REACT_APP_API_URL}/credits`)
+      .then(res => res.json())
+      .then((credits) => {
+        this.setState({
+          creditsLoaded: true,
+          credits: credits
+        })
+      }, (error) => {
+        this.setState({
+          creditsLoaded: true,
+          creditsError: error
+        })
+      })
+    
+    fetch(`${process.env.REACT_APP_API_URL}/videos`)
+      .then(res => res.json())
+      .then((videos) => {
+        this.setState({
+          videosLoaded: true,
+          videos: videos
+        })
+      }, (error) => {
+        this.setState({
+          videosLoaded: true,
+          videosError: error
+        })
+      })
+    
   }
 
   render () {
@@ -98,10 +159,14 @@ class ProjectsHome extends React.Component {
             flexWrap: 'wrap', 
             justifyContent: 'space-around'
           }}>
-            {projects.filter(project => !project.beatTape).map((album) => 
-              <Link key={album.id} to={`${this.props.url}/${album.id}`}>
-                <AlbumCard title={album.title} cover={album.cover} />
-              </Link>
+            {this.state.albumsLoaded ? (
+              this.state.albums.map((album) => 
+                <Link key={album.id} to={`${this.props.url}/${album.id}`}>
+                  <AlbumCard title={album.title} cover={album.cover} />
+                </Link>
+              )
+            ) : (
+              <Spinner animation="border" style={{margin: '2% 0%', color: lightBlue}} />
             )}
           </Container>
           <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
@@ -112,40 +177,55 @@ class ProjectsHome extends React.Component {
             width: '100%',
             padding: 0,
           }}>
-            {this.state.open && (<SingleCard open single={singles[this.state.openId]} onClick={() => this.setState({
-              openId: -1,
-              open: undefined,
-            })} />)}
-            <Container style={{
-              display: 'flex', 
-              flexDirection: 'row', 
-              flexWrap: 'wrap', 
-              justifyContent: 'space-around',
-              width: '38%',
-            }}>
-              {singles.map((single, id) => {
-                if (id === this.state.openId) {
-                  return false
-                }
-                return (<SingleCard key={single.id} single={single} onClick={() => this.setState({
-                  open: single, 
-                  openId: id,
-                })} />)
-              })}
-            </Container>
+            {this.state.singlesLoaded ? (
+              <>
+                {this.state.open && (<SingleCard open single={this.state.singles[this.state.openId]} onClick={() => this.setState({
+                  openId: -1,
+                  open: undefined,
+                })} />)}
+                <Container style={{
+                  display: 'flex', 
+                  flexDirection: 'row', 
+                  flexWrap: 'wrap', 
+                  justifyContent: 'space-around',
+                  width: '38%',
+                }}>
+                  {this.state.singles.map((single, id) => {
+                    if (id === this.state.openId) {
+                      return false
+                    }
+                    return (<SingleCard key={single.id} single={single} onClick={() => this.setState({
+                      open: single, 
+                      openId: id,
+                    })} />)
+                  })}
+                </Container>
+              </>
+            ) : (
+              <Spinner animation="border" style={{margin: '2% 0%', color: lightBlue}} />
+            )}
+            
           </Container>
           <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
           <br />
           <PageSectionTitle>Credits</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
-          <CreditSection fluid>
-            {credits.map((credit) => <CreditCard key={credit.id} credit={credit} />)}
-          </CreditSection>
+          {this.state.creditsLoaded ? (
+            <CreditSection fluid>
+              {this.state.credits.map((credit) => <CreditCard key={credit.id} credit={credit} />)}
+            </CreditSection>
+          ) : (
+            <Spinner animation="border" style={{margin: '2% 0%', color: lightBlue}} />
+          )}
           <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
           <br />
           <PageSectionTitle>Videos</PageSectionTitle>
           <hr style={{width: '5%', borderWidth: 3, borderColor: silver}} />
-          {videos.map((video) => <YoutubeCard key={video.id} title={video.title} youtube={video.youtube} />)}
+          {this.state.videosLoaded ? (
+            this.state.videos.map((video) => <YoutubeCard key={video.id} title={video.title} youtube={video.youtube} />)
+          ) : (
+            <Spinner animation="border" style={{margin: '2% 0%', color: lightBlue}} />
+          )}
         </Container>
       </Container>
     );
@@ -162,6 +242,15 @@ class ProjectsHome extends React.Component {
  */
 export default () => {
   let { path, url } = useRouteMatch();
+  const [ albums, setAlbums ] = useState(null)
+
+  if(!albums) {
+    fetch(`${process.env.REACT_APP_API_URL}/projects?beatTape=false`)
+      .then(res => res.json())
+      .then((body) => {
+        setAlbums(body)
+      })
+  }
 
   // Scrolls to the top when changing pages on the beats page.
   useEffect(() => {
@@ -174,7 +263,7 @@ export default () => {
         <ProjectsHome url={url}/>
       </Route>
       {/* Loads each route for the albums */}
-      {projects.filter(project => !project.beatTape).map(album => (
+      {albums && albums.map(album => (
         <Route key={album.id} path={`${path}/${album.id}`}>
           <ProjectPage album={album} />
         </Route>

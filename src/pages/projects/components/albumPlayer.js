@@ -27,22 +27,14 @@ import {
  * @example <AlbumPlayer album={album} />
  */
 export default class AlbumPlayer extends React.Component {
-  /**
-   * @constructor
-   * @param {object} props Properties that may be passed when using the AlbumPlayer
-   */
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      spotifyBgColor: spotifyGreen,
-      appleBgColor: 'transparent',
-      bandcampBgColor: 'transparent',
-      soundcloudBgColor: 'transparent',
-    }
-
-    this.album = this.props.album
+  state = {
+    spotifyBgColor: spotifyGreen,
+    appleBgColor: 'transparent',
+    bandcampBgColor: 'transparent',
+    soundcloudBgColor: 'transparent',
   }
+
+  album = this.props.album
 
   render() {
     return (

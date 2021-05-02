@@ -180,15 +180,11 @@ const ProjectPageInfoSection = styled(Container)`
  * @example <ProjectPage album={album} />
  */
 export default class ProjectPage extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      description: '',
-    }
-
-    this.album = this.props.album;
+  state = {
+    description: '',
   }
+
+  album = this.props.album
 
   componentDidMount = () => {
     this.printDescription(this.album.description);

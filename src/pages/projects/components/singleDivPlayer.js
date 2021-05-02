@@ -19,16 +19,11 @@ import { PlayerTab, PlayerSelector } from '../../../constants/styled-components'
  * @example <SingleDivPlayer album={album} />
  */
 export default class SingleDivPlayer extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      spotifyBgColor: spotifyGreen,
-      appleBgColor: 'transparent',
-      bandcampBgColor: 'transparent',
-      soundcloudBgColor: 'transparent',
-    }
+  state = {
+    spotifyBgColor: spotifyGreen,
+    appleBgColor: 'transparent',
+    bandcampBgColor: 'transparent',
+    soundcloudBgColor: 'transparent',
   }
 
   render() {

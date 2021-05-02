@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
   Route, 
   Link, 
@@ -8,12 +8,11 @@ import {
 import styled from 'styled-components';
 import Accordion from 'react-bootstrap/Accordion';
 import Container from 'react-bootstrap/Container';
+import Spinner from 'react-bootstrap/Spinner';
 import { Helmet } from 'react-helmet';
 
 
-import { silver } from '../../constants/colors';
-import beats from '../../constants/beats.json';
-import projects from '../../constants/projects.json';
+import { silver, lightBlue } from '../../constants/colors';
 import { 
   PageBanner, 
   PageBannerFade, 
@@ -57,6 +56,46 @@ const BeatsPageSection = styled(Container)`
  * @example <BeatsHome />
  */
 class BeatsHome extends React.Component {
+
+  state = {
+    beatsLoaded: false,
+    beatTapesLoaded: false,
+    beats: [],
+    beatTapes: [],
+    beatsError: null,
+    beatTapesError: null,
+  }
+
+  componentDidMount() {
+    fetch(`${process.env.REACT_APP_API_URL}/beats`)
+      .then(res => res.json())
+      .then((beats) => {
+        this.setState({
+          beatsLoaded: true,
+          beats: beats
+        })
+      }, (error) => {
+        this.setState({
+          beatsLoaded: true,
+          beatsError: error
+        })
+      })
+    
+    fetch(`${process.env.REACT_APP_API_URL}/projects?beatTape=true`)
+      .then(res => res.json())
+      .then((beatTapes) => {
+        this.setState({
+          beatTapesLoaded: true,
+          beatTapes: beatTapes
+        })
+      }, (error) => {
+        this.setState({
+          beatTapesLoaded: true,
+          beatTapesError: error
+        })
+      })
+  }
+
   render() {
     return (
       <Container fluid style={{padding: 0}}>
@@ -79,10 +118,14 @@ class BeatsHome extends React.Component {
             <PageSectionInfo>All beats on Beat Tapes are for sale for the same prices as normal beats.</PageSectionInfo>
             <br />
             <Container style={{width: '80%', display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', padding: 0}}>
-              {projects.filter(project => project.beatTape).map((beatTape) => 
-                <Link key={beatTape.id} to={`${this.props.url}/${beatTape.id}`}>
-                  <AlbumCard title={beatTape.title} cover={beatTape.cover} />
-                </Link>
+              {this.state.beatTapesLoaded ? (
+                this.state.beatTapes.map((beatTape) => (
+                  <Link key={beatTape.id} to={`${this.props.url}/${beatTape.id}`}>
+                    <AlbumCard title={beatTape.title} cover={beatTape.cover} />
+                  </Link>
+                ))
+              ) : (
+                <Spinner animation="border" style={{margin: '2% 0%', color: lightBlue}} />
               )}
             </Container>
           </BeatsPageSection>
@@ -96,11 +139,15 @@ class BeatsHome extends React.Component {
             </PageSectionInfo>
             <br />
             <Container fluid style={{width: '100%', padding: 0}}>
-              <Accordion>
-                {beats.map((beat) => (
-                  <BeatDisplay key={beat.id} beat={beat} />
-                ))}
-              </Accordion>
+              {this.state.beatsLoaded ? (
+                <Accordion>
+                  {this.state.beats.map((beat) => (
+                    <BeatDisplay key={beat.id} beat={beat} />
+                  ))}
+                </Accordion>
+              ) : (
+                <Spinner animation="border" style={{margin: '2% 0%', color: lightBlue}} />
+              )}
             </Container>
           </BeatsPageSection>
         </Container>
@@ -119,6 +166,15 @@ class BeatsHome extends React.Component {
  */
 export default () => {
   let { path, url } = useRouteMatch();
+  const [ beatTapes, setBeatTapes ] = useState(null)
+  
+  if(!beatTapes) {
+    fetch(`${process.env.REACT_APP_API_URL}/projects?beatTape=true`)
+      .then(res => res.json())
+      .then(body => {
+        setBeatTapes(body)
+      })
+  }
 
   // Scrolls to the top when changing pages on the beats page.
   useEffect(() => {
@@ -132,7 +188,7 @@ export default () => {
         <BeatsHome url={url} />
       </Route>
       {/* Loads each route for the beat tapes */}
-      {projects.filter(project => project.beatTape).map(beatTape => (
+      {beatTapes && beatTapes.map(beatTape => (
         <Route key={beatTape.id} path={`${path}/${beatTape.id}`}>
           <ProjectPage album={beatTape} />
         </Route>
