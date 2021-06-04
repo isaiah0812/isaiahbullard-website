@@ -112,7 +112,7 @@ export default class SingleDiv extends React.Component {
             soundcloud={single.soundcloud}
             textColor={textColor}
           />
-          <SongLink href={"https://song.link/us/i/" + single.songLink} color={textColor} target="_blank">Other Sources</SongLink>
+          <SongLink href={"https://song.link/" + single.songLink} color={textColor} target="_blank">Other Sources</SongLink>
         </SingleBox>
       </Container>
     );
