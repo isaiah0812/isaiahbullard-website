@@ -164,7 +164,7 @@ class BeatsHome extends React.Component {
  * @version 1.0.0
  * @example <Beats />
  */
-export default () => {
+const Beats = () => {
   let { path, url } = useRouteMatch();
   const [ beatTapes, setBeatTapes ] = useState(null)
   
@@ -196,3 +196,5 @@ export default () => {
     </Switch>
   );
 }
+
+export default Beats

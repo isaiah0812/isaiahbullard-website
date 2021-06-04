@@ -240,7 +240,7 @@ class ProjectsHome extends React.Component {
  * @version 1.0.0
  * @example <Beats />
  */
-export default () => {
+const Projects = () => {
   let { path, url } = useRouteMatch();
   const [ albums, setAlbums ] = useState(null)
 
@@ -271,3 +271,5 @@ export default () => {
     </Switch>
   );
 }
+
+export default Projects
