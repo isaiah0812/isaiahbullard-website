@@ -24,7 +24,7 @@ import {
   BannerCaption, 
   PageSectionTitle,
   PageSectionInfo,
-} from '../../constants/styled-components';
+} from '../../components/styled-components';
 import { darkBlue, lightBlue, silver, white } from '../../constants/colors';
 import { pageContainer } from '../../constants/styles';
 
@@ -114,7 +114,6 @@ export default class Contact extends React.Component {
     fetch(`${process.env.REACT_APP_API_URL}/beats`)
       .then(res => res.json())
       .then((beats) => {
-        console.log(beats)
         this.setState({
           beatsLoaded: true,
           beats: beats,

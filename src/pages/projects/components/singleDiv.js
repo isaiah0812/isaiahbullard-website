@@ -2,7 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import styled from 'styled-components';
 
-import { SongLink } from '../../../constants/styled-components';
+import { SongLink } from '../../../components/styled-components';
 import { black, white } from '../../../constants/colors';
 
 import SingleDivPlayer from './singleDivPlayer';

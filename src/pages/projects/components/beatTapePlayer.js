@@ -17,7 +17,7 @@ import {
 import { 
   PlayerTab, 
   PlayerSelector 
-} from '../../../constants/styled-components';
+} from '../../../components/styled-components';
 
 /**
  * A container with a Bandcamp, SoundCloud, and YouTube player, and a button to go to the Contact Page for a beat tape.

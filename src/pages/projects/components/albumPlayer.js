@@ -17,7 +17,7 @@ import {
   PlayerTab, 
   PlayerSelector, 
   SongLink 
-} from '../../../constants/styled-components';
+} from '../../../components/styled-components';
 
 /**
  * A container with a Spotify, Apple Music, Bandcamp, and SoundCloud player, as well as a SongLink for an album.

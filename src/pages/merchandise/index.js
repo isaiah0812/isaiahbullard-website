@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
+import Alert from 'react-bootstrap/Alert';
 import { Helmet } from 'react-helmet';
 
 import { 
@@ -8,10 +9,14 @@ import {
   BannerText, 
   BannerTitle, 
   BannerCaption, 
-  PageSectionTitle,
-} from '../../constants/styled-components';
+} from '../../components/styled-components';
+import { pageContainer } from '../../constants/styles';
 
 import banner from './assets/banner.jpg';
+
+import MerchCard from './components/merchCard'
+import MerchModal from './components/merchModal';
+import merch from '../../constants/merch';
 
 /**
  * The Merchandise page, yet to be implemented.
@@ -21,6 +26,23 @@ import banner from './assets/banner.jpg';
  * @example <Merchandise />
  */
 export default class Merchandise extends React.Component {
+  state = {
+    showModal: false,
+    selected: merch[0],
+    addedToCart: false,
+    addedItemName: '',
+    addedItemQuantity: 0
+  }
+
+  setAddedAlertProps = (quantity) => {
+    this.setState({
+      showModal: false,
+      addedToCart: true,
+      addedItemName: this.state.selected.name,
+      addedItemQuantity: quantity
+    })
+  }
+
   render() {
     return (
       <Container fluid style={{padding: 0}}>
@@ -36,9 +58,22 @@ export default class Merchandise extends React.Component {
             </BannerText>
           </PageBannerFade>
         </PageBanner>
-        <Container style={{padding: 60, height: '55vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-          <PageSectionTitle>Coming Soon</PageSectionTitle>
+        <Alert
+          variant="success"
+          show={this.state.addedToCart}
+          dismissible
+          onClose={() => this.setState({ addedToCart: false })}
+        >
+          Added {this.state.addedItemQuantity} {`${this.state.addedItemName}${this.state.addedItemQuantity === 1 ? '' : 's'}`} to cart.
+        </Alert>
+        <Container style={{...pageContainer, flexDirection: 'row', flexWrap: 'wrap'}}>
+          {merch.map((m) => <MerchCard merch={m} onClick={() => this.setState({showModal: true, selected: m})} />)}
         </Container>
+        <MerchModal
+          merch={this.state.selected}
+          show={this.state.showModal}
+          onHide={() => this.setState({showModal: false})}
+          added={this.setAddedAlertProps} />
       </Container>
     );
   }

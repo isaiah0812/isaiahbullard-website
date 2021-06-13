@@ -21,7 +21,7 @@ import {
   BannerCaption, 
   PageSectionTitle,
   PageSectionInfo,
-} from '../../constants/styled-components';
+} from '../../components/styled-components';
 
 import AlbumCard from '../projects/components/albumCard';
 import ProjectPage from '../projects/projectPage';

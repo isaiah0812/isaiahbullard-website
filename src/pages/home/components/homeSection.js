@@ -95,7 +95,7 @@ export default class HomeSection extends React.Component {
         <SectionTitle>{title}</SectionTitle>
         <SectionInfo fluid>
           <SectionDescription>{description}</SectionDescription>
-          <Button text={buttonText} secondary={!primary ? 'true' : 'false'} href={href} />
+          <Button text={buttonText} secondary={!primary} href={href} />
         </SectionInfo>
       </Container>
     );
