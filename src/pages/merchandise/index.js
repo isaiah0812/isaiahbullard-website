@@ -40,6 +40,8 @@ export default class Merchandise extends React.Component {
       addedToCart: true,
       addedItemName: this.state.selected.name,
       addedItemQuantity: quantity
+    }, () => {
+      setTimeout(() => this.setState({addedToCart: false}), 5000)
     })
   }
 
@@ -66,7 +68,7 @@ export default class Merchandise extends React.Component {
         >
           Added {this.state.addedItemQuantity} {`${this.state.addedItemName}${this.state.addedItemQuantity === 1 ? '' : 's'}`} to cart.
         </Alert>
-        <Container style={{...pageContainer, flexDirection: 'row', flexWrap: 'wrap'}}>
+        <Container style={{...pageContainer, flexDirection: 'row', flexWrap: 'wrap', minHeight: '55vh'}}>
           {merch.map((m) => <MerchCard merch={m} onClick={() => this.setState({showModal: true, selected: m})} />)}
         </Container>
         <MerchModal
