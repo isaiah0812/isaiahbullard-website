@@ -30,10 +30,10 @@ class StyledFormRow extends React.Component {
 
 class CartSummaryItem extends React.Component {
   render() {
-    const { name, quantity, price } = this.props.item
+    const { name, quantity, price, size } = this.props.item
     return (
       <StyledCartSummaryDiv>
-        <p style={{lineHeight: 'normal'}}>{name} x {quantity}</p>
+        <p style={{lineHeight: 'normal'}}>{`${name}${size ? ` (${size.name})`: ``}`} x {quantity}</p>
         <p style={{lineHeight: 'normal'}}>${price.toFixed(2)}</p>
       </StyledCartSummaryDiv>
     )
@@ -92,7 +92,16 @@ export default class Checkout extends React.Component {
     processing: false
   }
 
-  getShippingRate = () => {
+  getCartWeight = (cart) => {
+    let weight = 0
+    for(let item of cart) {
+      weight += (item.weight * item.quantity)
+    }
+
+    return weight
+  }
+
+  getShippingRate = (cart) => {
     const api = axios.create()
 
     this.setState({
@@ -101,7 +110,7 @@ export default class Checkout extends React.Component {
       api.post(`${process.env.REACT_APP_API_URL}/orders/rates/estimate`, {
         postalCode: this.state.shippingAddress.postalCode,
         weight: {
-          value: 0.317,
+          value: this.getCartWeight(cart),
           unit: "ounce"
         }
       }).then((rates) => {
@@ -340,7 +349,7 @@ export default class Checkout extends React.Component {
                                 shippingAddress: {...(this.state.shippingAddress), postalCode: e.target.value}
                               })
                             }}
-                            onBlur={() => this.getShippingRate()}
+                            onBlur={() => this.getShippingRate(cart)}
                             required />
                         </Col>
                       </StyledFormRow>

@@ -32,9 +32,9 @@ import Helmet from 'react-helmet';
  * @version 1.0.0
  */
 export default class App extends React.Component {
-  addToCart = (merchId, name, price, thumbnail, quantity, cap) => {
+  addToCart = (merchId, name, price, thumbnail, quantity, cap, weight, size) => {
     let cart = [...this.state.cartState.cart]
-    const existingItemId = cart.findIndex(cartItem => cartItem.merchId === merchId)
+    const existingItemId = cart.findIndex(cartItem => cartItem.merchId === merchId && cartItem.size.id === size.id)
     
     if(existingItemId === -1) {
       cart.push({
@@ -43,7 +43,12 @@ export default class App extends React.Component {
         price: price,
         thumbnail: thumbnail,
         quantity: quantity,
-        cap: cap
+        cap: cap,
+        weight: weight,
+        size: size && size.id !== '' ? {
+          id: size.id,
+          name: size.name,
+        } : undefined
       })
     } else {
       cart[existingItemId].quantity += quantity

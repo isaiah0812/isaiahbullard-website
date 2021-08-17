@@ -61,12 +61,12 @@ class CartItem extends React.Component {
     const equalWidth = {
       width: '25%'
     }
-    const { name, thumbnail, cap } = this.props.item
+    const { name, thumbnail, cap, size } = this.props.item
     return (
       <tr>
         <td style={{...equalWidth}}>
           <Image
-            src={`${process.env.REACT_APP_IMG_SRC}/${thumbnail}`}
+            src={`${thumbnail}`}
             alt={name}
             style={{
               width: '100%'
@@ -74,7 +74,7 @@ class CartItem extends React.Component {
           />
         </td>
         <td style={{...equalWidth}}>
-          <h4>{name}</h4>
+          <h4>{`${name}${size ? ` (${size.name})` : ``}`}</h4>
         </td>
         <td style={{...equalWidth, textAlign: 'center'}}>
           <QuantityButton onClick={() => {

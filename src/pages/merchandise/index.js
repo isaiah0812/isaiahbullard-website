@@ -16,7 +16,6 @@ import banner from './assets/banner.jpg';
 
 import MerchCard from './components/merchCard'
 import MerchModal from './components/merchModal';
-import merch from '../../constants/merch';
 
 /**
  * The Merchandise page, yet to be implemented.
@@ -28,10 +27,10 @@ import merch from '../../constants/merch';
 export default class Merchandise extends React.Component {
   state = {
     showModal: false,
-    selected: merch[0],
     addedToCart: false,
     addedItemName: '',
-    addedItemQuantity: 0
+    addedItemQuantity: 0,
+    merch: []
   }
 
   setAddedAlertProps = (quantity) => {
@@ -43,6 +42,18 @@ export default class Merchandise extends React.Component {
     }, () => {
       setTimeout(() => this.setState({addedToCart: false}), 5000)
     })
+  }
+
+  componentDidMount = () => {
+    fetch(`${process.env.REACT_APP_API_URL}/merch`)
+      .then(merchFulfilled => merchFulfilled.json())
+      .then(merchResult => {
+        console.log(merchResult)
+        this.setState({
+          merch: merchResult,
+          selected: merchResult[0]
+        })
+      })
   }
 
   render() {
@@ -69,13 +80,15 @@ export default class Merchandise extends React.Component {
           Added {this.state.addedItemQuantity} {`${this.state.addedItemName}${this.state.addedItemQuantity === 1 ? '' : 's'}`} to cart.
         </Alert>
         <Container style={{...pageContainer, flexDirection: 'row', flexWrap: 'wrap', minHeight: '55vh'}}>
-          {merch.map((m) => <MerchCard merch={m} onClick={() => this.setState({showModal: true, selected: m})} />)}
+          {this.state.merch.map((m) => <MerchCard merch={m} onClick={() => this.setState({showModal: true, selected: m})} />)}
         </Container>
-        <MerchModal
-          merch={this.state.selected}
-          show={this.state.showModal}
-          onHide={() => this.setState({showModal: false})}
-          added={this.setAddedAlertProps} />
+        {this.state.selected && (
+          <MerchModal
+            merch={this.state.selected}
+            show={this.state.showModal}
+            onHide={() => this.setState({showModal: false})}
+            added={this.setAddedAlertProps} />
+        )}
       </Container>
     );
   }
