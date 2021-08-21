@@ -264,7 +264,7 @@ export default class Checkout extends React.Component {
                       <StyledFormRow>
                         <Col>
                           <Form.Control
-                            placeholder="Email"
+                            placeholder="Email Address"
                             type="email"
                             value={this.state.email}
                             onChange={(e) => this.setState({email: e.target.value})}

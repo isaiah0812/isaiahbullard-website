@@ -10,6 +10,7 @@ import Menu from './components/menu';
 import Footer from './components/footer';
 import { CartContext, CartButton, CartModal } from './components/cart';
 import Checkout, { CheckoutConfirmation } from './components/checkout';
+import Orders, { OrdersButton } from './components/orders'
 
 import Home from './pages/home/';
 import Projects from './pages/projects/';
@@ -145,6 +146,7 @@ export default class App extends React.Component {
       totalCost: 0,
       shippingRate: 0
     },
+    ordersVisible: false,
   }
 
   showCart = () => {
@@ -194,6 +196,18 @@ export default class App extends React.Component {
     })
   }
 
+  showOrders = () => {
+    this.setState({
+      ordersVisible: true
+    })
+  }
+
+  hideOrders = () => {
+    this.setState({
+      ordersVisible: false
+    })
+  }
+
   componentDidMount = () => {
     let cart = JSON.parse(window.localStorage.getItem('cart'))
     if (!cart) {
@@ -231,6 +245,7 @@ export default class App extends React.Component {
             <Footer />
           </div>
           <CartButton onClick={() => this.showCart()} style={{zIndex: 1, bottom: 0, right: 0, position: 'fixed'}} />
+          <OrdersButton onClick={() => this.showOrders()} style={{zIndex: 1, bottom: 0, position: 'fixed'}} />
           <CartModal show={this.state.cartModalVisible} onHide={() => this.hideCart()} checkout={() => {
             this.hideCart()
             this.showCheckout()
@@ -243,6 +258,7 @@ export default class App extends React.Component {
             this.confirmOrder(order)
           }} />
           <CheckoutConfirmation show={this.state.confirmVisible} onHide={() => this.hideConfirm()} order={this.state.confirmedOrder} />
+          <Orders show={this.state.ordersVisible} onHide={() => this.hideOrders()} />
         </Container>
       </CartContext.Provider>
     );
