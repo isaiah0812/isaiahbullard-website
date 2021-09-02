@@ -155,6 +155,15 @@ export default class Checkout extends React.Component {
 
     const api = axios.create()
 
+    const apiCart = []
+    for(let item of cart) {
+      apiCart.push({
+        merchId: item.merchId,
+        quantity: item.quantity,
+        sizeId: item.size ? item.size.id : undefined
+      })
+    }
+
     this.setState({
       processing: true
     }, () => (
@@ -163,7 +172,7 @@ export default class Checkout extends React.Component {
           api.post(`${process.env.REACT_APP_API_URL}/orders`, {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
-            cart: cart,
+            cart: apiCart,
             token: tokenResult.token,
             shippingAddress: {
               line1: this.state.shippingAddress.line1,
