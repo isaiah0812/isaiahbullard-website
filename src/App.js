@@ -213,7 +213,7 @@ export default class App extends React.Component {
     return (
       <CartContext.Provider value={this.state.cartState}>
         <Helmet>
-          <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
+          <script src={process.env.NODE_ENV === 'production' ? "https://web.squarecdn.com/v1/square.js" : "https://sandbox.web.squarecdn.com/v1/square.js"}></script>
         </Helmet>
         <Container fluid style={{padding: 0, display: 'flex', flexDirection: 'column'}}>
           <div style={{zIndex: 0}}>
