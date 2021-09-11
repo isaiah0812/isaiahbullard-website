@@ -547,7 +547,7 @@ export default class Checkout extends React.Component {
                   </React.Fragment>
                 )}
               </Modal.Body>
-              <Modal.Footer style={{display: 'flex', justifyContent: 'center'}}>
+              <Modal.Footer style={{display: 'flex', justifyContent: 'center', flexWrap: 'nowrap'}}>
                 <Button 
                   width="48%"
                   text="Back to Cart"

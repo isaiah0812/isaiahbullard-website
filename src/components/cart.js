@@ -209,7 +209,7 @@ export class CartModal extends React.Component {
               </tbody>
             </Table>
           </Modal.Body>
-          <Modal.Footer style={{display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
+          <Modal.Footer style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', flexWrap: 'nowrap'}}>
             <CartContext.Consumer>
               {({cart, clearCart}) => (
                 <>
