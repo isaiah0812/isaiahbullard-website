@@ -48,7 +48,6 @@ export default class Merchandise extends React.Component {
     fetch(`${process.env.REACT_APP_API_URL}/merch`)
       .then(merchFulfilled => merchFulfilled.json())
       .then(merchResult => {
-        console.log(merchResult)
         this.setState({
           merch: merchResult,
           selected: merchResult[0]

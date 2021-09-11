@@ -10,6 +10,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from './button'
 import Spinner from 'react-bootstrap/Spinner';
 import states from '../constants/states.json';
+import Alert from 'react-bootstrap/Alert';
 
 const StyledCartSummaryDiv = styled.div`
   display: flex;
@@ -43,7 +44,7 @@ class CartSummaryItem extends React.Component {
 export class CheckoutConfirmation extends React.Component {
   render() {
     const { firstName, email } = this.props.order.customer
-    const { shippingRate, totalCost } = this.props.order
+    const { shippingRate, totalCost, orderId } = this.props.order
     return (
       <Modal
         {...(this.props)}
@@ -55,8 +56,11 @@ export class CheckoutConfirmation extends React.Component {
         </Modal.Header>
         <Modal.Body style={{textAlign: 'center'}}>
           <h2>Your order has been placed!</h2>
+          <h4>Order Number: {orderId}</h4>
+          <hr />
           <p>When your order is shipped, you will be charged ${totalCost.toFixed(2)} (${shippingRate.toFixed(2)} for shipping).</p>
           <p>Check your email ({email}) for confirmation.</p>
+          <p>If you have any questions or concerns, go to the <a href="/contact">Contact Page</a> and enter as much information about your order as you can with your concern (order number, email address, your order items, etc.).</p>
         </Modal.Body>
       </Modal>
     )
@@ -89,7 +93,10 @@ export default class Checkout extends React.Component {
     sameShippingBilling: false,
     shippingRate: 0,
     gettingShipping: false,
-    processing: false
+    processing: false,
+    errorMessage: '',
+    error: false,
+    validShipping: false
   }
 
   getCartWeight = (cart) => {
@@ -117,20 +124,25 @@ export default class Checkout extends React.Component {
         if(rates.data.rate) {
           this.setState({
             shippingRate: rates.data.rate,
-            gettingShipping: false
+            gettingShipping: false,
+            validShipping: true
           })
         } else {
-          console.error(rates.data)
           this.setState({
             shippingRate: 0,
-            gettingShipping: false
+            gettingShipping: false,
+            validShipping: false
           })
         }
       }).catch((error) => {
-        console.error(error)
         this.setState({
           shippingRate: 0,
-          gettingShipping: false
+          gettingShipping: false,
+          validShipping: false,
+          errorMessage: error.response.data.code === "SHIPPING_RATE_ERROR" 
+            ? 'Error getting shipping rate. Check the Postal Code of your Shipping address.' 
+            : 'Internal Server Error. Please send a message through the Contact Page if the problem persists.',
+          error: true
         })
       })
     ))
@@ -209,16 +221,48 @@ export default class Checkout extends React.Component {
             this.setState({
               processing: false
             })
+          }).catch(err => {
+            const response = err.response.data
+
+            if(response.code === "SOLD_OUT" || response.code === "TOO_MANY") {
+              this.setState({
+                errorMessage: response.message,
+                error: true,
+                processing: false
+              }, () => this.getPaymentSdk())
+            } else if(response.code === "CARDS_API_ERROR") {
+              this.setState({
+                errorMessage: 'Your card information is not correct.',
+                error: true,
+                processing: false
+              }, () => this.getPaymentSdk())
+            } else if(response.code === "CUSTOMERS_API_ERROR") {
+              this.setState({
+                errorMessage: 'Your customer information is not valid.',
+                error: true,
+                processing: false
+              }, () => this.getPaymentSdk())
+            } else {
+              this.setState({
+                errorMessage: `Internal Server Error. Please send a message via the Contact Page if the problem persists.`,
+                error: true,
+                processing: false
+              }, () => this.getPaymentSdk())
+            }
           })
         } else {
-          console.error(tokenResult.errors)
+          this.setState({
+            errorMessage: 'Error making token for card.',
+            error: true,
+            processing: false
+          }, () => this.getPaymentSdk())
         }
       })
     ))
 
   }
 
-  onShow = () => {
+  getPaymentSdk = () => {
     async function main() {
       const payments = window.Square.payments(process.env.REACT_APP_SQUARE_APP_ID, process.env.REACT_APP_SQUARE_LOC_ID);
       const card = await payments.card();
@@ -237,7 +281,10 @@ export default class Checkout extends React.Component {
         scrollable
         size="xl"
         centered
-        onShow={() => this.onShow()}
+        onShow={() => {
+          this.getPaymentSdk()
+          this.setState({ error: false })
+        }}
       >
         <CartContext.Consumer>
           {({cart}) => (
@@ -375,7 +422,7 @@ export default class Checkout extends React.Component {
                       </StyledFormRow>
                       <StyledFormRow>
                         <Col>
-                          <div style={{width: '100%'}} id="card-box" onChange={(e) => console.log("Solution")}></div>
+                          <div style={{width: '100%'}} id="card-box"></div>
                         </Col>
                       </StyledFormRow>
                       <StyledFormRow>
@@ -484,7 +531,7 @@ export default class Checkout extends React.Component {
                         <p style={{lineHeight: 'normal'}}>Shipping</p>
                         {this.state.gettingShipping 
                           ? <Spinner animation="border" style={{color: lightBlue}} />
-                          : <p style={{lineHeight: 'normal'}}>${this.state.shippingRate.toFixed(2)}</p>
+                          : <p style={{lineHeight: 'normal'}}>${this.state.validShipping ? `${this.state.shippingRate.toFixed(2)}` : `-.--`}</p>
                         }
                       </StyledCartSummaryDiv>
                       <hr style={{width: '100%', borderWidth: 2, borderColor: silver}} />
@@ -492,6 +539,10 @@ export default class Checkout extends React.Component {
                         <h3>Subtotal:</h3>
                         <h3>${this.getTotalPrice(cart).toFixed(2)}</h3>
                       </StyledCartSummaryDiv>
+                      <Alert variant='danger' dismissible show={this.state.error} onClose={() => this.setState({ error: false })}>
+                        <Alert.Heading>Error</Alert.Heading>
+                        {this.state.errorMessage}
+                      </Alert>
                     </StyledModalSection>
                   </React.Fragment>
                 )}
@@ -505,8 +556,8 @@ export default class Checkout extends React.Component {
                 <Button
                   width="48%"
                   text="Process Checkout"
-                  submit={!this.state.gettingShipping && !this.state.processing}
-                  muted={this.state.gettingShipping || this.state.processing} />
+                  submit={!this.state.gettingShipping && !this.state.processing && this.state.validShipping}
+                  muted={this.state.gettingShipping || this.state.processing || !this.state.validShipping} />
               </Modal.Footer>
             </Form>
           )}

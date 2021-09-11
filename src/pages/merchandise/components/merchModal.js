@@ -16,7 +16,7 @@ export default class MerchModal extends React.Component {
     size: this.props.merch.sizes ? this.props.merch.sizes[0] : { price: 0, pics: [], quantity: 0, id: '' },
     price: this.props.merch.price !== undefined && this.props.merch.price !== null ? this.props.merch.price : this.props.merch.sizes[0].price,
     weight: this.props.merch.weight ? this.props.merch.weight : this.props.merch.sizes[0].weight,
-    cap: this.props.merch.quantity ? this.props.merch.quantity : this.props.merch.sizes[0].quantity,
+    cap: this.props.merch.quantity ? this.props.merch.quantity : (this.props.merch.quantity !== 0 ? this.props.merch.sizes[0].quantity : 0),
     pics: this.props.merch.pics ? this.props.merch.pics : this.props.merch.sizes[0].pics
   }
 
@@ -41,19 +41,20 @@ export default class MerchModal extends React.Component {
       size: this.props.merch.sizes ? this.props.merch.sizes[0] : { price: 0, pics: [], quantity: 0, id: '' },
       price: this.props.merch.price !== undefined && this.props.merch.price !== null ? this.props.merch.price : this.props.merch.sizes[0].price,
       weight: this.props.merch.weight ? this.props.merch.weight : this.props.merch.sizes[0].weight,
-      cap: this.props.merch.quantity ? this.props.merch.quantity : this.props.merch.sizes[0].quantity,
+      cap: this.props.merch.quantity ? this.props.merch.quantity : (this.props.merch.quantity !== 0 ? this.props.merch.sizes[0].quantity : 0),
       pics: this.props.merch.pics ? this.props.merch.pics : this.props.merch.sizes[0].pics
     })
   }
 
   changeSize = (size) => {
     this.setState({
-      totalCost: size.price * this.state.quantity,
+      totalCost: size.price ? size.price * this.state.quantity : this.state.totalCost,
       size: size,
-      price: size.price,
+      price: size.price ? size.price : this.state.price,
       weight: size.weight,
       cap: size.quantity,
-      pics: size.pics
+      pics: size.pics,
+      quantity: size.quantity === 0 ? 1 : this.state.quantity
     })
   }
 
@@ -101,7 +102,7 @@ export default class MerchModal extends React.Component {
               width="2.5em"
               height="2.5em"
               fontSize="1em"
-              muted={this.state.quantity < 2 || isNaN(this.state.quantity)}
+              muted={this.state.quantity < 2 || isNaN(this.state.quantity) || this.state.cap === 0}
               onClick={() => {
                 if(this.state.quantity > 1) {
                   this.decrement()
@@ -113,16 +114,18 @@ export default class MerchModal extends React.Component {
                 overlay={
                   <Tooltip>
                     {this.state.quantity < 1 && "Okay, you have to get at least 1."}
-                    {this.state.quantity > this.state.cap && "The limit does exist, and the limit is 20. You can't get more than 20."}
+                    {this.state.quantity > this.state.cap && `The limit does exist, and the limit is ${this.state.cap}. You can't get more than ${this.state.cap}.`}
                     {isNaN(this.state.quantity) && "The quantity should be a number."}
                   </Tooltip>
                 }
-                show={this.state.quantity > this.state.cap || this.state.quantity < 1 || isNaN(this.state.quantity)}
+                show={this.state.cap !== 0 && (this.state.quantity > this.state.cap || this.state.quantity < 1 || isNaN(this.state.quantity))}
               >
                 <FormControl 
                   value={this.state.quantity}
                   onChange={(e) => {
-                    this.setState({ quantity: e.target.value, totalCost: e.target.value * this.state.price })
+                    if(this.state.cap !== 0) {
+                      this.setState({ quantity: e.target.value, totalCost: e.target.value * this.state.price })
+                    }
                   }}
                   style={{
                     width: this.state.quantity < 1 || this.state.quantity > this.state.cap || isNaN(this.state.quantity) ? '5em' : '3em',
@@ -130,7 +133,7 @@ export default class MerchModal extends React.Component {
                     display: 'inline',
                     margin: '0% 2%'
                   }}
-                  isInvalid={this.state.quantity < 1 || this.state.quantity > this.state.cap || isNaN(this.state.quantity)}
+                  isInvalid={this.state.cap && (this.state.quantity < 1 || this.state.quantity > this.state.cap || isNaN(this.state.quantity))}
                 />
               </OverlayTrigger>
             <Button
@@ -139,7 +142,7 @@ export default class MerchModal extends React.Component {
               width="2.5em"
               height="2.5em"
               fontSize="1em"
-              muted={this.state.quantity > this.state.cap - 1 || isNaN(this.state.quantity)}
+              muted={this.state.quantity > this.state.cap - 1 || isNaN(this.state.quantity) || this.state.cap === 0}
               onClick={() => {
                 if(this.state.quantity === '') {
                   this.reset()
@@ -166,23 +169,25 @@ export default class MerchModal extends React.Component {
           <CartContext.Consumer>
             {({addToCart}) => (
               <Button
-                text={`Add to Cart${this.state.quantity > 0 && this.state.quantity < this.state.cap + 1 ? ` ($${this.state.totalCost.toFixed(2)})`: ``}`}
+                text={this.state.cap === 0 ? `Sold Out` :`Add to Cart${this.state.quantity > 0 && this.state.quantity < this.state.cap + 1 ? ` ($${this.state.totalCost.toFixed(2)})`: ``}`}
                 secondary
                 fontSize="1.1em"
                 width="100%"
-                muted={this.state.quantity > this.state.cap || this.state.quantity < 1 || isNaN(this.state.quantity)}
+                muted={this.state.quantity > this.state.cap || this.state.quantity < 1 || isNaN(this.state.quantity) || this.state.cap === 0}
                 onClick={() => {
-                  addToCart(
-                    id,
-                    name,
-                    this.state.totalCost,
-                    thumbnail,
-                    this.state.quantity,
-                    this.state.cap,
-                    this.state.weight,
-                    this.state.size
-                  )
-                  this.props.added(this.state.quantity)
+                  if(this.state.cap !== 0){
+                    addToCart(
+                      id,
+                      name,
+                      this.state.totalCost,
+                      thumbnail,
+                      this.state.quantity,
+                      this.state.cap,
+                      this.state.weight,
+                      this.state.size
+                    )
+                    this.props.added(this.state.quantity)
+                  }
                 }}
               />
             )}

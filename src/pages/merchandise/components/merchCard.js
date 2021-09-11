@@ -25,15 +25,44 @@ export default class MerchCard extends React.Component {
         }
       }
 
-      if(lowest === highest) return lowest
+      if(lowest === highest) return `$${lowest.toFixed(2)}`
 
       return `$${lowest.toFixed(2)} - $${highest.toFixed(2)}`
     }
   }
+
+  isSoldOut = (quantity, sizes) => {
+    if(quantity || quantity === 0) {
+      return quantity === 0
+    } else {
+      for(let size of sizes) {
+        if(size.quantity > 0) {
+          return false
+        }
+      }
+
+      return true
+    }
+  }
+
+  sizeCount = (sizes) => {
+    let sizeCount = 0
+    if(sizes) {
+      for(let size of sizes) {
+        if(size.quantity > 0) {
+          sizeCount++
+        }
+      }
+    }
+
+    return sizeCount
+  }
+
   render() {
-    const { name, thumbnail, sizes } = this.props.merch;
+    const { name, thumbnail, sizes, quantity } = this.props.merch;
 
     const price = this.getPrice()
+    const sellingSizes = this.sizeCount(sizes)
     return (
       <StyledCard
         restcolors={{ bgColor: white, color: black }}
@@ -48,10 +77,13 @@ export default class MerchCard extends React.Component {
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Subtitle>{price === 0 ? 'FREE!' : `${price}`}</Card.Subtitle>
-          {(sizes && sizes.length > 0) && 
+          {(sizes && sellingSizes > 0) && 
             <Card.Text style={{ color: lightBlue }}>
-              {sizes.length} sizes available
+              {sellingSizes} sizes available
             </Card.Text>
+          }
+          {
+            (this.isSoldOut(quantity, sizes) && <Card.Text style={{ color: lightBlue }}>SOLD OUT!</Card.Text>)
           }
         </Card.Body>
       </StyledCard>

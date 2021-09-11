@@ -91,9 +91,9 @@ export default class App extends React.Component {
     window.localStorage.setItem('cart', "[]")
   }
 
-  incrementQuantity = (merchId) => {
+  incrementQuantity = (merchId, sizeId) => {
     let cart = [...this.state.cartState.cart]
-    let itemId = cart.findIndex(cartItem => cartItem.merchId === merchId)
+    let itemId = cart.findIndex(cartItem => cartItem.merchId === merchId && cartItem.size && cartItem.size.id === sizeId)
     cart[itemId].price += cart[itemId].price / cart[itemId].quantity
     cart[itemId].quantity += 1
 
@@ -107,9 +107,9 @@ export default class App extends React.Component {
     window.localStorage.setItem('cart', JSON.stringify(cart))
   }
 
-  decrementQuantity = (merchId) => {
+  decrementQuantity = (merchId, sizeId) => {
     let cart = [...this.state.cartState.cart]
-    let itemId = cart.findIndex(cartItem => cartItem.merchId === merchId)
+    let itemId = cart.findIndex(cartItem => cartItem.merchId === merchId && cartItem.size && cartItem.size.id === sizeId)
     cart[itemId].price -= cart[itemId].price / cart[itemId].quantity
     cart[itemId].quantity -= 1
 

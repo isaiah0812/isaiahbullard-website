@@ -178,7 +178,6 @@ export default class Contact extends React.Component {
         beats: this.selectedToString(), // Doesn't matter which template it is.
       })
     .then((result) => {
-      console.info(result);
       this.setState({
         yourName: "",
         email: "",
@@ -199,7 +198,6 @@ export default class Contact extends React.Component {
         spinnerVisible: false,
       }, (error) => {
         if(error) {
-          console.info(error);
           this.setState({
             spinnerVisible: false,
             failureAlertVisible: true,
@@ -208,7 +206,6 @@ export default class Contact extends React.Component {
       })
     }).catch((error) => {
       if(error) {
-        console.error(error);
         this.setState({
           spinnerVisible: false,
           failureAlertVisible: true,

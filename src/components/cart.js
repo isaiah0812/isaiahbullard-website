@@ -90,7 +90,6 @@ class CartItem extends React.Component {
           }}>-</QuantityButton>
             {this.state.quantity}
           <QuantityButton onClick={() => {
-            console.log(cap)
             if(this.state.quantity < cap) {
               this.props.increment()
               this.setState({
@@ -201,8 +200,8 @@ export class CartModal extends React.Component {
                             })
                           }
                         })}
-                        increment={() => incrementQuantity(cartItem.merchId)}
-                        decrement={() => decrementQuantity(cartItem.merchId)}
+                        increment={() => cartItem.size ? incrementQuantity(cartItem.merchId, cartItem.size.id) : incrementQuantity(cartItem.merchId)}
+                        decrement={() => cartItem.size ? decrementQuantity(cartItem.merchId, cartItem.size.id) : decrementQuantity(cartItem.merchId)}
                       />
                     ))
                   )}

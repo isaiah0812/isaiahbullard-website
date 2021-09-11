@@ -45,13 +45,12 @@ export default class MerchSlides extends React.Component {
   render() {
     return (
       <div style={{height: '100%', width: '100%', display: 'flex', flexWrap: 'wrap'}}>
-        <Carousel style={{height: '88%'}} activeIndex={this.state.activeIndex} indicators={false} controls={false} fade>
+        <Carousel style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '88%' }} activeIndex={this.state.activeIndex} indicators={false} controls={false} fade>
           {this.props.pics.map((pic, index) => (
             <Carousel.Item key={index}>
               <Image src={pic} style={{
                 display: 'block',
-                marginLeft: 'auto',
-                marginRight: 'auto',
+                margin: 'auto',
                 width: '92%',
                 objectFit: 'contain'
               }} />
