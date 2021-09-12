@@ -1,22 +1,22 @@
 [
   {
     "name": "Zae's Room",
-    "backdrop": "assets/projects/albums/Zaes_Room.png",
-    "logo": "assets/projects/albums/ZaesRoom_Logo.png",
+    "backdrop": "https://res.cloudinary.com/zaemadethis/image/upload/v1626575694/projects/albums/Zaes_Room.png",
+    "logo": "https://res.cloudinary.com/zaemadethis/image/upload/v1626574826/projects/albums/ZaesRoom_Logo.png",
     "description": "Welcome to Zae's Room. Out now.",
     "link": "/projects/zaes-room"
   },
   {
     "name": "The Holly Jolly Tape",
-    "backdrop": "assets/beats/beatTapes/HollyJolly.png",
-    "logo": "assets/beats/beatTapes/HollyJolly_Logo.png",
+    "backdrop": "https://res.cloudinary.com/zaemadethis/image/upload/v1626568375/beats/beatTapes/HollyJolly.png",
+    "logo": "https://res.cloudinary.com/zaemadethis/image/upload/v1626568381/beats/beatTapes/HollyJolly_Logo.png",
     "description": "Merry Christmas. The Holly Jolly Tape is out now.",
     "link": "/beats/the-holly-jolly-tape"
   },
   {
     "name": "Maestro",
-    "backdrop": "assets/projects/albums/Maestro.png",
-    "logo": "assets/projects/albums/Maestro_Logo.png",
+    "backdrop": "https://res.cloudinary.com/zaemadethis/image/upload/v1626666614/projects/albums/Maestro.png",
+    "logo": "https://res.cloudinary.com/zaemadethis/image/upload/v1626666615/projects/albums/Maestro_Logo.png",
     "description": "Home is where the heart is. Maestro is out now.",
     "link": "/projects/maestro"
   }

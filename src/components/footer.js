@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faFacebook, 
   faInstagram,
@@ -25,22 +24,9 @@ import {
   soundcloudOrange, 
   youtubeRed 
 } from '../constants/colors';
-
-/**
- * A regular styled FontAwesomeIcon using a StyledComponent
- * @constant
- * @type {import('styled-components').StyledComponent}
- * @name StyledFaIcon
- * @example <StyledFaIcon color="red" />
- */
-const StyledFaIcon = styled(FontAwesomeIcon)`
-  color: ${white};
-  margin: .4em;
-
-  &:hover {
-    color: ${props => props.color};
-  }
-`
+import {
+  StyledFaIcon
+} from './styled-components'
 
 /**
  * A styled Apple Music SVG object, used because FontAwesome doesn't have the apple music logo

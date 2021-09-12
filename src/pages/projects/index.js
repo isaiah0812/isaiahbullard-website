@@ -18,7 +18,7 @@ import {
   BannerTitle, 
   BannerCaption, 
   PageSectionTitle,
-} from '../../constants/styled-components';
+} from '../../components/styled-components';
 
 import banner from './assets/banner.jpg';
 import AlbumCard from './components/albumCard';
@@ -234,11 +234,11 @@ class ProjectsHome extends React.Component {
 
 // This has to be a functional component in order to use useRouteMatch()
 /**
- * The entire beats page, including every beat tape sub route.
- * @name Beats
+ * The entire Projects page, including every beat tape sub route.
+ * @name Projects
  * @author Isaiah Bullard
  * @version 1.0.0
- * @example <Beats />
+ * @example <Projects />
  */
 const Projects = () => {
   let { path, url } = useRouteMatch();

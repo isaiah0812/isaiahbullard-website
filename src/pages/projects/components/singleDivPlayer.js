@@ -9,7 +9,7 @@ import {
   soundcloudOrange, 
   spotifyGreen 
 } from '../../../constants/colors';
-import { PlayerTab, PlayerSelector } from '../../../constants/styled-components';
+import { PlayerTab, PlayerSelector } from '../../../components/styled-components';
 
 /**
  * A container with a Spotify, Apple Music, Bandcamp, and SoundCloud player, as well as a SongLink for a single.

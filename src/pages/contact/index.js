@@ -24,7 +24,7 @@ import {
   BannerCaption, 
   PageSectionTitle,
   PageSectionInfo,
-} from '../../constants/styled-components';
+} from '../../components/styled-components';
 import { darkBlue, lightBlue, silver, white } from '../../constants/colors';
 import { pageContainer } from '../../constants/styles';
 
@@ -114,7 +114,6 @@ export default class Contact extends React.Component {
     fetch(`${process.env.REACT_APP_API_URL}/beats`)
       .then(res => res.json())
       .then((beats) => {
-        console.log(beats)
         this.setState({
           beatsLoaded: true,
           beats: beats,
@@ -179,7 +178,6 @@ export default class Contact extends React.Component {
         beats: this.selectedToString(), // Doesn't matter which template it is.
       })
     .then((result) => {
-      console.info(result);
       this.setState({
         yourName: "",
         email: "",
@@ -200,7 +198,6 @@ export default class Contact extends React.Component {
         spinnerVisible: false,
       }, (error) => {
         if(error) {
-          console.info(error);
           this.setState({
             spinnerVisible: false,
             failureAlertVisible: true,
@@ -209,7 +206,6 @@ export default class Contact extends React.Component {
       })
     }).catch((error) => {
       if(error) {
-        console.error(error);
         this.setState({
           spinnerVisible: false,
           failureAlertVisible: true,

@@ -5,7 +5,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { default as RBButton } from 'react-bootstrap/Button';
 
-import { darkBlue, lightBlue, silver, white } from '../constants/colors'
+import { darkBlue, lightBlue, lightGray, silver, white, red } from '../constants/colors'
 
 /**
  * @constant
@@ -16,25 +16,26 @@ import { darkBlue, lightBlue, silver, white } from '../constants/colors'
 const StyledButton = styled(RBButton)`
   border-width: 7px;
   border-style: solid;
-  border-radius: 16px;
-  border-color: ${props => props.type === "submit" ? darkBlue : (props.secondary === 'true' ? darkBlue : white)};
-  background-color: ${props => props.type === "submit" ? silver : lightBlue};
+  border-radius: ${props => props.circle ? '50%' : '16px'};
+  border-color: ${props => props.trash ? red : (props.muted) ? silver : (props.type === "submit" ? darkBlue : (props.secondary ? darkBlue : white))};
+  background-color: ${props => props.trash ? red : (props.muted ? lightGray : (props.type === "submit" ? silver : lightBlue))};
   text-align: center;
-  font-size: 150%;
-  color: ${white};
-  padding: 0%;
-  width: 150px;
+  font-size: ${props => props.fontSize ? props.fontSize : "1.5em"};
+  color: ${props => props.trash ? white : (props.muted ? silver : white)};
+  padding: 0.5%;
+  width: ${props => props.width ? props.width : "150px"};
+  height: ${props => props.circle ? props.width : (props.height ? props.height: 'auto')};
   transition: background-color 0.2s, border-color 0.2s, color 0.2s;
 
   &:hover {
-    background-color: ${white};
-    border-color: ${lightBlue};
-    color: ${lightBlue};
+    background-color: ${props => props.muted ? lightGray : white};
+    border-color: ${props => props.trash ? red : (props.muted ? silver : lightBlue)};
+    color: ${props => props.trash ? red : (props.muted ? silver : lightBlue)};
   }
 
   @media (max-width: 740px) {
     font-size: 125%;
-    width: 120px;
+    width: ${props => props.width ? props.width : "120px"};
   }
 
 `
@@ -55,17 +56,35 @@ export default class Button extends React.Component {
     /**
      * @since 1.0.0
      */
-    const { 
+    const {
+      id,
       submit, 
       secondary, 
       text, 
-      href 
+      href,
+      fontSize,
+      width,
+      height,
+      onClick,
+      muted,
+      trash,
+      circle
     } = this.props;
+
     return (
-      <StyledButton 
+      <StyledButton
+        id={id}
+        style={{...(this.props.style)}}
         type={submit ? 'submit' : 'button'} // Has to be strings in order to get rid of the warnings in Chrome
         secondary={secondary}
         href={href}
+        fontSize={fontSize}
+        width={width}
+        height={height}
+        onClick={onClick}
+        muted={muted}
+        trash={trash}
+        circle={circle}
       >
         {text}
       </StyledButton>
