@@ -1,5 +1,12 @@
 [
   {
+    "name": "The Holly Jolly Tape, Vol. 2",
+    "backdrop": "https://res.cloudinary.com/zaemadethis/image/upload/v1639377969/beats/beatTapes/HollyJolly2.png",
+    "logo": "https://res.cloudinary.com/zaemadethis/image/upload/v1639377987/beats/beatTapes/HollyJolly2_Logo.png",
+    "description": "Happy Holidays. Volume 2 is out now.",
+    "link": "/beats/the-holly-jolly-tape-vol-2"
+  },
+  {
     "name": "Zae's Room",
     "backdrop": "https://res.cloudinary.com/zaemadethis/image/upload/v1626575694/projects/albums/Zaes_Room.png",
     "logo": "https://res.cloudinary.com/zaemadethis/image/upload/v1626574826/projects/albums/ZaesRoom_Logo.png",
