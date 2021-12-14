@@ -66,7 +66,7 @@ export default class Merchandise extends React.Component {
           <PageBannerFade fluid>
             <BannerText fluid>
               <BannerTitle>Merchandise</BannerTitle>
-              <BannerCaption>Merchandise coming soon.</BannerCaption>
+              <BannerCaption>Don't think of it as Zae worship. Think of it as...loving me unconditionally by giving me money in exchange for clothes.</BannerCaption>
             </BannerText>
           </PageBannerFade>
         </PageBanner>
