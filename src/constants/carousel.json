@@ -1,5 +1,12 @@
 [
   {
+    "name": "Pregames",
+    "backdrop": "https://res.cloudinary.com/zaemadethis/image/upload/v1661704696/other/pregame.jpg",
+    "logo": "https://res.cloudinary.com/zaemadethis/image/upload/v1661704696/other/pregame.jpg",
+    "description": "There's a party, and you're invited...",
+    "link": "https://www.partyatzaescrib.com"
+  },
+  {
     "name": "The Holly Jolly Tape, Vol. 2",
     "backdrop": "https://res.cloudinary.com/zaemadethis/image/upload/v1639377969/beats/beatTapes/HollyJolly2.png",
     "logo": "https://res.cloudinary.com/zaemadethis/image/upload/v1639377987/beats/beatTapes/HollyJolly2_Logo.png",
