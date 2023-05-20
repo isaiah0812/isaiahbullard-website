@@ -4,51 +4,8 @@
 This app is the informational website for Isaiah Bullard. It contains information on his projects including, but not limited to, albums, beat tapes, and production credits. It also contains information on beat the beats that he currently has for sale, available for purchase through the contact page of the site. The merchandise page is meant to display any available merchandise for the "Isaiah Bullard" brand, or any other brands affiliated with Isaiah Bullard.
 
 ---
-## Development
-
-### Requirements
-* [Node.js](https://nodejs.org/en/download/)
-  1. Download Node.js from [here](https://nodejs.org/en/download/).
-  1. Verify Node.js is downloaded by running the following commands:
-      ```
-      node -v
-      npm -v
-      ```
-  *Note: you can use [Yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable) as a local dependency manager as well, but this project was built with Node.js and [create-react-app](https://create-react-app.dev/).*
-
-### Installation
-1. Open your Command Prompt or Terminal and clone the project from the [repository](https://github.com/isaiah0812/isaiahbullard-website/tree/master) using `git clone`.
-    ```
-    git clone https://github.com/isaiah0812/isaiahbullard-website.git
-    ```
-2. Download all dependencies in this project using the following command:
-    ```
-    npm install
-    ```
-
-3. The project uses environment variables. To add these environment variables, create a file in the root of the project called `.env.local` and copy the following contents to the file:
-    ```
-    REACT_APP_EMAILJS_ID=key_goes_here
-    REACT_APP_EMAILJS_SERVICE=key_goes_here
-    REACT_APP_EMAILJS_TEMPLATE_BEATS=key_goes_here
-    REACT_APP_EMAILJS_TEMPLATE_CONTACT=key_goes_here
-    REACT_APP_RECAPTCHA_KEY=key_goes_here
-    ```
-    Contact the repository owner [here](mailto:isaiah0812@yahoo.com) to obtain secret keys. These keys are proprietary to the repository owner, so do not share these private keys.
-
-### Running the Project
-Run the project with the following command:
-```
-npm start
-```
-
-### Publishing
-When publishing any changes to the app, you must have a [Render](https://render.com/) account. Request access to the static site from the repository owner [here](mailto:isaiah0812@yahoo.com).
-
-*Note: EmailJS updates the messaging quota on the first of every month. Changes to the [Contact Page](#contact) should be made with this in mind.*
-
-### [Render](https://render.com/)
-Render is a platform with the capability of running static sites and any app related to a project. When a pull request is made, an copy of the production build with the changes from the pull request shown in the new instance. To obtain access to the project and make changes to production, contact the repository owner at [here](mailto:isaiah0812@yahoo.com).
+## NOTICE
+This project is no longer in development. While the [domain](https://www.zaemadethis.com) is still being used, this repository does not reflect the current deployment of code.
 
 ---
 ## Features
